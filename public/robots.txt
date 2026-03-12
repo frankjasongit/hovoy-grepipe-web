@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hovoy-grepipe.com/sitemap.xml
