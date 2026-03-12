@@ -10,6 +10,10 @@ export type ProductPage = {
   buyerFocus: string[]
   highlights: string[]
   applications: string[]
+  serviceMedia: string[]
+  supplyScope: Array<{ title: string; text: string }>
+  selectionNotes: Array<{ title: string; text: string }>
+  rfqChecklist: string[]
   relatedApplications: string[]
 }
 
@@ -22,6 +26,9 @@ export type ApplicationPage = {
   metaDescription: string
   concerns: string[]
   advantages: string[]
+  typicalSystems: Array<{ title: string; text: string }>
+  projectDrivers: string[]
+  inquiryFocus: string[]
   relatedProducts: string[]
 }
 
@@ -57,6 +64,42 @@ export const productPages: ProductPage[] = [
       'Technical information can be matched to project requirements',
     ],
     applications: ['Oil and gas wells', 'Produced water handling', 'Corrosive field service'],
+    serviceMedia: ['Produced water', 'Corrosive fluids', 'Water injection support', 'Field utility duty'],
+    supplyScope: [
+      {
+        title: 'Tubing and Casing Supply',
+        text: 'Composite well strings aligned to corrosive service, handling conditions, and practical field deployment needs.',
+      },
+      {
+        title: 'Associated Connection Planning',
+        text: 'Connection selection can be coordinated around field assembly, maintenance access, and operating environment.',
+      },
+      {
+        title: 'Project Clarification',
+        text: 'Inquiry review can cover well environment, service fluid, dimensions, and supporting documentation before quotation.',
+      },
+    ],
+    selectionNotes: [
+      {
+        title: 'Corrosion Environment',
+        text: 'Well-related service often requires stronger attention to chemical exposure, produced water, and long-term material durability.',
+      },
+      {
+        title: 'Handling and Installation',
+        text: 'Composite well systems are often evaluated for weight reduction, transport practicality, and field handling efficiency.',
+      },
+      {
+        title: 'Scope Definition',
+        text: 'Early clarification of duty, dimensions, accessories, and installation method improves technical review and commercial response.',
+      },
+    ],
+    rfqChecklist: [
+      'Well service description and operating environment',
+      'Required tubing or casing range',
+      'Service media and corrosion concerns',
+      'Connection or accessory requirements',
+      'Destination market and project schedule',
+    ],
     relatedApplications: ['oil-and-gas'],
   },
   {
@@ -86,6 +129,42 @@ export const productPages: ProductPage[] = [
       'Water treatment systems',
       'Chemical processing',
     ],
+    serviceMedia: ['Process water', 'Saline water', 'Chemical service', 'Industrial utility fluids'],
+    supplyScope: [
+      {
+        title: 'Straight Pipe Supply',
+        text: 'Line pipe can be supplied for transport networks, utility routing, and corrosion-sensitive industrial service.',
+      },
+      {
+        title: 'System Packages',
+        text: 'Fittings, spool pieces, and connection planning can be aligned to the route, installation method, and project scope.',
+      },
+      {
+        title: 'Commercial Coordination',
+        text: 'Line pipe projects often need clearer communication on dimensions, pressure class, fittings ratio, and export packing requirements.',
+      },
+    ],
+    selectionNotes: [
+      {
+        title: 'Service Media Fit',
+        text: 'Media type, corrosion risk, and plant duty all influence whether line pipe should be configured as a standard supply item or a more application-specific package.',
+      },
+      {
+        title: 'Route Conditions',
+        text: 'Above-ground, plant routing, buried service, or utility transfer layouts may change the preferred fittings and support logic.',
+      },
+      {
+        title: 'Project Documentation',
+        text: 'Line lists, route sketches, and fittings counts help reduce quotation gaps and speed up technical review.',
+      },
+    ],
+    rfqChecklist: [
+      'Line service and media description',
+      'Diameter range and pressure class',
+      'Estimated route length or line list',
+      'Required fittings and spool scope',
+      'Project location and delivery timing',
+    ],
     relatedApplications: ['oil-and-gas', 'water-treatment-desalination', 'chemical-processing'],
   },
   {
@@ -110,6 +189,42 @@ export const productPages: ProductPage[] = [
       'Supports export and project-oriented commercial communication',
     ],
     applications: ['Shipboard utilities', 'Seawater systems', 'Offshore platforms', 'Coastal projects'],
+    serviceMedia: ['Seawater', 'Cooling water', 'Ballast or utility service', 'Corrosive coastal duty'],
+    supplyScope: [
+      {
+        title: 'Marine Piping Supply',
+        text: 'Composite marine systems can support shipboard and offshore routing where corrosion resistance and weight reduction are important.',
+      },
+      {
+        title: 'Seawater-Oriented Systems',
+        text: 'Marine projects often require pipe, fittings, and support logic for continuous exposure to saline or coastal operating environments.',
+      },
+      {
+        title: 'Project Coordination',
+        text: 'Offshore and marine supply discussions often include routing complexity, installation method, and class or project documentation requirements.',
+      },
+    ],
+    selectionNotes: [
+      {
+        title: 'Weight Reduction',
+        text: 'Marine and offshore buyers frequently compare composite systems against heavier metallic alternatives where handling and support loads matter.',
+      },
+      {
+        title: 'Seawater Exposure',
+        text: 'Continuous saline service makes corrosion resistance and lifecycle reliability a major part of the commercial discussion.',
+      },
+      {
+        title: 'Installation Constraints',
+        text: 'Shipboard layouts, offshore modules, and retrofit access conditions all influence product choice and connection strategy.',
+      },
+    ],
+    rfqChecklist: [
+      'Shipboard, offshore, or coastal project type',
+      'Seawater or utility service description',
+      'Pipe size range and operating pressure',
+      'Fittings, joints, and installation constraints',
+      'Destination yard, country, or project schedule',
+    ],
     relatedApplications: ['marine-and-offshore', 'water-treatment-desalination'],
   },
   {
@@ -134,6 +249,42 @@ export const productPages: ProductPage[] = [
       'Clearly separated from rigid composite pipe systems',
     ],
     applications: ['Oil and gas field transport', 'Remote field deployment', 'Reel-based installation'],
+    serviceMedia: ['Produced water', 'Oil and gas transport', 'Field transfer duty', 'Remote utility service'],
+    supplyScope: [
+      {
+        title: 'Spoolable Composite Pipe',
+        text: 'Flexible pipe solutions are suited to projects that value reel-based delivery, fast deployment, and reduced field joining complexity.',
+      },
+      {
+        title: 'Field-Oriented Delivery',
+        text: 'This product family is relevant where installation speed, remote access, and deployment efficiency matter commercially.',
+      },
+      {
+        title: 'Comparison Support',
+        text: 'Buyers often compare flexible systems against rigid alternatives, so inquiry review can focus on installation method and operating duty.',
+      },
+    ],
+    selectionNotes: [
+      {
+        title: 'Installation Speed',
+        text: 'Flexible systems are often selected to reduce field labor, simplify deployment, and improve efficiency in remote or repetitive route conditions.',
+      },
+      {
+        title: 'Spoolable Logistics',
+        text: 'Reel-based transport and deployment can be a strong advantage where route length, access, or schedule pressure shape the project plan.',
+      },
+      {
+        title: 'Rigid vs Flexible Choice',
+        text: 'Application conditions, route geometry, and maintenance expectations all influence whether a flexible or rigid composite system is the better fit.',
+      },
+    ],
+    rfqChecklist: [
+      'Service fluid and operating environment',
+      'Approximate route length and deployment conditions',
+      'Pressure class and field layout',
+      'Preference for spoolable or rigid solution',
+      'Project timing and destination market',
+    ],
     relatedApplications: ['oil-and-gas'],
   },
   {
@@ -158,6 +309,42 @@ export const productPages: ProductPage[] = [
       'Improves RFQ quality by clarifying full supply scope',
     ],
     applications: ['System routing', 'Plant installation', 'Field assembly', 'Marine systems'],
+    serviceMedia: ['System-wide support', 'Process and utility duty', 'Plant installation', 'Marine routing'],
+    supplyScope: [
+      {
+        title: 'Standard Fittings',
+        text: 'Elbows, tees, reducers, flanges, and related items help complete pipe packages for industrial and marine systems.',
+      },
+      {
+        title: 'Connection Planning',
+        text: 'Jointing methods can be reviewed alongside installation conditions, field assembly requirements, and maintenance expectations.',
+      },
+      {
+        title: 'Package Completion',
+        text: 'Including fittings and joints in the RFQ improves scope clarity and helps avoid under-defined straight-pipe-only quotations.',
+      },
+    ],
+    selectionNotes: [
+      {
+        title: 'System Completeness',
+        text: 'Many projects depend on fittings ratio, spool arrangement, and connection logic rather than pipe alone.',
+      },
+      {
+        title: 'Installation Method',
+        text: 'Field assembly, shop fabrication, and access limitations often drive different fitting and joint requirements.',
+      },
+      {
+        title: 'Commercial Clarity',
+        text: 'Fittings scope should be clarified early to align quantities, packaging, and delivery expectations.',
+      },
+    ],
+    rfqChecklist: [
+      'Base pipe system and application',
+      'Fittings list or estimated quantities',
+      'Connection method requirements',
+      'Need for shop spools or field assembly',
+      'Project destination and packing expectations',
+    ],
     relatedApplications: ['oil-and-gas', 'marine-and-offshore', 'chemical-processing'],
   },
 ]
@@ -185,6 +372,32 @@ export const applicationPages: ApplicationPage[] = [
       'Well, line, and flexible systems can be compared more clearly by application',
       'Application-focused content helps improve RFQ quality and technical review',
     ],
+    typicalSystems: [
+      {
+        title: 'Well Service Systems',
+        text: 'Well tubing and casing are relevant where corrosive service, handling, and lifecycle performance affect operating decisions.',
+      },
+      {
+        title: 'Field Line Networks',
+        text: 'Line pipe is often selected for field transport, utility routing, and project systems that need corrosion-resistant flow paths.',
+      },
+      {
+        title: 'Flexible Transport Solutions',
+        text: 'Flexible composite pipe is relevant where spoolable deployment and faster field installation provide a commercial advantage.',
+      },
+    ],
+    projectDrivers: [
+      'Corrosive media and remote operating conditions',
+      'Transport and handling efficiency',
+      'Comparison between rigid and flexible pipeline concepts',
+      'Project-based supply and export coordination',
+    ],
+    inquiryFocus: [
+      'Application type: well, line, or flexible system',
+      'Service fluid and operating environment',
+      'Pressure class, line scope, and fittings needs',
+      'Destination market and project timing',
+    ],
     relatedProducts: ['well-tubing-casing', 'line-pipe', 'flexible-composite-pipe', 'fittings-and-joints'],
   },
   {
@@ -209,6 +422,32 @@ export const applicationPages: ApplicationPage[] = [
       'Suitable for standards, project examples, and system-specific discussion',
       'Keeps marine requirements separate from unrelated industrial pipe uses',
     ],
+    typicalSystems: [
+      {
+        title: 'Shipboard Utility Lines',
+        text: 'Marine utility systems may prioritize corrosion resistance, lower weight, and practical routing through constrained vessel spaces.',
+      },
+      {
+        title: 'Offshore Support Systems',
+        text: 'Offshore projects often require pipe and fittings for harsh environments where saline exposure and maintenance access matter.',
+      },
+      {
+        title: 'Coastal and Seawater Duty',
+        text: 'Coastal facilities and seawater-related projects often need pipe systems designed around long-term corrosive exposure.',
+      },
+    ],
+    projectDrivers: [
+      'Continuous saline exposure',
+      'Weight-sensitive routing and support loads',
+      'Vessel or offshore installation constraints',
+      'Project documentation and technical clarification',
+    ],
+    inquiryFocus: [
+      'Shipboard, offshore, or coastal use case',
+      'Seawater or utility service conditions',
+      'Dimensions, pressure class, and fittings scope',
+      'Class, yard, or project delivery requirements',
+    ],
     relatedProducts: ['marine-offshore-pipe', 'fittings-and-joints', 'line-pipe'],
   },
   {
@@ -232,6 +471,32 @@ export const applicationPages: ApplicationPage[] = [
       'The content can expand into more specific desalination and treatment scenarios',
       'Supports both process and utility system inquiry flow',
     ],
+    typicalSystems: [
+      {
+        title: 'Plant Utility Lines',
+        text: 'Treatment projects often need corrosion-resistant utility and process support piping across multiple operating zones.',
+      },
+      {
+        title: 'Saline Water Transport',
+        text: 'Desalination facilities and saline service systems may benefit from composite line pipe and compatible fittings packages.',
+      },
+      {
+        title: 'Treatment Process Support',
+        text: 'Pipe selection often depends on media compatibility, route complexity, and lifecycle maintenance expectations.',
+      },
+    ],
+    projectDrivers: [
+      'Corrosion exposure in saline or treatment duty',
+      'Utility system reliability',
+      'Compatibility of pipe and fittings packages',
+      'Longer lifecycle expectations',
+    ],
+    inquiryFocus: [
+      'Plant type and service media',
+      'Line scope and pressure class',
+      'Straight pipe and fittings requirements',
+      'Destination market and project timing',
+    ],
     relatedProducts: ['line-pipe', 'marine-offshore-pipe', 'fittings-and-joints'],
   },
   {
@@ -254,6 +519,32 @@ export const applicationPages: ApplicationPage[] = [
       'Connects line pipe and fittings pages directly to plant use cases',
       'Improves search intent match for chemical-related traffic',
       'Creates space for future media and standards content',
+    ],
+    typicalSystems: [
+      {
+        title: 'Corrosive Process Lines',
+        text: 'Chemical process systems often need materials selected around corrosion, compatibility, and maintenance reduction.',
+      },
+      {
+        title: 'Plant Utility Networks',
+        text: 'Composite line pipe and fittings can support utility and secondary process duties in corrosion-sensitive environments.',
+      },
+      {
+        title: 'System Accessory Packages',
+        text: 'Fittings, reducers, and flanged transitions are often as important as straight pipe in plant installations.',
+      },
+    ],
+    projectDrivers: [
+      'Chemical media compatibility',
+      'Corrosion-driven maintenance concerns',
+      'System completeness across pipe and fittings',
+      'Application-specific technical review',
+    ],
+    inquiryFocus: [
+      'Service media and process conditions',
+      'Line size range and pressure class',
+      'Required fittings and transitions',
+      'Project timeline and destination market',
     ],
     relatedProducts: ['line-pipe', 'fittings-and-joints'],
   },

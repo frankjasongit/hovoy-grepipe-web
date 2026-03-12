@@ -434,8 +434,52 @@ function ProductDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Applications</p>
-          <h2>Where this product line fits.</h2>
+          <p className="eyebrow">Service Profile</p>
+          <h2>Typical service media and operating contexts.</h2>
+        </div>
+        <div className="pill-grid">
+          {page.serviceMedia.map((item) => (
+            <span className="pill" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Supply Scope</p>
+          <h2>What buyers commonly expect from this product line.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {page.supplyScope.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Selection Notes</p>
+          <h2>Points that usually shape product review and quotation.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {page.selectionNotes.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Common Applications</p>
+          <h2>Typical uses for this product family.</h2>
         </div>
         <div className="pill-grid">
           {page.applications.map((item) => (
@@ -444,6 +488,20 @@ function ProductDetailPage() {
             </span>
           ))}
         </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">RFQ Checklist</p>
+          <h2>What to prepare before requesting a quotation.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {page.rfqChecklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
       </section>
 
       <section className="section section-grid page-section">
@@ -567,6 +625,49 @@ function ApplicationDetailPage() {
               </article>
             ))}
         </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Typical Systems</p>
+          <h2>Where these application requirements usually appear.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {page.typicalSystems.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Project Drivers</p>
+          <h2>Commercial and technical priorities in this sector.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {page.projectDrivers.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Inquiry Focus</p>
+          <h2>Information that helps speed up technical review.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {page.inquiryFocus.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
       </section>
 
       <CtaSection
