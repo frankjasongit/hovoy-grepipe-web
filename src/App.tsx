@@ -128,7 +128,7 @@ function HomePage() {
   usePageMeta({
     title: 'Hovoy Composite Pipe | Well, Line, Marine, and Flexible Pipe Systems',
     description:
-      'Hovoy Composite Pipe builds a structured industrial website around well tubing and casing, line pipe, marine pipe, flexible composite pipe, fittings, and engineering support for export projects.',
+      'Hovoy Composite Pipe supplies well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, fittings, and engineering support for industrial export projects.',
     path: '/',
   })
 
@@ -152,12 +152,12 @@ function HomePage() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Composite Pipe Systems For Industrial Projects</p>
-          <h1>Well pipe, line pipe, marine pipe, and flexible composite pipe in one clear structure.</h1>
+          <h1>Composite pipe systems for well service, line transport, marine duty, and flexible flowlines.</h1>
           <p className="hero-text">
-            The Hovoy site is being rebuilt around how industrial buyers actually search and
-            qualify suppliers: product line first, application context second, engineering fit
-            third, then a direct RFQ path. This avoids the weak “single homepage trading site”
-            pattern and turns the website into a real industrial sales platform.
+            Hovoy Composite Pipe supplies rigid and flexible composite pipe solutions for corrosive,
+            weight-sensitive, and project-driven applications. Our portfolio covers well tubing and
+            casing, line pipe, marine and offshore systems, flexible composite pipe, and matching
+            fittings for oil and gas, water treatment, desalination, marine, and chemical service.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/products">
@@ -202,7 +202,7 @@ function HomePage() {
             <div className="pipe-panel">
               <span>Hovoy</span>
               <strong>Composite Pipe</strong>
-              <small>Structured for SEO, project qualification, and export-facing RFQ flow.</small>
+              <small>Engineered supply for industrial, marine, and energy pipeline applications.</small>
             </div>
           </div>
         </div>
@@ -219,11 +219,11 @@ function HomePage() {
       <section className="section section-grid">
         <div className="section-heading">
           <p className="eyebrow">Products</p>
-          <h2>Build the website around product lines instead of one generic GRE page.</h2>
+          <h2>Composite pipe product lines for distinct operating environments.</h2>
           <p>
-            This industry has distinct buyer groups. A marine buyer, a well tubing buyer, and a
-            flexible pipe buyer do not search the same way and should not be forced through one
-            undifferentiated product page.
+            Each product family serves different service conditions, installation methods, and
+            project priorities. Explore dedicated pages for well pipe, line pipe, marine systems,
+            flexible flowlines, and fittings.
           </p>
         </div>
 
@@ -250,12 +250,12 @@ function HomePage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Applications</p>
-            <h2>Let search engines and buyers understand the industrial use case.</h2>
+            <h2>Application-focused solutions for demanding industrial sectors.</h2>
           </div>
           <p>
-            International competitors typically split applications from products. That is the
-            right model here too, because it creates stronger landing pages for oil and gas,
-            marine, desalination, and chemical process traffic.
+            Composite pipe selection depends on service media, corrosion risk, installation method,
+            and operating environment. Our application pages connect those conditions to the right
+            product family and support package.
           </p>
         </div>
 
@@ -274,12 +274,12 @@ function HomePage() {
 
       <section className="section capability-band">
         <div className="capability-copy">
-          <p className="eyebrow">Engineering Structure</p>
-          <h2>Separate product content from engineering content.</h2>
+          <p className="eyebrow">Engineering Support</p>
+          <h2>Material selection, joint methods, and project-oriented technical support.</h2>
           <p>
-            This site should not try to answer standards, materials, joint systems, and quality
-            control inside random product paragraphs. Engineering deserves its own architecture so
-            product pages can stay commercial and easy to scan.
+            Product selection is only one part of the supply decision. Buyers also need clear
+            support on connection systems, service conditions, documentation, and project
+            coordination before moving to quotation or technical review.
           </p>
         </div>
 
@@ -301,51 +301,50 @@ function HomePage() {
 
       <section className="section section-grid">
         <div className="section-heading">
-          <p className="eyebrow">Implementation Plan</p>
-          <h2>First structure the website correctly, then deepen each page.</h2>
+          <p className="eyebrow">Project Workflow</p>
+          <h2>From inquiry review to product matching and delivery support.</h2>
         </div>
 
         <div className="timeline">
           <article>
             <span>01</span>
-            <strong>Architecture</strong>
-            <p>Products, applications, engineering, resources, about, and contact become separate routes.</p>
+            <strong>Inquiry Review</strong>
+            <p>We start from application, media, pressure class, dimensions, routing scope, and destination market.</p>
           </article>
           <article>
             <span>02</span>
-            <strong>SEO Expansion</strong>
-            <p>Each product and application line gets a dedicated title, description, canonical, and sitemap URL.</p>
+            <strong>Product Matching</strong>
+            <p>Rigid or flexible systems, fittings, and connection methods are aligned to service conditions and installation needs.</p>
           </article>
           <article>
             <span>03</span>
-            <strong>Content Depth</strong>
-            <p>Next phase adds data sheets, standards, pressure ranges, and downloadable resources.</p>
+            <strong>Technical and Commercial Review</strong>
+            <p>Scope clarification, documentation support, and quotation alignment help reduce delays before order placement.</p>
           </article>
           <article>
             <span>04</span>
-            <strong>Lead Capture</strong>
-            <p>RFQ pages and inquiry forms are connected to the exact product or application page that sourced the lead.</p>
+            <strong>Project Delivery</strong>
+            <p>Export communication, packing coordination, and follow-up support continue through project execution.</p>
           </article>
         </div>
       </section>
 
       <section className="section contact-panel">
         <div>
-          <p className="eyebrow">Next Step</p>
-          <h2>The homepage is now a router into the real site, not the whole site itself.</h2>
+          <p className="eyebrow">Contact</p>
+          <h2>Discuss product selection, application fit, and project requirements with Hovoy.</h2>
           <p>
-            The key structural problem is solved by turning the website into a proper industrial
-            page tree. That gives you room to add technical depth without collapsing all traffic
-            into one weak homepage.
+            Our team supports buyers looking for well tubing and casing, line pipe, marine piping,
+            flexible composite pipe, fittings, and export-oriented project supply.
           </p>
         </div>
 
         <div className="contact-card">
-          <p>Recommended action</p>
+          <p>Primary inquiry email</p>
           <a href="mailto:sales@hovoy-grepipe.com">sales@hovoy-grepipe.com</a>
-          <span>Use contact, product, and application pages as separate inquiry entry points.</span>
+          <span>Send application details, product scope, dimensions, pressure class, and destination market.</span>
           <Link className="button button-primary contact-button" to="/contact">
-            Open Contact Page
+            Contact Hovoy
           </Link>
         </div>
       </section>
@@ -364,8 +363,8 @@ function ProductsPage() {
   return (
     <PageHero
       eyebrow="Products"
-      title="Composite pipe product lines organized around real buying intent."
-      description="Each product family needs its own page because the use case, pressure logic, standards, and buyer questions differ. This section is structured to support deeper product SEO and better RFQ quality."
+      title="Composite pipe product lines for industrial, marine, and energy projects."
+      description="Explore the main Hovoy product families, from well tubing and casing to line pipe, marine systems, flexible composite pipe, and fittings and joints."
     >
       <div className="product-grid">
         {productPages.map((item) => (
@@ -408,7 +407,7 @@ function ProductDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Product Scope</p>
-            <h2>What this line is built for.</h2>
+            <h2>Designed around service conditions and project requirements.</h2>
           </div>
           <p>{page.intro}</p>
         </div>
@@ -450,7 +449,7 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Related Pages</p>
-          <h2>Connect product pages to industry pages.</h2>
+          <h2>Related applications for this product family.</h2>
         </div>
         <div className="sector-grid">
           {applicationPages
@@ -468,8 +467,8 @@ function ProductDetailPage() {
       </section>
 
       <CtaSection
-        title="Turn this product page into a qualified inquiry path."
-        text="Next content depth can include pressure ranges, material systems, end connections, standards, and downloadable data sheets. The structure is already in place."
+        title="Request technical review or quotation support for this product line."
+        text="Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately."
       />
     </PageHero>
   )
@@ -486,8 +485,8 @@ function ApplicationsPage() {
   return (
     <PageHero
       eyebrow="Applications"
-      title="Industry pages that match how industrial buyers search."
-      description="Applications should not be buried inside product paragraphs. These pages let the site rank and convert around oil and gas, marine, water treatment, and corrosive process scenarios."
+      title="Composite piping solutions for major industrial and marine applications."
+      description="Review key application sectors including oil and gas, marine and offshore, desalination, water treatment, and chemical processing."
     >
       <div className="sector-grid">
         {applicationPages.map((item) => (
@@ -524,7 +523,7 @@ function ApplicationDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Industry Overview</p>
-            <h2>What buyers in this sector usually need.</h2>
+            <h2>Service demands and operating priorities in this sector.</h2>
           </div>
           <p>{page.intro}</p>
         </div>
@@ -552,7 +551,7 @@ function ApplicationDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Recommended Products</p>
-          <h2>Connect application intent to specific product families.</h2>
+          <h2>Product lines commonly used in this application.</h2>
         </div>
         <div className="product-grid">
           {productPages
@@ -571,8 +570,8 @@ function ApplicationDetailPage() {
       </section>
 
       <CtaSection
-        title="Use application pages to attract better-qualified traffic."
-        text="These pages should later absorb standards, media, pressure classes, and project scenarios. That is where long-tail industrial SEO becomes meaningful."
+        title="Discuss application-specific product selection with Hovoy."
+        text="If you already know the service media, pressure class, routing scope, or installation environment, send those details with your inquiry for faster review."
       />
     </PageHero>
   )
@@ -582,15 +581,15 @@ function EngineeringPage() {
   usePageMeta({
     title: 'Engineering | Materials, Joints, Standards, and Quality Logic',
     description:
-      'Review Hovoy engineering structure for composite pipe systems including material systems, joint methods, standards, quality control, and RFQ preparation.',
+      'Review Hovoy engineering support for composite pipe systems including material systems, joint methods, standards, quality control, and RFQ preparation.',
     path: '/engineering/',
   })
 
   return (
     <PageHero
       eyebrow="Engineering"
-      title="Engineering content deserves its own structure, not scattered paragraphs."
-      description="Industrial composite pipe websites work better when material systems, joints, standards, and quality topics are organized in a dedicated section. This gives search engines and buyers a clearer technical map."
+      title="Engineering support for materials, joints, standards, and quality control."
+      description="Product performance depends on more than pipe type alone. Hovoy supports buyers with application-focused guidance on material systems, connection methods, standards, and project documentation."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -610,7 +609,7 @@ function EngineeringPage() {
         <article className="capability-card">
           <h3>Standards and Certification</h3>
           <p>
-            Buyers need a direct route to standards, testing, manufacturing controls, and quality
+            Buyers need clear access to standards, testing, manufacturing controls, and quality
             discussion instead of chasing this information through sales copy.
           </p>
         </article>
@@ -618,8 +617,8 @@ function EngineeringPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">What To Build Next</p>
-          <h2>High-value engineering pages after the structure phase.</h2>
+          <p className="eyebrow">Engineering Focus</p>
+          <h2>Key technical topics for composite pipe selection and project review.</h2>
         </div>
         <div className="highlight-grid">
           <div className="highlight-card">
@@ -648,31 +647,31 @@ function ResourcesPage() {
   usePageMeta({
     title: 'Resources | FAQ, Downloads Planning, and Buyer Guidance',
     description:
-      'See Hovoy resources architecture for FAQ content, future data sheet downloads, RFQ guidance, and technical information organization.',
+      'See Hovoy resources for FAQ content, data sheet planning, RFQ guidance, and technical information for composite pipe projects.',
     path: '/resources/',
   })
 
   return (
     <PageHero
       eyebrow="Resources"
-      title="Resources turn traffic into better inquiries."
-      description="Industrial buyers do not only browse products. They compare standards, download technical files, and search long-tail questions. This section gives those behaviors a place to land."
+      title="Technical resources and buyer guidance for composite pipe projects."
+      description="Use this section for FAQ answers, RFQ guidance, and future technical downloads covering product selection, standards, and application support."
     >
       <div className="capability-grid">
         <article className="capability-card">
           <h3>FAQ</h3>
-          <p>Use structured answer pages to capture long-tail search intent and reduce low-quality inquiries.</p>
+          <p>Review direct answers to common questions on product fit, application scope, and inquiry preparation.</p>
           <Link className="text-link" to="/resources/faq">
             Open FAQ page
           </Link>
         </article>
         <article className="capability-card">
           <h3>Downloads</h3>
-          <p>Later this section can host data sheets, brochures, line cards, and installation or standards PDFs.</p>
+          <p>Technical data sheets, brochures, line cards, and supporting documents can be organized here for buyer access.</p>
         </article>
         <article className="capability-card">
           <h3>RFQ Guidance</h3>
-          <p>Resource pages can teach buyers what scope details to provide before asking for pricing or technical review.</p>
+          <p>Guidance on application details, dimensions, pressure class, and fittings scope helps improve inquiry quality.</p>
         </article>
       </div>
     </PageHero>
@@ -709,8 +708,8 @@ function FaqPage() {
 
       <PageHero
         eyebrow="FAQ"
-        title="Answer direct buyer questions instead of hiding them in sales text."
-        description="FAQ content is useful for both SEO and sales. It clarifies product fit, reduces confusion between product lines, and prepares buyers to send better RFQs."
+        title="Frequently asked questions about composite pipe supply and selection."
+        description="Review common questions on product fit, application areas, and inquiry preparation for well, line, marine, and flexible composite pipe systems."
       >
         <div className="faq-list">
           {faqItems.map((item) => (
@@ -729,36 +728,36 @@ function AboutPage() {
   usePageMeta({
     title: 'About Hovoy | Composite Pipe Website Structure and Market Positioning',
     description:
-      'Learn how Hovoy Composite Pipe is positioning its website and commercial presentation around export markets, product families, and engineering-led industrial communication.',
+      'Learn about Hovoy Composite Pipe, our product focus, export market orientation, and support for industrial, marine, and energy pipeline projects.',
     path: '/about/',
   })
 
   return (
     <PageHero
       eyebrow="About"
-      title="The brand needs a clearer market position than a generic factory homepage."
-      description="The purpose of this rebuild is to present Hovoy as a structured industrial supplier with distinct product lines, application pages, and technical pathways rather than a broad undifferentiated catalog."
+      title="Composite pipe solutions for industrial, marine, and energy markets."
+      description="Hovoy focuses on export-oriented supply of well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and system accessories for demanding service conditions."
     >
       <div className="timeline">
         <article>
           <span>01</span>
-          <strong>Positioning</strong>
-          <p>Well, line, marine, and flexible pipe are treated as separate demand buckets.</p>
+          <strong>Product Focus</strong>
+          <p>Our portfolio covers rigid and flexible composite pipe systems for distinct operating environments and project needs.</p>
         </article>
         <article>
           <span>02</span>
-          <strong>Architecture</strong>
-          <p>Products, applications, engineering, resources, and contact are separated into crawlable routes.</p>
+          <strong>Application Coverage</strong>
+          <p>We support oil and gas, marine, desalination, water treatment, and corrosive process applications.</p>
         </article>
         <article>
           <span>03</span>
-          <strong>Quality Story</strong>
-          <p>Future pages can expand manufacturing, quality control, standards, and project support credibility.</p>
+          <strong>Project Support</strong>
+          <p>Technical clarification, quotation review, and export coordination help buyers move from inquiry to delivery.</p>
         </article>
         <article>
           <span>04</span>
-          <strong>Commercial Flow</strong>
-          <p>The website should help convert industrial traffic into qualified export RFQs rather than generic mailbox noise.</p>
+          <strong>Commercial Response</strong>
+          <p>Product pages, application pages, and contact channels are aligned to support clearer and faster RFQ communication.</p>
         </article>
       </div>
     </PageHero>
@@ -776,8 +775,8 @@ function ContactPage() {
   return (
     <PageHero
       eyebrow="Contact"
-      title="Make the contact page specific enough to improve inquiry quality."
-      description="A strong contact page tells buyers what to send. That improves the quality of technical review and helps reduce low-information price requests."
+      title="Contact Hovoy for product selection, technical review, and project quotations."
+      description="Send your application details, product scope, dimensions, pressure class, and destination market so we can review the request and respond more accurately."
     >
       <div className="detail-grid">
         <article className="detail-panel">
@@ -795,7 +794,7 @@ function ContactPage() {
           <ul className="detail-list">
             <li>Product line: well, line, marine, flexible, or fittings</li>
             <li>Application and service media</li>
-            <li>Diameter range, pressure class, and route or line scope</li>
+            <li>Diameter range, pressure class, and line scope</li>
             <li>Destination country and project timing</li>
             <li>Drawings, line list, or technical notes if available</li>
           </ul>
@@ -815,7 +814,7 @@ function NotFoundPage() {
   return (
     <PageHero
       eyebrow="404"
-      title="This page does not exist in the current site structure."
+      title="The page you requested could not be found."
       description="Use the main navigation to return to product, application, engineering, resource, or contact pages."
     >
       <div className="hero-actions">
@@ -864,9 +863,9 @@ function CtaSection({ title, text }: { title: string; text: string }) {
         <p>{text}</p>
       </div>
       <div className="contact-card">
-        <p>Inquiry route</p>
+        <p>Inquiry email</p>
         <a href="mailto:sales@hovoy-grepipe.com">sales@hovoy-grepipe.com</a>
-        <span>Use product and application pages as the source pages for future leads.</span>
+        <span>Share product scope, application details, dimensions, pressure class, and destination market.</span>
         <Link className="button button-primary contact-button" to="/contact">
           Contact Hovoy
         </Link>

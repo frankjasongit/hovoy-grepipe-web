@@ -53,8 +53,8 @@ export const productPages: ProductPage[] = [
     highlights: [
       'Field-oriented composite well product positioning',
       'Lower weight handling logic for operational practicality',
-      'Separate page architecture for well-related search intent',
-      'Commercial structure that can later absorb technical specifications',
+      'Product scope aligned to well-service operating conditions',
+      'Technical information can be matched to project requirements',
     ],
     applications: ['Oil and gas wells', 'Produced water handling', 'Corrosive field service'],
     relatedApplications: ['oil-and-gas'],
@@ -66,7 +66,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite line pipe for industrial transport, corrosive process duty, utility networks, and engineered project routing.',
     intro:
-      'Line pipe pages should attract buyers looking for transport networks, plant utility routing, and engineered pipe systems. This is one of the strongest industrial search categories and needs its own keyword and content structure.',
+      'Line pipe buyers typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
     metaDescription:
       'Review composite line pipe solutions for industrial transport, utility networks, corrosion-resistant process service, and project supply.',
     buyerFocus: [
@@ -75,10 +75,10 @@ export const productPages: ProductPage[] = [
       'Fittings, spool assemblies, and project package supply',
     ],
     highlights: [
-      'Dedicated line pipe product positioning for industrial search traffic',
-      'Supports future pages for dimensions, pressure ranges, and standards',
-      'Can connect directly to oil and gas, desalination, and chemical pages',
-      'Helps separate line pipe intent from well pipe and marine buyers',
+      'Line pipe product positioning for transport and process systems',
+      'Suitable for dimensional, pressure, and standards-based technical discussion',
+      'Connects directly to oil and gas, desalination, and chemical applications',
+      'Clarifies line pipe supply apart from well pipe and marine systems',
     ],
     applications: [
       'Industrial transport lines',
@@ -95,7 +95,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite marine and offshore pipe systems for seawater duty, shipboard utility lines, and offshore corrosion-sensitive environments.',
     intro:
-      'Marine and offshore buyers evaluate products differently from land-based industrial buyers. They care about seawater, corrosion, weight, installation practicality, and ship or offshore project constraints. This page isolates that demand clearly.',
+      'Marine and offshore buyers focus on seawater duty, corrosion resistance, weight reduction, installation practicality, and vessel or offshore project constraints.',
     metaDescription:
       'Explore marine and offshore composite pipe systems for seawater duty, shipboard utility service, and corrosion-resistant offshore applications.',
     buyerFocus: [
@@ -104,10 +104,10 @@ export const productPages: ProductPage[] = [
       'Project and standards discussion aligned to marine use',
     ],
     highlights: [
-      'Marine and offshore pipe is a distinct SEO and commercial category',
-      'Supports future content for shipboard systems and offshore environments',
-      'Separates marine buyers from line pipe and well pipe traffic',
-      'Fits export and project-oriented sales communication',
+      'Dedicated marine and offshore product positioning',
+      'Suitable for shipboard and offshore system discussion',
+      'Clear separation from line pipe and well-service requirements',
+      'Supports export and project-oriented commercial communication',
     ],
     applications: ['Shipboard utilities', 'Seawater systems', 'Offshore platforms', 'Coastal projects'],
     relatedApplications: ['marine-and-offshore', 'water-treatment-desalination'],
@@ -119,7 +119,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Flexible composite pipe for spoolable transport, oil and gas field service, and installation scenarios where reel-based deployment matters.',
     intro:
-      'Flexible composite pipe competes in a different market from rigid GRE systems. Buyers search around spoolable pipe, RTP, TCP, and flexible composite transport solutions, so this product line needs its own route and terminology.',
+      'Flexible composite pipe serves a different market from rigid GRE systems, with buyers focusing on spoolable deployment, RTP/TCP terminology, and fast field installation.',
     metaDescription:
       'Discover flexible composite pipe systems for spoolable transport, field deployment, and oil and gas service applications.',
     buyerFocus: [
@@ -128,10 +128,10 @@ export const productPages: ProductPage[] = [
       'Comparison versus rigid pipe systems',
     ],
     highlights: [
-      'Own page for flexible composite pipe and spoolable search intent',
-      'Can later support RTP/TCP terminology and comparison content',
+      'Dedicated flexible pipe offering for spoolable transport duty',
+      'Supports RTP/TCP terminology and product comparison',
       'Useful for oil and gas and remote installation scenarios',
-      'Avoids burying flexible pipe under rigid GRE content',
+      'Clearly separated from rigid composite pipe systems',
     ],
     applications: ['Oil and gas field transport', 'Remote field deployment', 'Reel-based installation'],
     relatedApplications: ['oil-and-gas'],
@@ -143,7 +143,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite fittings, joint systems, and project connection solutions that complete the commercial supply package around pipe.',
     intro:
-      'Fittings and connection systems are essential to project conversion. They need a dedicated page because RFQs often depend on elbows, tees, reducers, flanges, and jointing logic rather than straight pipe alone.',
+      'Fittings and connection systems are essential to complete project supply. Many RFQs depend as much on elbows, tees, reducers, flanges, and jointing logic as on straight pipe.',
     metaDescription:
       'Review composite fittings and joint systems including elbows, tees, flanges, reducers, and project-driven connection solutions.',
     buyerFocus: [
@@ -152,8 +152,8 @@ export const productPages: ProductPage[] = [
       'Commercial support for project routing and spool design',
     ],
     highlights: [
-      'Dedicated conversion page for fittings-related searches',
-      'Supports future connection and engineering content',
+      'Dedicated fittings and joints product focus',
+      'Supports connection and engineering discussion',
       'Useful across well, line, marine, and plant projects',
       'Improves RFQ quality by clarifying full supply scope',
     ],
@@ -170,7 +170,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite pipe systems for oil and gas transport, corrosive field service, well environments, and spoolable deployment scenarios.',
     intro:
-      'Oil and gas buyers usually compare well products, line pipe, and flexible transport options under one sector umbrella. This page acts as the industry landing page that connects those separate product families.',
+      'Oil and gas buyers often compare well products, line pipe, and flexible transport options within the same project scope, especially in corrosive or logistically demanding field environments.',
     metaDescription:
       'Explore composite pipe applications for oil and gas including well systems, line pipe, and flexible composite transport solutions.',
     concerns: [
@@ -182,8 +182,8 @@ export const applicationPages: ApplicationPage[] = [
     advantages: [
       'Composite solutions can reduce corrosion-related maintenance pressure',
       'Weight advantages can simplify transport and handling',
-      'Dedicated pages help buyers compare well, line, and flexible systems clearly',
-      'Application-first content improves RFQ quality and search visibility',
+      'Well, line, and flexible systems can be compared more clearly by application',
+      'Application-focused content helps improve RFQ quality and technical review',
     ],
     relatedProducts: ['well-tubing-casing', 'line-pipe', 'flexible-composite-pipe', 'fittings-and-joints'],
   },
@@ -205,9 +205,9 @@ export const applicationPages: ApplicationPage[] = [
     ],
     advantages: [
       'Composite pipe is attractive where corrosion and weight are persistent constraints',
-      'Marine-specific page structure supports more credible positioning',
-      'This route can later absorb standards and project examples',
-      'Separates marine traffic from unrelated industrial pipe searches',
+      'Marine-specific product positioning supports more credible communication',
+      'Suitable for standards, project examples, and system-specific discussion',
+      'Keeps marine requirements separate from unrelated industrial pipe uses',
     ],
     relatedProducts: ['marine-offshore-pipe', 'fittings-and-joints', 'line-pipe'],
   },
@@ -218,7 +218,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite pipe applications for treatment plants, desalination systems, corrosive utility duty, and saline water transport.',
     intro:
-      'Water treatment and desalination projects often search by plant type and corrosion context rather than by pipe material first. This page helps catch that application traffic and route it into the right product families.',
+      'Water treatment and desalination projects often begin with plant duty, corrosion environment, and saline service requirements rather than material type alone.',
     metaDescription:
       'Learn how composite pipe systems fit water treatment and desalination applications requiring corrosion resistance and utility system reliability.',
     concerns: [
@@ -229,7 +229,7 @@ export const applicationPages: ApplicationPage[] = [
     advantages: [
       'Application pages let buyers understand the service context before comparing products',
       'Composite line pipe can be positioned against corrosion-related metal challenges',
-      'This route can later grow into desalination-specific keyword pages',
+      'The content can expand into more specific desalination and treatment scenarios',
       'Supports both process and utility system inquiry flow',
     ],
     relatedProducts: ['line-pipe', 'marine-offshore-pipe', 'fittings-and-joints'],
@@ -261,14 +261,14 @@ export const applicationPages: ApplicationPage[] = [
 
 export const faqItems = [
   {
-    question: 'Why should Hovoy separate well pipe, line pipe, marine pipe, and flexible pipe into different pages?',
+    question: 'What product lines does Hovoy Composite Pipe supply?',
     answer:
-      'Because those buyer groups search differently, compare different standards, and ask different RFQ questions. Separate pages create better SEO targeting and stronger commercial clarity.',
+      'Hovoy Composite Pipe focuses on well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and related fittings and joint systems.',
   },
   {
-    question: 'Why is a single homepage not enough for this industry?',
+    question: 'Which industries commonly use these composite pipe systems?',
     answer:
-      'A single homepage cannot effectively rank for product-specific and application-specific search intent. Industrial competitors usually separate product families, industry pages, engineering pages, and resources.',
+      'Typical application areas include oil and gas, marine and offshore service, water treatment and desalination, and corrosive chemical process environments.',
   },
   {
     question: 'Should flexible composite pipe be treated as a separate product line?',
@@ -276,8 +276,8 @@ export const faqItems = [
       'Yes. Flexible composite pipe competes under its own terms such as spoolable pipe, RTP, and flexible transport systems. It should not be buried inside rigid GRE product content.',
   },
   {
-    question: 'What content should be added after the structure phase?',
+    question: 'What information should be included in an RFQ?',
     answer:
-      'The highest-value next content is standards, material systems, joint methods, downloadable data sheets, and stronger RFQ guidance for each product and application page.',
+      'The most useful RFQs include the application, service media, dimensions, pressure class, fittings scope, destination country, and any drawings or line lists available.',
   },
 ]
