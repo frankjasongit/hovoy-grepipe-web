@@ -9,6 +9,7 @@
 
 .topbar,
 .hero,
+.page-hero,
 .trust-strip,
 .section,
 .footer {
@@ -26,7 +27,7 @@
   padding-top: 1.15rem;
   padding-bottom: 1.15rem;
   backdrop-filter: blur(18px);
-  background: rgba(245, 249, 251, 0.78);
+  background: rgba(245, 249, 251, 0.8);
   border-bottom: 1px solid rgba(17, 31, 46, 0.08);
 }
 
@@ -58,7 +59,7 @@
 .eyebrow,
 .hero-stats dt,
 .hero-stats dd,
-.topnav a,
+.navlink,
 .hero-text,
 .product-card h3,
 .product-card p,
@@ -77,7 +78,11 @@
 .contact-card a,
 .contact-card span,
 .footer-note,
-.footer-nav a {
+.detail-panel h3,
+.detail-panel p,
+.detail-list li,
+.page-hero-copy p,
+.text-link {
   margin: 0;
 }
 
@@ -94,30 +99,70 @@
   color: var(--ink-soft);
 }
 
-.topnav {
+.topnav,
+.footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.15rem;
+  gap: 1rem;
 }
 
-.topnav a,
-.footer-nav a {
+.navlink {
   color: var(--ink-soft);
   font-size: 0.95rem;
   transition: color 160ms ease;
 }
 
-.topnav a:hover,
-.footer-nav a:hover {
+.navlink:hover,
+.navlink-active {
   color: var(--ink-strong);
 }
 
-.hero {
+.hero,
+.page-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   padding-top: clamp(3.2rem, 7vw, 6rem);
   padding-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.page-hero {
+  padding-top: clamp(3.4rem, 7vw, 5.6rem);
+  padding-bottom: 1.6rem;
+}
+
+.page-hero-copy {
+  max-width: 72rem;
+}
+
+.page-hero-copy h1,
+.hero-copy h1,
+.section-heading h2,
+.contact-panel h2 {
+  margin: 0;
+  font-family: var(--display-font);
+  letter-spacing: -0.05em;
+  color: #0e2030;
+}
+
+.page-hero-copy h1,
+.hero-copy h1 {
+  line-height: 0.94;
+}
+
+.hero-copy h1 {
+  max-width: 11ch;
+  margin-top: 1rem;
+  font-size: clamp(3.1rem, 7vw, 6.2rem);
+}
+
+.page-hero-copy h1 {
+  max-width: 12ch;
+  margin-top: 0.8rem;
+  font-size: clamp(2.8rem, 6vw, 5rem);
 }
 
 .eyebrow {
@@ -131,34 +176,22 @@
   font-weight: 800;
 }
 
-.hero-copy h1,
-.section-heading h2,
-.contact-panel h2 {
-  margin: 0;
-  font-family: var(--display-font);
-  letter-spacing: -0.05em;
-  color: #0e2030;
-}
-
-.hero-copy h1 {
-  max-width: 11ch;
-  margin-top: 1rem;
-  font-size: clamp(3.1rem, 7vw, 6.2rem);
-  line-height: 0.94;
+.hero-text,
+.page-hero-copy p,
+.section-heading p:last-child,
+.capability-copy p,
+.contact-panel > div:first-child p:last-child,
+.detail-panel p,
+.detail-list li {
+  color: var(--ink-soft);
+  line-height: 1.76;
 }
 
 .hero-text,
-.section-heading p:last-child,
-.capability-copy p,
-.contact-panel > div:first-child p:last-child {
-  color: var(--ink-soft);
-  line-height: 1.78;
-}
-
-.hero-text {
-  max-width: 60ch;
-  margin-top: 1.4rem;
-  font-size: 1.06rem;
+.page-hero-copy p {
+  max-width: 64ch;
+  margin-top: 1.2rem;
+  font-size: 1.03rem;
 }
 
 .hero-actions {
@@ -385,7 +418,8 @@
   padding-bottom: 0.8rem;
 }
 
-.trust-strip p {
+.trust-strip p,
+.pill {
   margin: 0;
   padding: 0.95rem 1rem;
   border-radius: 999px;
@@ -399,6 +433,10 @@
 .section {
   padding-top: clamp(3.4rem, 8vw, 6rem);
   padding-bottom: clamp(1rem, 5vw, 3rem);
+}
+
+.page-section {
+  padding-top: 1rem;
 }
 
 .section-grid {
@@ -432,22 +470,34 @@
 .sector-grid,
 .capability-grid,
 .highlight-grid,
-.faq-list {
+.faq-list,
+.detail-grid,
+.pill-grid {
   display: grid;
   gap: 1rem;
 }
 
-.product-grid {
+.product-grid,
+.detail-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.product-card,
+.sector-card,
+.capability-card,
+.highlight-card,
+.faq-card,
+.timeline article,
+.detail-panel {
+  padding: 1.35rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(17, 31, 46, 0.08);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 12px 24px rgba(17, 31, 46, 0.05);
 }
 
 .product-card {
   position: relative;
-  padding: 1.45rem 1.45rem 1.4rem;
-  border-radius: 1.45rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 250, 0.92));
-  border: 1px solid rgba(17, 31, 46, 0.08);
-  box-shadow: 0 16px 26px rgba(17, 31, 46, 0.06);
   overflow: hidden;
 }
 
@@ -462,7 +512,8 @@
 .product-card h3,
 .sector-card h3,
 .capability-card h3,
-.faq-card h3 {
+.faq-card h3,
+.detail-panel h3 {
   font-size: 1.18rem;
   color: #102535;
 }
@@ -471,13 +522,13 @@
 .sector-card p,
 .capability-card p,
 .faq-card p,
-.timeline article p {
+.timeline article p,
+.detail-panel p {
   margin-top: 0.7rem;
-  color: var(--ink-soft);
-  line-height: 1.72;
 }
 
-.product-card ul {
+.product-card ul,
+.detail-list {
   margin: 1rem 0 0;
   padding: 0;
   list-style: none;
@@ -485,14 +536,15 @@
   gap: 0.55rem;
 }
 
-.product-card li {
+.product-card li,
+.detail-list li {
   position: relative;
   padding-left: 1.05rem;
   color: #274255;
-  line-height: 1.55;
 }
 
-.product-card li::before {
+.product-card li::before,
+.detail-list li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -503,18 +555,22 @@
   background: var(--brand-copper);
 }
 
-.sector-grid {
+.sector-grid,
+.capability-grid,
+.timeline {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.sector-card {
-  min-height: 12rem;
-  padding: 1.35rem 1.4rem;
-  border-radius: 1.4rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(237, 243, 246, 0.92)),
-    #ffffff;
-  border: 1px solid rgba(17, 31, 46, 0.08);
+.pill-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--brand-blue);
+  font-weight: 700;
 }
 
 .capability-band {
@@ -551,22 +607,8 @@
   color: rgba(235, 244, 247, 0.78);
 }
 
-.capability-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.capability-card,
-.highlight-card,
-.faq-card,
-.timeline article {
-  padding: 1.3rem 1.35rem;
-  border-radius: 1.35rem;
-  border: 1px solid rgba(17, 31, 46, 0.08);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 24px rgba(17, 31, 46, 0.05);
-}
-
-.highlight-grid {
+.highlight-grid,
+.faq-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -583,17 +625,6 @@
   flex: none;
   border-radius: 50%;
   background: linear-gradient(180deg, #d48647, #1a7a74);
-}
-
-.roadmap {
-  display: grid;
-  gap: 1.4rem;
-}
-
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
 }
 
 .timeline article {
@@ -614,14 +645,6 @@
 .timeline article strong {
   font-size: 1.04rem;
   color: #102535;
-}
-
-.faq-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.faq-section {
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .contact-panel {
@@ -677,6 +700,10 @@
   width: fit-content;
 }
 
+.contact-email a {
+  color: var(--brand-blue);
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -692,12 +719,6 @@
   color: var(--ink-soft);
   line-height: 1.65;
   max-width: 48ch;
-}
-
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 @media (max-width: 1180px) {
@@ -716,11 +737,13 @@
   }
 
   .product-grid,
-  .capability-grid,
   .sector-grid,
+  .capability-grid,
   .highlight-grid,
   .faq-list,
-  .timeline {
+  .detail-grid,
+  .timeline,
+  .pill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -736,10 +759,6 @@
     flex-direction: column;
   }
 
-  .topnav {
-    gap: 0.85rem;
-  }
-
   .hero-stats,
   .trust-strip,
   .product-grid,
@@ -747,7 +766,9 @@
   .capability-grid,
   .highlight-grid,
   .faq-list,
-  .timeline {
+  .detail-grid,
+  .timeline,
+  .pill-grid {
     grid-template-columns: 1fr;
   }
 
