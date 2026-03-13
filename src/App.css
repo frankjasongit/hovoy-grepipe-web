@@ -359,6 +359,7 @@
 
 .product-overview-copy {
   display: grid;
+  gap: 1rem;
 }
 
 .product-overview-copy h1 {
@@ -372,6 +373,10 @@
 .product-overview-rail {
   display: grid;
   gap: 1rem;
+}
+
+.product-hero-highlights {
+  max-width: 58ch;
 }
 
 .rail-card {
@@ -416,6 +421,40 @@
 .rail-card span {
   color: var(--ink-soft);
   line-height: 1.65;
+}
+
+.snapshot-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.snapshot-list div {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(17, 31, 46, 0.08);
+}
+
+.snapshot-list div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.snapshot-list dt {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-green);
+}
+
+.snapshot-list dd {
+  margin: 0;
+  color: #102535;
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .rail-card-dark {

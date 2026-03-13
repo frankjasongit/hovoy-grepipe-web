@@ -1107,32 +1107,32 @@ function ProductDetailPage() {
     },
     'line-pipe': {
       fitProjects: [
-        'Petrochemical, utility, and produced-water routes where corrosion resistance affects lifecycle cost',
-        'Projects that need straight pipe plus fittings, transitions, and spool logic together',
-        'Overseas industrial jobs that require line lists, route sketches, and export delivery coordination',
+        'Process, utility, and produced-water routes where corrosion resistance and long service life matter together',
+        'Industrial packages that need straight pipe, fittings, transitions, and tie-in planning in one quotation path',
+        'Projects with mixed above-ground and buried routing where installation logic affects the final scope',
       ],
       whyHovoy: [
         {
-          title: 'Package Thinking, Not Straight Pipe Only',
-          text: 'Line pipe enquiries often fail when the supplier quotes pipe without understanding fittings ratio, tie-ins, spool scope, or installation sequence.',
+          title: 'Pipe, fittings, and transitions reviewed together',
+          text: 'Many line pipe jobs fail at quotation stage when fittings scope, tie-ins, and fabricated items are separated from the straight-pipe discussion. Hovoy is positioned around the full route, not only the pipe count.',
         },
         {
-          title: 'Experience With Industrial Project Communication',
-          text: 'Hovoy is positioned around EPC, distributor, and end-user RFQ communication where route conditions and package completeness need to be clarified early.',
+          title: 'Industrial project communication built around the actual route',
+          text: 'Line pipe RFQs usually move faster when route conditions, support assumptions, equipment interfaces, and delivery constraints are clarified before the commercial offer is issued.',
         },
         {
-          title: 'Useful For Petrochemical And Utility Work',
-          text: 'This is where material familiarity, process understanding, and practical delivery coordination matter more than generic brochure language.',
+          title: 'Useful across utility, desalination, and corrosive process work',
+          text: 'This product family is relevant where project teams need a supplier that can discuss service media, connection logic, and export-oriented package support with more depth than a simple catalogue listing.',
         },
       ],
       packageScope: [
-        'Straight pipe plus fittings and transition review',
-        'Support around line lists, route sketches, and equipment tie-ins',
-        'Commercial coordination for packing, delivery, and documentation',
+        'Straight pipe together with elbows, tees, flanges, reducers, and transition items',
+        'Support around line lists, route sketches, pressure classes, and equipment tie-ins',
+        'Packing, delivery, and documentation coordination for industrial export projects',
       ],
-      nextActionTitle: 'Send a line pipe RFQ with route and fittings scope.',
+      nextActionTitle: 'Request a line pipe quotation with route and fittings scope.',
       nextActionText:
-        'If the job includes plant routing, water transfer, produced water, or petrochemical utility lines, send the line list, diameter range, pressure class, fittings estimate, and destination market so the quotation covers the real scope.',
+        'Share the service media, diameter range, pressure class, route length or line list, fittings estimate, and destination market so the quotation can be built around the real operating scope.',
     },
     'marine-offshore-pipe': {
       fitProjects: [
@@ -1277,27 +1277,49 @@ function ProductDetailPage() {
         <div className="product-overview">
           <div className="product-overview-copy">
             <p className="eyebrow">{page.heroEyebrow}</p>
-            <h1>{page.title}</h1>
+            <h1>{page.heroTitle ?? page.title}</h1>
             <p>{page.summary}</p>
             <p className="product-overview-intro">{page.intro}</p>
+            {page.heroHighlights?.length ? (
+              <div className="mini-pill-grid product-hero-highlights">
+                {page.heroHighlights.map((item) => (
+                  <span className="pill" key={item}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            ) : null}
             <div className="hero-actions">
               <Link className="button button-primary" to="/contact">
-                Request Product Review
+                Request RFQ
               </Link>
-              <Link className="button button-secondary" to="/applications">
-                Browse Applications
+              <Link className="button button-secondary" to="/resources/downloads">
+                Review Downloads
               </Link>
             </div>
           </div>
 
           <aside className="product-overview-rail">
             <article className="rail-card">
-              <p className="eyebrow">Engineering Focus</p>
-              <ul className="detail-list">
-                {page.engineeringFocus.slice(0, 4).map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <p className="eyebrow">
+                {page.technicalSnapshot?.length ? 'Technical Snapshot' : 'Engineering Focus'}
+              </p>
+              {page.technicalSnapshot?.length ? (
+                <dl className="snapshot-list">
+                  {page.technicalSnapshot.map((item) => (
+                    <div key={item.label}>
+                      <dt>{item.label}</dt>
+                      <dd>{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : (
+                <ul className="detail-list">
+                  {page.engineeringFocus.slice(0, 4).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
             </article>
             <article className="rail-card">
               <p className="eyebrow">Typical Service Media</p>
@@ -1330,15 +1352,15 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">At A Glance</p>
-            <h2>Use this page to evaluate fit, scope, and quotation readiness.</h2>
+            <p className="eyebrow">Product Overview</p>
+            <h2>What this product family covers and where it is commonly used.</h2>
           </div>
           <p>{page.intro}</p>
         </div>
 
         <div className="detail-grid">
           <article className="detail-panel">
-            <h3>Typical client requirements</h3>
+            <h3>What project teams usually need to confirm</h3>
             <ul className="detail-list">
               {page.engineeringFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -1346,7 +1368,7 @@ function ProductDetailPage() {
             </ul>
           </article>
           <article className="detail-panel">
-            <h3>Key commercial strengths</h3>
+            <h3>How this product family is commonly evaluated</h3>
             <ul className="detail-list">
               {page.highlights.map((item) => (
                 <li key={item}>{item}</li>
@@ -1356,45 +1378,32 @@ function ProductDetailPage() {
         </div>
       </section>
 
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Supply Scope</p>
-          <h2>What Hovoy can support for this product family.</h2>
-        </div>
-        <div className="detail-card-grid">
-          {page.supplyScope.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Selection Considerations</p>
-          <h2>Technical and commercial points that often shape supplier review.</h2>
-        </div>
-        <div className="detail-card-grid">
-          {page.selectionNotes.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      {page.technicalConfiguration?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Technical Configuration</p>
+            <h2>Technical options that shape line pipe selection.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {page.technicalConfiguration.map((item) => (
+              <article className="detail-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Project Fit</p>
-            <h2>Where this product family usually fits best.</h2>
+            <p className="eyebrow">Application Fit</p>
+            <h2>Applications and service conditions commonly matched to this product family.</h2>
           </div>
           <p>
-            Product pages should help project teams confirm operating context, package scope, and related
-            applications before they ask for a quotation.
+            Review the operating environment, service media, and related application paths before
+            deciding whether this product family fits the route and package scope.
           </p>
         </div>
 
@@ -1422,16 +1431,80 @@ function ProductDetailPage() {
         </div>
       </section>
 
+      {page.jointingMethods?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Jointing And Fittings</p>
+            <h2>Connection methods and package items commonly reviewed with line pipe.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {page.jointingMethods.map((item) => (
+              <article className="detail-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Supply Scope</p>
+          <h2>What Hovoy can supply with this product family.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {page.supplyScope.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Project Inputs</p>
+          <h2>Technical details that should be confirmed before quotation.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {page.selectionNotes.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {page.availableDocumentation?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Available Documentation</p>
+            <h2>Documents and technical inputs commonly requested for line pipe projects.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {page.availableDocumentation.map((item) => (
+              <article className="detail-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {productModule ? (
         <section className="section section-grid page-section">
           <div className="section-heading section-heading-split">
             <div>
-              <p className="eyebrow">Best Fit Projects</p>
-              <h2>Project conditions where this product family is often selected.</h2>
+              <p className="eyebrow">Common Project Conditions</p>
+              <h2>Project conditions where this product family is commonly specified.</h2>
             </div>
             <p>
-              These are the operating conditions and package needs where clients often evaluate
-              Hovoy as a supplier.
+              These conditions often determine whether the request should be handled as straight
+              pipe supply only or as a broader fittings and package discussion.
             </p>
           </div>
           <div className="detail-grid">
@@ -1458,12 +1531,12 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Inquiry Readiness</p>
-            <h2>Give engineers the information they need before sending an RFQ.</h2>
+            <p className="eyebrow">RFQ Inputs</p>
+            <h2>Information commonly needed for technical review and quotation.</h2>
           </div>
           <p>
-            Strong product pages reduce back-and-forth by combining commercial reasons to shortlist
-            Hovoy with a clear list of project information needed for quotation review.
+            A stronger RFQ usually includes the service duty, dimensions, route conditions,
+            fittings estimate, and destination market from the start.
           </p>
         </div>
 
@@ -1498,7 +1571,7 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Why Hovoy On This Product</p>
-            <h2>Reasons clients review Hovoy for this product family.</h2>
+            <h2>Why project teams work with Hovoy on this product family.</h2>
           </div>
           <div className="detail-card-grid">
             {productModule.whyHovoy.map((item) => (
@@ -1514,7 +1587,7 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Related Applications</p>
-          <h2>Application pages commonly reviewed together with this product family.</h2>
+          <h2>Application paths commonly connected to this product family.</h2>
         </div>
         <div className="sector-grid">
           {applicationPages

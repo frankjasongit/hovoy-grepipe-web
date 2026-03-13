@@ -4,9 +4,15 @@ export type ProductPage = {
   slug: string
   title: string
   heroEyebrow: string
+  heroTitle?: string
   summary: string
   intro: string
   metaDescription: string
+  heroHighlights?: string[]
+  technicalSnapshot?: Array<{ label: string; value: string }>
+  technicalConfiguration?: Array<{ title: string; text: string }>
+  jointingMethods?: Array<{ title: string; text: string }>
+  availableDocumentation?: Array<{ title: string; text: string }>
   engineeringFocus: string[]
   highlights: string[]
   applications: string[]
@@ -107,24 +113,95 @@ export const productPages: ProductPage[] = [
     slug: 'line-pipe',
     title: 'Line Pipe',
     heroEyebrow: 'Products / Line Pipe',
+    heroTitle: 'GRE line pipe for corrosive industrial and utility service.',
     summary:
-      'Composite line pipe for industrial transport, corrosive process duty, utility networks, and engineered project routing.',
+      'GRE line pipe for process water, produced water, saline duty, and corrosive industrial routing where project teams need pipe, fittings, and application support together.',
     intro:
-      'Line pipe projects typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
+      'Designed for industrial transport and utility systems where project teams need to review pressure class, temperature, route conditions, jointing methods, and fittings scope together.',
     metaDescription:
-      'Review Hovoy line pipe solutions for industrial transport, utility networks, corrosive process service, and export-oriented project supply.',
+      'Explore Hovoy GRE line pipe for corrosive industrial transport, produced water, process water, utility networks, buried or above-ground routing, and fittings-inclusive project supply.',
+    heroHighlights: [
+      'Corrosion-resistant process and utility service',
+      'Above-ground and buried routing options',
+      'Conductive and non-conductive configurations',
+      'Pipe, fittings, transitions, and package support',
+    ],
+    technicalSnapshot: [
+      {
+        label: 'Pressure class',
+        value: 'Reviewed against service duty, route conditions, and the selected jointing method',
+      },
+      {
+        label: 'Temperature',
+        value: 'Checked against media, operating environment, and the selected resin system',
+      },
+      {
+        label: 'Diameter range',
+        value: 'Discussed by line list, flow requirement, and the real project scope',
+      },
+      {
+        label: 'Jointing options',
+        value: 'Flanged, bonded, laminated, and transition-based package routes',
+      },
+    ],
+    technicalConfiguration: [
+      {
+        title: 'Cure system options',
+        text: 'Line pipe configurations can be reviewed around acid anhydride cured or amine cured systems, depending on service conditions, client specifications, and documentation requirements.',
+      },
+      {
+        title: 'Conductive and non-conductive options',
+        text: 'Where static control or project specifications require it, conductive configurations can be discussed alongside standard non-conductive line pipe systems.',
+      },
+      {
+        title: 'Above-ground and buried routing',
+        text: 'The same line pipe family may be reviewed for above-ground racks, plant utility routes, or buried service, with support logic, joint details, and fittings scope adjusted to the installation environment.',
+      },
+      {
+        title: 'Jointing and package scope',
+        text: 'Flanged, bonded, laminated, or other project-based connection approaches should be aligned early with tie-in points, fittings counts, spool requirements, and installation sequence.',
+      },
+    ],
+    jointingMethods: [
+      {
+        title: 'Flanged connections',
+        text: 'Commonly reviewed for equipment tie-ins, maintenance access, and locations where package completeness and installation control are critical.',
+      },
+      {
+        title: 'Bonded and laminated joints',
+        text: 'Used where the project route, installation method, or fabrication logic makes bonded or laminated connection methods more suitable than simple end connections.',
+      },
+      {
+        title: 'Transitions and fabricated fittings',
+        text: 'Steel transitions, reducers, elbows, tees, spool pieces, and mixed-material tie-ins should be reviewed together with the pipe run, not after the pipe quotation is finished.',
+      },
+    ],
+    availableDocumentation: [
+      {
+        title: 'Datasheet and product summary',
+        text: 'Project teams can request a clearer overview of line pipe positioning, service fit, and package scope before moving into a full RFQ.',
+      },
+      {
+        title: 'Pressure, dimensions, and route discussion',
+        text: 'Diameter range, pressure class, temperature, and route conditions can be aligned to the actual project scope during technical review.',
+      },
+      {
+        title: 'Fittings and package clarification',
+        text: 'Fittings lists, tie-in points, and spool requirements can be reviewed together so the commercial offer reflects the real installation package.',
+      },
+    ],
     engineeringFocus: [
-      'Transport and routing logic across plant or field systems',
-      'Corrosion resistance and lifecycle cost discussion',
-      'Fittings, spool assemblies, and project package supply',
-      'Export packing, delivery planning, and installation sequence for project jobs',
+      'Diameter, pressure class, and service conditions aligned to project specifications',
+      'Route conditions reviewed for above-ground, buried, or mixed installation environments',
+      'Fittings, spool assemblies, and steel transition points clarified early',
+      'Documentation, packing, and delivery sequence matched to industrial project needs',
     ],
     highlights: [
-      'Line pipe product positioning for transport and process systems',
-      'Suitable for dimensional, pressure, and standards-based technical discussion',
-      'Connects directly to oil and gas, desalination, and chemical applications',
-      'Clarifies line pipe supply apart from well pipe and marine systems',
-      'Supports both straight-pipe supply and fabricated package discussion',
+      'Suitable for process, utility, water, and corrosive-service transport systems',
+      'Can be reviewed as straight-pipe supply or as a fittings-inclusive package',
+      'Supports technical discussion around cure systems, conductivity, and route conditions',
+      'Useful across oil and gas, desalination, and chemical plant environments',
+      'Built for project communication rather than generic catalogue-only quoting',
     ],
     applications: [
       'Industrial transport lines',
@@ -154,20 +231,20 @@ export const productPages: ProductPage[] = [
     ],
     selectionNotes: [
       {
-        title: 'Service Media Fit',
-        text: 'Media type, corrosion risk, and plant duty all influence whether line pipe should be configured as a standard supply item or a more application-specific package.',
+        title: 'Service conditions',
+        text: 'Service media, temperature, corrosion severity, and operating pressure should be confirmed first so the material system and line classification match the real duty.',
       },
       {
-        title: 'Route Conditions',
-        text: 'Above-ground, plant routing, buried service, or utility transfer layouts may change the preferred fittings and support logic.',
+        title: 'Route conditions',
+        text: 'Above-ground racks, buried sections, long utility runs, and congested plant layouts each change the fittings ratio, support logic, and fabrication scope.',
       },
       {
-        title: 'System Interfaces',
-        text: 'Transitions to pumps, tanks, valves, steel headers, or existing plant sections should be clarified early so the fittings package matches the actual tie-in points.',
+        title: 'Interfaces and tie-ins',
+        text: 'Connections to pumps, valves, tanks, steel headers, or existing plant lines should be identified early so transition details and joint methods are not left to guesswork.',
       },
       {
-        title: 'Project Documentation',
-        text: 'Line lists, route sketches, and fittings counts help reduce quotation gaps and speed up technical review.',
+        title: 'Project documentation',
+        text: 'Line lists, route sketches, pressure classes, and approximate fittings counts make it much easier to build a quotation around the real scope instead of a bare pipe count.',
       },
     ],
     rfqChecklist: [
