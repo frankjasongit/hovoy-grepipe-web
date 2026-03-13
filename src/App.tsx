@@ -217,7 +217,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
     )
     const fadeTargets = Array.from(
       document.querySelectorAll<HTMLElement>(
-        '.hero-stats > div, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
+        '.hero-stats > div, .hero-proof-card, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
       ),
     )
 
@@ -272,7 +272,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 
     const surfaces = Array.from(
       document.querySelectorAll<HTMLElement>(
-        '.hero-photo-card, .hero-stats > div, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
+        '.hero-photo-card, .hero-stats > div, .hero-proof-card, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
       ),
     )
 
@@ -602,6 +602,27 @@ function HomePage() {
     },
   ]
 
+  const heroProofEntries = [
+    {
+      title: 'Why Hovoy',
+      text: 'See the business reasons clients shortlist Hovoy in a crowded GRE, GRP, and FRP pipe market.',
+      to: '/why-hovoy',
+      label: 'Core positioning',
+    },
+    {
+      title: 'Downloads',
+      text: 'Open document entry points for product briefs, RFQ preparation, and quality-related material.',
+      to: '/resources/downloads',
+      label: 'Document access',
+    },
+    {
+      title: 'Manufacturing and Quality',
+      text: 'Review production logic, inspection discussion, shipment readiness, and export-oriented support.',
+      to: '/about/manufacturing-quality',
+      label: 'Proof content',
+    },
+  ]
+
   usePageMeta({
     title: 'Hovoy GRE Pipe | GRE, GRP, and FRP Pipe Systems',
     description:
@@ -663,6 +684,16 @@ function HomePage() {
               <dd>Overseas petrochemical, marine, and industrial project cooperation</dd>
             </div>
           </dl>
+
+          <div className="hero-proof-grid" aria-label="Primary proof paths">
+            {heroProofEntries.map((item) => (
+              <Link className="hero-proof-card" key={item.to} to={item.to}>
+                <span>{item.label}</span>
+                <strong>{item.title}</strong>
+                <small>{item.text}</small>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="hero-visual">
@@ -1877,6 +1908,37 @@ function DownloadsPage() {
     'Destination market and target delivery timing',
   ]
 
+  const fileEntries = [
+    {
+      title: 'Product Family Overview',
+      status: 'Available on request',
+      text: 'Use this entry when the client needs a commercial-level overview of well tubing and casing, line pipe, marine pipe, flexible pipe, and fittings.',
+      to: '/contact',
+      cta: 'Request via contact',
+    },
+    {
+      title: 'RFQ Preparation Checklist',
+      status: 'Open page now',
+      text: 'Use this entry when the project still needs help organizing scope, line lists, fittings ratio, and documentation expectations before quotation.',
+      to: '/resources',
+      cta: 'Open resource page',
+    },
+    {
+      title: 'Manufacturing And Quality Brief',
+      status: 'Available on request',
+      text: 'Use this entry when the client is reviewing production logic, inspection discussion, packing, and shipment readiness before order placement.',
+      to: '/about/manufacturing-quality',
+      cta: 'Open quality page',
+    },
+    {
+      title: 'Project Technical Review Path',
+      status: 'Open page now',
+      text: 'Use this entry when material family, joint methods, and technical clarification should be aligned before requesting deeper project documents.',
+      to: '/engineering',
+      cta: 'Open engineering',
+    },
+  ]
+
   usePageMeta({
     title: 'Downloads | Project Documents And Data Support | Hovoy GRE Pipe',
     description:
@@ -1907,6 +1969,25 @@ function DownloadsPage() {
             <article className="detail-panel" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">File Entry Points</p>
+          <h2>Use these entry points even when the final file set is project-specific.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {fileEntries.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <p className="eyebrow detail-panel-tag">{item.status}</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                {item.cta}
+              </Link>
             </article>
           ))}
         </div>
@@ -2504,6 +2585,61 @@ function ContactPage() {
     { title: 'Read FAQ', to: '/resources/faq' },
   ]
 
+  const inquiryTypes = [
+    {
+      title: 'Product RFQ',
+      text: 'For buyers who already know the product family and need quotation support for pipe, fittings, and project package scope.',
+    },
+    {
+      title: 'Technical Review',
+      text: 'For projects that still need support on material family, joints, operating conditions, or rigid-versus-flexible selection.',
+    },
+    {
+      title: 'Document Request',
+      text: 'For clients requesting product overviews, manufacturing discussion, RFQ preparation support, or supplier-review material.',
+    },
+    {
+      title: 'Commercial Coordination',
+      text: 'For export packing, delivery timing, documentation, and package-completeness discussions before order placement.',
+    },
+  ]
+
+  const contactFlow = [
+    {
+      title: '1. Define the route',
+      text: 'Start from product family, application, or document need so the request reaches the right review path immediately.',
+    },
+    {
+      title: '2. Add project facts',
+      text: 'Include media, dimensions, pressure class, line scope, fittings estimate, and destination market where possible.',
+    },
+    {
+      title: '3. Request the next action',
+      text: 'Tell us whether you need quotation, technical clarification, file support, or supplier-review discussion.',
+    },
+  ]
+
+  const contactEntries = [
+    {
+      title: 'Request quotation support',
+      text: 'Use this path for live RFQs covering pipe, fittings, route conditions, and delivery scope.',
+      to: '/contact',
+      cta: 'Use inquiry email',
+    },
+    {
+      title: 'Request project documents',
+      text: 'Use this path when the next step is product overviews, RFQ preparation support, or manufacturing-related material.',
+      to: '/resources/downloads',
+      cta: 'Open downloads',
+    },
+    {
+      title: 'Narrow the product family first',
+      text: 'Use this path if the project still needs help choosing between well, line, marine, or flexible pipe.',
+      to: '/products',
+      cta: 'Open products',
+    },
+  ]
+
   usePageMeta({
     title: 'Contact Hovoy | RFQ For GRE, GRP, and FRP Pipe Systems',
     description:
@@ -2532,6 +2668,21 @@ function ContactPage() {
         </div>
       </section>
 
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Choose The Right Contact Route</p>
+          <h2>Not every visitor should enter the same RFQ path.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {inquiryTypes.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <div className="detail-grid">
         <article className="detail-panel">
           <h3>Primary contact</h3>
@@ -2552,6 +2703,39 @@ function ContactPage() {
           </ul>
         </article>
       </div>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Contact Flow</p>
+          <h2>Use this sequence to improve response quality.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {contactFlow.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Quick Contact Entries</p>
+          <h2>Move into the right next step without losing the project context.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {contactEntries.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                {item.cta}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="section section-grid page-section">
         <div className="section-heading">

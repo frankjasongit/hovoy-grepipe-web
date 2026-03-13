@@ -473,6 +473,81 @@
   margin-top: 2.4rem;
 }
 
+.hero-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.hero-proof-card {
+  position: relative;
+  --surface-lift: 0px;
+  --surface-scale: 1;
+  --surface-tilt-x: 0deg;
+  --surface-tilt-y: 0deg;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(17, 31, 46, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(247, 250, 252, 0.94));
+  box-shadow: 0 12px 24px rgba(17, 31, 46, 0.05);
+  overflow: hidden;
+  transform:
+    perspective(1200px)
+    translate3d(0, var(--surface-lift), 0)
+    rotateX(var(--surface-tilt-x))
+    rotateY(var(--surface-tilt-y))
+    scale(var(--surface-scale));
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.hero-proof-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.36) 48%, transparent 80%);
+  transform: translateX(-125%);
+  transition: transform 680ms ease;
+  pointer-events: none;
+}
+
+.hero-proof-card:hover {
+  --surface-lift: -4px;
+  --surface-scale: 1.008;
+  border-color: rgba(26, 122, 116, 0.18);
+  box-shadow: 0 18px 30px rgba(17, 31, 46, 0.09);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(243, 249, 250, 0.98));
+}
+
+.hero-proof-card:hover::after {
+  transform: translateX(125%);
+}
+
+.hero-proof-card span {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brand-green);
+  font-weight: 800;
+}
+
+.hero-proof-card strong {
+  color: #102535;
+  font-size: 1rem;
+}
+
+.hero-proof-card small {
+  color: var(--ink-soft);
+  line-height: 1.58;
+  font-size: 0.9rem;
+}
+
 .hero-stats div {
   position: relative;
   --surface-lift: 0px;
@@ -822,6 +897,7 @@
 
 .hero-photo-card::before,
 .hero-stats div::before,
+.hero-proof-card::before,
 .trust-strip p::before,
 .pill::before,
 .product-card::before,
@@ -868,6 +944,7 @@
 
 .hero-photo-card.is-interacting::before,
 .hero-stats div.is-interacting::before,
+.hero-proof-card.is-interacting::before,
 .trust-strip p.is-interacting::before,
 .pill.is-interacting::before,
 .product-card.is-interacting::before,
@@ -910,6 +987,10 @@
 .timeline article p,
 .detail-panel p {
   margin-top: 0.7rem;
+}
+
+.detail-panel-tag {
+  margin-bottom: 0.2rem;
 }
 
 .product-card ul,
@@ -1181,6 +1262,7 @@
   .button,
   .mega-menu-card,
   .hero-stats div,
+  .hero-proof-card,
   .hero-photo-card,
   .hero-photo,
   .hero-photo-panel,
@@ -1199,6 +1281,7 @@
   }
 
   .hero-stats div::after,
+  .hero-proof-card::after,
   .trust-strip p::after,
   .pill::after,
   .product-card::after,
@@ -1259,6 +1342,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .trust-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1285,6 +1372,7 @@
   }
 
   .hero-stats,
+  .hero-proof-grid,
   .trust-strip,
   .product-grid,
   .sector-grid,
