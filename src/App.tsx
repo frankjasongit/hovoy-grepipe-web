@@ -1056,6 +1056,119 @@ function AboutPage() {
           </article>
         </div>
       </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Quality And Manufacturing</p>
+          <h2>Review how manufacturing control and quality discussion fit into project support.</h2>
+        </div>
+        <article className="detail-panel">
+          <h3>Manufacturing and quality page</h3>
+          <p>
+            For buyers reviewing export supply, standards discussion, inspection logic, and
+            documentation expectations, we maintain a dedicated page focused on manufacturing and
+            quality support.
+          </p>
+          <Link className="text-link" to="/about/manufacturing-quality">
+            View manufacturing and quality page
+          </Link>
+        </article>
+      </section>
+    </PageHero>
+  )
+}
+
+function ManufacturingQualityPage() {
+  const qualityPillars = [
+    'Material consistency and traceable production flow',
+    'Dimensional and scope review before shipment',
+    'Inspection discussion aligned to project expectations',
+    'Documentation support for export and project jobs',
+  ]
+
+  const processTopics = [
+    {
+      title: 'Production Planning',
+      text: 'Manufacturing review starts from product family, service conditions, dimensions, fittings ratio, and whether the project needs straight pipe only or a broader package with spools and accessories.',
+    },
+    {
+      title: 'Quality Control Logic',
+      text: 'Inspection focus typically follows project requirements for dimensions, visual checks, package completeness, and documentation expected by EPC buyers, distributors, or overseas contractors.',
+    },
+    {
+      title: 'Shipment Readiness',
+      text: 'Export jobs often require clearer packing logic, marking, documentation sets, and shipment sequencing so the delivered scope matches the site installation plan.',
+    },
+  ]
+
+  const buyerChecks = [
+    'Applicable product family and service description',
+    'Dimensions, pressure class, and package scope',
+    'Required fittings, transitions, or spool assemblies',
+    'Inspection or documentation expectations',
+    'Destination market, delivery sequence, and packing notes',
+  ]
+
+  usePageMeta({
+    title: 'Manufacturing and Quality | Composite Pipe Project Support',
+    description:
+      'Review Hovoy manufacturing and quality support for composite pipe projects including production planning, inspection discussion, documentation, and export shipment readiness.',
+    path: '/about/manufacturing-quality/',
+  })
+
+  return (
+    <PageHero
+      eyebrow="About / Manufacturing and Quality"
+      title="Manufacturing and quality support for export-oriented composite pipe projects."
+      description="Industrial buyers often need more than product pages alone. This section explains how production planning, inspection discussion, and shipment readiness fit into project supply."
+    >
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Quality Focus</p>
+          <h2>Topics that usually matter during supplier review.</h2>
+        </div>
+        <div className="pill-grid">
+          {qualityPillars.map((item) => (
+            <span className="pill" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Manufacturing Review</p>
+          <h2>How production and quality conversations are usually structured.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {processTopics.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Before Supplier Review</p>
+          <h2>Information that helps align production and inspection discussion.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {buyerChecks.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <CtaSection
+        title="Need production, inspection, or documentation clarification?"
+        text="Send the project scope, destination market, and required documentation level so we can align manufacturing discussion with the actual order requirements."
+      />
     </PageHero>
   )
 }
@@ -1185,6 +1298,7 @@ function App() {
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/resources/faq" element={<FaqPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/manufacturing-quality" element={<ManufacturingQualityPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

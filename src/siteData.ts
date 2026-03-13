@@ -313,19 +313,25 @@ export const productPages: ProductPage[] = [
       'Complete system supply instead of straight pipe only',
       'Connection logic matched to installation method',
       'Commercial support for project routing and spool design',
+      'Transition details to pumps, valves, tanks, and steel interfaces',
     ],
     highlights: [
       'Dedicated fittings and joints product focus',
       'Supports connection and engineering discussion',
       'Useful across well, line, marine, and plant projects',
       'Improves RFQ quality by clarifying full supply scope',
+      'Helps buyers avoid under-scoped straight-pipe quotations',
     ],
-    applications: ['System routing', 'Plant installation', 'Field assembly', 'Marine systems'],
-    serviceMedia: ['System-wide support', 'Process and utility duty', 'Plant installation', 'Marine routing'],
+    applications: ['System routing', 'Plant installation', 'Field assembly', 'Marine systems', 'Skid and module tie-ins'],
+    serviceMedia: ['System-wide support', 'Process and utility duty', 'Plant installation', 'Marine routing', 'Tie-in and transition service'],
     supplyScope: [
       {
         title: 'Standard Fittings',
         text: 'Elbows, tees, reducers, flanges, and related items help complete pipe packages for industrial and marine systems.',
+      },
+      {
+        title: 'Transition Components',
+        text: 'Projects often require flanged ends, reducers, stub ends, or connection pieces that align composite pipe runs with equipment nozzles and mixed-material tie-in points.',
       },
       {
         title: 'Connection Planning',
@@ -346,6 +352,10 @@ export const productPages: ProductPage[] = [
         text: 'Field assembly, shop fabrication, and access limitations often drive different fitting and joint requirements.',
       },
       {
+        title: 'Tie-In Conditions',
+        text: 'Interface loads, connection count, valve stations, and equipment tie-ins should be clarified before finalizing the fittings scope and transition details.',
+      },
+      {
         title: 'Commercial Clarity',
         text: 'Fittings scope should be clarified early to align quantities, packaging, and delivery expectations.',
       },
@@ -354,6 +364,7 @@ export const productPages: ProductPage[] = [
       'Base pipe system and application',
       'Fittings list or estimated quantities',
       'Connection method requirements',
+      'Tie-in points, equipment interfaces, or valve stations',
       'Need for shop spools or field assembly',
       'Project destination and packing expectations',
     ],
@@ -476,12 +487,14 @@ export const applicationPages: ApplicationPage[] = [
       'Corrosion in saline and treatment environments',
       'Utility system reliability and lifecycle cost',
       'Line pipe and fittings package compatibility',
+      'Long plant routing with multiple equipment interfaces',
     ],
     advantages: [
       'Application pages let buyers understand the service context before comparing products',
       'Composite line pipe can be positioned against corrosion-related metal challenges',
       'Supports both desalination and general treatment utility discussions',
       'Supports both process and utility system inquiry flow',
+      'Useful for projects where saline exposure and maintenance reduction matter together',
     ],
     typicalSystems: [
       {
@@ -496,16 +509,22 @@ export const applicationPages: ApplicationPage[] = [
         title: 'Treatment Process Support',
         text: 'Pipe selection often depends on media compatibility, route complexity, and lifecycle maintenance expectations.',
       },
+      {
+        title: 'Equipment Tie-In Networks',
+        text: 'Plants often include pumps, tanks, skids, and filter blocks that require coordinated fittings, transitions, and installation sequencing.',
+      },
     ],
     projectDrivers: [
       'Corrosion exposure in saline or treatment duty',
       'Utility system reliability',
       'Compatibility of pipe and fittings packages',
       'Longer lifecycle expectations',
+      'Reduced maintenance burden across plant operating zones',
     ],
     inquiryFocus: [
       'Plant type and service media',
       'Line scope and pressure class',
+      'Interface points to pumps, tanks, or treatment skids',
       'Straight pipe and fittings requirements',
       'Destination market and project timing',
     ],
@@ -525,12 +544,14 @@ export const applicationPages: ApplicationPage[] = [
       'Aggressive media and corrosion risk',
       'System compatibility across pipe and fittings',
       'Application-specific product selection',
+      'Shutdown costs linked to maintenance and replacement',
     ],
     advantages: [
       'Composite pipe can be positioned as a corrosion-resistant option for selected process and utility duties',
       'Connects line pipe and fittings pages directly to plant use cases',
       'Improves search intent match for chemical-related traffic',
       'Supports technical review around media compatibility and system completeness',
+      'Helps frame lifecycle and maintenance discussion for corrosive service',
     ],
     typicalSystems: [
       {
@@ -545,17 +566,23 @@ export const applicationPages: ApplicationPage[] = [
         title: 'System Accessory Packages',
         text: 'Fittings, reducers, and flanged transitions are often as important as straight pipe in plant installations.',
       },
+      {
+        title: 'Maintenance-Sensitive Utility Runs',
+        text: 'Secondary chemical utilities and wash systems may also benefit from corrosion-resistant pipe packages where unplanned replacement is costly.',
+      },
     ],
     projectDrivers: [
       'Chemical media compatibility',
       'Corrosion-driven maintenance concerns',
       'System completeness across pipe and fittings',
       'Application-specific technical review',
+      'Longer service life in aggressive plant environments',
     ],
     inquiryFocus: [
       'Service media and process conditions',
       'Line size range and pressure class',
       'Required fittings and transitions',
+      'Operating temperature, routing conditions, or equipment interfaces',
       'Project timeline and destination market',
     ],
     relatedProducts: ['line-pipe', 'fittings-and-joints'],
