@@ -550,7 +550,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 }
 
 function HomePage() {
-  const whyHovoy = [
+  const commercialProof = [
     {
       title: '20+ Years In The Pipe Industry',
       text: 'Hovoy brings more than twenty years of industry experience across GRE, GRP, and FRP pipe supply for industrial, marine, and energy projects.',
@@ -569,36 +569,49 @@ function HomePage() {
     },
   ]
 
-  const quickAccessLinks = [
+  const projectEntryRoutes = [
     {
-      title: 'Well Tubing and Casing',
-      text: 'For corrosive well environments, field handling, and tubing or casing discussions.',
-      to: '/products/well-tubing-casing',
+      title: 'Start With Product Families',
+      text: 'Compare well service, line pipe, marine systems, flexible pipe, and fittings before narrowing the technical path.',
+      to: '/products',
     },
     {
-      title: 'Line Pipe',
-      text: 'For plant routing, produced water, utility networks, and corrosion-sensitive transport lines.',
-      to: '/products/line-pipe',
+      title: 'Start With Applications',
+      text: 'Review oil and gas, offshore, desalination, and chemical processing environments before choosing the product family.',
+      to: '/applications',
     },
     {
-      title: 'Marine and Offshore Pipe',
-      text: 'For shipboard utilities, seawater systems, and offshore routing constraints.',
-      to: '/products/marine-offshore-pipe',
+      title: 'Review Quality And Documents',
+      text: 'Open manufacturing, quality, and document support when the project is already in supplier review.',
+      to: '/resources/downloads',
     },
     {
-      title: 'Flexible Composite Pipe',
-      text: 'For spoolable deployment, RTP-style field transport, and fast installation scenarios.',
-      to: '/products/flexible-composite-pipe',
+      title: 'Send A Project RFQ',
+      text: 'Move directly to contact when the application, dimensions, pressure class, and scope are already known.',
+      to: '/contact',
     },
+  ]
+
+  const supportRoutes = [
     {
-      title: 'Engineering',
-      text: 'For materials, joints, standards, and RFQ preparation before technical review.',
+      title: 'Engineering Guidance',
+      text: 'Review material systems, joint methods, and RFQ preparation support before formal technical review.',
       to: '/engineering',
     },
     {
-      title: 'Manufacturing and Quality',
-      text: 'For inspection discussion, documentation logic, and export shipment readiness.',
+      title: 'Manufacturing And Quality',
+      text: 'See production planning, inspection support, shipment readiness, and documentation logic.',
       to: '/about/manufacturing-quality',
+    },
+    {
+      title: 'Downloads',
+      text: 'Request product family briefs, quality material, and RFQ support documents tied to the project stage.',
+      to: '/resources/downloads',
+    },
+    {
+      title: 'Contact Hovoy',
+      text: 'Move directly into product selection, quotation support, or supplier-review discussion.',
+      to: '/contact',
     },
   ]
 
@@ -651,23 +664,21 @@ function HomePage() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">GRE / GRP / FRP Pipe Systems</p>
-          <h1>GRE, GRP, and FRP pipe systems for well service, line transport, marine duty, and flexible flowlines.</h1>
+          <h1>Composite pipe systems designed for industrial routes, corrosive media, and project delivery.</h1>
           <p className="hero-text">
-            Hovoy GRE Pipe brings more than twenty years of industry experience in GRE, GRP, and
-            FRP pipe systems. We are familiar with raw materials, production logic, fittings scope,
-            and project-driven supply processes for well tubing and casing, line pipe, marine and
-            offshore systems, flexible pipe, and matching fittings serving petrochemical, marine,
-            water treatment, desalination, and chemical applications.
+            Hovoy supports GRE, GRP, and FRP pipe projects with product-family guidance,
+            application matching, manufacturing familiarity, and export-oriented communication for
+            well service, line transport, marine systems, flexible flowlines, and fittings packages.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" to="/products">
-              Explore Product Lines
+            <Link className="button button-primary" to="/contact">
+              Request Project Review
             </Link>
-            <Link className="button button-secondary" to="/why-hovoy">
-              Why Hovoy
+            <Link className="button button-secondary" to="/products">
+              Explore Product Families
             </Link>
-            <Link className="button button-secondary" to="/contact">
-              Send RFQ
+            <Link className="button button-secondary" to="/applications">
+              Explore Applications
             </Link>
           </div>
           <dl className="hero-stats">
@@ -676,12 +687,12 @@ function HomePage() {
               <dd>20+ years in GRE, GRP, and FRP pipe supply</dd>
             </div>
             <div>
-              <dt>Technical Familiarity</dt>
-              <dd>Raw materials, production process, fittings, and package coordination</dd>
+              <dt>Product Coverage</dt>
+              <dd>Well, line, marine, flexible pipe, and fittings systems</dd>
             </div>
             <div>
-              <dt>Market Exposure</dt>
-              <dd>Overseas petrochemical, marine, and industrial project cooperation</dd>
+              <dt>Project Fit</dt>
+              <dd>Petrochemical, marine, desalination, and chemical-service supply</dd>
             </div>
           </dl>
 
@@ -706,58 +717,54 @@ function HomePage() {
             <div className="hero-photo-shade" />
             <div className="hero-photo-panel">
               <span>Industrial Project Context</span>
-              <strong>Project supply built around operating conditions, package completeness, and delivery coordination.</strong>
-              <small>Hovoy supports GRE, GRP, and FRP pipe projects with product knowledge, process familiarity, and export-oriented communication.</small>
+              <strong>Build the inquiry around service conditions, route logic, fittings scope, and delivery needs.</strong>
+              <small>That structure makes it easier for buyers to compare product families, request documents, and move into quotation without losing context.</small>
             </div>
           </figure>
         </div>
       </section>
 
       <section className="trust-strip" aria-label="Industrial positioning">
-        <p>Well tubing and casing</p>
-        <p>Line pipe systems</p>
-        <p>Marine and offshore pipe</p>
-        <p>Flexible pipe systems</p>
+        <p>Well service systems</p>
+        <p>Produced-water and utility lines</p>
+        <p>Marine and offshore routing</p>
+        <p>Spoolable field deployment</p>
         <p>Engineering-led project support</p>
+      </section>
+
+      <section className="section section-grid">
+        <div className="section-heading">
+          <p className="eyebrow">Project Entry Routes</p>
+          <h2>Start from the commercial or technical path that matches the project stage.</h2>
+          <p>
+            Strong industrial sites do not force every visitor through the same path. Use the
+            route below that best matches where the inquiry currently stands.
+          </p>
+        </div>
+
+        <div className="sector-grid">
+          {projectEntryRoutes.map((item) => (
+            <article className="sector-card" key={item.to}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                Open route
+              </Link>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section section-grid">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Why Hovoy</p>
-            <h2>Why clients choose Hovoy for GRE, GRP, and FRP pipe projects.</h2>
+            <p className="eyebrow">Product Families</p>
+            <h2>Five primary product routes for different operating environments.</h2>
           </div>
           <p>
-            In a crowded pipe market, clients usually shortlist suppliers who can explain the
-            product clearly, understand the manufacturing process, respond around the real RFQ
-            scope, and support overseas project communication without wasting time.
-          </p>
-        </div>
-
-        <div className="detail-card-grid">
-          {whyHovoy.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="hero-actions">
-          <Link className="button button-primary" to="/why-hovoy">
-            Open Why Hovoy
-          </Link>
-        </div>
-      </section>
-
-      <section className="section section-grid">
-        <div className="section-heading">
-          <p className="eyebrow">Products</p>
-          <h2>Composite pipe product lines for distinct operating environments.</h2>
-          <p>
-            Each product family serves different service conditions, installation methods, and
-            project priorities. Explore dedicated pages for well pipe, line pipe, marine systems,
-            flexible flowlines, and fittings.
+            Product pages should help buyers quickly separate well service, line transport, marine
+            duty, flexible deployment, and fittings scope instead of treating everything as one
+            generic composite pipe category.
           </p>
         </div>
 
@@ -783,13 +790,13 @@ function HomePage() {
       <section className="section section-grid">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Applications</p>
-            <h2>Application-focused solutions for demanding industrial sectors.</h2>
+            <p className="eyebrow">Application Sectors</p>
+            <h2>Application-first routes for buyers solving a service problem before choosing a product.</h2>
           </div>
           <p>
-            Composite pipe selection depends on service media, corrosion risk, installation method,
-            and operating environment. Our application pages connect those conditions to the right
-            product family and support package.
+            Buyers often arrive with an operating environment in mind, not a final material choice.
+            Application pages should bridge that gap by connecting service conditions to the right
+            product family, fittings scope, and documentation path.
           </p>
         </div>
 
@@ -808,45 +815,36 @@ function HomePage() {
 
       <section className="section capability-band">
         <div className="capability-copy">
-          <p className="eyebrow">Engineering Support</p>
-          <h2>Material selection, joint methods, and project-oriented technical support.</h2>
+          <p className="eyebrow">Commercial Proof</p>
+          <h2>Show buyers why Hovoy is easier to work with than a generic trading site.</h2>
           <p>
-            Product selection is only one part of the supply decision. Clients also need clear
-            support on GRE, GRP, and FRP pipe configuration, connection systems, service
-            conditions, documentation, and project coordination before moving to quotation or
-            technical review.
+            The strongest industrial sites combine technical familiarity, manufacturing discussion,
+            export coordination, and package-completeness thinking in one clear story.
           </p>
         </div>
 
         <div className="capability-grid">
-          <article className="capability-card">
-            <h3>Material Systems</h3>
-            <p>Explain GRE, composite construction logic, and selection rationale by service duty.</p>
-          </article>
-          <article className="capability-card">
-            <h3>Joint Systems</h3>
-            <p>Show how threaded, bonded, laminated, flanged, and flexible connection methods fit different projects.</p>
-          </article>
-          <article className="capability-card">
-            <h3>Standards and Quality</h3>
-            <p>Provide a dedicated place for testing, compliance, manufacturing control, and documentation logic.</p>
-          </article>
+          {commercialProof.slice(0, 3).map((item) => (
+            <article className="capability-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="section section-grid">
         <div className="section-heading">
-          <p className="eyebrow">Quick Access</p>
-          <h2>Start from the page that matches your project scope.</h2>
+          <p className="eyebrow">Support Paths</p>
+          <h2>Keep document support, engineering guidance, and contact routes one click away.</h2>
           <p>
-            Project teams usually arrive with a specific need in mind. Use these direct links
-            to jump into the right product, engineering, or quality page without sorting through
-            unrelated content.
+            Good browsing experience in industrial B2B means the visitor can always move from a
+            product or application page into engineering help, documentation, or direct contact.
           </p>
         </div>
 
         <div className="sector-grid">
-          {quickAccessLinks.map((item) => (
+          {supportRoutes.map((item) => (
             <article className="sector-card" key={item.to}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -1165,6 +1163,50 @@ function ProductDetailPage() {
 
   const productModule = productSalesModules[page.slug]
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: page.title,
+    description: page.metaDescription,
+    category: page.heroEyebrow.replace('Products / ', ''),
+    brand: {
+      '@type': 'Brand',
+      name: 'Hovoy GRE Pipe',
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Hovoy GRE Pipe',
+      url: siteUrl,
+    },
+    url: `${siteUrl}/products/${page.slug}/`,
+    keywords: [...page.applications, ...page.serviceMedia].join(', '),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: `${siteUrl}/products/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: page.title,
+        item: `${siteUrl}/products/${page.slug}/`,
+      },
+    ],
+  }
+
   usePageMeta({
     title: `${page.title} | Hovoy GRE Pipe`,
     description: page.metaDescription,
@@ -1172,12 +1214,84 @@ function ProductDetailPage() {
   })
 
   return (
-    <PageHero eyebrow={page.heroEyebrow} title={page.title} description={page.summary}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <section className="page-hero product-page-top">
+        <nav aria-label="Breadcrumb" className="breadcrumb-list">
+          <Link className="breadcrumb-link" to="/">
+            Home
+          </Link>
+          <span className="breadcrumb-separator">/</span>
+          <Link className="breadcrumb-link" to="/products">
+            Products
+          </Link>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{page.title}</span>
+        </nav>
+
+        <div className="product-overview">
+          <div className="product-overview-copy">
+            <p className="eyebrow">{page.heroEyebrow}</p>
+            <h1>{page.title}</h1>
+            <p>{page.summary}</p>
+            <p className="product-overview-intro">{page.intro}</p>
+            <div className="hero-actions">
+              <Link className="button button-primary" to="/contact">
+                Request Product Review
+              </Link>
+              <Link className="button button-secondary" to="/applications">
+                Browse Applications
+              </Link>
+            </div>
+          </div>
+
+          <aside className="product-overview-rail">
+            <article className="rail-card">
+              <p className="eyebrow">Buyer Priorities</p>
+              <ul className="detail-list">
+                {page.buyerFocus.slice(0, 4).map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="rail-card">
+              <p className="eyebrow">Typical Service Media</p>
+              <div className="mini-pill-grid">
+                {page.serviceMedia.slice(0, 5).map((item) => (
+                  <span className="pill" key={item}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
+            <article className="rail-card rail-card-dark">
+              <p>Need quotation support?</p>
+              <strong>sales@hovoy-grepipe.com</strong>
+              <span>
+                Send media, pressure class, dimensions, fittings scope, and destination market for
+                a faster review.
+              </span>
+              <Link className="button button-primary contact-button" to="/contact">
+                Open contact page
+              </Link>
+            </article>
+          </aside>
+        </div>
+      </section>
+
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Product Scope</p>
-            <h2>Designed around service conditions and project requirements.</h2>
+            <p className="eyebrow">At A Glance</p>
+            <h2>Use this page to evaluate fit, scope, and quotation readiness.</h2>
           </div>
           <p>{page.intro}</p>
         </div>
@@ -1204,22 +1318,8 @@ function ProductDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Service Profile</p>
-          <h2>Typical service media and operating contexts.</h2>
-        </div>
-        <div className="pill-grid">
-          {page.serviceMedia.map((item) => (
-            <span className="pill" key={item}>
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-grid page-section">
-        <div className="section-heading">
           <p className="eyebrow">Supply Scope</p>
-          <h2>What Hovoy can offer for this product line.</h2>
+          <h2>What Hovoy can support for this product family.</h2>
         </div>
         <div className="detail-card-grid">
           {page.supplyScope.map((item) => (
@@ -1234,7 +1334,7 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Selection Considerations</p>
-          <h2>Points that usually shape technical review and quotation.</h2>
+          <h2>Technical and commercial points that often shape supplier review.</h2>
         </div>
         <div className="detail-card-grid">
           {page.selectionNotes.map((item) => (
@@ -1247,16 +1347,38 @@ function ProductDetailPage() {
       </section>
 
       <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Common Applications</p>
-          <h2>Typical uses for this product family.</h2>
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="eyebrow">Project Fit</p>
+            <h2>Where this product family usually fits best.</h2>
+          </div>
+          <p>
+            Product pages should help buyers confirm operating context, package scope, and related
+            applications before they ask for a quotation.
+          </p>
         </div>
-        <div className="pill-grid">
-          {page.applications.map((item) => (
-            <span className="pill" key={item}>
-              {item}
-            </span>
-          ))}
+
+        <div className="detail-grid">
+          <article className="detail-panel">
+            <h3>Typical Applications</h3>
+            <div className="mini-pill-grid">
+              {page.applications.map((item) => (
+                <span className="pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
+          <article className="detail-panel">
+            <h3>Service Media</h3>
+            <div className="mini-pill-grid">
+              {page.serviceMedia.map((item) => (
+                <span className="pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1293,11 +1415,50 @@ function ProductDetailPage() {
         </section>
       ) : null}
 
+      <section className="section section-grid page-section">
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="eyebrow">Inquiry Readiness</p>
+            <h2>Give buyers the information they need before sending an RFQ.</h2>
+          </div>
+          <p>
+            Strong product pages reduce back-and-forth by combining commercial reasons to shortlist
+            Hovoy with a clear list of project information needed for quotation review.
+          </p>
+        </div>
+
+        <div className="detail-grid">
+          <article className="detail-panel">
+            <h3>RFQ Checklist</h3>
+            <ul className="detail-list">
+              {page.rfqChecklist.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="detail-panel detail-panel-accent">
+            <h3>{productModule?.nextActionTitle ?? 'Request technical review or quotation support.'}</h3>
+            <p>
+              {productModule?.nextActionText ??
+                'Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately.'}
+            </p>
+            <div className="hero-actions">
+              <Link className="button button-primary" to="/contact">
+                Contact Hovoy
+              </Link>
+              <Link className="button button-secondary" to="/resources/downloads">
+                Review documents
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
       {productModule ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Why Hovoy On This Product</p>
-            <h2>Why buyers review Hovoy for this product family.</h2>
+            <h2>Reasons buyers review Hovoy for this product family.</h2>
           </div>
           <div className="detail-card-grid">
             {productModule.whyHovoy.map((item) => (
@@ -1312,22 +1473,8 @@ function ProductDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">RFQ Checklist</p>
-          <h2>Information recommended before requesting a quotation.</h2>
-        </div>
-        <article className="detail-panel">
-          <ul className="detail-list">
-            {page.rfqChecklist.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
-      </section>
-
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Related Pages</p>
-          <h2>Related applications for this product family.</h2>
+          <p className="eyebrow">Related Applications</p>
+          <h2>Application pages commonly reviewed together with this product family.</h2>
         </div>
         <div className="sector-grid">
           {applicationPages
@@ -1351,7 +1498,7 @@ function ProductDetailPage() {
           'Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately.'
         }
       />
-    </PageHero>
+    </>
   )
 }
 
