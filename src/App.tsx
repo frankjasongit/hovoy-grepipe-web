@@ -451,7 +451,7 @@ function HomePage() {
           <p className="eyebrow">Engineering Support</p>
           <h2>Material selection, joint methods, and project-oriented technical support.</h2>
           <p>
-            Product selection is only one part of the supply decision. Buyers also need clear
+            Product selection is only one part of the supply decision. Clients also need clear
             support on connection systems, service conditions, documentation, and project
             coordination before moving to quotation or technical review.
           </p>
@@ -468,7 +468,7 @@ function HomePage() {
           </article>
           <article className="capability-card">
             <h3>Standards and Quality</h3>
-            <p>Give buyers a dedicated place for testing, compliance, manufacturing control, and documentation logic.</p>
+            <p>Provide a dedicated place for testing, compliance, manufacturing control, and documentation logic.</p>
           </article>
         </div>
       </section>
@@ -478,7 +478,7 @@ function HomePage() {
           <p className="eyebrow">Quick Access</p>
           <h2>Start from the page that matches your project scope.</h2>
           <p>
-            Industrial buyers usually arrive with a specific need in mind. Use these direct links
+            Project teams usually arrive with a specific need in mind. Use these direct links
             to jump into the right product, engineering, or quality page without sorting through
             unrelated content.
           </p>
@@ -499,7 +499,7 @@ function HomePage() {
 
       <section className="section section-grid">
         <div className="section-heading">
-          <p className="eyebrow">Project Workflow</p>
+          <p className="eyebrow">Project Process</p>
           <h2>From inquiry review to product matching and delivery support.</h2>
         </div>
 
@@ -532,7 +532,7 @@ function HomePage() {
           <p className="eyebrow">Contact</p>
           <h2>Discuss product selection, application fit, and project requirements with Hovoy.</h2>
           <p>
-            Our team supports buyers looking for well tubing and casing, line pipe, marine piping,
+            Our team supports clients looking for well tubing and casing, line pipe, marine piping,
             flexible composite pipe, fittings, and export-oriented project supply.
           </p>
         </div>
@@ -609,8 +609,8 @@ function ProductsPage() {
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Selection Logic</p>
-          <h2>Buyers usually narrow product choice in three steps.</h2>
+          <p className="eyebrow">Selection Approach</p>
+          <h2>Product selection usually narrows down in three steps.</h2>
         </div>
         <div className="detail-card-grid">
           {selectionLogic.map((item) => (
@@ -693,7 +693,7 @@ function ProductDetailPage() {
 
         <div className="detail-grid">
           <article className="detail-panel">
-            <h3>Typical buyer focus</h3>
+            <h3>Typical client requirements</h3>
             <ul className="detail-list">
               {page.buyerFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -728,7 +728,7 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Supply Scope</p>
-          <h2>What buyers commonly expect from this product line.</h2>
+          <h2>What Hovoy can offer for this product line.</h2>
         </div>
         <div className="detail-card-grid">
           {page.supplyScope.map((item) => (
@@ -742,8 +742,8 @@ function ProductDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Selection Notes</p>
-          <h2>Points that usually shape product review and quotation.</h2>
+          <p className="eyebrow">Selection Considerations</p>
+          <h2>Points that usually shape technical review and quotation.</h2>
         </div>
         <div className="detail-card-grid">
           {page.selectionNotes.map((item) => (
@@ -772,7 +772,7 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">RFQ Checklist</p>
-          <h2>What to prepare before requesting a quotation.</h2>
+          <h2>Information recommended before requesting a quotation.</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
@@ -815,7 +815,7 @@ function ApplicationsPage() {
   const applicationLogic = [
     {
       title: 'Corrosion And Media',
-      text: 'Application pages help buyers start from what the system carries and how aggressive the operating environment is.',
+      text: 'Application pages help project teams start from service media and the severity of the operating environment.',
     },
     {
       title: 'Installation Context',
@@ -865,8 +865,8 @@ function ApplicationsPage() {
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Application Logic</p>
-          <h2>Industry pages should answer why a composite system is relevant.</h2>
+          <p className="eyebrow">Application Approach</p>
+          <h2>Industry pages should explain where a composite system is relevant.</h2>
         </div>
         <div className="detail-card-grid">
           {applicationLogic.map((item) => (
@@ -935,7 +935,7 @@ function ApplicationDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Industry Overview</p>
+            <p className="eyebrow">Application Overview</p>
             <h2>Service demands and operating priorities in this sector.</h2>
           </div>
           <p>{page.intro}</p>
@@ -999,7 +999,7 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Project Drivers</p>
+          <p className="eyebrow">Project Priorities</p>
           <h2>Commercial and technical priorities in this sector.</h2>
         </div>
         <article className="detail-panel">
@@ -1013,7 +1013,7 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Inquiry Focus</p>
+          <p className="eyebrow">Inquiry Requirements</p>
           <h2>Information that helps speed up technical review.</h2>
         </div>
         <article className="detail-panel">
@@ -1087,7 +1087,7 @@ function EngineeringPage() {
     <PageHero
       eyebrow="Engineering"
       title="Engineering support for materials, joints, standards, and quality control."
-      description="Product performance depends on more than pipe type alone. Hovoy supports buyers with application-focused guidance on material systems, connection methods, standards, and project documentation."
+      description="Product performance depends on more than pipe type alone. Hovoy supports project teams with application-focused guidance on material systems, connection methods, standards, and project documentation."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -1107,7 +1107,7 @@ function EngineeringPage() {
         <article className="capability-card">
           <h3>Standards and Certification</h3>
           <p>
-            Buyers need clear access to standards, testing, manufacturing controls, and quality
+            Project teams need clear access to standards, testing, manufacturing controls, and quality
             discussion instead of chasing this information through sales copy.
           </p>
         </article>
@@ -1170,7 +1170,7 @@ function EngineeringPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Before RFQ</p>
+          <p className="eyebrow">RFQ Inputs</p>
           <h2>Technical information that helps us respond faster.</h2>
         </div>
         <article className="detail-panel">
@@ -1227,8 +1227,8 @@ function ResourcesPage() {
   return (
     <PageHero
       eyebrow="Resources"
-      title="Technical resources and buyer guidance for composite pipe projects."
-      description="This section helps buyers prepare cleaner RFQs, identify the right product family, and organize the technical information needed for faster review."
+      title="Technical resources and project guidance for composite pipe projects."
+      description="This section helps project teams prepare cleaner RFQs, identify the right product family, and organize the technical information needed for faster review."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -1251,7 +1251,7 @@ function ResourcesPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Resource Focus</p>
-          <h2>What this section is designed to support.</h2>
+          <h2>How this section supports project communication.</h2>
         </div>
         <div className="detail-card-grid">
           {resourceGroups.map((item) => (
@@ -1266,7 +1266,7 @@ function ResourcesPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Common Requests</p>
-          <h2>Information buyers usually ask for before placing an order.</h2>
+          <h2>Information commonly requested before order placement.</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
@@ -1308,7 +1308,7 @@ function FaqPage() {
   ]
 
   usePageMeta({
-    title: 'FAQ | Composite Pipe Questions For Industrial Buyers',
+      title: 'FAQ | Composite Pipe Questions For Industrial Projects',
     description:
       'Read common FAQ answers about composite pipe selection, well tubing and casing, line pipe, marine pipe, flexible pipe, and inquiry preparation.',
     path: '/resources/faq/',
@@ -1398,7 +1398,7 @@ function AboutPage() {
         <article>
           <span>03</span>
           <strong>Project Support</strong>
-          <p>Technical clarification, quotation review, and export coordination help buyers move from inquiry to delivery.</p>
+          <p>Technical clarification, quotation review, and export coordination help projects move from inquiry to delivery.</p>
         </article>
         <article>
           <span>04</span>
@@ -1416,7 +1416,7 @@ function AboutPage() {
           <article className="detail-panel">
             <h3>Application-Led Review</h3>
             <p>
-              We separate well, line, marine, and flexible systems so buyers can discuss the right
+              We separate well, line, marine, and flexible systems so clients can discuss the right
               product family instead of sorting through unrelated categories.
             </p>
           </article>
@@ -1445,7 +1445,7 @@ function AboutPage() {
         <article className="detail-panel">
           <h3>Manufacturing and quality page</h3>
           <p>
-            For buyers reviewing export supply, standards discussion, inspection logic, and
+            For clients reviewing export supply, standards discussion, inspection logic, and
             documentation expectations, we maintain a dedicated page focused on manufacturing and
             quality support.
           </p>
@@ -1473,7 +1473,7 @@ function ManufacturingQualityPage() {
     },
     {
       title: 'Quality Control Logic',
-      text: 'Inspection focus typically follows project requirements for dimensions, visual checks, package completeness, and documentation expected by EPC buyers, distributors, or overseas contractors.',
+      text: 'Inspection focus typically follows project requirements for dimensions, visual checks, package completeness, and documentation expected by EPC contractors, distributors, or overseas project teams.',
     },
     {
       title: 'Shipment Readiness',
@@ -1500,7 +1500,7 @@ function ManufacturingQualityPage() {
     <PageHero
       eyebrow="About / Manufacturing and Quality"
       title="Manufacturing and quality support for export-oriented composite pipe projects."
-      description="Industrial buyers often need more than product pages alone. This section explains how production planning, inspection discussion, and shipment readiness fit into project supply."
+      description="Industrial projects often need more than product pages alone. This section explains how production planning, inspection discussion, and shipment readiness fit into project supply."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -1625,7 +1625,7 @@ function ContactPage() {
           </p>
         </article>
         <article className="detail-panel">
-          <h3>What to include in your RFQ</h3>
+          <h3>Recommended RFQ information</h3>
           <ul className="detail-list">
             {rfqChecklist.map((item) => (
               <li key={item}>{item}</li>

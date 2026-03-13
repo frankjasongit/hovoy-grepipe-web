@@ -49,7 +49,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite well tubing and casing for corrosive production environments where weight, corrosion, and lifecycle cost matter.',
     intro:
-      'Well tubing and casing buyers usually care about corrosive service, handling, installation practicality, and long-term reliability in demanding field environments where standard metallic systems may raise weight or corrosion concerns.',
+      'Well tubing and casing projects usually focus on corrosive service, handling, installation practicality, and long-term reliability in demanding field environments where standard metallic systems may raise weight or corrosion concerns.',
     metaDescription:
       'Explore composite well tubing and casing systems for corrosive service, field installation efficiency, and engineered well applications.',
     buyerFocus: [
@@ -109,7 +109,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite line pipe for industrial transport, corrosive process duty, utility networks, and engineered project routing.',
     intro:
-      'Line pipe buyers typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
+      'Line pipe projects typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
     metaDescription:
       'Review composite line pipe solutions for industrial transport, utility networks, corrosion-resistant process service, and project supply.',
     buyerFocus: [
@@ -186,7 +186,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite marine and offshore pipe systems for seawater duty, shipboard utility lines, and offshore corrosion-sensitive environments.',
     intro:
-      'Marine and offshore buyers focus on seawater duty, corrosion resistance, weight reduction, installation practicality, and vessel or offshore project constraints.',
+      'Marine and offshore projects focus on seawater duty, corrosion resistance, weight reduction, installation practicality, and vessel or offshore project constraints.',
     metaDescription:
       'Explore marine and offshore composite pipe systems for seawater duty, shipboard utility service, and corrosion-resistant offshore applications.',
     buyerFocus: [
@@ -219,7 +219,7 @@ export const productPages: ProductPage[] = [
     selectionNotes: [
       {
         title: 'Weight Reduction',
-        text: 'Marine and offshore buyers frequently compare composite systems against heavier metallic alternatives where handling and support loads matter.',
+        text: 'Marine and offshore teams frequently compare composite systems against heavier metallic alternatives where handling and support loads matter.',
       },
       {
         title: 'Seawater Exposure',
@@ -246,7 +246,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Flexible composite pipe for spoolable transport, oil and gas field service, and installation scenarios where reel-based deployment matters.',
     intro:
-      'Flexible composite pipe serves a different market from rigid GRE systems, with buyers focusing on spoolable deployment, RTP/TCP terminology, and fast field installation.',
+      'Flexible composite pipe serves a different market from rigid GRE systems, with project teams focusing on spoolable deployment, RTP/TCP terminology, and fast field installation.',
     metaDescription:
       'Discover flexible composite pipe systems for spoolable transport, field deployment, and oil and gas service applications.',
     buyerFocus: [
@@ -320,7 +320,7 @@ export const productPages: ProductPage[] = [
       'Supports connection and engineering discussion',
       'Useful across well, line, marine, and plant projects',
       'Improves RFQ quality by clarifying full supply scope',
-      'Helps buyers avoid under-scoped straight-pipe quotations',
+      'Helps avoid under-scoped straight-pipe quotations',
     ],
     applications: ['System routing', 'Plant installation', 'Field assembly', 'Marine systems', 'Skid and module tie-ins'],
     serviceMedia: ['System-wide support', 'Process and utility duty', 'Plant installation', 'Marine routing', 'Tie-in and transition service'],
@@ -380,7 +380,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite pipe systems for oil and gas transport, corrosive field service, well environments, and spoolable deployment scenarios.',
     intro:
-      'Oil and gas buyers often compare well products, line pipe, and flexible transport options within the same project scope, especially in corrosive or logistically demanding field environments.',
+      'Oil and gas projects often compare well products, line pipe, and flexible transport options within the same project scope, especially in corrosive or logistically demanding field environments.',
     metaDescription:
       'Explore composite pipe applications for oil and gas including well systems, line pipe, and flexible composite transport solutions.',
     concerns: [
@@ -430,14 +430,14 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite marine and offshore piping for seawater duty, corrosion-sensitive utility service, and project environments where weight matters.',
     intro:
-      'Marine buyers evaluate materials through the lens of seawater, weight, corrosion, and vessel or offshore routing constraints, especially when maintenance access and onboard space are limited.',
+      'Marine projects evaluate materials through the lens of seawater, weight, corrosion, and vessel or offshore routing constraints, especially when maintenance access and onboard space are limited.',
     metaDescription:
       'Review composite pipe applications for marine and offshore environments including seawater systems and corrosion-resistant shipboard routing.',
     concerns: [
       'Seawater corrosion and long service life',
       'Weight constraints on vessel or offshore routing',
       'Application-specific fittings and joint requirements',
-      'Project communication for export-oriented buyers',
+      'Project communication for export-oriented clients',
     ],
     advantages: [
       'Composite pipe is attractive where corrosion and weight are persistent constraints',
@@ -490,7 +490,7 @@ export const applicationPages: ApplicationPage[] = [
       'Long plant routing with multiple equipment interfaces',
     ],
     advantages: [
-      'Application pages let buyers understand the service context before comparing products',
+      'Application pages help project teams understand the service context before comparing products',
       'Composite line pipe can be positioned against corrosion-related metal challenges',
       'Supports both desalination and general treatment utility discussions',
       'Supports both process and utility system inquiry flow',
@@ -537,7 +537,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite piping applications for chemical media, corrosive process systems, and plant environments where lifecycle durability matters.',
     intro:
-      'Chemical processing buyers usually review pipe systems around corrosion risk, media compatibility, maintenance burden, and how the full pipe-and-fittings package performs in plant service.',
+      'Chemical processing projects usually review pipe systems around corrosion risk, media compatibility, maintenance burden, and how the full pipe-and-fittings package performs in plant service.',
     metaDescription:
       'Explore composite pipe solutions for chemical processing and corrosive plant applications requiring long-life piping systems.',
     concerns: [
@@ -611,7 +611,7 @@ export const faqItems = [
       'The most useful RFQs include the application, service media, dimensions, pressure class, fittings scope, destination country, and any drawings or line lists available.',
   },
   {
-    question: 'How should buyers choose between rigid line pipe and flexible composite pipe?',
+    question: 'How should project teams choose between rigid line pipe and flexible composite pipe?',
     answer:
       'That decision usually depends on route geometry, installation speed targets, spoolable deployment needs, pressure class, and whether the project benefits more from reel-based installation or rigid fabricated sections.',
   },
@@ -626,13 +626,13 @@ export const faqItems = [
       'Plant type, service media, pressure class, route conditions, equipment tie-in points, and the expected mix of straight pipe and fittings all help clarify the correct line pipe package faster.',
   },
   {
-    question: 'What do marine and offshore buyers usually need to clarify first?',
+    question: 'What do marine and offshore teams usually need to clarify first?',
     answer:
       'Marine and offshore inquiries usually need to clarify whether the service is shipboard, offshore, or coastal, along with seawater exposure, routing constraints, pipe size range, and fittings or class-related requirements.',
   },
   {
-    question: 'Why is a separate manufacturing and quality page useful for industrial buyers?',
+    question: 'Why is a separate manufacturing and quality page useful for industrial clients?',
     answer:
-      'Industrial buyers often review production logic, inspection discussion, documentation scope, and export shipment readiness before order placement, so that information deserves a dedicated page rather than being hidden inside general sales copy.',
+      'Industrial clients often review production logic, inspection discussion, documentation scope, and export shipment readiness before order placement, so that information deserves a dedicated page rather than being hidden inside general sales copy.',
   },
 ]
