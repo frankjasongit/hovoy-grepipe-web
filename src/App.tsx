@@ -1,6 +1,7 @@
 import { BrowserRouter, Link, NavLink, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import './App.css'
+import heroRefinery from './assets/refinery-hero.jpg'
 import {
   applicationPages,
   faqItems,
@@ -216,28 +217,35 @@ function HomePage() {
           </dl>
         </div>
 
-        <div className="hero-visual" aria-hidden="true">
-          <div className="pipe-graphic">
-            <div className="grid-overlay" />
-            <div className="pipe pipe-main" />
-            <div className="pipe pipe-branch pipe-branch-top" />
-            <div className="pipe pipe-branch pipe-branch-bottom" />
-            <div className="pipe-ring pipe-ring-one" />
-            <div className="pipe-ring pipe-ring-two" />
-            <div className="pipe-callout callout-one">
-              <span>Pipeline Scope</span>
-              <strong>Well / Line / Marine / Flexible</strong>
+        <div className="hero-visual">
+          <figure className="hero-photo-card">
+            <img
+              className="hero-photo"
+              src={heroRefinery}
+              alt="Aerial view of a refinery and industrial processing plant"
+            />
+            <div className="hero-photo-shade" />
+            <div className="hero-photo-panel">
+              <span>Project Supply Focus</span>
+              <strong>Industrial, Marine, and Energy Pipeline Systems</strong>
+              <small>Product lines, application pages, engineering support, and export-oriented RFQ handling.</small>
             </div>
-            <div className="pipe-callout callout-two">
-              <span>Commercial Logic</span>
-              <strong>Products + Applications + Engineering</strong>
+            <div className="hero-photo-tags">
+              <span>Corrosion-Resistant Systems</span>
+              <span>Rigid And Flexible Product Families</span>
+              <span>Project Documentation Support</span>
             </div>
-            <div className="pipe-panel">
-              <span>Hovoy</span>
-              <strong>Composite Pipe</strong>
-              <small>Engineered supply for industrial, marine, and energy pipeline applications.</small>
-            </div>
-          </div>
+            <figcaption className="hero-photo-credit">
+              Hero image via{' '}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Gdansk_rafineria_aerial_4.jpg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Wikimedia Commons
+              </a>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
