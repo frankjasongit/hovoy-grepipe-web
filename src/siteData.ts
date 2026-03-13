@@ -591,19 +591,19 @@ export const applicationPages: ApplicationPage[] = [
 
 export const faqItems = [
   {
-    question: 'What product lines does Hovoy Composite Pipe supply?',
+    question: 'What product lines does Hovoy GRE Pipe supply?',
     answer:
-      'Hovoy Composite Pipe focuses on well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and related fittings and joint systems.',
+      'Hovoy GRE Pipe focuses on GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, and related fittings and joint systems.',
   },
   {
     question: 'Which industries commonly use these composite pipe systems?',
     answer:
-      'Typical application areas include oil and gas, marine and offshore service, water treatment and desalination, and corrosive chemical process environments.',
+      'Typical application areas include oil and gas, marine and offshore service, water treatment and desalination, petrochemical plants, and corrosive chemical process environments.',
   },
   {
     question: 'Should flexible composite pipe be treated as a separate product line?',
     answer:
-      'Yes. Flexible composite pipe competes under its own terms such as spoolable pipe, RTP, and flexible transport systems. It should not be buried inside rigid GRE product content.',
+      'Yes. Flexible pipe competes under its own terms such as spoolable pipe, RTP, and flexible transport systems. It should not be buried inside rigid GRE, GRP, or FRP pipe content.',
   },
   {
     question: 'What information should be included in an RFQ?',
@@ -633,6 +633,6 @@ export const faqItems = [
   {
     question: 'Why is a separate manufacturing and quality page useful for industrial clients?',
     answer:
-      'Industrial clients often review production logic, inspection discussion, documentation scope, and export shipment readiness before order placement, so that information deserves a dedicated page rather than being hidden inside general sales copy.',
+      'Industrial clients often review production logic, inspection discussion, documentation scope, raw material familiarity, and export shipment readiness before order placement, so that information deserves a dedicated page rather than being hidden inside general sales copy.',
   },
 ]

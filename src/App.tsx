@@ -249,7 +249,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
         },
         {
           title: 'Resources',
-          text: 'FAQ, RFQ preparation, and buyer guidance for project communication.',
+          text: 'FAQ, RFQ preparation, and project guidance for technical and commercial communication.',
           to: '/resources',
         },
       ],
@@ -257,11 +257,11 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
     },
     resources: {
       title: 'Resources And RFQ Support',
-      text: 'Use resources pages to answer common buyer questions, prepare RFQ inputs, and move to contact with a cleaner project brief.',
+      text: 'Use resources pages to answer common project questions, prepare RFQ inputs, and move to contact with a cleaner project brief.',
       links: [
         {
           title: 'Resources',
-          text: 'Resource center for buyer guidance, request preparation, and supporting technical discussion.',
+          text: 'Resource center for project guidance, request preparation, and supporting technical discussion.',
           to: '/resources',
         },
         {
@@ -321,8 +321,8 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
           <Link className="brand-lockup" to="/">
             <div className="brand-badge">HG</div>
             <div>
-              <p className="brand-name">Hovoy Composite Pipe</p>
-              <p className="brand-tag">Well, line, marine, flexible, and engineered project supply</p>
+              <p className="brand-name">Hovoy GRE Pipe</p>
+              <p className="brand-tag">GRE, GRP, and FRP pipe systems for project supply</p>
             </div>
           </Link>
 
@@ -392,10 +392,10 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 
       <footer className="footer">
         <div>
-          <p className="brand-name">Hovoy Composite Pipe</p>
+          <p className="brand-name">Hovoy GRE Pipe</p>
           <p className="footer-note">
-            Export-focused composite pipe systems for well tubing and casing, line pipe, marine
-            piping, flexible pipe, and project-driven industrial applications.
+            Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing,
+            line pipe, marine piping, flexible pipe, fittings, and project-driven industrial applications.
           </p>
         </div>
 
@@ -416,6 +416,25 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 }
 
 function HomePage() {
+  const whyHovoy = [
+    {
+      title: '20+ Years In The Pipe Industry',
+      text: 'Hovoy brings more than twenty years of industry experience across GRE, GRP, and FRP pipe supply for industrial, marine, and energy projects.',
+    },
+    {
+      title: 'Strong Material And Process Familiarity',
+      text: 'Clients often need suppliers who understand raw materials, reinforcement logic, fittings scope, winding processes, curing, and production coordination rather than only catalogue language.',
+    },
+    {
+      title: 'Overseas Petrochemical Project Exposure',
+      text: 'Our team is familiar with working alongside overseas petrochemical and industrial project requirements where documentation, communication, and delivery coordination matter.',
+    },
+    {
+      title: 'Project-Oriented Package Supply',
+      text: 'We support pipe, fittings, joints, and RFQ clarification together so the quotation is closer to the actual installation scope.',
+    },
+  ]
+
   const quickAccessLinks = [
     {
       title: 'Well Tubing and Casing',
@@ -450,20 +469,21 @@ function HomePage() {
   ]
 
   usePageMeta({
-    title: 'Hovoy Composite Pipe | Well, Line, Marine, and Flexible Pipe Systems',
+    title: 'Hovoy GRE Pipe | GRE, GRP, and FRP Pipe Systems',
     description:
-      'Hovoy Composite Pipe supplies well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, fittings, and engineering support for industrial export projects.',
+      'Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, fittings, and industrial export projects.',
     path: '/',
   })
 
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Hovoy Composite Pipe',
+    name: 'Hovoy GRE Pipe',
+    alternateName: 'Hovoy Composite Pipe',
     url: siteUrl,
     email: 'sales@hovoy-grepipe.com',
     description:
-      'Hovoy Composite Pipe supplies well tubing and casing, line pipe, marine pipe, flexible composite pipe, and engineered project support.',
+      'Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine pipe, flexible pipe, and engineered project support.',
   }
 
   return (
@@ -475,13 +495,14 @@ function HomePage() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Composite Pipe Systems For Industrial Projects</p>
-          <h1>Composite pipe systems for well service, line transport, marine duty, and flexible flowlines.</h1>
+          <p className="eyebrow">GRE / GRP / FRP Pipe Systems</p>
+          <h1>GRE, GRP, and FRP pipe systems for well service, line transport, marine duty, and flexible flowlines.</h1>
           <p className="hero-text">
-            Hovoy Composite Pipe supplies rigid and flexible composite pipe solutions for corrosive,
-            weight-sensitive, and project-driven applications. Our portfolio covers well tubing and
-            casing, line pipe, marine and offshore systems, flexible composite pipe, and matching
-            fittings for oil and gas, water treatment, desalination, marine, and chemical service.
+            Hovoy GRE Pipe brings more than twenty years of industry experience in GRE, GRP, and
+            FRP pipe systems. We are familiar with raw materials, production logic, fittings scope,
+            and project-driven supply processes for well tubing and casing, line pipe, marine and
+            offshore systems, flexible pipe, and matching fittings serving petrochemical, marine,
+            water treatment, desalination, and chemical applications.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/products">
@@ -493,16 +514,16 @@ function HomePage() {
           </div>
           <dl className="hero-stats">
             <div>
-              <dt>Product Focus</dt>
-              <dd>Well, line, marine, flexible, fittings</dd>
+              <dt>Industry Experience</dt>
+              <dd>20+ years in GRE, GRP, and FRP pipe supply</dd>
             </div>
             <div>
-              <dt>Market Logic</dt>
-              <dd>Export, EPC, distributor, project supply</dd>
+              <dt>Technical Familiarity</dt>
+              <dd>Raw materials, production process, fittings, and package coordination</dd>
             </div>
             <div>
-              <dt>Contact</dt>
-              <dd>sales@hovoy-grepipe.com</dd>
+              <dt>Market Exposure</dt>
+              <dd>Overseas petrochemical, marine, and industrial project cooperation</dd>
             </div>
           </dl>
         </div>
@@ -517,8 +538,8 @@ function HomePage() {
             <div className="hero-photo-shade" />
             <div className="hero-photo-panel">
               <span>Industrial Project Context</span>
-              <strong>Supply scope built around operating environment, package completeness, and project delivery.</strong>
-              <small>Well systems, line pipe, marine service, flexible deployment, and full package coordination for export projects.</small>
+              <strong>Project supply built around operating conditions, package completeness, and delivery coordination.</strong>
+              <small>Hovoy supports GRE, GRP, and FRP pipe projects with product knowledge, process familiarity, and export-oriented communication.</small>
             </div>
           </figure>
         </div>
@@ -528,8 +549,31 @@ function HomePage() {
         <p>Well tubing and casing</p>
         <p>Line pipe systems</p>
         <p>Marine and offshore pipe</p>
-        <p>Flexible composite pipe</p>
+        <p>Flexible pipe systems</p>
         <p>Engineering-led RFQ path</p>
+      </section>
+
+      <section className="section section-grid">
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="eyebrow">Why Hovoy</p>
+            <h2>Why clients choose Hovoy for GRE, GRP, and FRP pipe projects.</h2>
+          </div>
+          <p>
+            In a crowded pipe market, clients usually shortlist suppliers who can explain the
+            product clearly, understand the manufacturing process, respond around the real RFQ
+            scope, and support overseas project communication without wasting time.
+          </p>
+        </div>
+
+        <div className="detail-card-grid">
+          {whyHovoy.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section section-grid">
@@ -594,8 +638,9 @@ function HomePage() {
           <h2>Material selection, joint methods, and project-oriented technical support.</h2>
           <p>
             Product selection is only one part of the supply decision. Clients also need clear
-            support on connection systems, service conditions, documentation, and project
-            coordination before moving to quotation or technical review.
+            support on GRE, GRP, and FRP pipe configuration, connection systems, service
+            conditions, documentation, and project coordination before moving to quotation or
+            technical review.
           </p>
         </div>
 
@@ -737,17 +782,17 @@ function ProductsPage() {
   ]
 
   usePageMeta({
-    title: 'Composite Pipe Products | Well Pipe, Line Pipe, Marine Pipe, Flexible Pipe',
+    title: 'GRE, GRP, and FRP Pipe Products | Well Pipe, Line Pipe, Marine Pipe',
     description:
-      'Explore Hovoy composite pipe product lines including well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and fittings and joints.',
+      'Explore Hovoy GRE, GRP, and FRP pipe product lines including well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, and fittings and joints.',
     path: '/products/',
   })
 
   return (
     <PageHero
       eyebrow="Products"
-      title="Composite pipe product lines for industrial, marine, and energy projects."
-      description="Explore the main Hovoy product families, from well tubing and casing to line pipe, marine systems, flexible composite pipe, and fittings and joints."
+      title="GRE, GRP, and FRP pipe product lines for industrial, marine, and energy projects."
+      description="Explore the main Hovoy product families, from well tubing and casing to line pipe, marine systems, flexible pipe, and fittings and joints."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -817,7 +862,7 @@ function ProductDetailPage() {
   }
 
   usePageMeta({
-    title: `${page.title} | Hovoy Composite Pipe`,
+    title: `${page.title} | Hovoy GRE Pipe`,
     description: page.metaDescription,
     path: `/products/${page.slug}/`,
   })
@@ -1067,7 +1112,7 @@ function ApplicationDetailPage() {
   }
 
   usePageMeta({
-    title: `${page.title} | Hovoy Composite Pipe`,
+    title: `${page.title} | Hovoy GRE Pipe`,
     description: page.metaDescription,
     path: `/applications/${page.slug}/`,
   })
@@ -1179,7 +1224,7 @@ function EngineeringPage() {
   const engineeringTopics = [
     {
       title: 'Material Systems By Duty',
-      text: 'Different service conditions may require different composite system logic. Buyers usually compare media resistance, operating environment, handling considerations, and lifecycle expectations before final selection.',
+      text: 'Different service conditions may require different GRE, GRP, FRP, or flexible pipe logic. Project teams usually compare media resistance, operating environment, handling considerations, and lifecycle expectations before final selection.',
     },
     {
       title: 'Connection And Installation Logic',
@@ -1219,17 +1264,17 @@ function EngineeringPage() {
   ]
 
   usePageMeta({
-    title: 'Engineering | Materials, Joints, Standards, and Quality Logic',
+    title: 'Engineering | GRE, GRP, FRP Pipe Materials, Joints, and Quality Logic',
     description:
-      'Review Hovoy engineering support for composite pipe systems including material systems, joint methods, standards, quality control, and RFQ preparation.',
+      'Review Hovoy engineering support for GRE, GRP, and FRP pipe systems including material systems, joint methods, quality control, and RFQ preparation.',
     path: '/engineering/',
   })
 
   return (
     <PageHero
       eyebrow="Engineering"
-      title="Engineering support for materials, joints, standards, and quality control."
-      description="Product performance depends on more than pipe type alone. Hovoy supports project teams with application-focused guidance on material systems, connection methods, standards, and project documentation."
+      title="Engineering support for GRE, GRP, FRP, and flexible pipe projects."
+      description="Product performance depends on more than pipe type alone. Hovoy supports project teams with application-focused guidance on material systems, connection methods, quality control, and project documentation."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -1329,10 +1374,10 @@ function EngineeringPage() {
 
 function ResourcesPage() {
   const resourceGroups = [
-    {
-      title: 'Product Scope Guidance',
-      text: 'Buyers often start by confirming whether a project is better suited to well tubing and casing, rigid line pipe, marine systems, or flexible composite pipe.',
-    },
+      {
+        title: 'Product Scope Guidance',
+        text: 'Project teams often start by confirming whether a job is better suited to GRE or GRP line pipe, FRP process piping, marine piping, or flexible pipe supply.',
+      },
     {
       title: 'Technical Clarification',
       text: 'Pressure class, service media, route conditions, fittings ratio, and tie-in points all affect how the system should be reviewed before quotation.',
@@ -1360,16 +1405,16 @@ function ResourcesPage() {
   ]
 
   usePageMeta({
-    title: 'Resources | FAQ, Downloads Planning, and Buyer Guidance',
+    title: 'Resources | GRE, GRP, and FRP Pipe FAQ, Downloads, and RFQ Guidance',
     description:
-      'See Hovoy resources for FAQ content, data sheet planning, RFQ guidance, and technical information for composite pipe projects.',
+      'See Hovoy resources for GRE, GRP, and FRP pipe FAQ content, data sheet planning, RFQ guidance, and technical information for industrial pipe projects.',
     path: '/resources/',
   })
 
   return (
     <PageHero
       eyebrow="Resources"
-      title="Technical resources and project guidance for composite pipe projects."
+      title="Technical resources and project guidance for GRE, GRP, and FRP pipe projects."
       description="This section helps project teams prepare cleaner RFQs, identify the right product family, and organize the technical information needed for faster review."
     >
       <div className="capability-grid">
@@ -1450,7 +1495,7 @@ function FaqPage() {
   ]
 
   usePageMeta({
-      title: 'FAQ | Composite Pipe Questions For Industrial Projects',
+      title: 'FAQ | GRE, GRP, and FRP Pipe Questions For Industrial Projects',
     description:
       'Read common FAQ answers about composite pipe selection, well tubing and casing, line pipe, marine pipe, flexible pipe, and inquiry preparation.',
     path: '/resources/faq/',
@@ -1478,8 +1523,8 @@ function FaqPage() {
 
       <PageHero
         eyebrow="FAQ"
-        title="Frequently asked questions about composite pipe supply and selection."
-        description="Review common questions on product fit, application areas, and inquiry preparation for well, line, marine, and flexible composite pipe systems."
+        title="Frequently asked questions about GRE, GRP, FRP, and flexible pipe supply."
+        description="Review common questions on product fit, application areas, and inquiry preparation for well, line, marine, and flexible pipe systems."
       >
         <div className="faq-list">
           {faqItems.map((item) => (
@@ -1514,38 +1559,38 @@ function FaqPage() {
 
 function AboutPage() {
   usePageMeta({
-    title: 'About Hovoy | Composite Pipe Supplier For Industrial, Marine, and Energy Projects',
+    title: 'About Hovoy | GRE, GRP, and FRP Pipe Supplier For Industrial Projects',
     description:
-      'Learn about Hovoy Composite Pipe, our product focus, export-oriented supply capability, and support for industrial, marine, and energy pipeline projects.',
+      'Learn about Hovoy GRE Pipe, our 20+ years of industry experience, product focus, export-oriented supply capability, and support for industrial, marine, and energy pipeline projects.',
     path: '/about/',
   })
 
   return (
     <PageHero
       eyebrow="About"
-      title="Composite pipe solutions for industrial, marine, and energy markets."
-      description="Hovoy focuses on export-oriented supply of well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and system accessories for demanding service conditions."
+      title="GRE, GRP, and FRP pipe solutions backed by industry experience and project familiarity."
+      description="Hovoy focuses on export-oriented supply of well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, and system accessories for demanding service conditions."
     >
       <div className="timeline">
         <article>
           <span>01</span>
-          <strong>Product Focus</strong>
-          <p>Our portfolio covers rigid and flexible composite pipe systems for distinct operating environments and project needs.</p>
+          <strong>20+ Years Of Industry Experience</strong>
+          <p>Our team brings long-term industry experience across GRE, GRP, FRP, and flexible pipe products for industrial and marine projects.</p>
         </article>
         <article>
           <span>02</span>
-          <strong>Application Coverage</strong>
-          <p>We support oil and gas, marine, desalination, water treatment, and corrosive process applications.</p>
+          <strong>Material And Process Familiarity</strong>
+          <p>We understand raw materials, production flow, fittings scope, and manufacturing coordination behind project supply.</p>
         </article>
         <article>
           <span>03</span>
-          <strong>Project Support</strong>
-          <p>Technical clarification, quotation review, and export coordination help projects move from inquiry to delivery.</p>
+          <strong>Application Coverage</strong>
+          <p>We support oil and gas, marine, desalination, water treatment, petrochemical, and corrosive process applications.</p>
         </article>
         <article>
           <span>04</span>
-          <strong>Commercial Response</strong>
-          <p>Product pages, application pages, and contact channels are aligned to support clearer and faster RFQ communication.</p>
+          <strong>Overseas Project Coordination</strong>
+          <p>Technical clarification, quotation review, and export communication help overseas industrial projects move from inquiry to delivery.</p>
         </article>
       </div>
 
@@ -1559,21 +1604,21 @@ function AboutPage() {
             <h3>Application-Led Review</h3>
             <p>
               We separate well, line, marine, and flexible systems so clients can discuss the right
-              product family instead of sorting through unrelated categories.
+              GRE, GRP, FRP, or flexible product family instead of sorting through unrelated categories.
             </p>
           </article>
           <article className="detail-panel">
-            <h3>Export Coordination</h3>
+            <h3>Process And Scope Familiarity</h3>
             <p>
-              Commercial review can include packing expectations, delivery timing, documentation
-              needs, and the balance between straight pipe and fabricated scope.
+              Commercial review benefits when the supplier understands raw materials, manufacturing
+              flow, fittings logic, and the balance between straight pipe and fabricated scope.
             </p>
           </article>
           <article className="detail-panel">
-            <h3>RFQ Efficiency</h3>
+            <h3>Overseas Project Communication</h3>
             <p>
               Clearer product pages and engineering guidance help reduce missing information so
-              technical and quotation review can move faster.
+              petrochemical and industrial project communication can move faster across borders.
             </p>
           </article>
         </div>
@@ -1632,16 +1677,16 @@ function ManufacturingQualityPage() {
   ]
 
   usePageMeta({
-    title: 'Manufacturing and Quality | Composite Pipe Project Support',
+    title: 'Manufacturing and Quality | GRE, GRP, and FRP Pipe Project Support',
     description:
-      'Review Hovoy manufacturing and quality support for composite pipe projects including production planning, inspection discussion, documentation, and export shipment readiness.',
+      'Review Hovoy manufacturing and quality support for GRE, GRP, and FRP pipe projects including production planning, inspection discussion, documentation, and export shipment readiness.',
     path: '/about/manufacturing-quality/',
   })
 
   return (
     <PageHero
       eyebrow="About / Manufacturing and Quality"
-      title="Manufacturing and quality support for export-oriented composite pipe projects."
+      title="Manufacturing and quality support for GRE, GRP, and FRP pipe projects."
       description="Industrial projects often need more than product pages alone. This section explains how production planning, inspection discussion, and shipment readiness fit into project supply."
     >
       <section className="section section-grid page-section">
@@ -1728,9 +1773,9 @@ function ContactPage() {
   ]
 
   usePageMeta({
-    title: 'Contact Hovoy | RFQ For Composite Pipe Systems',
+    title: 'Contact Hovoy | RFQ For GRE, GRP, and FRP Pipe Systems',
     description:
-      'Contact Hovoy Composite Pipe for RFQs related to well tubing and casing, line pipe, marine pipe, flexible composite pipe, fittings, and engineered project support.',
+      'Contact Hovoy GRE Pipe for RFQs related to well tubing and casing, line pipe, marine pipe, flexible pipe, fittings, and engineered project support.',
     path: '/contact/',
   })
 
@@ -1798,8 +1843,8 @@ function ContactPage() {
 
 function NotFoundPage() {
   usePageMeta({
-    title: 'Page Not Found | Hovoy Composite Pipe',
-    description: 'The requested Hovoy Composite Pipe page was not found.',
+    title: 'Page Not Found | Hovoy GRE Pipe',
+    description: 'The requested Hovoy GRE Pipe page was not found.',
     path: '/404/',
   })
 
