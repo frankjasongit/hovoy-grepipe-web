@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, NavLink, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import './App.css'
 import heroRefinery from './assets/refinery-hero-pexels.jpg'
 import {
@@ -15,6 +15,9 @@ type MetaConfig = {
   description: string
   path: string
 }
+
+export type MetaSnapshot = Partial<MetaConfig>
+export const MetaContext = createContext<MetaSnapshot | null>(null)
 
 type KeywordPage = {
   slug: 'gre-pipe' | 'grp-pipe' | 'frp-pipe'
@@ -145,6 +148,14 @@ function ensureMetaAttribute(
 }
 
 function usePageMeta({ title, description, path }: MetaConfig) {
+  const metaSnapshot = useContext(MetaContext)
+
+  if (metaSnapshot) {
+    metaSnapshot.title = title
+    metaSnapshot.description = description
+    metaSnapshot.path = path
+  }
+
   useEffect(() => {
     document.title = title
 
@@ -2291,8 +2302,11 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
   )
 }
 
-function KeywordLandingPage() {
-  const { slug } = useParams()
+function KeywordLandingPage({
+  slug,
+}: {
+  slug: KeywordPage['slug']
+}) {
   const page = keywordPages.find((item) => item.slug === slug)
 
   if (!page) {
@@ -2973,31 +2987,37 @@ function CtaSection({ title, text }: { title: string; text: string }) {
   )
 }
 
+export function AppRoutes() {
+  return (
+    <SiteLayout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/:slug" element={<ProductDetailPage />} />
+        <Route path="/applications" element={<ApplicationsPage />} />
+        <Route path="/applications/:slug" element={<ApplicationDetailPage />} />
+        <Route path="/engineering" element={<EngineeringPage />} />
+        <Route path="/why-hovoy" element={<WhyHovoyPage />} />
+        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/resources/downloads" element={<DownloadsPage />} />
+        <Route path="/resources/faq" element={<FaqPage />} />
+        <Route path="/gre-pipe" element={<KeywordLandingPage slug="gre-pipe" />} />
+        <Route path="/grp-pipe" element={<KeywordLandingPage slug="grp-pipe" />} />
+        <Route path="/frp-pipe" element={<KeywordLandingPage slug="frp-pipe" />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/about/manufacturing-quality" element={<ManufacturingQualityPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </SiteLayout>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <SiteLayout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:slug" element={<ProductDetailPage />} />
-          <Route path="/applications" element={<ApplicationsPage />} />
-          <Route path="/applications/:slug" element={<ApplicationDetailPage />} />
-          <Route path="/engineering" element={<EngineeringPage />} />
-          <Route path="/why-hovoy" element={<WhyHovoyPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/resources/downloads" element={<DownloadsPage />} />
-          <Route path="/resources/faq" element={<FaqPage />} />
-          <Route path="/gre-pipe" element={<KeywordLandingPage />} />
-          <Route path="/grp-pipe" element={<KeywordLandingPage />} />
-          <Route path="/frp-pipe" element={<KeywordLandingPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/about/manufacturing-quality" element={<ManufacturingQualityPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </SiteLayout>
+      <AppRoutes />
     </BrowserRouter>
   )
 }
