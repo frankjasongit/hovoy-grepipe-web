@@ -375,6 +375,9 @@
 }
 
 .rail-card {
+  position: relative;
+  --surface-lift: 0px;
+  --surface-scale: 1;
   display: grid;
   gap: 0.8rem;
   padding: 1.25rem;
@@ -384,6 +387,18 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.92)),
     rgba(255, 255, 255, 0.88);
   box-shadow: 0 14px 30px rgba(17, 31, 46, 0.06);
+  transform: translate3d(0, var(--surface-lift), 0) scale(var(--surface-scale));
+  transition:
+    transform 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 450ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.rail-card:hover {
+  --surface-lift: -6px;
+  --surface-scale: 1.015;
+  box-shadow: 0 32px 58px rgba(17, 31, 46, 0.12);
+  border-color: rgba(26, 122, 116, 0.25);
 }
 
 .rail-card p,
@@ -408,6 +423,11 @@
     linear-gradient(155deg, rgba(12, 29, 43, 0.99), rgba(22, 59, 80, 0.96)),
     #10283a;
   box-shadow: 0 24px 42px rgba(16, 38, 55, 0.18);
+}
+
+.rail-card-dark:hover {
+  box-shadow: 0 32px 64px rgba(16, 38, 55, 0.28);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .rail-card-dark p {
