@@ -648,9 +648,9 @@ function HomePage() {
   ]
 
   usePageMeta({
-    title: 'Hovoy GRE Pipe | GRE, GRP, and FRP Pipe Systems',
+    title: 'GRE, GRP, and FRP Pipe Supplier | Hovoy GRE Pipe',
     description:
-      'Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, fittings, and industrial export projects.',
+      'Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, fittings, and export-oriented industrial projects.',
     path: '/',
   })
 
@@ -675,11 +675,11 @@ function HomePage() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">GRE / GRP / FRP Pipe Systems</p>
-          <h1>Composite pipe systems designed for industrial routes, corrosive media, and project delivery.</h1>
+          <h1>GRE, GRP, and FRP pipe supplier for industrial, marine, and energy projects.</h1>
           <p className="hero-text">
-            Hovoy supports GRE, GRP, and FRP pipe projects with product-family guidance,
-            application matching, manufacturing familiarity, and export-oriented communication for
-            well service, line transport, marine systems, flexible flowlines, and fittings packages.
+            Hovoy supports well tubing and casing, line pipe, marine and offshore pipe, flexible
+            composite pipe, and fittings packages for corrosive service, utility routing, seawater
+            systems, and export-oriented industrial supply.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/contact">
@@ -791,7 +791,7 @@ function HomePage() {
                 ))}
               </ul>
               <Link className="text-link" to={`/products/${item.slug}`}>
-                View product page
+                Explore {item.title}
               </Link>
             </article>
           ))}
@@ -817,7 +817,7 @@ function HomePage() {
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
               <Link className="text-link" to={`/applications/${item.slug}`}>
-                View application page
+                Explore {item.title} applications
               </Link>
             </article>
           ))}
@@ -965,17 +965,17 @@ function ProductsPage() {
   ]
 
   usePageMeta({
-    title: 'GRE, GRP, and FRP Pipe Products | Well Pipe, Line Pipe, Marine Pipe',
+    title: 'GRE, GRP, and FRP Pipe Products | Well, Line, Marine, Flexible Pipe',
     description:
-      'Explore Hovoy GRE, GRP, and FRP pipe product lines including well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, and fittings and joints.',
+      'Explore Hovoy GRE, GRP, and FRP pipe products including well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and fittings and joints.',
     path: '/products/',
   })
 
   return (
     <PageHero
       eyebrow="Products"
-      title="GRE, GRP, and FRP pipe product lines for industrial, marine, and energy projects."
-      description="Explore the main Hovoy product families, from well tubing and casing to line pipe, marine systems, flexible pipe, and fittings and joints."
+      title="GRE, GRP, and FRP pipe products for well service, line pipe, marine systems, and flexible pipe projects."
+      description="Compare Hovoy product families for well tubing and casing, line pipe, marine and offshore pipe, flexible composite pipe, and fittings and joints."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -1003,7 +1003,7 @@ function ProductsPage() {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link className="text-link" to={item.to}>
-                Open product page
+                Explore {item.title}
               </Link>
             </article>
           ))}
@@ -1022,7 +1022,7 @@ function ProductsPage() {
               ))}
             </ul>
             <Link className="text-link" to={`/products/${item.slug}`}>
-              View product page
+              Explore {item.title}
             </Link>
           </article>
         ))}
@@ -1219,7 +1219,7 @@ function ProductDetailPage() {
   }
 
   usePageMeta({
-    title: `${page.title} | Hovoy GRE Pipe`,
+    title: `${page.title} | GRE, GRP, and FRP Pipe Supply | Hovoy`,
     description: page.metaDescription,
     path: `/products/${page.slug}/`,
   })
@@ -1495,7 +1495,7 @@ function ProductDetailPage() {
                 <h3>{item.title}</h3>
                 <p>{item.summary}</p>
                 <Link className="text-link" to={`/applications/${item.slug}`}>
-                  View application page
+                  Explore {item.title}
                 </Link>
               </article>
             ))}
@@ -1553,17 +1553,17 @@ function ApplicationsPage() {
   ]
 
   usePageMeta({
-    title: 'Applications | Oil and Gas, Marine, Desalination, Chemical Processing',
+    title: 'Composite Pipe Applications | Oil and Gas, Marine, Desalination, Chemical',
     description:
-      'Explore Hovoy application pages for oil and gas, marine and offshore, water treatment and desalination, and chemical processing composite piping systems.',
+      'Explore composite pipe applications for oil and gas, marine and offshore, water treatment and desalination, and chemical processing projects.',
     path: '/applications/',
   })
 
   return (
     <PageHero
       eyebrow="Applications"
-      title="Composite piping solutions for major industrial and marine applications."
-      description="Review key application sectors including oil and gas, marine and offshore, desalination, water treatment, and chemical processing."
+      title="Composite pipe applications for oil and gas, marine, desalination, and chemical processing."
+      description="Review Hovoy application pages for corrosive service, seawater systems, utility routing, treatment plants, and process piping projects."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -1591,7 +1591,7 @@ function ApplicationsPage() {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link className="text-link" to={item.to}>
-                Open application page
+                Explore {item.title}
               </Link>
             </article>
           ))}
@@ -1604,7 +1604,7 @@ function ApplicationsPage() {
             <h3>{item.title}</h3>
             <p>{item.summary}</p>
             <Link className="text-link" to={`/applications/${item.slug}`}>
-              View application page
+              Explore {item.title}
             </Link>
           </article>
         ))}
@@ -1627,7 +1627,7 @@ function ApplicationDetailPage() {
   }
 
   usePageMeta({
-    title: `${page.title} | Hovoy GRE Pipe`,
+    title: `${page.title} Composite Pipe Applications | Hovoy GRE Pipe`,
     description: page.metaDescription,
     path: `/applications/${page.slug}/`,
   })
@@ -1677,7 +1677,7 @@ function ApplicationDetailPage() {
                 <h3>{item.title}</h3>
                 <p>{item.summary}</p>
                 <Link className="text-link" to={`/products/${item.slug}`}>
-                  View product page
+                  Explore {item.title}
                 </Link>
               </article>
             ))}
@@ -1779,17 +1779,17 @@ function EngineeringPage() {
   ]
 
   usePageMeta({
-    title: 'Engineering | GRE, GRP, FRP Pipe Materials, Joints, and Quality Logic',
+    title: 'Engineering | GRE, GRP, FRP Pipe Materials, Joints, and Quality',
     description:
-      'Review Hovoy engineering support for GRE, GRP, and FRP pipe systems including material systems, joint methods, quality control, and RFQ preparation.',
+      'Review Hovoy engineering support for GRE, GRP, and FRP pipe systems including material selection, joint methods, quality control, standards, and RFQ preparation.',
     path: '/engineering/',
   })
 
   return (
     <PageHero
       eyebrow="Engineering"
-      title="Engineering support for GRE, GRP, FRP, and flexible pipe projects."
-      description="Product performance depends on more than pipe type alone. Hovoy supports project teams with application-focused guidance on material systems, connection methods, quality control, and project documentation."
+      title="Engineering support for GRE, GRP, FRP, and flexible composite pipe projects."
+      description="Review material systems, joint methods, standards, quality control, and project documentation support for composite pipe selection and RFQ preparation."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -1941,15 +1941,15 @@ function ResourcesPage() {
   usePageMeta({
     title: 'Resources | GRE, GRP, and FRP Pipe FAQ, Downloads, and RFQ Guidance',
     description:
-      'See Hovoy resources for GRE, GRP, and FRP pipe FAQ content, data sheet planning, RFQ guidance, and technical information for industrial pipe projects.',
+      'See Hovoy resources for GRE, GRP, and FRP pipe FAQ content, downloads, RFQ guidance, and technical information for industrial pipe projects.',
     path: '/resources/',
   })
 
   return (
     <PageHero
       eyebrow="Resources"
-      title="Technical resources and project guidance for GRE, GRP, and FRP pipe projects."
-      description="This section helps project teams prepare cleaner RFQs, identify the right product family, and organize the technical information needed for faster review."
+      title="GRE, GRP, and FRP pipe resources, downloads, and RFQ guidance."
+      description="Use Hovoy resources to compare product families, prepare RFQs, request technical documents, and organize application details for faster review."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -1975,7 +1975,7 @@ function ResourcesPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Resource Focus</p>
-          <h2>How this section supports project communication.</h2>
+          <h2>How these resources support product selection and RFQ preparation.</h2>
         </div>
         <div className="detail-card-grid">
           {resourceGroups.map((item) => (
@@ -2100,15 +2100,15 @@ function DownloadsPage() {
   usePageMeta({
     title: 'Downloads | Project Documents And Data Support | Hovoy GRE Pipe',
     description:
-      'Review Hovoy downloads and documentation support for GRE, GRP, FRP, and flexible pipe projects including product briefs, data review, and quality-related material.',
+      'Review Hovoy downloads and documentation support for GRE, GRP, FRP, and flexible pipe projects including product briefs, project data review, and quality-related material.',
     path: '/resources/downloads/',
   })
 
   return (
     <PageHero
       eyebrow="Resources / Downloads"
-      title="Project documents and data support for GRE, GRP, FRP, and flexible pipe RFQs."
-      description="Request project documents that match the product family, application, and review stage for your GRE, GRP, FRP, or flexible pipe inquiry."
+      title="Composite pipe downloads and project document support for RFQs."
+      description="Request Hovoy product briefs, manufacturing and quality material, and RFQ support documents for GRE, GRP, FRP, and flexible composite pipe projects."
     >
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
@@ -2172,23 +2172,23 @@ function DownloadsPage() {
         <div className="sector-grid">
           <article className="sector-card">
             <h3>Why Hovoy</h3>
-            <p>Review the supplier-side reasons Hovoy is positioning itself to win in a crowded market.</p>
+            <p>Review the commercial reasons buyers shortlist Hovoy for GRE, GRP, and FRP pipe projects.</p>
             <Link className="text-link" to="/why-hovoy">
-              Open why hovoy
+              Explore why Hovoy
             </Link>
           </article>
           <article className="sector-card">
             <h3>Engineering</h3>
             <p>Use the engineering page when the document request depends on material, joints, or technical review scope.</p>
             <Link className="text-link" to="/engineering">
-              Open engineering
+              Explore engineering support
             </Link>
           </article>
           <article className="sector-card">
             <h3>Contact</h3>
             <p>Move directly to Hovoy if the product family and project context are already clear.</p>
             <Link className="text-link" to="/contact">
-              Open contact
+              Contact Hovoy
             </Link>
           </article>
         </div>
@@ -2287,7 +2287,7 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link className="text-link" to={item.to}>
-                Open page
+                Explore {item.title}
               </Link>
             </article>
           ))}
@@ -2325,7 +2325,7 @@ function FaqPage() {
   ]
 
   usePageMeta({
-      title: 'FAQ | GRE, GRP, and FRP Pipe Questions For Industrial Projects',
+    title: 'FAQ | GRE, GRP, and FRP Pipe Questions for Industrial Projects',
     description:
       'Read common FAQ answers about composite pipe selection, well tubing and casing, line pipe, marine pipe, flexible pipe, and inquiry preparation.',
     path: '/resources/faq/',
@@ -2376,7 +2376,7 @@ function FaqPage() {
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
                 <Link className="text-link" to={item.to}>
-                  Open page
+                  Explore {item.title}
                 </Link>
               </article>
             ))}
@@ -2398,8 +2398,8 @@ function AboutPage() {
   return (
     <PageHero
       eyebrow="About"
-      title="GRE, GRP, and FRP pipe solutions backed by industry experience and project familiarity."
-      description="Hovoy focuses on export-oriented supply of well tubing and casing, line pipe, marine and offshore pipe, flexible pipe, and system accessories for demanding service conditions."
+      title="About Hovoy GRE Pipe and our composite pipe supply experience."
+      description="Learn how Hovoy supports GRE, GRP, and FRP pipe projects across well service, line pipe, marine and offshore systems, flexible pipe, and fittings supply."
     >
       <div className="timeline">
         <article>
@@ -2467,7 +2467,7 @@ function AboutPage() {
             quality support.
           </p>
           <Link className="text-link" to="/about/manufacturing-quality">
-            View manufacturing and quality page
+            Explore manufacturing and quality support
           </Link>
         </article>
       </section>
@@ -2526,8 +2526,8 @@ function WhyHovoyPage() {
   return (
     <PageHero
       eyebrow="Why Hovoy"
-      title="Why clients choose Hovoy in a crowded GRE, GRP, and FRP pipe market."
-      description="Hovoy should not compete as a generic supplier. The advantage is long industry experience, process familiarity, overseas project communication, and project-oriented package support."
+      title="Why buyers choose Hovoy for GRE, GRP, and FRP pipe projects."
+      description="See why industrial buyers choose Hovoy for GRE, GRP, FRP, and flexible pipe projects, from industry experience and process familiarity to export coordination and package support."
     >
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
@@ -2590,21 +2590,21 @@ function WhyHovoyPage() {
             <h3>Line Pipe</h3>
             <p>Best for petrochemical, utility, produced-water, and industrial transfer projects.</p>
             <Link className="text-link" to="/products/line-pipe">
-              Open line pipe page
+              Explore line pipe solutions
             </Link>
           </article>
           <article className="sector-card">
             <h3>Marine and Offshore Pipe</h3>
             <p>Best for seawater, shipboard routing, offshore utility systems, and export package support.</p>
             <Link className="text-link" to="/products/marine-offshore-pipe">
-              Open marine page
+              Explore marine and offshore pipe
             </Link>
           </article>
           <article className="sector-card">
             <h3>Contact Hovoy</h3>
             <p>Send the application, product family, fittings scope, and destination market for a faster review.</p>
             <Link className="text-link" to="/contact">
-              Open contact page
+              Contact Hovoy
             </Link>
           </article>
         </div>
@@ -2659,8 +2659,8 @@ function ManufacturingQualityPage() {
   return (
     <PageHero
       eyebrow="About / Manufacturing and Quality"
-      title="Manufacturing and quality support for GRE, GRP, and FRP pipe projects."
-      description="Industrial projects often need more than product pages alone. This section explains how production planning, inspection discussion, and shipment readiness fit into project supply."
+      title="Manufacturing and quality support for GRE, GRP, and FRP pipe supply."
+      description="Review Hovoy production planning, inspection discussion, documentation support, and shipment readiness for GRE, GRP, and FRP pipe projects."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -2713,6 +2713,158 @@ function ManufacturingQualityPage() {
   )
 }
 
+function SmartRFQForm() {
+  const [step, setStep] = React.useState(1)
+  const [formData, setFormData] = React.useState({
+    application: '',
+    media: '',
+    pressure: '',
+    dimensions: '',
+    fittingsScope: '',
+    destination: '',
+    name: '',
+    email: '',
+    company: '',
+    additionalNotes: ''
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const nextStep = () => setStep((s) => s + 1)
+  const prevStep = () => setStep((s) => s - 1)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Formatting a mailto link with the structured data
+    const subject = encodeURIComponent(`Smart RFQ from ${formData.company || formData.name}`)
+    const body = encodeURIComponent(`
+Application: ${formData.application}
+Media & Temp: ${formData.media}
+Pressure Class: ${formData.pressure}
+Dimensions/Route: ${formData.dimensions}
+Fittings Scope: ${formData.fittingsScope}
+Destination: ${formData.destination}
+
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+
+Notes: ${formData.additionalNotes}
+    `)
+    window.location.href = `mailto:sales@hovoy-grepipe.com?subject=${subject}&body=${body}`
+  }
+
+  return (
+    <div className="smart-rfq-container">
+      <div className="rfq-progress">
+        <div className={`step-indicator ${step >= 1 ? 'active' : ''}`}>1. Application</div>
+        <div className={`step-indicator ${step >= 2 ? 'active' : ''}`}>2. Technical</div>
+        <div className={`step-indicator ${step >= 3 ? 'active' : ''}`}>3. Commercial</div>
+        <div className={`step-indicator ${step >= 4 ? 'active' : ''}`}>4. Contact</div>
+      </div>
+
+      <form className="rfq-form" onSubmit={handleSubmit}>
+        {step === 1 && (
+          <div className="form-step slide-in">
+            <h3>1. Primary Application</h3>
+            <p>Select the main operating environment for your project.</p>
+            <div className="radio-grid">
+              {['Oil & Gas (Well/Line)', 'Marine & Offshore', 'Water Treatment / Desalination', 'Chemical Processing', 'Other'].map(app => (
+                <label key={app} className={`radio-card ${formData.application === app ? 'selected' : ''}`}>
+                  <input type="radio" name="application" value={app} checked={formData.application === app} onChange={handleChange} />
+                  <span>{app}</span>
+                </label>
+              ))}
+            </div>
+            <div className="form-actions right">
+              <button type="button" className="button button-primary" onClick={nextStep} disabled={!formData.application}>Next Step</button>
+            </div>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="form-step slide-in">
+            <h3>2. Technical Parameters</h3>
+            <p>Provide basic service conditions to help us align the right material system.</p>
+            <div className="input-group">
+              <label htmlFor="media">Service Media & Temperature</label>
+              <input type="text" id="media" name="media" placeholder="e.g., Raw seawater at 45°C" value={formData.media} onChange={handleChange} required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="pressure">Pressure Class Requirements</label>
+              <input type="text" id="pressure" name="pressure" placeholder="e.g., 16 Bar / 232 PSI" value={formData.pressure} onChange={handleChange} required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="dimensions">Diameter Range & Route Scope</label>
+              <input type="text" id="dimensions" name="dimensions" placeholder="e.g., DN200 - DN600, Approx 2km straight pipe" value={formData.dimensions} onChange={handleChange} required />
+            </div>
+            <div className="form-actions space-between">
+              <button type="button" className="button button-secondary" onClick={prevStep}>Back</button>
+              <button type="button" className="button button-primary" onClick={nextStep} disabled={!formData.media || !formData.pressure || !formData.dimensions}>Next Step</button>
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="form-step slide-in">
+            <h3>3. Package Scope & Logistics</h3>
+            <p>Help us understand the completeness of the package required.</p>
+            <div className="input-group">
+              <label htmlFor="fittingsScope">Fittings & Transition Scope</label>
+              <select id="fittingsScope" name="fittingsScope" value={formData.fittingsScope} onChange={handleChange} required>
+                <option value="" disabled>Select scope level...</option>
+                <option value="Straight pipe only">Straight pipe only</option>
+                <option value="Pipe + Standard Fittings (Elbows, Tees, Flanges)">Pipe + Standard Fittings (Elbows, Tees, Flanges)</option>
+                <option value="Complete Spool Prefabrication Required">Complete Spool Prefabrication Required</option>
+                <option value="Unsure / Need Engineering Support">Unsure / Need Engineering Support</option>
+              </select>
+            </div>
+            <div className="input-group">
+              <label htmlFor="destination">Destination Country / Project Location</label>
+              <input type="text" id="destination" name="destination" placeholder="e.g., UAE, Saudi Arabia, Singapore" value={formData.destination} onChange={handleChange} required />
+            </div>
+            <div className="form-actions space-between">
+              <button type="button" className="button button-secondary" onClick={prevStep}>Back</button>
+              <button type="button" className="button button-primary" onClick={nextStep} disabled={!formData.fittingsScope || !formData.destination}>Next Step</button>
+            </div>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="form-step slide-in">
+            <h3>4. Contact Details</h3>
+            <p>Where should we send the technical review and quotation?</p>
+            <div className="input-grid">
+              <div className="input-group">
+                <label htmlFor="name">Your Name</label>
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+              </div>
+              <div className="input-group">
+                <label htmlFor="company">Company Name</label>
+                <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} required />
+              </div>
+            </div>
+            <div className="input-group">
+              <label htmlFor="email">Work Email</label>
+              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+            </div>
+            <div className="input-group">
+              <label htmlFor="additionalNotes">Additional Project Notes (Optional)</label>
+              <textarea id="additionalNotes" name="additionalNotes" rows={3} value={formData.additionalNotes} onChange={handleChange}></textarea>
+            </div>
+            <div className="form-actions space-between">
+              <button type="button" className="button button-secondary" onClick={prevStep}>Back</button>
+              <button type="submit" className="button button-primary" disabled={!formData.name || !formData.email || !formData.company}>Submit RFQ</button>
+            </div>
+          </div>
+        )}
+      </form>
+    </div>
+  )
+}
+
 function ContactPage() {
   const inquiryRoutes = [
     {
@@ -2727,15 +2879,6 @@ function ContactPage() {
       title: 'Commercial Scope',
       text: 'Clarify destination country, delivery timing, packing expectations, and whether you need straight pipe only or a broader package with spools and accessories.',
     },
-  ]
-
-  const rfqChecklist = [
-    'Application sector and service media',
-    'Product family or shortlist under review',
-    'Diameter range, pressure class, and estimated quantities',
-    'Line list, route sketch, or general arrangement if available',
-    'Fittings, flanges, reducers, or transition details',
-    'Destination country, target delivery window, and documentation needs',
   ]
 
   const supportLinks = [
@@ -2810,8 +2953,8 @@ function ContactPage() {
   return (
     <PageHero
       eyebrow="Contact"
-      title="Contact Hovoy for product selection, technical review, and project quotations."
-      description="Send your application details, product scope, dimensions, pressure class, and destination market so we can review the request and respond more accurately."
+      title="Contact Hovoy for GRE, GRP, and FRP pipe RFQs and technical review."
+      description="Send product scope, service media, dimensions, pressure class, fittings requirements, and destination market for faster quotation and technical review."
     >
       <section className="section section-grid page-section">
         <div className="section-heading">
@@ -2844,23 +2987,10 @@ function ContactPage() {
       </section>
 
       <div className="detail-grid">
-        <article className="detail-panel">
-          <h3>Primary contact</h3>
-          <p className="contact-email">
-            <a href="mailto:sales@hovoy-grepipe.com">sales@hovoy-grepipe.com</a>
-          </p>
-          <p>
-            Use this address for product selection, project discussion, export RFQs, and follow-up
-            on composite pipe requirements.
-          </p>
-        </article>
-        <article className="detail-panel">
-          <h3>Recommended RFQ information</h3>
-          <ul className="detail-list">
-            {rfqChecklist.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+        <article className="detail-panel rfq-panel-container">
+          <p className="eyebrow" style={{marginBottom: '1rem'}}>Smart RFQ Builder</p>
+          <h2>Build a complete engineering package request.</h2>
+          <SmartRFQForm />
         </article>
       </div>
 
@@ -2907,7 +3037,7 @@ function ContactPage() {
             <article className="detail-panel" key={item.to}>
               <h3>{item.title}</h3>
               <Link className="text-link" to={item.to}>
-                Open page
+                Explore {item.title}
               </Link>
             </article>
           ))}
