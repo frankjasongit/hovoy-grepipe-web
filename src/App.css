@@ -150,19 +150,20 @@
 
 .page-hero-copy h1,
 .hero-copy h1 {
-  line-height: 0.94;
+  line-height: 0.98;
+  text-wrap: balance;
 }
 
 .hero-copy h1 {
-  max-width: 11ch;
+  max-width: 12ch;
   margin-top: 1rem;
-  font-size: clamp(3.1rem, 7vw, 6.2rem);
+  font-size: clamp(2.9rem, 6.2vw, 5.4rem);
 }
 
 .page-hero-copy h1 {
-  max-width: 12ch;
+  max-width: 14ch;
   margin-top: 0.8rem;
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
 }
 
 .eyebrow {
@@ -451,9 +452,10 @@
 
 .section-heading h2,
 .contact-panel h2 {
-  max-width: 14ch;
+  max-width: 16ch;
   font-size: clamp(2.2rem, 4vw, 4rem);
   line-height: 0.98;
+  text-wrap: balance;
 }
 
 .section-heading p:last-child,
@@ -494,7 +496,9 @@
   padding: 1.35rem;
   border-radius: 1.35rem;
   border: 1px solid rgba(17, 31, 46, 0.08);
-  background: rgba(255, 255, 255, 0.84);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 252, 0.88)),
+    rgba(255, 255, 255, 0.84);
   box-shadow: 0 12px 24px rgba(17, 31, 46, 0.05);
 }
 

@@ -410,6 +410,49 @@ function HomePage() {
 }
 
 function ProductsPage() {
+  const selectionLogic = [
+    {
+      title: 'Start With Service Duty',
+      text: 'Separate well service, plant transport, marine duty, and spoolable field deployment before comparing products on price or dimensions.',
+    },
+    {
+      title: 'Check Installation Logic',
+      text: 'Rigid systems, spool packages, and flexible deployment each suit different route conditions, field access, and tie-in requirements.',
+    },
+    {
+      title: 'Define Package Scope',
+      text: 'Many projects need more than straight pipe, so fittings, reducers, flanges, and shop-fabricated sections should be clarified early.',
+    },
+  ]
+
+  const productRoutes = [
+    {
+      title: 'Well Tubing and Casing',
+      text: 'For corrosive well environments, field handling, and tubing or casing supply discussion.',
+      to: '/products/well-tubing-casing',
+    },
+    {
+      title: 'Line Pipe',
+      text: 'For plant routing, produced water, utility transfer, and corrosion-sensitive transport systems.',
+      to: '/products/line-pipe',
+    },
+    {
+      title: 'Marine and Offshore Pipe',
+      text: 'For seawater service, shipboard routing, and offshore projects where corrosion and weight matter together.',
+      to: '/products/marine-offshore-pipe',
+    },
+    {
+      title: 'Flexible Composite Pipe',
+      text: 'For spoolable installation, remote field deployment, and RTP-style transport scenarios.',
+      to: '/products/flexible-composite-pipe',
+    },
+    {
+      title: 'Fittings and Joints',
+      text: 'For elbows, tees, reducers, flanges, and transition details that complete the package.',
+      to: '/products/fittings-and-joints',
+    },
+  ]
+
   usePageMeta({
     title: 'Composite Pipe Products | Well Pipe, Line Pipe, Marine Pipe, Flexible Pipe',
     description:
@@ -423,6 +466,39 @@ function ProductsPage() {
       title="Composite pipe product lines for industrial, marine, and energy projects."
       description="Explore the main Hovoy product families, from well tubing and casing to line pipe, marine systems, flexible composite pipe, and fittings and joints."
     >
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Selection Logic</p>
+          <h2>Buyers usually narrow product choice in three steps.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {selectionLogic.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Choose a Route</p>
+          <h2>Go directly to the product family that matches your project.</h2>
+        </div>
+        <div className="sector-grid">
+          {productRoutes.map((item) => (
+            <article className="sector-card" key={item.to}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                Open product page
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <div className="product-grid">
         {productPages.map((item) => (
           <article className="product-card" key={item.slug}>
@@ -440,6 +516,11 @@ function ProductsPage() {
           </article>
         ))}
       </div>
+
+      <CtaSection
+        title="Need help deciding which product family fits the project?"
+        text="Send the service media, installation method, pressure class, and route conditions so we can suggest the most relevant product path before formal quotation."
+      />
     </PageHero>
   )
 }
@@ -590,6 +671,44 @@ function ProductDetailPage() {
 }
 
 function ApplicationsPage() {
+  const applicationLogic = [
+    {
+      title: 'Corrosion And Media',
+      text: 'Application pages help buyers start from what the system carries and how aggressive the operating environment is.',
+    },
+    {
+      title: 'Installation Context',
+      text: 'Onshore plant routing, offshore modules, water treatment blocks, and remote field lines all create different selection priorities.',
+    },
+    {
+      title: 'Commercial Outcome',
+      text: 'A stronger application definition usually leads to a cleaner product shortlist, a more complete fittings scope, and faster RFQ handling.',
+    },
+  ]
+
+  const applicationRoutes = [
+    {
+      title: 'Oil and Gas',
+      text: 'Start here for well systems, field line networks, and flexible deployment in corrosive or remote service.',
+      to: '/applications/oil-and-gas',
+    },
+    {
+      title: 'Marine and Offshore',
+      text: 'Use this path for seawater duty, shipboard routing, and offshore support systems.',
+      to: '/applications/marine-and-offshore',
+    },
+    {
+      title: 'Water Treatment and Desalination',
+      text: 'For saline utility systems, treatment plants, and equipment tie-in networks.',
+      to: '/applications/water-treatment-desalination',
+    },
+    {
+      title: 'Chemical Processing',
+      text: 'For corrosive plant environments, process lines, and maintenance-sensitive utility systems.',
+      to: '/applications/chemical-processing',
+    },
+  ]
+
   usePageMeta({
     title: 'Applications | Oil and Gas, Marine, Desalination, Chemical Processing',
     description:
@@ -603,6 +722,39 @@ function ApplicationsPage() {
       title="Composite piping solutions for major industrial and marine applications."
       description="Review key application sectors including oil and gas, marine and offshore, desalination, water treatment, and chemical processing."
     >
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Application Logic</p>
+          <h2>Industry pages should answer why a composite system is relevant.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {applicationLogic.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Industry Paths</p>
+          <h2>Choose the sector that matches the operating environment.</h2>
+        </div>
+        <div className="sector-grid">
+          {applicationRoutes.map((item) => (
+            <article className="sector-card" key={item.to}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                Open application page
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <div className="sector-grid">
         {applicationPages.map((item) => (
           <article className="sector-card" key={item.slug}>
@@ -614,6 +766,11 @@ function ApplicationsPage() {
           </article>
         ))}
       </div>
+
+      <CtaSection
+        title="Already know the application but not the product family?"
+        text="Send the service environment, media, pressure class, and installation context so we can align the right product line and fittings scope to the application."
+      />
     </PageHero>
   )
 }
