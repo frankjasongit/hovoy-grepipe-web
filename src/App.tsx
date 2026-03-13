@@ -1300,6 +1300,15 @@ function ProductDetailPage() {
           </div>
 
           <aside className="product-overview-rail">
+            {page.heroImage ? (
+              <figure className="rail-card product-hero-visual">
+                <img src={page.heroImage.src} alt={page.heroImage.alt} />
+                <figcaption>
+                  <strong>{page.heroImage.title}</strong>
+                  {page.heroImage.text ? <span>{page.heroImage.text}</span> : null}
+                </figcaption>
+              </figure>
+            ) : null}
             <article className="rail-card">
               <p className="eyebrow">
                 {page.technicalSnapshot?.length ? 'Technical Snapshot' : 'Engineering Focus'}
@@ -1348,6 +1357,26 @@ function ProductDetailPage() {
           </aside>
         </div>
       </section>
+
+      {page.productVisuals?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Product Visuals</p>
+            <h2>Images that explain product form, installation context, and connection detail.</h2>
+          </div>
+          <div className="media-grid">
+            {page.productVisuals.map((item) => (
+              <article className="media-card" key={item.src}>
+                <img src={item.src} alt={item.alt} loading="lazy" />
+                <div className="media-card-copy">
+                  <h3>{item.title}</h3>
+                  {item.text ? <p>{item.text}</p> : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
@@ -1489,6 +1518,26 @@ function ProductDetailPage() {
               <article className="detail-panel" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {page.manufacturingProof?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Manufacturing And Test Proof</p>
+            <h2>Factory, testing, and delivery visuals that support technical discussion.</h2>
+          </div>
+          <div className="media-grid media-grid-compact">
+            {page.manufacturingProof.map((item) => (
+              <article className="media-card" key={item.src}>
+                <img src={item.src} alt={item.alt} loading="lazy" />
+                <div className="media-card-copy">
+                  <h3>{item.title}</h3>
+                  {item.text ? <p>{item.text}</p> : null}
+                </div>
               </article>
             ))}
           </div>
@@ -2731,15 +2780,42 @@ function ManufacturingQualityPage() {
   const processTopics = [
     {
       title: 'Production Planning',
-      text: 'Manufacturing review starts from product family, service conditions, dimensions, fittings ratio, and whether the project needs straight pipe only or a broader package with spools and accessories.',
+      text: 'Manufacturing planning should begin with product family, dimensions, pressure class, route conditions, and whether the project needs pipe only or a broader package with fittings and fabricated items.',
     },
     {
       title: 'Quality Control Logic',
-      text: 'Inspection focus typically follows project requirements for dimensions, visual checks, package completeness, and documentation expected by EPC contractors, distributors, or overseas project teams.',
+      text: 'Inspection discussion should point to real checks such as dimensional control, joint tooling, thermal-performance verification, hydrostatic testing, and package completeness before shipment.',
     },
     {
       title: 'Shipment Readiness',
       text: 'Export jobs often require clearer packing logic, marking, documentation sets, and shipment sequencing so the delivered scope matches the site installation plan.',
+    },
+  ]
+
+  const qualityVisuals = [
+    {
+      src: '/product-media/quality/tg-test.jpg',
+      alt: 'Glass transition temperature test equipment in the quality control room.',
+      title: 'Thermal-performance verification',
+      text: 'Tg testing visuals help explain how material-system discussion can be tied back to real quality equipment.',
+    },
+    {
+      src: '/product-media/quality/hydro-test.jpg',
+      alt: 'Hydrostatic pressure test equipment inside the factory test area.',
+      title: 'Hydrostatic pressure testing',
+      text: 'Useful proof when clients need to understand pressure-class discussion and test capability before placing project orders.',
+    },
+    {
+      src: '/product-media/quality/thread-mold.jpg',
+      alt: 'Thread tooling and dimensional measurement setup for pipe joint production.',
+      title: 'Joint tooling and dimensional control',
+      text: 'Supports threaded and connection-sensitive product families where manufacturing detail directly affects installation reliability.',
+    },
+    {
+      src: '/product-media/quality/container-shipment.jpg',
+      alt: 'Container yard prepared for export shipment.',
+      title: 'Packing and shipment readiness',
+      text: 'Shows that export supply discussions can include packing sequence, delivery planning, and project shipment control.',
     },
   ]
 
@@ -2788,6 +2864,24 @@ function ManufacturingQualityPage() {
             <article className="detail-panel" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Factory And Test Visuals</p>
+          <h2>Visual proof used to support manufacturing, testing, and shipment discussion.</h2>
+        </div>
+        <div className="media-grid media-grid-compact">
+          {qualityVisuals.map((item) => (
+            <article className="media-card" key={item.src}>
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <div className="media-card-copy">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
             </article>
           ))}
         </div>

@@ -1,5 +1,12 @@
 export const siteUrl = 'https://hovoy-grepipe.com'
 
+export type MediaAsset = {
+  src: string
+  alt: string
+  title: string
+  text?: string
+}
+
 export type ProductPage = {
   slug: string
   title: string
@@ -9,10 +16,13 @@ export type ProductPage = {
   intro: string
   metaDescription: string
   heroHighlights?: string[]
+  heroImage?: MediaAsset
   technicalSnapshot?: Array<{ label: string; value: string }>
   technicalConfiguration?: Array<{ title: string; text: string }>
   jointingMethods?: Array<{ title: string; text: string }>
   availableDocumentation?: Array<{ title: string; text: string }>
+  productVisuals?: MediaAsset[]
+  manufacturingProof?: MediaAsset[]
   engineeringFocus: string[]
   highlights: string[]
   applications: string[]
@@ -120,6 +130,12 @@ export const productPages: ProductPage[] = [
       'Designed for industrial transport and utility systems where project teams need to review pressure class, temperature, route conditions, jointing methods, and fittings scope together.',
     metaDescription:
       'Explore Hovoy GRE line pipe for corrosive industrial transport, produced water, process water, utility networks, buried or above-ground routing, and fittings-inclusive project supply.',
+    heroImage: {
+      src: '/product-media/line-pipe/stockyard.jpg',
+      alt: 'Stacks of GRE line pipe prepared for industrial project supply.',
+      title: 'Line pipe stockyard and ready supply',
+      text: 'Use real product visuals to show batch readiness, coating consistency, and industrial supply scale.',
+    },
     heroHighlights: [
       'Corrosion-resistant process and utility service',
       'Above-ground and buried routing options',
@@ -188,6 +204,64 @@ export const productPages: ProductPage[] = [
       {
         title: 'Fittings and package clarification',
         text: 'Fittings lists, tie-in points, and spool requirements can be reviewed together so the commercial offer reflects the real installation package.',
+      },
+    ],
+    productVisuals: [
+      {
+        src: '/product-media/line-pipe/site-acid-anhydride.jpg',
+        alt: 'Acid anhydride cured GRE line pipe installed in a field line route.',
+        title: 'Field installation reference',
+        text: 'Shows line pipe deployed in a real routed system instead of only warehouse presentation.',
+      },
+      {
+        src: '/product-media/line-pipe/site-buried.jpg',
+        alt: 'Buried GRE pipeline route with multiple aligned pipe runs.',
+        title: 'Buried service context',
+        text: 'Useful when the page needs to show buried routing, tie-ins, and route planning conditions.',
+      },
+      {
+        src: '/product-media/line-pipe/fittings-display.jpg',
+        alt: 'Displayed GRE pipe and fittings assembly with elbows and vertical sections.',
+        title: 'Pipe and fittings package view',
+        text: 'Supports the message that Hovoy handles product family supply as a system, not only straight pipe.',
+      },
+      {
+        src: '/product-media/line-pipe/flange-detail.jpg',
+        alt: 'Composite flange detail used in GRE line pipe systems.',
+        title: 'Flange detail',
+        text: 'Use close-up connection images to make jointing routes easier to understand for engineers.',
+      },
+      {
+        src: '/product-media/line-pipe/flange-assembly.jpg',
+        alt: 'Flanged GRE pipe assembly with bolted connection.',
+        title: 'Bolted flange assembly',
+        text: 'Shows how flanged package scope connects the pipe run to maintenance, equipment, and tie-in points.',
+      },
+    ],
+    manufacturingProof: [
+      {
+        src: '/product-media/quality/tg-test.jpg',
+        alt: 'Glass transition temperature test equipment for composite pipe quality verification.',
+        title: 'Tg testing support',
+        text: 'Use testing visuals to show that thermal performance discussion is backed by real equipment, not only brochure claims.',
+      },
+      {
+        src: '/product-media/quality/hydro-test.jpg',
+        alt: 'Hydrostatic pressure test equipment used for pipe system verification.',
+        title: 'Hydrostatic pressure testing',
+        text: 'Useful proof for projects that focus on pressure class, service boundaries, and product validation discussion.',
+      },
+      {
+        src: '/product-media/quality/thread-mold.jpg',
+        alt: 'Thread manufacturing tooling for composite pipe joint production.',
+        title: 'Thread tooling and joint production',
+        text: 'Supports line pipe pages where threaded or joint-specific manufacturing capability matters to the client.',
+      },
+      {
+        src: '/product-media/quality/container-shipment.jpg',
+        alt: 'Container shipment area for export pipe delivery.',
+        title: 'Packing and export delivery',
+        text: 'Shows batch shipment readiness for overseas industrial orders and project-based delivery planning.',
       },
     ],
     engineeringFocus: [

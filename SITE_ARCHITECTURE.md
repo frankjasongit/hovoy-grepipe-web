@@ -92,20 +92,33 @@ The site needs to guide buyers through three common starting points:
 7. Contact CTA
    Sticky, visible, and simple.
 
-## Product page wireframe
+## Product landing architecture
+
+Product pages should follow the reading pattern established by major industrial manufacturers:
+technical anchors first, product and joint visuals early, then applications, supply scope, proof, and RFQ.
+
+### Product page wireframe
 
 1. Breadcrumb and hero
-   Product title, short overview, intro, quick actions.
-2. Quick-fit rail
-   Typical service media, key buyer priorities, direct inquiry CTA.
-3. At-a-glance overview
-   Client requirements and commercial strengths.
-4. Supply scope and selection logic
-   What can be supplied and what affects selection.
-5. Best-fit projects
-   Typical project conditions, package scope, and related applications.
-6. Inquiry readiness
-   RFQ checklist, why Hovoy, and next-step CTA.
+   Product title, service positioning, quick actions, and one real product image.
+2. Technical snapshot
+   Pressure class, temperature, diameter range, jointing route, and service-media anchor points.
+3. Product visuals
+   Real product, installed pipeline, and connection-detail images.
+4. Product overview
+   Core use cases, evaluation points, and technical routes such as resin system, conductivity, and installation environment.
+5. Application fit
+   Typical operating environments and service media.
+6. Jointing and fittings
+   Connection systems, flange or joint details, and package items.
+7. Supply scope
+   Straight pipe, fittings, fabricated items, export packing, and project coordination.
+8. Available documentation
+   Datasheet path, route discussion, fittings clarification, and other download-ready material.
+9. Manufacturing and test proof
+   Testing capability, tooling, shipment readiness, and other real factory evidence.
+10. RFQ and next actions
+   Checklist, related applications, and a direct path to quotation.
 
 ## SEO principles for all pages
 
