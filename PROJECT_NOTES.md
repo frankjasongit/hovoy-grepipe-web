@@ -18,7 +18,7 @@
 
 ## Immediate business setup tasks
 
-- Keep `sales@hovoy-grepipe.com` on Cloudflare email routing for launch
+- Keep `chinahovoy@yahoo.com` available for launch inquiries
 - Create a dedicated GitHub repo for this project
 - Connect the new repo to deployment after the first stable homepage build
 - Start collecting product data sheets, pressure classes, resin system information, and fitting range
