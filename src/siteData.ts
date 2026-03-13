@@ -550,7 +550,7 @@ export const applicationPages: ApplicationPage[] = [
     advantages: [
       'Composite pipe can be positioned as a corrosion-resistant option for selected process and utility duties',
       'Connects line pipe and fittings pages directly to plant use cases',
-      'Improves search intent match for chemical-related traffic',
+      'Aligns product information more closely with chemical-service project needs',
       'Supports technical review around media compatibility and system completeness',
       'Helps frame lifecycle and maintenance discussion for corrosive service',
     ],
@@ -604,7 +604,7 @@ export const faqItems = [
   {
     question: 'Should flexible composite pipe be treated as a separate product line?',
     answer:
-      'Yes. Flexible pipe competes under its own terms such as spoolable pipe, RTP, and flexible transport systems. It should not be buried inside rigid GRE, GRP, or FRP pipe content.',
+      'Yes. Flexible pipe is usually reviewed as its own product line because spoolable pipe, RTP, and flexible transport systems involve different operating and installation considerations from rigid GRE, GRP, or FRP pipe.',
   },
   {
     question: 'What information should be included in an RFQ?',

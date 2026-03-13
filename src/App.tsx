@@ -32,15 +32,15 @@ type KeywordPage = {
 const keywordPages: KeywordPage[] = [
   {
     slug: 'gre-pipe',
-    eyebrow: 'Keyword Page / GRE Pipe',
+    eyebrow: 'Material Guide / GRE Pipe',
     title: 'GRE pipe supply for corrosive industrial, marine, and oil and gas projects.',
     description:
-      'This page connects Hovoy with GRE pipe searches around line pipe, marine systems, well service, fittings, and project-oriented export supply.',
+      'Explore GRE pipe options for line pipe, marine systems, well service, fittings, and export-oriented industrial projects.',
     metaTitle: 'GRE Pipe Supplier | Hovoy GRE Pipe',
     metaDescription:
       'Explore Hovoy GRE pipe supply for line pipe, marine pipe, well service, fittings, and export-oriented industrial projects.',
     summary:
-      'GRE pipe is often the search term used by clients who already know the material family and need a supplier that can discuss application fit, fittings, and project scope clearly.',
+      'Clients looking for GRE pipe often need a supplier that can discuss application fit, fittings, and project scope clearly.',
     fit: [
       'Line pipe and utility networks in corrosive service',
       'Marine and offshore piping where weight and corrosion matter together',
@@ -57,22 +57,22 @@ const keywordPages: KeywordPage[] = [
       },
       {
         title: 'How To Proceed',
-        text: 'Use the product pages and contact page to move from a general GRE pipe search into the right RFQ path for line pipe, marine pipe, or well-related applications.',
+        text: 'Review the product pages and contact Hovoy for line pipe, marine pipe, or well-related GRE applications.',
       },
     ],
     related: ['/products/line-pipe', '/products/marine-offshore-pipe', '/contact'],
   },
   {
     slug: 'grp-pipe',
-    eyebrow: 'Keyword Page / GRP Pipe',
+    eyebrow: 'Material Guide / GRP Pipe',
     title: 'GRP pipe solutions for water treatment, desalination, utility, and project routing.',
     description:
-      'This page strengthens Hovoy visibility for GRP pipe searches tied to utility systems, desalination, water treatment, and corrosion-sensitive industrial routing.',
+      'Review GRP pipe solutions for utility systems, desalination, water treatment, and corrosion-sensitive industrial routing.',
     metaTitle: 'GRP Pipe Supplier | Hovoy GRE Pipe',
     metaDescription:
       'Review Hovoy GRP pipe solutions for water treatment, desalination, utility routing, and export-oriented industrial projects.',
     summary:
-      'GRP pipe searches usually come from utility, water treatment, desalination, and corrosion-sensitive industrial routing needs where lifecycle performance and package completeness matter.',
+      'Clients looking for GRP pipe usually focus on utility, water treatment, desalination, and corrosion-sensitive industrial routing where lifecycle performance and package completeness matter.',
     fit: [
       'Water treatment and desalination utility networks',
       'Industrial routes where corrosion resistance and service life affect lifecycle cost',
@@ -89,22 +89,22 @@ const keywordPages: KeywordPage[] = [
       },
       {
         title: 'How To Proceed',
-        text: 'Use the line pipe, water treatment, and contact pages to move from a general GRP pipe search into a project-ready RFQ.',
+        text: 'Review the line pipe and water treatment pages, then contact Hovoy with the project scope for quotation review.',
       },
     ],
     related: ['/products/line-pipe', '/applications/water-treatment-desalination', '/contact'],
   },
   {
     slug: 'frp-pipe',
-    eyebrow: 'Keyword Page / FRP Pipe',
+    eyebrow: 'Material Guide / FRP Pipe',
     title: 'FRP pipe supply for chemical, utility, marine, and corrosion-sensitive plant service.',
     description:
-      'This page supports Hovoy visibility for FRP pipe searches connected to chemical service, corrosive process environments, plant utilities, and export-oriented supply.',
+      'Explore FRP pipe solutions for chemical service, corrosive process environments, plant utilities, and export-oriented supply.',
     metaTitle: 'FRP Pipe Supplier | Hovoy GRE Pipe',
     metaDescription:
       'Explore Hovoy FRP pipe supply for chemical service, plant utility routing, marine systems, fittings, and project-oriented industrial RFQs.',
     summary:
-      'FRP pipe searches are often tied to chemical plants, corrosive utilities, and broader industrial routing where materials, fittings, and project communication all affect supplier selection.',
+      'Clients looking for FRP pipe are often evaluating chemical plants, corrosive utilities, and broader industrial routing where materials, fittings, and project communication all affect supplier selection.',
     fit: [
       'Corrosive process and utility lines in chemical plants',
       'Industrial projects comparing FRP pipe against metal for service-life reasons',
@@ -121,7 +121,7 @@ const keywordPages: KeywordPage[] = [
       },
       {
         title: 'How To Proceed',
-        text: 'Use the chemical processing, line pipe, and contact pages to move from a general FRP pipe search into a more qualified project discussion.',
+        text: 'Review the chemical processing and line pipe pages, then contact Hovoy for a project-specific FRP discussion.',
       },
     ],
     related: ['/applications/chemical-processing', '/products/line-pipe', '/contact'],
@@ -335,8 +335,8 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
           to: `/products/${item.slug}`,
         })),
         {
-          title: 'GRE / GRP / FRP Topic Pages',
-          text: 'Use dedicated keyword routes when the client search starts from the material family before the application is clear.',
+          title: 'GRE / GRP / FRP Material Guides',
+          text: 'Review material-family pages when the project starts with GRE, GRP, or FRP selection before the application is fully narrowed.',
           to: '/gre-pipe',
         },
       ],
@@ -421,8 +421,8 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
           to: '/about/manufacturing-quality',
         },
         {
-          title: 'GRE / GRP / FRP Topic Pages',
-          text: 'Material-family landing pages designed to support search visibility and move users into the right RFQ path.',
+          title: 'GRE / GRP / FRP Material Guides',
+          text: 'Material-family pages covering GRE, GRP, and FRP options before moving into product, application, or quotation review.',
           to: '/gre-pipe',
         },
         {
@@ -718,7 +718,7 @@ function HomePage() {
         <p>Line pipe systems</p>
         <p>Marine and offshore pipe</p>
         <p>Flexible pipe systems</p>
-        <p>Engineering-led RFQ path</p>
+        <p>Engineering-led project support</p>
       </section>
 
       <section className="section section-grid">
@@ -1265,11 +1265,11 @@ function ProductDetailPage() {
           <div className="section-heading section-heading-split">
             <div>
               <p className="eyebrow">Best Fit Projects</p>
-              <h2>Where this page should convert better than a generic catalogue.</h2>
+              <h2>Project conditions where this product family is often selected.</h2>
             </div>
             <p>
-              These are the project conditions where Hovoy should be evaluated as a supplier, not
-              just as another product listing.
+              These are the operating conditions and package needs where buyers often evaluate
+              Hovoy as a supplier.
             </p>
           </div>
           <div className="detail-grid">
@@ -1297,7 +1297,7 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Why Hovoy On This Product</p>
-            <h2>Reasons this product line should convert for Hovoy.</h2>
+            <h2>Why buyers review Hovoy for this product family.</h2>
           </div>
           <div className="detail-card-grid">
             {productModule.whyHovoy.map((item) => (
@@ -1410,7 +1410,7 @@ function ApplicationsPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Application Approach</p>
-          <h2>Industry pages should explain where a composite system is relevant.</h2>
+          <h2>How composite systems fit major operating environments.</h2>
         </div>
         <div className="detail-card-grid">
           {applicationLogic.map((item) => (
@@ -1950,18 +1950,17 @@ function DownloadsPage() {
     <PageHero
       eyebrow="Resources / Downloads"
       title="Project documents and data support for GRE, GRP, FRP, and flexible pipe RFQs."
-      description="Hovoy does not treat downloads as generic catalogue files. Documentation requests are aligned to project stage, product family, and the level of technical review already in place."
+      description="Request project documents that match the product family, application, and review stage for your GRE, GRP, FRP, or flexible pipe inquiry."
     >
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Documentation Logic</p>
+            <p className="eyebrow">Documentation Support</p>
             <h2>Request the document type that matches the stage of the RFQ.</h2>
           </div>
           <p>
-            Strong documentation support is part of conversion. Clients should be able to move from
-            a keyword search to a product page, then to the right document request, without losing
-            the application context.
+            Clients often need different files at different stages, from initial product overviews
+            to manufacturing, quality, and quotation support documents.
           </p>
         </div>
         <div className="detail-card-grid">
@@ -2083,8 +2082,8 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Keyword Context</p>
-            <h2>How this material-family search should connect to real project work.</h2>
+            <p className="eyebrow">Material Overview</p>
+            <h2>How this material family fits real project requirements.</h2>
           </div>
           <p>{page.summary}</p>
         </div>
@@ -2092,8 +2091,8 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Best Fit Searches</p>
-          <h2>Projects that should move from this keyword page into an RFQ path.</h2>
+          <p className="eyebrow">Best Fit Projects</p>
+          <h2>Projects where this material family is commonly reviewed.</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
@@ -2106,8 +2105,8 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Why This Page Matters</p>
-          <h2>Material-family searches need a business path, not just a definition.</h2>
+          <p className="eyebrow">Buyer Priorities</p>
+          <h2>What buyers usually need when comparing this material family.</h2>
         </div>
         <div className="detail-card-grid">
           {page.focus.map((item) => (
@@ -2122,7 +2121,7 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Continue By Project Need</p>
-          <h2>Move from the keyword route into a product, application, or RFQ page.</h2>
+          <h2>Continue to the product, application, or contact page that fits the project.</h2>
         </div>
         <div className="sector-grid">
           {relatedPages.map((item) => (
@@ -2138,8 +2137,8 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
       </section>
 
       <CtaSection
-        title="Need to turn a GRE, GRP, or FRP pipe search into a qualified RFQ?"
-        text="Send the material family you are searching for, the application, media, dimensions, and fittings scope so Hovoy can move the inquiry into the correct project path."
+        title="Need support selecting the right GRE, GRP, or FRP pipe solution?"
+        text="Send the material family, application, media, dimensions, and fittings scope so Hovoy can review the inquiry and recommend the most suitable next step."
       />
     </PageHero>
   )
@@ -2343,16 +2342,16 @@ function WhyHovoyPage() {
 
   const conversionPaths = [
     {
-      title: 'Why The Site Should Rank',
-      text: 'Hovoy needs stronger binding to GRE pipe, GRP pipe, and FRP pipe keywords while still showing the flexible pipe offer as a separate path. This page supports brand plus keyword association.',
+      title: 'Material Coverage',
+      text: 'Hovoy presents GRE, GRP, and FRP pipe capabilities clearly while keeping flexible composite pipe positioned as a separate product path.',
     },
     {
-      title: 'Why The Site Should Convert',
-      text: 'Visitors should quickly understand why Hovoy is easier to work with: industry experience, process familiarity, project communication, and broader package support.',
+      title: 'Commercial Clarity',
+      text: 'Visitors should quickly understand why Hovoy is easier to work with through industry experience, process familiarity, project communication, and broader package support.',
     },
     {
-      title: 'Where We Can Win Faster',
-      text: 'The most realistic early wins are project-oriented searches around line pipe, marine pipe, fittings packages, and corrosive-service industrial jobs where package thinking matters.',
+      title: 'Project Priorities',
+      text: 'Many buyers begin with line pipe, marine pipe, fittings packages, and corrosive-service industrial projects where package completeness matters.',
     },
   ]
 
@@ -2407,8 +2406,8 @@ function WhyHovoyPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Lead Generation Logic</p>
-          <h2>How this positioning should support ranking and conversion.</h2>
+          <p className="eyebrow">Market Position</p>
+          <h2>How Hovoy presents its value to industrial and project buyers.</h2>
         </div>
         <div className="detail-card-grid">
           {conversionPaths.map((item) => (
@@ -2671,7 +2670,7 @@ function ContactPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Choose The Right Contact Route</p>
-          <h2>Not every visitor should enter the same RFQ path.</h2>
+          <h2>Choose the contact route that matches the stage of your project.</h2>
         </div>
         <div className="detail-card-grid">
           {inquiryTypes.map((item) => (
