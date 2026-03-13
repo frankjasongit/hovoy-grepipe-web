@@ -282,6 +282,11 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
       text: 'Company positioning, manufacturing discussion, and contact paths for export-oriented project supply.',
       links: [
         {
+          title: 'Why Hovoy',
+          text: 'See the reasons clients choose Hovoy for GRE, GRP, FRP, and flexible pipe projects.',
+          to: '/why-hovoy',
+        },
+        {
           title: 'About',
           text: 'Product focus, application coverage, project support, and commercial response.',
           to: '/about',
@@ -508,6 +513,9 @@ function HomePage() {
             <Link className="button button-primary" to="/products">
               Explore Product Lines
             </Link>
+            <Link className="button button-secondary" to="/why-hovoy">
+              Why Hovoy
+            </Link>
             <Link className="button button-secondary" to="/contact">
               Send RFQ
             </Link>
@@ -573,6 +581,12 @@ function HomePage() {
               <p>{item.text}</p>
             </article>
           ))}
+        </div>
+
+        <div className="hero-actions">
+          <Link className="button button-primary" to="/why-hovoy">
+            Open Why Hovoy
+          </Link>
         </div>
       </section>
 
@@ -857,9 +871,110 @@ function ProductDetailPage() {
   const { slug } = useParams()
   const page = productPages.find((item) => item.slug === slug)
 
+  const productSalesModules: Record<
+    string,
+    {
+      fitProjects: string[]
+      whyHovoy: Array<{ title: string; text: string }>
+      packageScope: string[]
+      nextActionTitle: string
+      nextActionText: string
+    }
+  > = {
+    'well-tubing-casing': {
+      fitProjects: [
+        'Corrosive well service where metallic replacement frequency is a concern',
+        'Field jobs where lighter handling and installation practicality affect total project cost',
+        'Export projects that need tubing or casing discussion together with connection and accessory clarification',
+      ],
+      whyHovoy: [
+        {
+          title: 'Material And Process Familiarity',
+          text: 'Well projects move faster when the supplier understands corrosion-related service conditions, material selection logic, and the practical impact of manufacturing and accessory scope.',
+        },
+        {
+          title: 'Project-Led RFQ Handling',
+          text: 'Hovoy focuses on the actual well environment, tubing or casing range, accessories, and destination-market requirements before quotation.',
+        },
+        {
+          title: 'Export Coordination',
+          text: 'Overseas oil and gas projects often need clearer packing, documentation, and delivery communication than stock-only suppliers can provide.',
+        },
+      ],
+      packageScope: [
+        'Tubing or casing range matched to corrosive service',
+        'Connection and accessory clarification before quotation',
+        'Export packing and project delivery communication',
+      ],
+      nextActionTitle: 'Need a better-structured tubing or casing RFQ?',
+      nextActionText:
+        'Send the well service description, diameter range, corrosion concerns, accessory scope, and project destination so Hovoy can review the job as a real project package rather than a generic pipe request.',
+    },
+    'line-pipe': {
+      fitProjects: [
+        'Petrochemical, utility, and produced-water routes where corrosion resistance affects lifecycle cost',
+        'Projects that need straight pipe plus fittings, transitions, and spool logic together',
+        'Overseas industrial jobs that require line lists, route sketches, and export delivery coordination',
+      ],
+      whyHovoy: [
+        {
+          title: 'Package Thinking, Not Straight Pipe Only',
+          text: 'Line pipe enquiries often fail when the supplier quotes pipe without understanding fittings ratio, tie-ins, spool scope, or installation sequence.',
+        },
+        {
+          title: 'Experience With Industrial Project Communication',
+          text: 'Hovoy is positioned around EPC, distributor, and end-user RFQ communication where route conditions and package completeness need to be clarified early.',
+        },
+        {
+          title: 'Useful For Petrochemical And Utility Work',
+          text: 'This is where material familiarity, process understanding, and practical delivery coordination matter more than generic brochure language.',
+        },
+      ],
+      packageScope: [
+        'Straight pipe plus fittings and transition review',
+        'Support around line lists, route sketches, and equipment tie-ins',
+        'Commercial coordination for packing, delivery, and documentation',
+      ],
+      nextActionTitle: 'Send a line pipe RFQ with route and fittings scope.',
+      nextActionText:
+        'If the job includes plant routing, water transfer, produced water, or petrochemical utility lines, send the line list, diameter range, pressure class, fittings estimate, and destination market so the quotation covers the real scope.',
+    },
+    'marine-offshore-pipe': {
+      fitProjects: [
+        'Shipboard and offshore systems where seawater exposure and weight reduction must be addressed together',
+        'Marine projects that need fittings, routing logic, and export communication instead of pipe-only quotes',
+        'Coastal or offshore jobs where documentation and delivery planning affect yard or installation schedules',
+      ],
+      whyHovoy: [
+        {
+          title: 'Marine-Focused Product Discussion',
+          text: 'Marine jobs require clearer treatment of seawater exposure, routing complexity, support loads, and the mix between straight pipe and connection scope.',
+        },
+        {
+          title: 'Practical Export Coordination',
+          text: 'Shipyard and offshore deliveries often depend on cleaner documentation, packing sequence, and communication around fittings and tie-in details.',
+        },
+        {
+          title: 'Project Familiarity Over Generic Sales Copy',
+          text: 'Hovoy is building its marine offer around real project concerns: corrosion, weight, route constraints, and package completeness.',
+        },
+      ],
+      packageScope: [
+        'Marine pipe and fittings for seawater and utility service',
+        'Routing-oriented connection and transition clarification',
+        'Export delivery coordination for shipyard and offshore jobs',
+      ],
+      nextActionTitle: 'Need marine pipe review for shipboard or offshore work?',
+      nextActionText:
+        'Send the service duty, size range, fittings and joint scope, route constraints, and project destination so Hovoy can align the marine package to the actual installation environment.',
+    },
+  }
+
   if (!page) {
     return <Navigate to="/products" replace />
   }
+
+  const productModule = productSalesModules[page.slug]
 
   usePageMeta({
     title: `${page.title} | Hovoy GRE Pipe`,
@@ -956,6 +1071,56 @@ function ProductDetailPage() {
         </div>
       </section>
 
+      {productModule ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading section-heading-split">
+            <div>
+              <p className="eyebrow">Best Fit Projects</p>
+              <h2>Where this page should convert better than a generic catalogue.</h2>
+            </div>
+            <p>
+              These are the project conditions where Hovoy should be evaluated as a supplier, not
+              just as another product listing.
+            </p>
+          </div>
+          <div className="detail-grid">
+            <article className="detail-panel">
+              <h3>Project Fit</h3>
+              <ul className="detail-list">
+                {productModule.fitProjects.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="detail-panel">
+              <h3>Typical Package Scope</h3>
+              <ul className="detail-list">
+                {productModule.packageScope.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </section>
+      ) : null}
+
+      {productModule ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Why Hovoy On This Product</p>
+            <h2>Reasons this product line should convert for Hovoy.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {productModule.whyHovoy.map((item) => (
+              <article className="detail-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">RFQ Checklist</p>
@@ -991,8 +1156,11 @@ function ProductDetailPage() {
       </section>
 
       <CtaSection
-        title="Request technical review or quotation support for this product line."
-        text="Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately."
+        title={productModule?.nextActionTitle ?? 'Request technical review or quotation support for this product line.'}
+        text={
+          productModule?.nextActionText ??
+          'Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately.'
+        }
       />
     </PageHero>
   )
@@ -1645,6 +1813,149 @@ function AboutPage() {
   )
 }
 
+function WhyHovoyPage() {
+  const proofPoints = [
+    {
+      title: '20+ Years Of Industry Experience',
+      text: 'Hovoy is not positioning itself as a startup brochure site. The business case is built around long-term familiarity with GRE, GRP, FRP, and flexible pipe supply for industrial and marine projects.',
+    },
+    {
+      title: 'Raw Material And Process Familiarity',
+      text: 'Clients in this market often prefer suppliers who understand reinforcement logic, winding and curing processes, fittings scope, and how manufacturing decisions affect delivery and performance.',
+    },
+    {
+      title: 'Overseas Petrochemical Project Exposure',
+      text: 'Hovoy is familiar with international project communication where petrochemical and industrial clients expect clearer RFQ handling, documentation logic, and export coordination.',
+    },
+    {
+      title: 'Project Package Thinking',
+      text: 'Many competitors still behave like straight-pipe traders. Hovoy is differentiating around package completeness: pipe, fittings, joint logic, and quotation clarification together.',
+    },
+  ]
+
+  const targetClients = [
+    'EPC contractors that need clearer RFQ handling before quotation',
+    'Distributors looking for a supplier who can discuss products by application, not just by SKU',
+    'End users that need support on line scope, fittings, service media, and export coordination',
+  ]
+
+  const conversionPaths = [
+    {
+      title: 'Why The Site Should Rank',
+      text: 'Hovoy needs stronger binding to GRE pipe, GRP pipe, and FRP pipe keywords while still showing the flexible pipe offer as a separate path. This page supports brand plus keyword association.',
+    },
+    {
+      title: 'Why The Site Should Convert',
+      text: 'Visitors should quickly understand why Hovoy is easier to work with: industry experience, process familiarity, project communication, and broader package support.',
+    },
+    {
+      title: 'Where We Can Win Faster',
+      text: 'The most realistic early wins are project-oriented searches around line pipe, marine pipe, fittings packages, and corrosive-service industrial jobs where package thinking matters.',
+    },
+  ]
+
+  usePageMeta({
+    title: 'Why Hovoy | GRE, GRP, FRP Pipe Supplier Advantages',
+    description:
+      'See why clients choose Hovoy GRE Pipe for GRE, GRP, FRP, and flexible pipe projects: 20+ years of experience, process familiarity, overseas petrochemical exposure, and project package coordination.',
+    path: '/why-hovoy/',
+  })
+
+  return (
+    <PageHero
+      eyebrow="Why Hovoy"
+      title="Why clients choose Hovoy in a crowded GRE, GRP, and FRP pipe market."
+      description="Hovoy should not compete as a generic supplier. The advantage is long industry experience, process familiarity, overseas project communication, and project-oriented package support."
+    >
+      <section className="section section-grid page-section">
+        <div className="section-heading section-heading-split">
+          <div>
+            <p className="eyebrow">Core Differentiators</p>
+            <h2>Selection reasons that should appear before price discussion.</h2>
+          </div>
+          <p>
+            In this market, many suppliers can say they offer GRE or FRP pipe. Fewer can explain
+            why their process familiarity, RFQ handling, and export coordination reduce friction
+            for actual project teams.
+          </p>
+        </div>
+        <div className="detail-card-grid">
+          {proofPoints.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Who We Serve Best</p>
+          <h2>Client types that fit the Hovoy model.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {targetClients.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Lead Generation Logic</p>
+          <h2>How this positioning should support ranking and conversion.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {conversionPaths.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Next Step</p>
+          <h2>Move from brand positioning to a product or RFQ page.</h2>
+        </div>
+        <div className="sector-grid">
+          <article className="sector-card">
+            <h3>Line Pipe</h3>
+            <p>Best for petrochemical, utility, produced-water, and industrial transfer projects.</p>
+            <Link className="text-link" to="/products/line-pipe">
+              Open line pipe page
+            </Link>
+          </article>
+          <article className="sector-card">
+            <h3>Marine and Offshore Pipe</h3>
+            <p>Best for seawater, shipboard routing, offshore utility systems, and export package support.</p>
+            <Link className="text-link" to="/products/marine-offshore-pipe">
+              Open marine page
+            </Link>
+          </article>
+          <article className="sector-card">
+            <h3>Contact Hovoy</h3>
+            <p>Send the application, product family, fittings scope, and destination market for a faster review.</p>
+            <Link className="text-link" to="/contact">
+              Open contact page
+            </Link>
+          </article>
+        </div>
+      </section>
+
+      <CtaSection
+        title="Need a supplier who understands products, process, and project scope together?"
+        text="Send your project details to Hovoy with product family, media, dimensions, fittings scope, and destination market so we can review the commercial and technical fit more accurately."
+      />
+    </PageHero>
+  )
+}
+
 function ManufacturingQualityPage() {
   const qualityPillars = [
     'Material consistency and traceable production flow',
@@ -1923,6 +2234,7 @@ function App() {
           <Route path="/applications" element={<ApplicationsPage />} />
           <Route path="/applications/:slug" element={<ApplicationDetailPage />} />
           <Route path="/engineering" element={<EngineeringPage />} />
+          <Route path="/why-hovoy" element={<WhyHovoyPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/resources/faq" element={<FaqPage />} />
           <Route path="/about" element={<AboutPage />} />

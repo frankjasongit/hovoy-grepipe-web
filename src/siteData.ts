@@ -36,6 +36,7 @@ export const secondaryNav = [
   { label: 'Products', to: '/products' },
   { label: 'Applications', to: '/applications' },
   { label: 'Engineering', to: '/engineering' },
+  { label: 'Why Hovoy', to: '/why-hovoy' },
   { label: 'Resources', to: '/resources' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
