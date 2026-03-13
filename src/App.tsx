@@ -679,6 +679,48 @@ function ApplicationDetailPage() {
 }
 
 function EngineeringPage() {
+  const engineeringTopics = [
+    {
+      title: 'Material Systems By Duty',
+      text: 'Different service conditions may require different composite system logic. Buyers usually compare media resistance, operating environment, handling considerations, and lifecycle expectations before final selection.',
+    },
+    {
+      title: 'Connection And Installation Logic',
+      text: 'Joint choice should reflect installation method, field access, maintenance planning, and the balance between shop fabrication and site assembly.',
+    },
+    {
+      title: 'Documentation Support',
+      text: 'Technical clarification often depends on line lists, drawings, pressure class requirements, fittings ratios, and destination-market documentation expectations.',
+    },
+  ]
+
+  const documentationSupport = [
+    'Application summary and service media description',
+    'Diameter range, pressure class, and estimated line scope',
+    'Fittings, jointing, and spool requirements',
+    'Project drawings, line lists, or scope notes when available',
+    'Destination country, project schedule, and delivery priorities',
+  ]
+
+  const byProductFamily = [
+    {
+      title: 'Well Systems',
+      text: 'Focus on corrosive well environments, handling conditions, and the practical fit of tubing, casing, and related accessories.',
+    },
+    {
+      title: 'Line Pipe Systems',
+      text: 'Review transport duty, route conditions, utility service, fittings scope, and the balance between straight pipe and fabricated packages.',
+    },
+    {
+      title: 'Marine And Offshore Systems',
+      text: 'Discuss seawater duty, weight reduction, routing constraints, and marine-specific project or class requirements.',
+    },
+    {
+      title: 'Flexible Composite Pipe',
+      text: 'Clarify spoolable deployment conditions, route length, installation speed targets, and whether flexible or rigid systems are better suited.',
+    },
+  ]
+
   usePageMeta({
     title: 'Engineering | Materials, Joints, Standards, and Quality Logic',
     description:
@@ -740,11 +782,86 @@ function EngineeringPage() {
           </div>
         </div>
       </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Technical Review</p>
+          <h2>Topics that usually drive engineering conversations.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {engineeringTopics.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">By Product Family</p>
+          <h2>Engineering priorities change by system type.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {byProductFamily.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Before RFQ</p>
+          <h2>Technical information that helps us respond faster.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {documentationSupport.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
     </PageHero>
   )
 }
 
 function ResourcesPage() {
+  const resourceGroups = [
+    {
+      title: 'Product Scope Guidance',
+      text: 'Buyers often start by confirming whether a project is better suited to well tubing and casing, rigid line pipe, marine systems, or flexible composite pipe.',
+    },
+    {
+      title: 'Technical Clarification',
+      text: 'Pressure class, service media, route conditions, fittings ratio, and tie-in points all affect how the system should be reviewed before quotation.',
+    },
+    {
+      title: 'Commercial Readiness',
+      text: 'A stronger RFQ package usually includes destination market, packing requirements, schedule expectations, and the level of shop fabrication required.',
+    },
+  ]
+
+  const documentRequests = [
+    'Product overviews by family and application',
+    'Data sheet or dimensional planning discussions',
+    'Jointing and fittings scope clarification',
+    'Standards, testing, and quality-related discussion points',
+    'Project packing, export, and delivery coordination inputs',
+  ]
+
+  const rfqPreparation = [
+    'Application summary and service media',
+    'Diameter range, pressure class, and estimated quantities',
+    'Line list, route sketch, or general arrangement if available',
+    'Required fittings, transitions, or spool assemblies',
+    'Project timing, destination country, and documentation needs',
+  ]
+
   usePageMeta({
     title: 'Resources | FAQ, Downloads Planning, and Buyer Guidance',
     description:
@@ -756,7 +873,7 @@ function ResourcesPage() {
     <PageHero
       eyebrow="Resources"
       title="Technical resources and buyer guidance for composite pipe projects."
-      description="Use this section for FAQ answers, RFQ guidance, and future technical downloads covering product selection, standards, and application support."
+      description="This section helps buyers prepare cleaner RFQs, identify the right product family, and organize the technical information needed for faster review."
     >
       <div className="capability-grid">
         <article className="capability-card">
@@ -768,13 +885,61 @@ function ResourcesPage() {
         </article>
         <article className="capability-card">
           <h3>Downloads</h3>
-          <p>Technical data sheets, brochures, line cards, and supporting documents can be organized here for buyer access.</p>
+          <p>Product overviews, data-sheet discussions, and supporting documentation can be provided against live project requirements.</p>
         </article>
         <article className="capability-card">
           <h3>RFQ Guidance</h3>
           <p>Guidance on application details, dimensions, pressure class, and fittings scope helps improve inquiry quality.</p>
         </article>
       </div>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Resource Focus</p>
+          <h2>What this section is designed to support.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {resourceGroups.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Common Requests</p>
+          <h2>Information buyers usually ask for before placing an order.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {documentRequests.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">RFQ Preparation</p>
+          <h2>Send these details to speed up technical and commercial review.</h2>
+        </div>
+        <article className="detail-panel">
+          <ul className="detail-list">
+            {rfqPreparation.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <CtaSection
+        title="Need project-specific documents or selection support?"
+        text="Send your application details, line scope, and destination market so we can align the right product family, documentation scope, and quotation inputs."
+      />
     </PageHero>
   )
 }
@@ -827,9 +992,9 @@ function FaqPage() {
 
 function AboutPage() {
   usePageMeta({
-    title: 'About Hovoy | Composite Pipe Website Structure and Market Positioning',
+    title: 'About Hovoy | Composite Pipe Supplier For Industrial, Marine, and Energy Projects',
     description:
-      'Learn about Hovoy Composite Pipe, our product focus, export market orientation, and support for industrial, marine, and energy pipeline projects.',
+      'Learn about Hovoy Composite Pipe, our product focus, export-oriented supply capability, and support for industrial, marine, and energy pipeline projects.',
     path: '/about/',
   })
 
@@ -861,6 +1026,36 @@ function AboutPage() {
           <p>Product pages, application pages, and contact channels are aligned to support clearer and faster RFQ communication.</p>
         </article>
       </div>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">How We Support Projects</p>
+          <h2>Supply discussions are organized around application, scope, and delivery logic.</h2>
+        </div>
+        <div className="detail-grid">
+          <article className="detail-panel">
+            <h3>Application-Led Review</h3>
+            <p>
+              We separate well, line, marine, and flexible systems so buyers can discuss the right
+              product family instead of sorting through unrelated categories.
+            </p>
+          </article>
+          <article className="detail-panel">
+            <h3>Export Coordination</h3>
+            <p>
+              Commercial review can include packing expectations, delivery timing, documentation
+              needs, and the balance between straight pipe and fabricated scope.
+            </p>
+          </article>
+          <article className="detail-panel">
+            <h3>RFQ Efficiency</h3>
+            <p>
+              Clearer product pages and engineering guidance help reduce missing information so
+              technical and quotation review can move faster.
+            </p>
+          </article>
+        </div>
+      </section>
     </PageHero>
   )
 }

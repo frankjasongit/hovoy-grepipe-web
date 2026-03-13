@@ -49,7 +49,7 @@ export const productPages: ProductPage[] = [
     summary:
       'Composite well tubing and casing for corrosive production environments where weight, corrosion, and lifecycle cost matter.',
     intro:
-      'Well tubing and casing buyers usually care about corrosive service, handling, installation practicality, and long-term reliability in demanding field environments. This page separates that demand from general line pipe or marine pipe traffic.',
+      'Well tubing and casing buyers usually care about corrosive service, handling, installation practicality, and long-term reliability in demanding field environments where standard metallic systems may raise weight or corrosion concerns.',
     metaDescription:
       'Explore composite well tubing and casing systems for corrosive service, field installation efficiency, and engineered well applications.',
     buyerFocus: [
@@ -116,20 +116,23 @@ export const productPages: ProductPage[] = [
       'Transport and routing logic across plant or field systems',
       'Corrosion resistance and lifecycle cost discussion',
       'Fittings, spool assemblies, and project package supply',
+      'Export packing, delivery planning, and installation sequence for project jobs',
     ],
     highlights: [
       'Line pipe product positioning for transport and process systems',
       'Suitable for dimensional, pressure, and standards-based technical discussion',
       'Connects directly to oil and gas, desalination, and chemical applications',
       'Clarifies line pipe supply apart from well pipe and marine systems',
+      'Supports both straight-pipe supply and fabricated package discussion',
     ],
     applications: [
       'Industrial transport lines',
+      'Produced water and utility transfer',
       'Utility routing',
       'Water treatment systems',
       'Chemical processing',
     ],
-    serviceMedia: ['Process water', 'Saline water', 'Chemical service', 'Industrial utility fluids'],
+    serviceMedia: ['Process water', 'Saline water', 'Produced water', 'Chemical service', 'Industrial utility fluids'],
     supplyScope: [
       {
         title: 'Straight Pipe Supply',
@@ -138,6 +141,10 @@ export const productPages: ProductPage[] = [
       {
         title: 'System Packages',
         text: 'Fittings, spool pieces, and connection planning can be aligned to the route, installation method, and project scope.',
+      },
+      {
+        title: 'Installation-Oriented Supply',
+        text: 'Projects can be reviewed around above-ground routing, buried sections, support spacing, field joints, and the mix between prefabrication and site assembly.',
       },
       {
         title: 'Commercial Coordination',
@@ -154,6 +161,10 @@ export const productPages: ProductPage[] = [
         text: 'Above-ground, plant routing, buried service, or utility transfer layouts may change the preferred fittings and support logic.',
       },
       {
+        title: 'System Interfaces',
+        text: 'Transitions to pumps, tanks, valves, steel headers, or existing plant sections should be clarified early so the fittings package matches the actual tie-in points.',
+      },
+      {
         title: 'Project Documentation',
         text: 'Line lists, route sketches, and fittings counts help reduce quotation gaps and speed up technical review.',
       },
@@ -162,6 +173,7 @@ export const productPages: ProductPage[] = [
       'Line service and media description',
       'Diameter range and pressure class',
       'Estimated route length or line list',
+      'Tie-in points, equipment interfaces, or support conditions',
       'Required fittings and spool scope',
       'Project location and delivery timing',
     ],
@@ -407,7 +419,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite marine and offshore piping for seawater duty, corrosion-sensitive utility service, and project environments where weight matters.',
     intro:
-      'Marine buyers evaluate materials through the lens of seawater, weight, corrosion, and vessel or offshore routing constraints. That logic deserves an industry page separate from land-based industrial applications.',
+      'Marine buyers evaluate materials through the lens of seawater, weight, corrosion, and vessel or offshore routing constraints, especially when maintenance access and onboard space are limited.',
     metaDescription:
       'Review composite pipe applications for marine and offshore environments including seawater systems and corrosion-resistant shipboard routing.',
     concerns: [
@@ -468,7 +480,7 @@ export const applicationPages: ApplicationPage[] = [
     advantages: [
       'Application pages let buyers understand the service context before comparing products',
       'Composite line pipe can be positioned against corrosion-related metal challenges',
-      'The content can expand into more specific desalination and treatment scenarios',
+      'Supports both desalination and general treatment utility discussions',
       'Supports both process and utility system inquiry flow',
     ],
     typicalSystems: [
@@ -506,7 +518,7 @@ export const applicationPages: ApplicationPage[] = [
     summary:
       'Composite piping applications for chemical media, corrosive process systems, and plant environments where lifecycle durability matters.',
     intro:
-      'Chemical processing buyers need a clear explanation of why composite piping makes sense for corrosive process duty. This page should become the sector hub for that conversation and point to the most relevant product families.',
+      'Chemical processing buyers usually review pipe systems around corrosion risk, media compatibility, maintenance burden, and how the full pipe-and-fittings package performs in plant service.',
     metaDescription:
       'Explore composite pipe solutions for chemical processing and corrosive plant applications requiring long-life piping systems.',
     concerns: [
@@ -515,10 +527,10 @@ export const applicationPages: ApplicationPage[] = [
       'Application-specific product selection',
     ],
     advantages: [
-      'Industry pages help frame composite pipe as a solution to corrosion-sensitive process duty',
+      'Composite pipe can be positioned as a corrosion-resistant option for selected process and utility duties',
       'Connects line pipe and fittings pages directly to plant use cases',
       'Improves search intent match for chemical-related traffic',
-      'Creates space for future media and standards content',
+      'Supports technical review around media compatibility and system completeness',
     ],
     typicalSystems: [
       {
