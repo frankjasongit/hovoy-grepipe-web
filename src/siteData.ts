@@ -610,4 +610,29 @@ export const faqItems = [
     answer:
       'The most useful RFQs include the application, service media, dimensions, pressure class, fittings scope, destination country, and any drawings or line lists available.',
   },
+  {
+    question: 'How should buyers choose between rigid line pipe and flexible composite pipe?',
+    answer:
+      'That decision usually depends on route geometry, installation speed targets, spoolable deployment needs, pressure class, and whether the project benefits more from reel-based installation or rigid fabricated sections.',
+  },
+  {
+    question: 'Can Hovoy support fittings, joints, and spool packages together with pipe supply?',
+    answer:
+      'Yes. Many projects require more than straight pipe, so fittings, transitions, flanges, reducers, and spool-related scope should be reviewed together with the base pipe requirement.',
+  },
+  {
+    question: 'Which details help speed up technical review for water treatment or desalination projects?',
+    answer:
+      'Plant type, service media, pressure class, route conditions, equipment tie-in points, and the expected mix of straight pipe and fittings all help clarify the correct line pipe package faster.',
+  },
+  {
+    question: 'What do marine and offshore buyers usually need to clarify first?',
+    answer:
+      'Marine and offshore inquiries usually need to clarify whether the service is shipboard, offshore, or coastal, along with seawater exposure, routing constraints, pipe size range, and fittings or class-related requirements.',
+  },
+  {
+    question: 'Why is a separate manufacturing and quality page useful for industrial buyers?',
+    answer:
+      'Industrial buyers often review production logic, inspection discussion, documentation scope, and export shipment readiness before order placement, so that information deserves a dedicated page rather than being hidden inside general sales copy.',
+  },
 ]

@@ -125,6 +125,39 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 }
 
 function HomePage() {
+  const quickAccessLinks = [
+    {
+      title: 'Well Tubing and Casing',
+      text: 'For corrosive well environments, field handling, and tubing or casing discussions.',
+      to: '/products/well-tubing-casing',
+    },
+    {
+      title: 'Line Pipe',
+      text: 'For plant routing, produced water, utility networks, and corrosion-sensitive transport lines.',
+      to: '/products/line-pipe',
+    },
+    {
+      title: 'Marine and Offshore Pipe',
+      text: 'For shipboard utilities, seawater systems, and offshore routing constraints.',
+      to: '/products/marine-offshore-pipe',
+    },
+    {
+      title: 'Flexible Composite Pipe',
+      text: 'For spoolable deployment, RTP-style field transport, and fast installation scenarios.',
+      to: '/products/flexible-composite-pipe',
+    },
+    {
+      title: 'Engineering',
+      text: 'For materials, joints, standards, and RFQ preparation before technical review.',
+      to: '/engineering',
+    },
+    {
+      title: 'Manufacturing and Quality',
+      text: 'For inspection discussion, documentation logic, and export shipment readiness.',
+      to: '/about/manufacturing-quality',
+    },
+  ]
+
   usePageMeta({
     title: 'Hovoy Composite Pipe | Well, Line, Marine, and Flexible Pipe Systems',
     description:
@@ -296,6 +329,30 @@ function HomePage() {
             <h3>Standards and Quality</h3>
             <p>Give buyers a dedicated place for testing, compliance, manufacturing control, and documentation logic.</p>
           </article>
+        </div>
+      </section>
+
+      <section className="section section-grid">
+        <div className="section-heading">
+          <p className="eyebrow">Quick Access</p>
+          <h2>Start from the page that matches your project scope.</h2>
+          <p>
+            Industrial buyers usually arrive with a specific need in mind. Use these direct links
+            to jump into the right product, engineering, or quality page without sorting through
+            unrelated content.
+          </p>
+        </div>
+
+        <div className="sector-grid">
+          {quickAccessLinks.map((item) => (
+            <article className="sector-card" key={item.to}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                Open page
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -945,6 +1002,13 @@ function ResourcesPage() {
 }
 
 function FaqPage() {
+  const faqSupportLinks = [
+    { title: 'Compare Product Families', text: 'See which system fits well service, line transport, marine duty, or flexible deployment.', to: '/products' },
+    { title: 'Review Applications', text: 'Start from oil and gas, marine, desalination, or chemical service if the industry use case is already clear.', to: '/applications' },
+    { title: 'Prepare Technical Review', text: 'Use the engineering page to align materials, joints, standards, and RFQ inputs before sending documents.', to: '/engineering' },
+    { title: 'Send RFQ', text: 'Move directly to contact if the application, pressure class, and scope are already defined.', to: '/contact' },
+  ]
+
   usePageMeta({
     title: 'FAQ | Composite Pipe Questions For Industrial Buyers',
     description:
@@ -985,6 +1049,24 @@ function FaqPage() {
             </article>
           ))}
         </div>
+
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Next Step</p>
+            <h2>Continue from FAQ to the right product or inquiry page.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {faqSupportLinks.map((item) => (
+              <article className="detail-panel" key={item.to}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <Link className="text-link" to={item.to}>
+                  Open page
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
       </PageHero>
     </>
   )
@@ -1174,6 +1256,37 @@ function ManufacturingQualityPage() {
 }
 
 function ContactPage() {
+  const inquiryRoutes = [
+    {
+      title: 'Product Selection',
+      text: 'Tell us whether the request is for well tubing and casing, line pipe, marine systems, flexible composite pipe, or fittings and joints.',
+    },
+    {
+      title: 'Technical Scope',
+      text: 'Share service media, pressure class, dimensions, route conditions, and the fittings or tie-in scope that affects system selection.',
+    },
+    {
+      title: 'Commercial Scope',
+      text: 'Clarify destination country, delivery timing, packing expectations, and whether you need straight pipe only or a broader package with spools and accessories.',
+    },
+  ]
+
+  const rfqChecklist = [
+    'Application sector and service media',
+    'Product family or shortlist under review',
+    'Diameter range, pressure class, and estimated quantities',
+    'Line list, route sketch, or general arrangement if available',
+    'Fittings, flanges, reducers, or transition details',
+    'Destination country, target delivery window, and documentation needs',
+  ]
+
+  const supportLinks = [
+    { title: 'Browse product families', to: '/products' },
+    { title: 'Review application pages', to: '/applications' },
+    { title: 'Check engineering guidance', to: '/engineering' },
+    { title: 'Read FAQ', to: '/resources/faq' },
+  ]
+
   usePageMeta({
     title: 'Contact Hovoy | RFQ For Composite Pipe Systems',
     description:
@@ -1187,6 +1300,21 @@ function ContactPage() {
       title="Contact Hovoy for product selection, technical review, and project quotations."
       description="Send your application details, product scope, dimensions, pressure class, and destination market so we can review the request and respond more accurately."
     >
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Inquiry Path</p>
+          <h2>What helps us respond faster and more accurately.</h2>
+        </div>
+        <div className="detail-card-grid">
+          {inquiryRoutes.map((item) => (
+            <article className="detail-panel" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <div className="detail-grid">
         <article className="detail-panel">
           <h3>Primary contact</h3>
@@ -1201,14 +1329,29 @@ function ContactPage() {
         <article className="detail-panel">
           <h3>What to include in your RFQ</h3>
           <ul className="detail-list">
-            <li>Product line: well, line, marine, flexible, or fittings</li>
-            <li>Application and service media</li>
-            <li>Diameter range, pressure class, and line scope</li>
-            <li>Destination country and project timing</li>
-            <li>Drawings, line list, or technical notes if available</li>
+            {rfqChecklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </article>
       </div>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Before Contacting Us</p>
+          <h2>Use these pages if you still need to narrow the inquiry.</h2>
+        </div>
+        <div className="detail-grid">
+          {supportLinks.map((item) => (
+            <article className="detail-panel" key={item.to}>
+              <h3>{item.title}</h3>
+              <Link className="text-link" to={item.to}>
+                Open page
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
     </PageHero>
   )
 }
