@@ -1,5 +1,13 @@
 import { BrowserRouter, Link, NavLink, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
-import { createContext, useContext, useEffect, useState } from 'react'
+import {
+  createContext,
+  type ChangeEvent,
+  type FormEvent,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import './App.css'
 import heroRefinery from './assets/refinery-hero-pexels.jpg'
 import {
@@ -196,7 +204,7 @@ function ScrollToTop() {
   return null
 }
 
-function SiteLayout({ children }: { children: React.ReactNode }) {
+function SiteLayout({ children }: { children: ReactNode }) {
   const location = useLocation()
   const [openMenu, setOpenMenu] = useState<string | null>(null)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -383,7 +391,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
           to: '/resources',
         },
       ],
-      utility: { label: 'Open engineering', to: '/engineering' },
+      utility: { label: 'Explore engineering support', to: '/engineering' },
     },
     resources: {
       title: 'Resources And RFQ Support',
@@ -827,7 +835,7 @@ function HomePage() {
       <section className="section capability-band">
         <div className="capability-copy">
           <p className="eyebrow">Commercial Proof</p>
-          <h2>Show buyers why Hovoy is easier to work with than a generic trading site.</h2>
+          <h2>Show buyers why Hovoy is easier to work with than a generic pipe supplier.</h2>
           <p>
             The strongest industrial sites combine technical familiarity, manufacturing discussion,
             export coordination, and package-completeness thinking in one clear story.
@@ -860,7 +868,7 @@ function HomePage() {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link className="text-link" to={item.to}>
-                Open page
+                Explore {item.title}
               </Link>
             </article>
           ))}
@@ -1291,7 +1299,7 @@ function ProductDetailPage() {
                 a faster review.
               </span>
               <Link className="button button-primary contact-button" to="/contact">
-                Open contact page
+                Contact Hovoy
               </Link>
             </article>
           </aside>
@@ -2093,7 +2101,7 @@ function DownloadsPage() {
       status: 'Open page now',
       text: 'Use this entry when material family, joint methods, and technical clarification should be aligned before requesting deeper project documents.',
       to: '/engineering',
-      cta: 'Open engineering',
+      cta: 'Explore engineering support',
     },
   ]
 
@@ -2714,8 +2722,8 @@ function ManufacturingQualityPage() {
 }
 
 function SmartRFQForm() {
-  const [step, setStep] = React.useState(1)
-  const [formData, setFormData] = React.useState({
+  const [step, setStep] = useState(1)
+  const [formData, setFormData] = useState({
     application: '',
     media: '',
     pressure: '',
@@ -2728,14 +2736,16 @@ function SmartRFQForm() {
     additionalNotes: ''
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const nextStep = () => setStep((s) => s + 1)
   const prevStep = () => setStep((s) => s - 1)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     // Formatting a mailto link with the structured data
     const subject = encodeURIComponent(`Smart RFQ from ${formData.company || formData.name}`)
@@ -3081,7 +3091,7 @@ function PageHero({
   eyebrow: string
   title: string
   description: string
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <>

@@ -52,7 +52,7 @@ export const productPages: ProductPage[] = [
     intro:
       'Well tubing and casing projects usually focus on corrosive service, handling, installation practicality, and long-term reliability in demanding field environments where standard metallic systems may raise weight or corrosion concerns.',
     metaDescription:
-      'Explore composite well tubing and casing systems for corrosive service, field installation efficiency, and engineered well applications.',
+      'Explore Hovoy well tubing and casing solutions for corrosive service, field installation efficiency, and engineered oil and gas well applications.',
     buyerFocus: [
       'Corrosion resistance in aggressive well environments',
       'Handling and installation efficiency versus metal alternatives',
@@ -112,7 +112,7 @@ export const productPages: ProductPage[] = [
     intro:
       'Line pipe projects typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
     metaDescription:
-      'Review composite line pipe solutions for industrial transport, utility networks, corrosion-resistant process service, and project supply.',
+      'Review Hovoy line pipe solutions for industrial transport, utility networks, corrosive process service, and export-oriented project supply.',
     buyerFocus: [
       'Transport and routing logic across plant or field systems',
       'Corrosion resistance and lifecycle cost discussion',
@@ -189,7 +189,7 @@ export const productPages: ProductPage[] = [
     intro:
       'Marine and offshore projects focus on seawater duty, corrosion resistance, weight reduction, installation practicality, and vessel or offshore project constraints.',
     metaDescription:
-      'Explore marine and offshore composite pipe systems for seawater duty, shipboard utility service, and corrosion-resistant offshore applications.',
+      'Explore Hovoy marine and offshore pipe solutions for seawater duty, shipboard utility service, and corrosion-resistant offshore applications.',
     buyerFocus: [
       'Seawater and saline corrosion resistance',
       'Weight reduction for shipboard and offshore routing',
@@ -249,7 +249,7 @@ export const productPages: ProductPage[] = [
     intro:
       'Flexible composite pipe serves a different market from rigid GRE systems, with project teams focusing on spoolable deployment, RTP/TCP terminology, and fast field installation.',
     metaDescription:
-      'Discover flexible composite pipe systems for spoolable transport, field deployment, and oil and gas service applications.',
+      'Discover Hovoy flexible composite pipe solutions for spoolable transport, field deployment, and oil and gas service applications.',
     buyerFocus: [
       'Spoolable deployment and installation speed',
       'Oil and gas transport scenarios',
@@ -309,7 +309,7 @@ export const productPages: ProductPage[] = [
     intro:
       'Fittings and connection systems are essential to complete project supply. Many RFQs depend as much on elbows, tees, reducers, flanges, and jointing logic as on straight pipe.',
     metaDescription:
-      'Review composite fittings and joint systems including elbows, tees, flanges, reducers, and project-driven connection solutions.',
+      'Review Hovoy composite fittings and joint systems including elbows, tees, flanges, reducers, and project-driven connection solutions.',
     buyerFocus: [
       'Complete system supply instead of straight pipe only',
       'Connection logic matched to installation method',
@@ -383,7 +383,7 @@ export const applicationPages: ApplicationPage[] = [
     intro:
       'Oil and gas projects often compare well products, line pipe, and flexible transport options within the same project scope, especially in corrosive or logistically demanding field environments.',
     metaDescription:
-      'Explore composite pipe applications for oil and gas including well systems, line pipe, and flexible composite transport solutions.',
+      'Explore composite pipe applications for oil and gas projects including well systems, line pipe, and flexible composite transport solutions.',
     concerns: [
       'Corrosive service and field reliability',
       'Installation practicality in remote conditions',
@@ -433,7 +433,7 @@ export const applicationPages: ApplicationPage[] = [
     intro:
       'Marine projects evaluate materials through the lens of seawater, weight, corrosion, and vessel or offshore routing constraints, especially when maintenance access and onboard space are limited.',
     metaDescription:
-      'Review composite pipe applications for marine and offshore environments including seawater systems and corrosion-resistant shipboard routing.',
+      'Review composite pipe applications for marine and offshore projects including seawater systems and corrosion-resistant shipboard routing.',
     concerns: [
       'Seawater corrosion and long service life',
       'Weight constraints on vessel or offshore routing',
@@ -483,7 +483,7 @@ export const applicationPages: ApplicationPage[] = [
     intro:
       'Water treatment and desalination projects often begin with plant duty, corrosion environment, and saline service requirements rather than material type alone.',
     metaDescription:
-      'Learn how composite pipe systems fit water treatment and desalination applications requiring corrosion resistance and utility system reliability.',
+      'Learn how composite pipe systems fit water treatment and desalination projects requiring corrosion resistance and utility system reliability.',
     concerns: [
       'Corrosion in saline and treatment environments',
       'Utility system reliability and lifecycle cost',
@@ -540,7 +540,7 @@ export const applicationPages: ApplicationPage[] = [
     intro:
       'Chemical processing projects usually review pipe systems around corrosion risk, media compatibility, maintenance burden, and how the full pipe-and-fittings package performs in plant service.',
     metaDescription:
-      'Explore composite pipe solutions for chemical processing and corrosive plant applications requiring long-life piping systems.',
+      'Explore composite pipe solutions for chemical processing and corrosive plant projects requiring long-life piping systems.',
     concerns: [
       'Aggressive media and corrosion risk',
       'System compatibility across pipe and fittings',
