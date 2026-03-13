@@ -737,7 +737,7 @@ function HomePage() {
             <div className="hero-photo-panel">
               <span>Industrial Project Context</span>
               <strong>Build the inquiry around service conditions, route logic, fittings scope, and delivery needs.</strong>
-              <small>That structure makes it easier for buyers to compare product families, request documents, and move into quotation without losing context.</small>
+              <small>That structure makes it easier for project teams to compare product families, request documents, and move into quotation without losing context.</small>
             </div>
           </figure>
         </div>
@@ -781,7 +781,7 @@ function HomePage() {
             <h2>Five primary product routes for different operating environments.</h2>
           </div>
           <p>
-            Product pages should help buyers quickly separate well service, line transport, marine
+            Product pages should help project teams quickly separate well service, line transport, marine
             duty, flexible deployment, and fittings scope instead of treating everything as one
             generic composite pipe category.
           </p>
@@ -810,10 +810,10 @@ function HomePage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Application Sectors</p>
-            <h2>Application-first routes for buyers solving a service problem before choosing a product.</h2>
+            <h2>Application-first routes for engineers solving a service problem before choosing a product.</h2>
           </div>
           <p>
-            Buyers often arrive with an operating environment in mind, not a final material choice.
+            Engineers often arrive with an operating environment in mind, not a final material choice.
             Application pages should bridge that gap by connecting service conditions to the right
             product family, fittings scope, and documentation path.
           </p>
@@ -835,7 +835,7 @@ function HomePage() {
       <section className="section capability-band">
         <div className="capability-copy">
           <p className="eyebrow">Commercial Proof</p>
-          <h2>Show buyers why Hovoy is easier to work with than a generic pipe supplier.</h2>
+          <h2>Show engineering teams why Hovoy is easier to work with than a generic pipe supplier.</h2>
           <p>
             The strongest industrial sites combine technical familiarity, manufacturing discussion,
             export coordination, and package-completeness thinking in one clear story.
@@ -1274,9 +1274,9 @@ function ProductDetailPage() {
 
           <aside className="product-overview-rail">
             <article className="rail-card">
-              <p className="eyebrow">Buyer Priorities</p>
+              <p className="eyebrow">Engineering Focus</p>
               <ul className="detail-list">
-                {page.buyerFocus.slice(0, 4).map((item) => (
+                {page.engineeringFocus.slice(0, 4).map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -1319,7 +1319,7 @@ function ProductDetailPage() {
           <article className="detail-panel">
             <h3>Typical client requirements</h3>
             <ul className="detail-list">
-              {page.buyerFocus.map((item) => (
+              {page.engineeringFocus.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -1372,7 +1372,7 @@ function ProductDetailPage() {
             <h2>Where this product family usually fits best.</h2>
           </div>
           <p>
-            Product pages should help buyers confirm operating context, package scope, and related
+            Product pages should help project teams confirm operating context, package scope, and related
             applications before they ask for a quotation.
           </p>
         </div>
@@ -1409,7 +1409,7 @@ function ProductDetailPage() {
               <h2>Project conditions where this product family is often selected.</h2>
             </div>
             <p>
-              These are the operating conditions and package needs where buyers often evaluate
+              These are the operating conditions and package needs where clients often evaluate
               Hovoy as a supplier.
             </p>
           </div>
@@ -1438,7 +1438,7 @@ function ProductDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Inquiry Readiness</p>
-            <h2>Give buyers the information they need before sending an RFQ.</h2>
+            <h2>Give engineers the information they need before sending an RFQ.</h2>
           </div>
           <p>
             Strong product pages reduce back-and-forth by combining commercial reasons to shortlist
@@ -1477,7 +1477,7 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Why Hovoy On This Product</p>
-            <h2>Reasons buyers review Hovoy for this product family.</h2>
+            <h2>Reasons clients review Hovoy for this product family.</h2>
           </div>
           <div className="detail-card-grid">
             {productModule.whyHovoy.map((item) => (
@@ -2180,7 +2180,7 @@ function DownloadsPage() {
         <div className="sector-grid">
           <article className="sector-card">
             <h3>Why Hovoy</h3>
-            <p>Review the commercial reasons buyers shortlist Hovoy for GRE, GRP, and FRP pipe projects.</p>
+            <p>Review the commercial reasons project teams shortlist Hovoy for GRE, GRP, and FRP pipe projects.</p>
             <Link className="text-link" to="/why-hovoy">
               Explore why Hovoy
             </Link>
@@ -2271,8 +2271,8 @@ function KeywordPageView({ page }: { page: KeywordPage }) {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Buyer Priorities</p>
-          <h2>What buyers usually need when comparing this material family.</h2>
+          <p className="eyebrow">Project Requirements</p>
+          <h2>What project teams usually need when comparing this material family.</h2>
         </div>
         <div className="detail-card-grid">
           {page.focus.map((item) => (
@@ -2520,7 +2520,7 @@ function WhyHovoyPage() {
     },
     {
       title: 'Project Priorities',
-      text: 'Many buyers begin with line pipe, marine pipe, fittings packages, and corrosive-service industrial projects where package completeness matters.',
+      text: 'Many projects begin with line pipe, marine pipe, fittings packages, and corrosive-service industrial projects where package completeness matters.',
     },
   ]
 
@@ -2534,8 +2534,8 @@ function WhyHovoyPage() {
   return (
     <PageHero
       eyebrow="Why Hovoy"
-      title="Why buyers choose Hovoy for GRE, GRP, and FRP pipe projects."
-      description="See why industrial buyers choose Hovoy for GRE, GRP, FRP, and flexible pipe projects, from industry experience and process familiarity to export coordination and package support."
+      title="Why engineers specify Hovoy for GRE, GRP, and FRP pipe projects."
+      description="See why industrial clients choose Hovoy for GRE, GRP, FRP, and flexible pipe projects, from industry experience and process familiarity to export coordination and package support."
     >
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
@@ -2576,7 +2576,7 @@ function WhyHovoyPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Market Position</p>
-          <h2>How Hovoy presents its value to industrial and project buyers.</h2>
+          <h2>How Hovoy presents its value to industrial and project teams.</h2>
         </div>
         <div className="detail-card-grid">
           {conversionPaths.map((item) => (
@@ -2649,7 +2649,7 @@ function ManufacturingQualityPage() {
     },
   ]
 
-  const buyerChecks = [
+  const projectChecks = [
     'Applicable product family and service description',
     'Dimensions, pressure class, and package scope',
     'Required fittings, transitions, or spool assemblies',
@@ -2706,7 +2706,7 @@ function ManufacturingQualityPage() {
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
-            {buyerChecks.map((item) => (
+            {projectChecks.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -2901,7 +2901,7 @@ function ContactPage() {
   const inquiryTypes = [
     {
       title: 'Product RFQ',
-      text: 'For buyers who already know the product family and need quotation support for pipe, fittings, and project package scope.',
+      text: 'For project teams who already know the product family and need quotation support for pipe, fittings, and project package scope.',
     },
     {
       title: 'Technical Review',

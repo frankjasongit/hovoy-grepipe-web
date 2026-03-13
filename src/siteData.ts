@@ -7,7 +7,7 @@ export type ProductPage = {
   summary: string
   intro: string
   metaDescription: string
-  buyerFocus: string[]
+  engineeringFocus: string[]
   highlights: string[]
   applications: string[]
   serviceMedia: string[]
@@ -53,7 +53,7 @@ export const productPages: ProductPage[] = [
       'Well tubing and casing projects usually focus on corrosive service, handling, installation practicality, and long-term reliability in demanding field environments where standard metallic systems may raise weight or corrosion concerns.',
     metaDescription:
       'Explore Hovoy well tubing and casing solutions for corrosive service, field installation efficiency, and engineered oil and gas well applications.',
-    buyerFocus: [
+    engineeringFocus: [
       'Corrosion resistance in aggressive well environments',
       'Handling and installation efficiency versus metal alternatives',
       'Project-specific supply logic rather than generic stock listing',
@@ -113,7 +113,7 @@ export const productPages: ProductPage[] = [
       'Line pipe projects typically focus on transport networks, plant utility routing, and engineered pipe systems for corrosive or weight-sensitive service conditions.',
     metaDescription:
       'Review Hovoy line pipe solutions for industrial transport, utility networks, corrosive process service, and export-oriented project supply.',
-    buyerFocus: [
+    engineeringFocus: [
       'Transport and routing logic across plant or field systems',
       'Corrosion resistance and lifecycle cost discussion',
       'Fittings, spool assemblies, and project package supply',
@@ -190,7 +190,7 @@ export const productPages: ProductPage[] = [
       'Marine and offshore projects focus on seawater duty, corrosion resistance, weight reduction, installation practicality, and vessel or offshore project constraints.',
     metaDescription:
       'Explore Hovoy marine and offshore pipe solutions for seawater duty, shipboard utility service, and corrosion-resistant offshore applications.',
-    buyerFocus: [
+    engineeringFocus: [
       'Seawater and saline corrosion resistance',
       'Weight reduction for shipboard and offshore routing',
       'Project and standards discussion aligned to marine use',
@@ -250,7 +250,7 @@ export const productPages: ProductPage[] = [
       'Flexible composite pipe serves a different market from rigid GRE systems, with project teams focusing on spoolable deployment, RTP/TCP terminology, and fast field installation.',
     metaDescription:
       'Discover Hovoy flexible composite pipe solutions for spoolable transport, field deployment, and oil and gas service applications.',
-    buyerFocus: [
+    engineeringFocus: [
       'Spoolable deployment and installation speed',
       'Oil and gas transport scenarios',
       'Comparison versus rigid pipe systems',
@@ -274,7 +274,7 @@ export const productPages: ProductPage[] = [
       },
       {
         title: 'Comparison Support',
-        text: 'Buyers often compare flexible systems against rigid alternatives, so inquiry review can focus on installation method and operating duty.',
+        text: 'Engineers often compare flexible systems against rigid alternatives, so inquiry review can focus on installation method and operating duty.',
       },
     ],
     selectionNotes: [
@@ -310,7 +310,7 @@ export const productPages: ProductPage[] = [
       'Fittings and connection systems are essential to complete project supply. Many RFQs depend as much on elbows, tees, reducers, flanges, and jointing logic as on straight pipe.',
     metaDescription:
       'Review Hovoy composite fittings and joint systems including elbows, tees, flanges, reducers, and project-driven connection solutions.',
-    buyerFocus: [
+    engineeringFocus: [
       'Complete system supply instead of straight pipe only',
       'Connection logic matched to installation method',
       'Commercial support for project routing and spool design',
