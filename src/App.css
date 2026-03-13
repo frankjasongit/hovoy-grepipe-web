@@ -752,8 +752,8 @@
     rotateY(var(--surface-tilt-y))
     scale(var(--surface-scale));
   transition:
-    transform 320ms ease,
-    box-shadow 320ms ease;
+    transform 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 450ms cubic-bezier(0.19, 1, 0.22, 1);
   transform-style: preserve-3d;
   will-change: transform, box-shadow;
 }
@@ -828,9 +828,9 @@
 }
 
 .hero-photo-card:hover {
-  --surface-lift: -4px;
-  --surface-scale: 1.004;
-  box-shadow: 0 36px 76px rgba(11, 28, 44, 0.24);
+  --surface-lift: -6px;
+  --surface-scale: 1.015;
+  box-shadow: 0 42px 84px rgba(11, 28, 44, 0.28);
 }
 
 .hero-photo-card:hover .hero-photo {
@@ -1210,6 +1210,14 @@
 }
 
 .capability-copy {
+  position: relative;
+  --surface-lift: 0px;
+  --surface-scale: 1;
+  transform: translate3d(0, var(--surface-lift), 0) scale(var(--surface-scale));
+  transition:
+    transform 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  
   padding: 1.7rem;
   border-radius: 1.7rem;
   background:
@@ -1217,6 +1225,12 @@
     #0d2435;
   color: #ffffff;
   box-shadow: 0 26px 44px rgba(11, 28, 44, 0.18);
+}
+
+.capability-copy:hover {
+  --surface-lift: -8px;
+  --surface-scale: 1.012;
+  box-shadow: 0 32px 58px rgba(11, 28, 44, 0.32);
 }
 
 .capability-copy .eyebrow {
@@ -1317,9 +1331,9 @@
     rotateY(var(--surface-tilt-y))
     scale(var(--surface-scale));
   transition:
-    transform 240ms ease,
-    box-shadow 240ms ease,
-    border-color 240ms ease;
+    transform 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 450ms cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 450ms cubic-bezier(0.19, 1, 0.22, 1);
   transform-style: preserve-3d;
   will-change: transform, box-shadow;
 }
