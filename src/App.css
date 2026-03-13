@@ -445,6 +445,22 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
+.email-stack {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.email-stack a {
+  display: block;
+}
+
+.email-stack-compact a {
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
 .mini-pill-grid {
   display: flex;
   flex-wrap: wrap;

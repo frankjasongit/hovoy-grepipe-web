@@ -18,7 +18,7 @@
 
 ## Immediate business setup tasks
 
-- Keep `chinahovoy@yahoo.com` available for launch inquiries
+- Keep `sales@hovoy-grepipe.com` as the primary inquiry email and `chinahovoy@yahoo.com` as the secondary contact
 - Create a dedicated GitHub repo for this project
 - Connect the new repo to deployment after the first stable homepage build
 - Start collecting product data sheets, pressure classes, resin system information, and fitting range

@@ -27,6 +27,9 @@ type MetaConfig = {
 export type MetaSnapshot = Partial<MetaConfig>
 export const MetaContext = createContext<MetaSnapshot | null>(null)
 
+const primaryInquiryEmail = 'sales@hovoy-grepipe.com'
+const secondaryInquiryEmail = 'chinahovoy@yahoo.com'
+
 type KeywordPage = {
   slug: 'gre-pipe' | 'grp-pipe' | 'frp-pipe'
   eyebrow: string
@@ -668,7 +671,19 @@ function HomePage() {
     name: 'Hovoy GRE Pipe',
     alternateName: 'Hovoy Composite Pipe',
     url: siteUrl,
-    email: 'chinahovoy@yahoo.com',
+    email: primaryInquiryEmail,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: primaryInquiryEmail,
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: secondaryInquiryEmail,
+      },
+    ],
     description:
       'Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe, marine pipe, flexible pipe, and engineered project support.',
   }
@@ -917,7 +932,10 @@ function HomePage() {
 
         <div className="contact-card">
           <p>Primary inquiry email</p>
-          <a href="mailto:chinahovoy@yahoo.com">chinahovoy@yahoo.com</a>
+          <div className="email-stack">
+            <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+            <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+          </div>
           <span>Send application details, product scope, dimensions, pressure class, and destination market.</span>
           <Link className="button button-primary contact-button" to="/contact">
             Contact Hovoy
@@ -1293,7 +1311,10 @@ function ProductDetailPage() {
             </article>
             <article className="rail-card rail-card-dark">
               <p>Need quotation support?</p>
-              <strong>chinahovoy@yahoo.com</strong>
+              <div className="email-stack email-stack-compact">
+                <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+                <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+              </div>
               <span>
                 Send media, pressure class, dimensions, fittings scope, and destination market for
                 a faster review.
@@ -2763,7 +2784,7 @@ Company: ${formData.company}
 
 Notes: ${formData.additionalNotes}
     `)
-    window.location.href = `mailto:chinahovoy@yahoo.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${primaryInquiryEmail}?cc=${encodeURIComponent(secondaryInquiryEmail)}&subject=${subject}&body=${body}`
   }
 
   return (
@@ -3117,7 +3138,10 @@ function CtaSection({ title, text }: { title: string; text: string }) {
       </div>
       <div className="contact-card">
         <p>Inquiry email</p>
-        <a href="mailto:chinahovoy@yahoo.com">chinahovoy@yahoo.com</a>
+        <div className="email-stack">
+          <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+          <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+        </div>
         <span>Share product scope, application details, dimensions, pressure class, and destination market.</span>
         <Link className="button button-primary contact-button" to="/contact">
           Contact Hovoy
