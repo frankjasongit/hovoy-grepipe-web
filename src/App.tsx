@@ -74,7 +74,143 @@ function ScrollToTop() {
 }
 
 function SiteLayout({ children }: { children: React.ReactNode }) {
+  const location = useLocation()
   const [openMenu, setOpenMenu] = useState<string | null>(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const updateTopbarState = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    updateTopbarState()
+    window.addEventListener('scroll', updateTopbarState, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', updateTopbarState)
+    }
+  }, [])
+
+  useEffect(() => {
+    setOpenMenu(null)
+  }, [location.pathname])
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    const riseTargets = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        '.hero-copy, .hero-visual, .page-hero-copy, .section-heading, .capability-copy, .contact-panel > div:first-child',
+      ),
+    )
+    const fadeTargets = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        '.hero-stats > div, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
+      ),
+    )
+
+    const riseSet = new Set(riseTargets)
+    const targets = [...riseTargets, ...fadeTargets]
+    const staggerByParent = new Map<HTMLElement, number>()
+
+    targets.forEach((target) => {
+      target.classList.remove('motion-rise', 'motion-fade', 'is-visible')
+      target.classList.add(riseSet.has(target) ? 'motion-rise' : 'motion-fade')
+
+      const parent = target.parentElement ?? document.body
+      const currentIndex = staggerByParent.get(parent) ?? 0
+
+      target.style.setProperty('--reveal-delay', `${Math.min(currentIndex, 6) * 70}ms`)
+      staggerByParent.set(parent, currentIndex + 1)
+    })
+
+    if (reducedMotion) {
+      targets.forEach((target) => target.classList.add('is-visible'))
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      {
+        threshold: 0.16,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    )
+
+    targets.forEach((target) => observer.observe(target))
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [location.pathname])
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reducedMotion) {
+      return
+    }
+
+    const surfaces = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        '.hero-photo-card, .hero-stats > div, .trust-strip p, .pill, .product-card, .sector-card, .capability-card, .highlight-card, .faq-card, .timeline article, .detail-panel, .contact-card',
+      ),
+    )
+
+    const cleanups = surfaces.map((surface) => {
+      const depth = surface.classList.contains('hero-photo-card') ? 7.5 : 4.2
+
+      const resetSurface = () => {
+        surface.style.removeProperty('--surface-tilt-x')
+        surface.style.removeProperty('--surface-tilt-y')
+        surface.style.removeProperty('--surface-glow-x')
+        surface.style.removeProperty('--surface-glow-y')
+        surface.style.removeProperty('--surface-scale')
+        surface.classList.remove('is-interacting')
+      }
+
+      const handleMove = (event: PointerEvent) => {
+        if (event.pointerType && event.pointerType !== 'mouse') {
+          return
+        }
+
+        const rect = surface.getBoundingClientRect()
+        const pointerX = (event.clientX - rect.left) / rect.width
+        const pointerY = (event.clientY - rect.top) / rect.height
+        const rotateX = (0.5 - pointerY) * depth
+        const rotateY = (pointerX - 0.5) * depth
+
+        surface.style.setProperty('--surface-tilt-x', `${rotateX.toFixed(2)}deg`)
+        surface.style.setProperty('--surface-tilt-y', `${rotateY.toFixed(2)}deg`)
+        surface.style.setProperty('--surface-glow-x', `${(pointerX * 100).toFixed(2)}%`)
+        surface.style.setProperty('--surface-glow-y', `${(pointerY * 100).toFixed(2)}%`)
+        surface.style.setProperty('--surface-scale', surface.classList.contains('hero-photo-card') ? '1.012' : '1.006')
+        surface.classList.add('is-interacting')
+      }
+
+      surface.addEventListener('pointermove', handleMove)
+      surface.addEventListener('pointerleave', resetSurface)
+      surface.addEventListener('pointercancel', resetSurface)
+
+      return () => {
+        surface.removeEventListener('pointermove', handleMove)
+        surface.removeEventListener('pointerleave', resetSurface)
+        surface.removeEventListener('pointercancel', resetSurface)
+        resetSurface()
+      }
+    })
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup())
+    }
+  }, [location.pathname])
 
   const megaMenus = {
     products: {
@@ -177,7 +313,10 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="site-shell">
-      <header className="topbar" onMouseLeave={() => setOpenMenu(null)}>
+      <header
+        className={isScrolled || openMenu ? 'topbar topbar-scrolled' : 'topbar'}
+        onMouseLeave={() => setOpenMenu(null)}
+      >
         <div className="topbar-inner">
           <Link className="brand-lockup" to="/">
             <div className="brand-badge">HG</div>
@@ -201,6 +340,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
                       isActive ? 'navlink navlink-parent navlink-active' : 'navlink navlink-parent'
                     }
                     to={item.to}
+                    aria-expanded={openMenu === item.key}
                   >
                     <span>{item.label}</span>
                     <span className="nav-caret" aria-hidden="true">
@@ -246,7 +386,9 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
         ) : null}
       </header>
 
-      <main>{children}</main>
+      <main className="page-shell" key={location.pathname}>
+        {children}
+      </main>
 
       <footer className="footer">
         <div>
