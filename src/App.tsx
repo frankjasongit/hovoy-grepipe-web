@@ -1,7 +1,7 @@
 import { BrowserRouter, Link, NavLink, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import heroRefinery from './assets/refinery-hero.jpg'
+import heroRefinery from './assets/refinery-hero-pexels.jpg'
 import {
   applicationPages,
   faqItems,
@@ -74,28 +74,168 @@ function ScrollToTop() {
 }
 
 function SiteLayout({ children }: { children: React.ReactNode }) {
+  const [openMenu, setOpenMenu] = useState<string | null>(null)
+
+  const megaMenus = {
+    products: {
+      title: 'Product Families',
+      text: 'Start with the pipe family that matches the service environment, installation logic, and package scope.',
+      links: productPages.map((item) => ({
+        title: item.title,
+        text: item.summary,
+        to: `/products/${item.slug}`,
+      })),
+      utility: { label: 'View all products', to: '/products' },
+    },
+    applications: {
+      title: 'Application Sectors',
+      text: 'Use industry pages when the operating environment is already clear and the product family still needs to be narrowed.',
+      links: applicationPages.map((item) => ({
+        title: item.title,
+        text: item.summary,
+        to: `/applications/${item.slug}`,
+      })),
+      utility: { label: 'View all applications', to: '/applications' },
+    },
+    engineering: {
+      title: 'Engineering And Quality',
+      text: 'Technical review often depends on material systems, joint logic, manufacturing discussion, and RFQ preparation.',
+      links: [
+        {
+          title: 'Engineering',
+          text: 'Materials, joints, standards, and technical inputs that shape selection and quotation.',
+          to: '/engineering',
+        },
+        {
+          title: 'Manufacturing and Quality',
+          text: 'Production planning, inspection discussion, documentation scope, and export shipment readiness.',
+          to: '/about/manufacturing-quality',
+        },
+        {
+          title: 'Resources',
+          text: 'FAQ, RFQ preparation, and buyer guidance for project communication.',
+          to: '/resources',
+        },
+      ],
+      utility: { label: 'Open engineering', to: '/engineering' },
+    },
+    resources: {
+      title: 'Resources And RFQ Support',
+      text: 'Use resources pages to answer common buyer questions, prepare RFQ inputs, and move to contact with a cleaner project brief.',
+      links: [
+        {
+          title: 'Resources',
+          text: 'Resource center for buyer guidance, request preparation, and supporting technical discussion.',
+          to: '/resources',
+        },
+        {
+          title: 'FAQ',
+          text: 'Common questions on product fit, application logic, and quotation preparation.',
+          to: '/resources/faq',
+        },
+        {
+          title: 'Contact',
+          text: 'Move directly to project communication when the application and scope are already defined.',
+          to: '/contact',
+        },
+      ],
+      utility: { label: 'Open resources', to: '/resources' },
+    },
+    about: {
+      title: 'About Hovoy',
+      text: 'Company positioning, manufacturing discussion, and contact paths for export-oriented project supply.',
+      links: [
+        {
+          title: 'About',
+          text: 'Product focus, application coverage, project support, and commercial response.',
+          to: '/about',
+        },
+        {
+          title: 'Manufacturing and Quality',
+          text: 'See how production control and quality review support project delivery.',
+          to: '/about/manufacturing-quality',
+        },
+        {
+          title: 'Contact',
+          text: 'Move directly into RFQ and project communication with the sales team.',
+          to: '/contact',
+        },
+      ],
+      utility: { label: 'Contact Hovoy', to: '/contact' },
+    },
+  } as const
+
+  const primaryItems = [
+    { label: 'Products', key: 'products' as const, to: '/products' },
+    { label: 'Applications', key: 'applications' as const, to: '/applications' },
+    { label: 'Engineering', key: 'engineering' as const, to: '/engineering' },
+    { label: 'Resources', key: 'resources' as const, to: '/resources' },
+    { label: 'About', key: 'about' as const, to: '/about' },
+  ]
+
   return (
     <div className="site-shell">
-      <header className="topbar">
-        <Link className="brand-lockup" to="/">
-          <div className="brand-badge">HG</div>
-          <div>
-            <p className="brand-name">Hovoy Composite Pipe</p>
-            <p className="brand-tag">Well, line, marine, and flexible composite pipe systems</p>
-          </div>
-        </Link>
+      <header className="topbar" onMouseLeave={() => setOpenMenu(null)}>
+        <div className="topbar-inner">
+          <Link className="brand-lockup" to="/">
+            <div className="brand-badge">HG</div>
+            <div>
+              <p className="brand-name">Hovoy Composite Pipe</p>
+              <p className="brand-tag">Well, line, marine, flexible, and engineered project supply</p>
+            </div>
+          </Link>
 
-        <nav className="topnav" aria-label="Primary">
-          {secondaryNav.map((item) => (
+          <nav className="topnav" aria-label="Primary">
+            {primaryItems.map((item) => {
+              const menu = megaMenus[item.key]
+              return (
+                <div
+                  className="navitem"
+                  key={item.label}
+                  onMouseEnter={() => setOpenMenu(item.key)}
+                  onFocus={() => setOpenMenu(item.key)}
+                >
+                  <NavLink
+                    className={({ isActive }) => (isActive ? 'navlink navlink-active' : 'navlink')}
+                    to={item.to}
+                  >
+                    {item.label}
+                  </NavLink>
+
+                  {openMenu === item.key ? (
+                    <div className="mega-menu" role="group" aria-label={item.label}>
+                      <div className="mega-menu-intro">
+                        <p className="eyebrow">Explore</p>
+                        <h3>{menu.title}</h3>
+                        <p>{menu.text}</p>
+                        <Link className="button button-primary mega-menu-button" to={menu.utility.to}>
+                          {menu.utility.label}
+                        </Link>
+                      </div>
+                      <div className="mega-menu-links">
+                        {menu.links.map((link) => (
+                          <Link className="mega-menu-card" key={link.to} to={link.to}>
+                            <strong>{link.title}</strong>
+                            <span>{link.text}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              )
+            })}
+
             <NavLink
-              className={({ isActive }) => (isActive ? 'navlink navlink-active' : 'navlink')}
-              key={item.to}
-              to={item.to}
+              className={({ isActive }) =>
+                isActive ? 'button button-primary nav-cta nav-cta-active' : 'button button-primary nav-cta'
+              }
+              to="/contact"
             >
-              {item.label}
+              Contact
             </NavLink>
-          ))}
-        </nav>
+          </nav>
+        </div>
       </header>
 
       <main>{children}</main>
@@ -225,26 +365,13 @@ function HomePage() {
               alt="Aerial view of a refinery and industrial processing plant"
             />
             <div className="hero-photo-shade" />
+            <div className="hero-photo-badge">
+              Refinery, process plant, and industrial pipeline environments
+            </div>
             <div className="hero-photo-panel">
-              <span>Project Supply Focus</span>
-              <strong>Industrial, Marine, and Energy Pipeline Systems</strong>
-              <small>Product lines, application pages, engineering support, and export-oriented RFQ handling.</small>
+              <span>Industrial Project Context</span>
+              <strong>Supply scope built around operating environment, package completeness, and project delivery.</strong>
             </div>
-            <div className="hero-photo-tags">
-              <span>Corrosion-Resistant Systems</span>
-              <span>Rigid And Flexible Product Families</span>
-              <span>Project Documentation Support</span>
-            </div>
-            <figcaption className="hero-photo-credit">
-              Hero image via{' '}
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Gdansk_rafineria_aerial_4.jpg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Wikimedia Commons
-              </a>
-            </figcaption>
           </figure>
         </div>
       </section>
