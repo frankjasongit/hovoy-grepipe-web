@@ -173,6 +173,8 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
     { label: 'About', key: 'about' as const, to: '/about' },
   ]
 
+  const activeMenu = openMenu ? megaMenus[openMenu as keyof typeof megaMenus] : null
+
   return (
     <div className="site-shell">
       <header className="topbar" onMouseLeave={() => setOpenMenu(null)}>
@@ -187,7 +189,6 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
 
           <nav className="topnav" aria-label="Primary">
             {primaryItems.map((item) => {
-              const menu = megaMenus[item.key]
               return (
                 <div
                   className="navitem"
@@ -196,32 +197,16 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
                   onFocus={() => setOpenMenu(item.key)}
                 >
                   <NavLink
-                    className={({ isActive }) => (isActive ? 'navlink navlink-active' : 'navlink')}
+                    className={({ isActive }) =>
+                      isActive ? 'navlink navlink-parent navlink-active' : 'navlink navlink-parent'
+                    }
                     to={item.to}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="nav-caret" aria-hidden="true">
+                      ▾
+                    </span>
                   </NavLink>
-
-                  {openMenu === item.key ? (
-                    <div className="mega-menu" role="group" aria-label={item.label}>
-                      <div className="mega-menu-intro">
-                        <p className="eyebrow">Explore</p>
-                        <h3>{menu.title}</h3>
-                        <p>{menu.text}</p>
-                        <Link className="button button-primary mega-menu-button" to={menu.utility.to}>
-                          {menu.utility.label}
-                        </Link>
-                      </div>
-                      <div className="mega-menu-links">
-                        {menu.links.map((link) => (
-                          <Link className="mega-menu-card" key={link.to} to={link.to}>
-                            <strong>{link.title}</strong>
-                            <span>{link.text}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : null}
                 </div>
               )
             })}
@@ -236,6 +221,29 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
             </NavLink>
           </nav>
         </div>
+
+        {activeMenu ? (
+          <div className="mega-menu-shell">
+            <div className="mega-menu" role="group" aria-label={activeMenu.title}>
+              <div className="mega-menu-intro">
+                <p className="eyebrow">Explore</p>
+                <h3>{activeMenu.title}</h3>
+                <p>{activeMenu.text}</p>
+                <Link className="button button-primary mega-menu-button" to={activeMenu.utility.to}>
+                  {activeMenu.utility.label}
+                </Link>
+              </div>
+              <div className="mega-menu-links">
+                {activeMenu.links.map((link) => (
+                  <Link className="mega-menu-card" key={link.to} to={link.to}>
+                    <strong>{link.title}</strong>
+                    <span>{link.text}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : null}
       </header>
 
       <main>{children}</main>
@@ -365,12 +373,10 @@ function HomePage() {
               alt="Aerial view of a refinery and industrial processing plant"
             />
             <div className="hero-photo-shade" />
-            <div className="hero-photo-badge">
-              Refinery, process plant, and industrial pipeline environments
-            </div>
             <div className="hero-photo-panel">
               <span>Industrial Project Context</span>
               <strong>Supply scope built around operating environment, package completeness, and project delivery.</strong>
+              <small>Well systems, line pipe, marine service, flexible deployment, and full package coordination for export projects.</small>
             </div>
           </figure>
         </div>
