@@ -1367,16 +1367,16 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Product Range</p>
-            <h2>Core product-line boundaries used to position this system.</h2>
+            <h2>Technical range and specification boundaries</h2>
           </div>
-          <div className="spec-table">
+          <dl className={`spec-table ${isTraditionalProductLine ? 'spec-table-heavy' : ''}`}>
             {page.productRange.map((item) => (
               <div className="spec-row" key={item.label}>
                 <dt>{item.label}</dt>
                 <dd>{item.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </section>
       ) : null}
 
@@ -1397,13 +1397,29 @@ function ProductDetailPage() {
         </section>
       ) : null}
 
+      {page.standards?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Standards</p>
+            <h2>Standards and technical basis used to define the product line.</h2>
+          </div>
+          <div className="pill-grid">
+            {page.standards.map((item) => (
+              <span className="pill" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Product Overview</p>
+            <p className="eyebrow">Product Description</p>
             <h2>
               {isTraditionalProductLine
-                ? 'Basic technical and commercial logic behind this product line.'
+                ? 'Basic description and technical basis of the product line.'
                 : 'Performance capabilities and primary operating scenarios'}
             </h2>
           </div>
@@ -1433,18 +1449,18 @@ function ProductDetailPage() {
       {page.technicalConfiguration?.length ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
-            <p className="eyebrow">Technical Configuration</p>
+            <p className="eyebrow">Product Characteristics</p>
             <h2>
               {isTraditionalProductLine
-                ? 'Technical routes that define the line pipe family.'
+                ? 'Product characteristics that should be explained on a traditional line pipe page.'
                 : 'Primary pathways for verifying technical and commercial viability'}
             </h2>
           </div>
           <div className="detail-card-grid">
-            {page.technicalConfiguration.map((item) => (
+            {(page.productCharacteristics?.length ? page.productCharacteristics.map((item) => ({ title: item, text: '' })) : page.technicalConfiguration).map((item) => (
               <article className="detail-panel" key={item.title}>
                 <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                {'text' in item && item.text ? <p>{item.text}</p> : null}
               </article>
             ))}
           </div>
@@ -1653,7 +1669,7 @@ function ProductDetailPage() {
         </section>
       ) : null}
 
-      {productModule ? (
+      {productModule && !isTraditionalProductLine ? (
         <section className="section section-grid page-section">
           <div className="section-heading section-heading-split">
             <div>
@@ -1735,7 +1751,7 @@ function ProductDetailPage() {
         </div>
       </section>
 
-      {productModule ? (
+      {productModule && !isTraditionalProductLine ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">The Hovoy Advantage</p>

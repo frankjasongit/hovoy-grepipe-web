@@ -35,6 +35,8 @@ export type ProductPage = {
   heroPlaceholder?: PlaceholderBlock
   productRange?: ProductLineSpec[]
   productSeries?: ProductLineItem[]
+  standards?: string[]
+  productCharacteristics?: string[]
   technicalSnapshot?: Array<{ label: string; value: string }>
   technicalConfiguration?: Array<{ title: string; text: string }>
   jointingMethods?: Array<{ title: string; text: string }>
@@ -165,64 +167,75 @@ export const productPages: ProductPage[] = [
     ],
     productRange: [
       {
-        label: 'Pressure class',
-        value: 'Reviewed against service duty, route conditions, and the selected jointing method',
+        label: 'Pressure Ratings',
+        value: 'To be inserted from validated pressure series tables by diameter and connection route',
       },
       {
-        label: 'Temperature',
-        value: 'Checked against media, operating environment, and the selected resin system',
+        label: 'Temperature Range',
+        value: 'To be inserted by resin system, service media, and validated operating envelope',
       },
       {
         label: 'Diameter range',
-        value: 'Discussed by line list, flow requirement, and the real project scope',
+        value: 'To be inserted from the current line pipe size table and related product series sheets',
       },
       {
-        label: 'Jointing options',
-        value: 'Flanged, bonded, laminated, and transition-based package routes',
+        label: 'Installation Environment',
+        value: 'Above-ground, buried, process routing, utility transfer, and mixed route conditions',
       },
       {
-        label: 'Installation environment',
-        value: 'Above-ground racks, buried lines, process routing, and utility transfer systems',
+        label: 'Resin Systems',
+        value: 'Anhydride cured and amine cured epoxy system routes',
       },
       {
-        label: 'System basis',
-        value: 'Acid anhydride cured, amine cured, conductive, and non-conductive line pipe routes',
+        label: 'Connection Routes',
+        value: 'Threaded, key-lock, bonding, flanged, laminated, and transition-based package options',
       },
     ],
     productSeries: [
       {
         title: 'Acid anhydride cured line pipe',
-        text: 'Used where the project specification, service duty, and product route call for acid anhydride cured GRE line pipe systems.',
+        text: 'Used where the selected resin route, service media, and project specification align with anhydride cured GRE line pipe systems.',
       },
       {
         title: 'Amine cured line pipe',
-        text: 'Used where amine cured configurations better match the requested resin route, service conditions, or customer specification logic.',
+        text: 'Used where amine cured systems better fit temperature, media severity, or the requested technical route.',
       },
       {
         title: 'Conductive line pipe',
-        text: 'Discussed when the project requires conductive or anti-static system routes alongside normal pressure and installation requirements.',
+        text: 'Used where the project requires conductive or anti-static pipe routes in addition to the basic pressure and installation envelope.',
       },
       {
         title: 'Standard non-conductive line pipe',
-        text: 'Used for process, utility, water, and corrosive-service lines where conductive properties are not part of the defined project scope.',
+        text: 'Used for general process, utility, water, and corrosive-service transport where conductivity is not part of the defined scope.',
       },
+    ],
+    standards: [
+      'Project-based line pipe standards and customer specifications',
+      'Pressure, dimensions, and connection routes aligned to approved source tables',
+      'Installation and fittings scope reviewed against the selected product series',
+    ],
+    productCharacteristics: [
+      'Corrosion-resistant composite structure for industrial transport and utility service',
+      'Can be positioned for above-ground racks, buried routes, process lines, and plant utilities',
+      'Available as straight pipe supply or as a broader package with fittings and transitions',
+      'Product family should be reviewed by resin system, connection route, and service conditions first',
     ],
     technicalSnapshot: [
       {
-        label: 'Pressure class',
-        value: 'Reviewed against service duty, route conditions, and the selected jointing method',
+        label: 'DN Range',
+        value: 'By product range table',
+      },
+      {
+        label: 'Pressure',
+        value: 'By validated pressure series',
       },
       {
         label: 'Temperature',
-        value: 'Checked against media, operating environment, and the selected resin system',
+        value: 'By resin system',
       },
       {
-        label: 'Diameter range',
-        value: 'Discussed by line list, flow requirement, and the real project scope',
-      },
-      {
-        label: 'Jointing options',
-        value: 'Flanged, bonded, laminated, and transition-based package routes',
+        label: 'Standards',
+        value: 'By approved source data',
       },
     ],
     technicalConfiguration: [
@@ -306,9 +319,9 @@ export const productPages: ProductPage[] = [
       text: 'Reserve this module for datasheet, range table, connection details, and RFQ support documents.',
     },
     engineeringFocus: [
-      'Diameter, pressure class, and service conditions aligned to project specifications',
+      'Diameter, pressure class, temperature, and service conditions aligned to project specifications',
       'Route conditions reviewed for above-ground, buried, or mixed installation environments',
-      'Fittings, spool assemblies, and steel transition points clarified early',
+      'Connection route, fittings ratio, and steel transition points clarified early',
       'Documentation, packing, and delivery sequence matched to industrial project needs',
     ],
     highlights: [
