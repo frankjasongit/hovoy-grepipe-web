@@ -375,6 +375,19 @@
   gap: 1rem;
 }
 
+.placeholder-card {
+  border-style: dashed;
+  border-color: rgba(17, 31, 46, 0.22);
+  background:
+    linear-gradient(180deg, rgba(250, 252, 253, 0.98), rgba(244, 248, 250, 0.94)),
+    rgba(255, 255, 255, 0.92);
+}
+
+.placeholder-card-large {
+  align-content: start;
+  min-height: 240px;
+}
+
 .product-hero-visual {
   padding: 0;
   overflow: hidden;
@@ -1056,6 +1069,45 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.spec-table {
+  display: grid;
+  border: 1px solid rgba(17, 31, 46, 0.08);
+  border-radius: 1.35rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 24px rgba(17, 31, 46, 0.05);
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.38fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid rgba(17, 31, 46, 0.08);
+}
+
+.spec-row:last-child {
+  border-bottom: 0;
+}
+
+.spec-row dt,
+.spec-row dd {
+  margin: 0;
+}
+
+.spec-row dt {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-green);
+}
+
+.spec-row dd {
+  color: #102535;
+  line-height: 1.65;
+}
+
 .media-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1646,6 +1698,10 @@
   .timeline,
   .pill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .spec-row {
+    grid-template-columns: 1fr;
   }
 
   .hero-proof-grid {

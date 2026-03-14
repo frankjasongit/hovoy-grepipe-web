@@ -7,6 +7,21 @@ export type MediaAsset = {
   text?: string
 }
 
+export type PlaceholderBlock = {
+  title: string
+  text: string
+}
+
+export type ProductLineSpec = {
+  label: string
+  value: string
+}
+
+export type ProductLineItem = {
+  title: string
+  text: string
+}
+
 export type ProductPage = {
   slug: string
   title: string
@@ -17,12 +32,20 @@ export type ProductPage = {
   metaDescription: string
   heroHighlights?: string[]
   heroImage?: MediaAsset
+  heroPlaceholder?: PlaceholderBlock
+  productRange?: ProductLineSpec[]
+  productSeries?: ProductLineItem[]
   technicalSnapshot?: Array<{ label: string; value: string }>
   technicalConfiguration?: Array<{ title: string; text: string }>
   jointingMethods?: Array<{ title: string; text: string }>
   availableDocumentation?: Array<{ title: string; text: string }>
   productVisuals?: MediaAsset[]
   manufacturingProof?: MediaAsset[]
+  jointingPlaceholder?: PlaceholderBlock
+  fittingsAccessories?: string[]
+  manufacturingCapabilities?: string[]
+  documentationItems?: string[]
+  downloadsPlaceholder?: PlaceholderBlock
   engineeringFocus: string[]
   highlights: string[]
   applications: string[]
@@ -130,17 +153,59 @@ export const productPages: ProductPage[] = [
       'Designed for industrial transport and utility systems where project teams need to review pressure class, temperature, route conditions, jointing methods, and fittings scope together.',
     metaDescription:
       'Explore Hovoy GRE line pipe for corrosive industrial transport, produced water, process water, utility networks, buried or above-ground routing, and fittings-inclusive project supply.',
-    heroImage: {
-      src: '/product-media/line-pipe/stockyard.jpg',
-      alt: 'Stacks of GRE line pipe prepared for industrial project supply.',
-      title: 'Line pipe stockyard and ready supply',
-      text: 'Use real product visuals to show batch readiness, coating consistency, and industrial supply scale.',
+    heroPlaceholder: {
+      title: 'Hero image placeholder',
+      text: 'Use one traditional product-line visual here: straight pipe stock, installed line route, or a clean product family image.',
     },
     heroHighlights: [
       'Corrosion-resistant process and utility service',
       'Above-ground and buried routing options',
       'Conductive and non-conductive configurations',
       'Pipe, fittings, transitions, and package support',
+    ],
+    productRange: [
+      {
+        label: 'Pressure class',
+        value: 'Reviewed against service duty, route conditions, and the selected jointing method',
+      },
+      {
+        label: 'Temperature',
+        value: 'Checked against media, operating environment, and the selected resin system',
+      },
+      {
+        label: 'Diameter range',
+        value: 'Discussed by line list, flow requirement, and the real project scope',
+      },
+      {
+        label: 'Jointing options',
+        value: 'Flanged, bonded, laminated, and transition-based package routes',
+      },
+      {
+        label: 'Installation environment',
+        value: 'Above-ground racks, buried lines, process routing, and utility transfer systems',
+      },
+      {
+        label: 'System basis',
+        value: 'Acid anhydride cured, amine cured, conductive, and non-conductive line pipe routes',
+      },
+    ],
+    productSeries: [
+      {
+        title: 'Acid anhydride cured line pipe',
+        text: 'Used where the project specification, service duty, and product route call for acid anhydride cured GRE line pipe systems.',
+      },
+      {
+        title: 'Amine cured line pipe',
+        text: 'Used where amine cured configurations better match the requested resin route, service conditions, or customer specification logic.',
+      },
+      {
+        title: 'Conductive line pipe',
+        text: 'Discussed when the project requires conductive or anti-static system routes alongside normal pressure and installation requirements.',
+      },
+      {
+        title: 'Standard non-conductive line pipe',
+        text: 'Used for process, utility, water, and corrosive-service lines where conductive properties are not part of the defined project scope.',
+      },
     ],
     technicalSnapshot: [
       {
@@ -162,35 +227,53 @@ export const productPages: ProductPage[] = [
     ],
     technicalConfiguration: [
       {
-        title: 'Cure system options',
-        text: 'Line pipe configurations can be reviewed around acid anhydride cured or amine cured systems, depending on service conditions, client specifications, and documentation requirements.',
+        title: 'Resin system route',
+        text: 'The line pipe family should be reviewed first by resin system and service conditions before detailed pricing or package scope is discussed.',
       },
       {
-        title: 'Conductive and non-conductive options',
-        text: 'Where static control or project specifications require it, conductive configurations can be discussed alongside standard non-conductive line pipe systems.',
+        title: 'Conductivity route',
+        text: 'Conductive and non-conductive options should be treated as separate technical routes, not as a minor afterthought inside a generic pipe page.',
       },
       {
-        title: 'Above-ground and buried routing',
-        text: 'The same line pipe family may be reviewed for above-ground racks, plant utility routes, or buried service, with support logic, joint details, and fittings scope adjusted to the installation environment.',
+        title: 'Installation route',
+        text: 'Above-ground, buried, and mixed-route projects affect support logic, fittings ratio, and the way the quotation package should be structured.',
       },
       {
-        title: 'Jointing and package scope',
-        text: 'Flanged, bonded, laminated, or other project-based connection approaches should be aligned early with tie-in points, fittings counts, spool requirements, and installation sequence.',
+        title: 'Connection route',
+        text: 'Threaded, key-lock, bonding, flanged, and transition-based solutions should be discussed as product-line decisions, not only as accessories after the fact.',
       },
     ],
     jointingMethods: [
       {
-        title: 'Flanged connections',
-        text: 'Commonly reviewed for equipment tie-ins, maintenance access, and locations where package completeness and installation control are critical.',
+        title: 'DSJ T-thread',
+        text: 'Traditional threaded connection route for line pipe systems where threaded assembly, field practicality, and product-series compatibility matter.',
       },
       {
-        title: 'Bonded and laminated joints',
-        text: 'Used where the project route, installation method, or fabrication logic makes bonded or laminated connection methods more suitable than simple end connections.',
+        title: 'Key-lock',
+        text: 'Used where lock-key joint routes are preferred for the selected product family, installation logic, or package structure.',
       },
       {
-        title: 'Transitions and fabricated fittings',
-        text: 'Steel transitions, reducers, elbows, tees, spool pieces, and mixed-material tie-ins should be reviewed together with the pipe run, not after the pipe quotation is finished.',
+        title: 'Bonding / laminated routes',
+        text: 'Used where bonding, butt-and-wrap, or laminated connection routes better fit the line route, fabrication plan, or field joining logic.',
       },
+      {
+        title: 'Flanged and transition routes',
+        text: 'Used for equipment tie-ins, mixed-material connections, maintenance access points, and broader fittings-inclusive package discussions.',
+      },
+    ],
+    jointingPlaceholder: {
+      title: 'Jointing diagram placeholder',
+      text: 'Reserve this area for connection schematics: DSJ thread, key-lock, bonding, flange, and transition details.',
+    },
+    fittingsAccessories: [
+      'Elbow',
+      'Tee',
+      'Reducing tee',
+      'Reducer',
+      'Flange',
+      'Coupling',
+      'Nipple',
+      'Steel transition',
     ],
     availableDocumentation: [
       {
@@ -206,64 +289,22 @@ export const productPages: ProductPage[] = [
         text: 'Fittings lists, tie-in points, and spool requirements can be reviewed together so the commercial offer reflects the real installation package.',
       },
     ],
-    productVisuals: [
-      {
-        src: '/product-media/line-pipe/site-acid-anhydride.jpg',
-        alt: 'Acid anhydride cured GRE line pipe installed in a field line route.',
-        title: 'Field installation reference',
-        text: 'Shows line pipe deployed in a real routed system instead of only warehouse presentation.',
-      },
-      {
-        src: '/product-media/line-pipe/site-buried.jpg',
-        alt: 'Buried GRE pipeline route with multiple aligned pipe runs.',
-        title: 'Buried service context',
-        text: 'Useful when the page needs to show buried routing, tie-ins, and route planning conditions.',
-      },
-      {
-        src: '/product-media/line-pipe/fittings-display.jpg',
-        alt: 'Displayed GRE pipe and fittings assembly with elbows and vertical sections.',
-        title: 'Pipe and fittings package view',
-        text: 'Supports the message that Hovoy handles product family supply as a system, not only straight pipe.',
-      },
-      {
-        src: '/product-media/line-pipe/flange-detail.jpg',
-        alt: 'Composite flange detail used in GRE line pipe systems.',
-        title: 'Flange detail',
-        text: 'Use close-up connection images to make jointing routes easier to understand for engineers.',
-      },
-      {
-        src: '/product-media/line-pipe/flange-assembly.jpg',
-        alt: 'Flanged GRE pipe assembly with bolted connection.',
-        title: 'Bolted flange assembly',
-        text: 'Shows how flanged package scope connects the pipe run to maintenance, equipment, and tie-in points.',
-      },
+    manufacturingCapabilities: [
+      'Production capability aligned to straight pipe, fittings, and connection-related product routes',
+      'Testing support discussions for thermal performance, hydrostatic pressure, and dimensional control',
+      'Joint tooling and manufacturing process support for threaded and connection-sensitive products',
+      'Packing and export shipment planning for overseas industrial orders',
     ],
-    manufacturingProof: [
-      {
-        src: '/product-media/quality/tg-test.jpg',
-        alt: 'Glass transition temperature test equipment for composite pipe quality verification.',
-        title: 'Tg testing support',
-        text: 'Use testing visuals to show that thermal performance discussion is backed by real equipment, not only brochure claims.',
-      },
-      {
-        src: '/product-media/quality/hydro-test.jpg',
-        alt: 'Hydrostatic pressure test equipment used for pipe system verification.',
-        title: 'Hydrostatic pressure testing',
-        text: 'Useful proof for projects that focus on pressure class, service boundaries, and product validation discussion.',
-      },
-      {
-        src: '/product-media/quality/thread-mold.jpg',
-        alt: 'Thread manufacturing tooling for composite pipe joint production.',
-        title: 'Thread tooling and joint production',
-        text: 'Supports line pipe pages where threaded or joint-specific manufacturing capability matters to the client.',
-      },
-      {
-        src: '/product-media/quality/container-shipment.jpg',
-        alt: 'Container shipment area for export pipe delivery.',
-        title: 'Packing and export delivery',
-        text: 'Shows batch shipment readiness for overseas industrial orders and project-based delivery planning.',
-      },
+    documentationItems: [
+      'Product range tables',
+      'Jointing data and connection route notes',
+      'Fittings and accessory scope summary',
+      'RFQ input sheet and technical clarification checklist',
     ],
+    downloadsPlaceholder: {
+      title: 'Download area placeholder',
+      text: 'Reserve this module for datasheet, range table, connection details, and RFQ support documents.',
+    },
     engineeringFocus: [
       'Diameter, pressure class, and service conditions aligned to project specifications',
       'Route conditions reviewed for above-ground, buried, or mixed installation environments',

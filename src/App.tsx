@@ -1065,6 +1065,7 @@ function ProductsPage() {
 function ProductDetailPage() {
   const { slug } = useParams()
   const page = productPages.find((item) => item.slug === slug)
+  const isTraditionalProductLine = page?.slug === 'line-pipe'
 
   const productSalesModules: Record<
     string,
@@ -1308,11 +1309,15 @@ function ProductDetailPage() {
                   {page.heroImage.text ? <span>{page.heroImage.text}</span> : null}
                 </figcaption>
               </figure>
+            ) : page.heroPlaceholder ? (
+              <article className="rail-card placeholder-card">
+                <p className="eyebrow">Hero Visual</p>
+                <strong>{page.heroPlaceholder.title}</strong>
+                <span>{page.heroPlaceholder.text}</span>
+              </article>
             ) : null}
             <article className="rail-card">
-              <p className="eyebrow">
-                {page.technicalSnapshot?.length ? 'Technical Snapshot' : 'Engineering Focus'}
-              </p>
+              <p className="eyebrow">{page.technicalSnapshot?.length ? 'Quick Specs' : 'Engineering Focus'}</p>
               {page.technicalSnapshot?.length ? (
                 <dl className="snapshot-list">
                   {page.technicalSnapshot.map((item) => (
@@ -1358,20 +1363,34 @@ function ProductDetailPage() {
         </div>
       </section>
 
-      {page.productVisuals?.length ? (
+      {page.productRange?.length ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
-            <p className="eyebrow">Product Visuals</p>
-            <h2>Images that explain product form, installation context, and connection detail.</h2>
+            <p className="eyebrow">Product Range</p>
+            <h2>Core product-line boundaries used to position this system.</h2>
           </div>
-          <div className="media-grid">
-            {page.productVisuals.map((item) => (
-              <article className="media-card" key={item.src}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
-                <div className="media-card-copy">
-                  <h3>{item.title}</h3>
-                  {item.text ? <p>{item.text}</p> : null}
-                </div>
+          <div className="spec-table">
+            {page.productRange.map((item) => (
+              <div className="spec-row" key={item.label}>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {page.productSeries?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Product Series</p>
+            <h2>Traditional product routes within this line pipe family.</h2>
+          </div>
+          <div className="detail-card-grid">
+            {page.productSeries.map((item) => (
+              <article className="detail-panel" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
@@ -1382,14 +1401,18 @@ function ProductDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Product Overview</p>
-            <h2>What this product family covers and where it is commonly used.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Basic technical and commercial logic behind this product line.'
+                : 'Performance capabilities and primary operating scenarios'}
+            </h2>
           </div>
           <p>{page.intro}</p>
         </div>
 
         <div className="detail-grid">
           <article className="detail-panel">
-            <h3>What project teams usually need to confirm</h3>
+            <h3>{isTraditionalProductLine ? 'Core engineering parameters' : 'Core engineering parameters'}</h3>
             <ul className="detail-list">
               {page.engineeringFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -1397,7 +1420,7 @@ function ProductDetailPage() {
             </ul>
           </article>
           <article className="detail-panel">
-            <h3>How this product family is commonly evaluated</h3>
+            <h3>{isTraditionalProductLine ? 'Key evaluation criteria' : 'Key evaluation criteria'}</h3>
             <ul className="detail-list">
               {page.highlights.map((item) => (
                 <li key={item}>{item}</li>
@@ -1411,7 +1434,11 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Technical Configuration</p>
-            <h2>Technical options that shape line pipe selection.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Technical routes that define the line pipe family.'
+                : 'Primary pathways for verifying technical and commercial viability'}
+            </h2>
           </div>
           <div className="detail-card-grid">
             {page.technicalConfiguration.map((item) => (
@@ -1428,11 +1455,16 @@ function ProductDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Application Fit</p>
-            <h2>Applications and service conditions commonly matched to this product family.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Applications and service media commonly matched to this product line.'
+                : 'Critical operating environments and matched service media'}
+            </h2>
           </div>
           <p>
-            Review the operating environment, service media, and related application paths before
-            deciding whether this product family fits the route and package scope.
+            {isTraditionalProductLine
+              ? 'Traditional product-line pages should make it easy to scan the main operating environments before the client asks for a quotation.'
+              : 'Aligning composite specifications with exact field conditions—including media composition, pressure surges, and external loads—ensures long-term structural integrity.'}
           </p>
         </div>
 
@@ -1464,14 +1496,43 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Jointing And Fittings</p>
-            <h2>Connection methods and package items commonly reviewed with line pipe.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Connection systems that should be treated as part of the product line.'
+                : 'Integrated connection design and fitting packages'}
+            </h2>
           </div>
-          <div className="detail-card-grid">
-            {page.jointingMethods.map((item) => (
-              <article className="detail-panel" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+          <div className="detail-grid">
+            <div className="detail-card-grid">
+              {page.jointingMethods.map((item) => (
+                <article className="detail-panel" key={item.title}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+            {page.jointingPlaceholder ? (
+              <article className="detail-panel placeholder-card placeholder-card-large">
+                <p className="eyebrow">Connection Diagram</p>
+                <strong>{page.jointingPlaceholder.title}</strong>
+                <span>{page.jointingPlaceholder.text}</span>
               </article>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {page.fittingsAccessories?.length ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading">
+            <p className="eyebrow">Fittings And Accessories</p>
+            <h2>Standard fittings and package items linked to this product line.</h2>
+          </div>
+          <div className="pill-grid">
+            {page.fittingsAccessories.map((item) => (
+              <span className="pill" key={item}>
+                {item}
+              </span>
             ))}
           </div>
         </section>
@@ -1480,7 +1541,11 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Supply Scope</p>
-          <h2>What Hovoy can supply with this product family.</h2>
+          <h2>
+            {isTraditionalProductLine
+              ? 'What can be supplied under this product line.'
+              : 'Comprehensive project scope capabilities'}
+          </h2>
         </div>
         <div className="detail-card-grid">
           {page.supplyScope.map((item) => (
@@ -1495,7 +1560,11 @@ function ProductDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">Project Inputs</p>
-          <h2>Technical details that should be confirmed before quotation.</h2>
+          <h2>
+            {isTraditionalProductLine
+              ? 'Project variables that should be confirmed before quotation.'
+              : 'Essential technical variables for accurate system design'}
+          </h2>
         </div>
         <div className="detail-card-grid">
           {page.selectionNotes.map((item) => (
@@ -1511,7 +1580,11 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading">
             <p className="eyebrow">Available Documentation</p>
-            <h2>Documents and technical inputs commonly requested for line pipe projects.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Documents traditionally expected on a line pipe product page.'
+                : 'Standard engineering deliverables and technical documentation'}
+            </h2>
           </div>
           <div className="detail-card-grid">
             {page.availableDocumentation.map((item) => (
@@ -1524,22 +1597,58 @@ function ProductDetailPage() {
         </section>
       ) : null}
 
-      {page.manufacturingProof?.length ? (
+      {page.documentationItems?.length || page.downloadsPlaceholder ? (
+        <section className="section section-grid page-section">
+          <div className="section-heading section-heading-split">
+            <div>
+              <p className="eyebrow">Downloads</p>
+              <h2>Reserved structure for datasheets, range tables, and jointing documents.</h2>
+            </div>
+            <p>
+              Keep this section traditional: product datasheet, range table, connection details,
+              fittings list, and RFQ support documents.
+            </p>
+          </div>
+          <div className="detail-grid">
+            <article className="detail-panel">
+              <h3>Planned document set</h3>
+              <ul className="detail-list">
+                {page.documentationItems?.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            {page.downloadsPlaceholder ? (
+              <article className="detail-panel placeholder-card placeholder-card-large">
+                <p className="eyebrow">Download Module</p>
+                <strong>{page.downloadsPlaceholder.title}</strong>
+                <span>{page.downloadsPlaceholder.text}</span>
+              </article>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {page.manufacturingCapabilities?.length ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
-            <p className="eyebrow">Manufacturing And Test Proof</p>
-            <h2>Factory, testing, and delivery visuals that support technical discussion.</h2>
+            <p className="eyebrow">Manufacturing And Quality</p>
+            <h2>Factory and test capability that should sit behind the product line.</h2>
           </div>
-          <div className="media-grid media-grid-compact">
-            {page.manufacturingProof.map((item) => (
-              <article className="media-card" key={item.src}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
-                <div className="media-card-copy">
-                  <h3>{item.title}</h3>
-                  {item.text ? <p>{item.text}</p> : null}
-                </div>
-              </article>
-            ))}
+          <div className="detail-grid">
+            <article className="detail-panel">
+              <h3>Capability focus</h3>
+              <ul className="detail-list">
+                {page.manufacturingCapabilities.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article className="detail-panel placeholder-card placeholder-card-large">
+              <p className="eyebrow">Factory Proof Placeholder</p>
+              <strong>Testing and production image block</strong>
+              <span>Reserve this module for Tg testing, hydrostatic pressure testing, thread tooling, shipment, and workshop photos.</span>
+            </article>
           </div>
         </section>
       ) : null}
@@ -1548,12 +1657,17 @@ function ProductDetailPage() {
         <section className="section section-grid page-section">
           <div className="section-heading section-heading-split">
             <div>
-              <p className="eyebrow">Common Project Conditions</p>
-              <h2>Project conditions where this product family is commonly specified.</h2>
+              <p className="eyebrow">Project Conditions</p>
+              <h2>
+                {isTraditionalProductLine
+                  ? 'Project conditions that commonly trigger this product route.'
+                  : 'Operational scenarios driving material selection'}
+              </h2>
             </div>
             <p>
-              These conditions often determine whether the request should be handled as straight
-              pipe supply only or as a broader fittings and package discussion.
+              {isTraditionalProductLine
+                ? 'Keep this section practical: route conditions, installation logic, fittings ratio, and export delivery scope.'
+                : 'Understanding the complete pipeline routing, support spacing constraints, and tie-in complexity dictates the transition from raw pipe supply to integrated system engineering.'}
             </p>
           </div>
           <div className="detail-grid">
@@ -1581,11 +1695,16 @@ function ProductDetailPage() {
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">RFQ Inputs</p>
-            <h2>Information commonly needed for technical review and quotation.</h2>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Technical inputs traditionally needed before issuing a quotation.'
+                : 'Core prerequisites for preliminary design and costing'}
+            </h2>
           </div>
           <p>
-            A stronger RFQ usually includes the service duty, dimensions, route conditions,
-            fittings estimate, and destination market from the start.
+            {isTraditionalProductLine
+              ? 'Traditional product-line pages should make the RFQ path obvious: media, pressure class, temperature, diameter range, route length, fittings scope, and destination market.'
+              : 'To accelerate bid cycles, please specify process media, design pressure/temperature, isometric data, transition joints, and logistical requirements.'}
           </p>
         </div>
 
@@ -1619,8 +1738,12 @@ function ProductDetailPage() {
       {productModule ? (
         <section className="section section-grid page-section">
           <div className="section-heading">
-            <p className="eyebrow">Why Hovoy On This Product</p>
-            <h2>Why project teams work with Hovoy on this product family.</h2>
+            <p className="eyebrow">The Hovoy Advantage</p>
+            <h2>
+              {isTraditionalProductLine
+                ? 'Commercial reasons to keep the line pipe discussion with Hovoy.'
+                : 'Value engineering and executional certainty'}
+            </h2>
           </div>
           <div className="detail-card-grid">
             {productModule.whyHovoy.map((item) => (
@@ -1635,8 +1758,12 @@ function ProductDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Related Applications</p>
-          <h2>Application paths commonly connected to this product family.</h2>
+          <p className="eyebrow">Related Contexts</p>
+          <h2>
+            {isTraditionalProductLine
+              ? 'Application pages that should sit below the product line.'
+              : 'Intersecting operational sectors and relevant applications'}
+          </h2>
         </div>
         <div className="sector-grid">
           {applicationPages
@@ -1788,15 +1915,15 @@ function ApplicationDetailPage() {
       <section className="section section-grid page-section">
         <div className="section-heading section-heading-split">
           <div>
-            <p className="eyebrow">Application Overview</p>
-            <h2>Service demands and operating priorities in this sector.</h2>
+            <p className="eyebrow">Sector Demands</p>
+            <h2>Operational challenges and specialized material requirements</h2>
           </div>
           <p>{page.intro}</p>
         </div>
 
         <div className="detail-grid">
           <article className="detail-panel">
-            <h3>Typical operating concerns</h3>
+            <h3>Primary performance drivers</h3>
             <ul className="detail-list">
               {page.concerns.map((item) => (
                 <li key={item}>{item}</li>
@@ -1804,7 +1931,7 @@ function ApplicationDetailPage() {
             </ul>
           </article>
           <article className="detail-panel">
-            <h3>Why composite pipe gets selected</h3>
+            <h3>Composite engineering rationale</h3>
             <ul className="detail-list">
               {page.advantages.map((item) => (
                 <li key={item}>{item}</li>
@@ -1816,8 +1943,8 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Recommended Products</p>
-          <h2>Product lines commonly used in this application.</h2>
+          <p className="eyebrow">Integrated Systems</p>
+          <h2>Engineered product families for this operating environment</h2>
         </div>
         <div className="product-grid">
           {productPages
@@ -1837,8 +1964,8 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Typical Systems</p>
-          <h2>Where these application requirements usually appear.</h2>
+          <p className="eyebrow">System Deployments</p>
+          <h2>Critical assets and integrated packages utilizing composites</h2>
         </div>
         <div className="detail-card-grid">
           {page.typicalSystems.map((item) => (
@@ -1852,8 +1979,8 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Project Priorities</p>
-          <h2>Commercial and technical priorities in this sector.</h2>
+          <p className="eyebrow">Execution Focus</p>
+          <h2>Strategic imperatives for supply scope and project delivery</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
@@ -1866,8 +1993,8 @@ function ApplicationDetailPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Inquiry Requirements</p>
-          <h2>Information that helps speed up technical review.</h2>
+          <p className="eyebrow">RFQ Parameters</p>
+          <h2>Essential data points for system design and preliminary costing</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">
@@ -1968,8 +2095,8 @@ function EngineeringPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Engineering Focus</p>
-          <h2>Key technical topics for composite pipe selection and project review.</h2>
+          <p className="eyebrow">Discipline Focus</p>
+          <h2>Core technical variables driving material and system qualification</h2>
         </div>
         <div className="highlight-grid">
           <div className="highlight-card">
@@ -2125,8 +2252,8 @@ function ResourcesPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Resource Focus</p>
-          <h2>How these resources support product selection and RFQ preparation.</h2>
+          <p className="eyebrow">Support Framework</p>
+          <h2>Documentation supporting commercial precision and technical selection</h2>
         </div>
         <div className="detail-card-grid">
           {resourceGroups.map((item) => (
@@ -2140,8 +2267,8 @@ function ResourcesPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Common Requests</p>
-          <h2>Information commonly requested before order placement.</h2>
+          <p className="eyebrow">Pre-Award Milestones</p>
+          <h2>Essential clarifications required for formal package integration</h2>
         </div>
         <article className="detail-panel">
           <ul className="detail-list">

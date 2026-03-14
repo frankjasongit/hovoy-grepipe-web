@@ -92,33 +92,34 @@ The site needs to guide buyers through three common starting points:
 7. Contact CTA
    Sticky, visible, and simple.
 
-## Product landing architecture
+## Traditional product-line landing architecture
 
-Product pages should follow the reading pattern established by major industrial manufacturers:
-technical anchors first, product and joint visuals early, then applications, supply scope, proof, and RFQ.
+The site should move away from block-style marketing pages and back to the traditional industrial product-line structure used by established manufacturers.
 
 ### Product page wireframe
 
 1. Breadcrumb and hero
-   Product title, service positioning, quick actions, and one real product image.
-2. Technical snapshot
-   Pressure class, temperature, diameter range, jointing route, and service-media anchor points.
-3. Product visuals
-   Real product, installed pipeline, and connection-detail images.
+   Product-line title, short positioning statement, quick actions, and one visual placeholder.
+2. Product range
+   Diameter range, pressure class, temperature, resin system, installation environment, and conductivity route.
+3. Product series
+   Acid anhydride, amine, conductive, non-conductive, or other real product families under the main line.
 4. Product overview
-   Core use cases, evaluation points, and technical routes such as resin system, conductivity, and installation environment.
-5. Application fit
-   Typical operating environments and service media.
-6. Jointing and fittings
-   Connection systems, flange or joint details, and package items.
-7. Supply scope
-   Straight pipe, fittings, fabricated items, export packing, and project coordination.
-8. Available documentation
-   Datasheet path, route discussion, fittings clarification, and other download-ready material.
-9. Manufacturing and test proof
-   Testing capability, tooling, shipment readiness, and other real factory evidence.
-10. RFQ and next actions
-   Checklist, related applications, and a direct path to quotation.
+   Basic technical and commercial logic behind the product line.
+5. Applications
+   Typical use environments and service media.
+6. Jointing systems
+   DSJ thread, key-lock, bonding, flange, transition, and a placeholder for connection diagrams.
+7. Fittings and accessories
+   Elbows, tees, reducers, flanges, couplings, nipples, and other linked components.
+8. Supply scope
+   Straight pipe, fittings, fabricated items, export packing, and package discussion.
+9. Documentation and downloads
+   Datasheet, range table, jointing sheet, and RFQ support placeholders.
+10. Manufacturing and quality
+   Production capability, testing capability, tooling, shipment readiness, and image placeholders.
+11. RFQ
+   Traditional quotation inputs and a direct path to contact.
 
 ## SEO principles for all pages
 
