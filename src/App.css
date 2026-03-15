@@ -1607,6 +1607,29 @@
   width: fit-content;
 }
 
+.contact-panel-priority {
+  padding-bottom: clamp(2.2rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.contact-card-priority {
+  gap: 1rem;
+}
+
+.contact-card-priority a:not(.contact-button) {
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  line-height: 1.2;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.contact-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
 .line-landing-hero {
   background:
     radial-gradient(circle at 82% 22%, rgba(120, 168, 212, 0.22), transparent 28%),

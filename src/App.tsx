@@ -4102,78 +4102,43 @@ Notes: ${formData.additionalNotes}
 function ContactPage() {
   const inquiryRoutes = [
     {
-      title: 'Product Selection',
-      text: 'Tell us whether the request is for well tubing and casing, line pipe, marine systems, flexible composite pipe, or fittings and joints.',
+      title: 'Product RFQ',
+      text: 'Use this route when you already know the product family and need quotation support for pipe, fittings, and package scope.',
     },
     {
-      title: 'Technical Scope',
-      text: 'Share service media, pressure class, dimensions, route conditions, and the fittings or tie-in scope that affects system selection.',
+      title: 'Technical Review',
+      text: 'Use this route when the project still needs support on material family, joints, operating conditions, or product selection.',
     },
     {
-      title: 'Commercial Scope',
-      text: 'Clarify destination country, delivery timing, packing expectations, and whether you need straight pipe only or a broader package with spools and accessories.',
+      title: 'Document Request',
+      text: 'Use this route when you need product overviews, datasheets, manufacturing discussion, or RFQ support material.',
     },
   ]
 
   const supportLinks = [
-    { title: 'Browse product families', to: '/products' },
-    { title: 'Review application pages', to: '/applications' },
-    { title: 'Check engineering guidance', to: '/engineering' },
-    { title: 'Read FAQ', to: '/resources/faq' },
-  ]
-
-  const inquiryTypes = [
     {
-      title: 'Product RFQ',
-      text: 'For project teams who already know the product family and need quotation support for pipe, fittings, and project package scope.',
+      title: 'Browse product families',
+      text: 'Compare well, line, marine, flexible pipe, and fittings pages before sending the request.',
+      to: '/products',
+      cta: 'Open products',
     },
     {
-      title: 'Technical Review',
-      text: 'For projects that still need support on material family, joints, operating conditions, or rigid-versus-flexible selection.',
+      title: 'Review application pages',
+      text: 'Start from oil and gas, marine, desalination, or chemical service if the project use case is already clear.',
+      to: '/applications',
+      cta: 'Open applications',
     },
     {
-      title: 'Document Request',
-      text: 'For clients requesting product overviews, manufacturing discussion, RFQ preparation support, or supplier-review material.',
-    },
-    {
-      title: 'Commercial Coordination',
-      text: 'For export packing, delivery timing, documentation, and package-completeness discussions before order placement.',
-    },
-  ]
-
-  const contactFlow = [
-    {
-      title: '1. Define the route',
-      text: 'Start from product family, application, or document need so the request reaches the right review path immediately.',
-    },
-    {
-      title: '2. Add project facts',
-      text: 'Include media, dimensions, pressure class, line scope, fittings estimate, and destination market where possible.',
-    },
-    {
-      title: '3. Request the next action',
-      text: 'Tell us whether you need quotation, technical clarification, file support, or supplier-review discussion.',
-    },
-  ]
-
-  const contactEntries = [
-    {
-      title: 'Request quotation support',
-      text: 'Use this path for live RFQs covering pipe, fittings, route conditions, and delivery scope.',
-      to: '/contact',
-      cta: 'Use inquiry email',
-    },
-    {
-      title: 'Request project documents',
-      text: 'Use this path when the next step is product overviews, RFQ preparation support, or manufacturing-related material.',
+      title: 'Open downloads',
+      text: 'Use this page when the next step is product overviews, RFQ preparation support, or manufacturing-related material.',
       to: '/resources/downloads',
       cta: 'Open downloads',
     },
     {
-      title: 'Narrow the product family first',
-      text: 'Use this path if the project still needs help choosing between well, line, marine, or flexible pipe.',
-      to: '/products',
-      cta: 'Open products',
+      title: 'Check engineering guidance',
+      text: 'Review material systems, joints, and technical scope if the inquiry still needs engineering clarification.',
+      to: '/engineering',
+      cta: 'Open engineering',
     },
   ]
 
@@ -4190,28 +4155,44 @@ function ContactPage() {
       title="Contact Hovoy for GRE, GRP, and FRP pipe RFQs and technical review."
       description="Send product scope, service media, dimensions, pressure class, fittings requirements, and destination market for faster quotation and technical review."
     >
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Inquiry Path</p>
-          <h2>What helps us respond faster and more accurately.</h2>
+      <section className="section contact-panel contact-panel-priority">
+        <div>
+          <p className="eyebrow">Direct Email</p>
+          <h2>Send your inquiry directly by email.</h2>
+          <p>
+            If the project is already active, the fastest path is to send the inquiry by email
+            with product family, service media, dimensions, pressure class, fittings scope, and
+            destination market.
+          </p>
         </div>
-        <div className="detail-card-grid">
-          {inquiryRoutes.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
+        <article className="contact-card contact-card-priority">
+          <p>Primary inquiry email</p>
+          <div className="email-stack">
+            <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+            <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+          </div>
+          <span>
+            Click either email address to open your mail app directly. Use the primary email first
+            and keep the secondary email as backup contact.
+          </span>
+          <div className="contact-card-actions">
+            <a className="button button-primary contact-button" href={`mailto:${primaryInquiryEmail}`}>
+              Email Sales
+            </a>
+            <a className="button button-secondary contact-button" href={`mailto:${secondaryInquiryEmail}`}>
+              Email Backup
+            </a>
+          </div>
+        </article>
       </section>
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Choose The Right Contact Route</p>
-          <h2>Choose the contact route that matches the stage of your project.</h2>
+          <p className="eyebrow">Contact Routes</p>
+          <h2>Choose the route that matches your request.</h2>
         </div>
         <div className="detail-card-grid">
-          {inquiryTypes.map((item) => (
+          {inquiryRoutes.map((item) => (
             <article className="detail-panel" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -4230,48 +4211,16 @@ function ContactPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Contact Flow</p>
-          <h2>Use this sequence to improve response quality.</h2>
+          <p className="eyebrow">Before You Email</p>
+          <h2>These pages can help narrow the request first.</h2>
         </div>
         <div className="detail-card-grid">
-          {contactFlow.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Quick Contact Entries</p>
-          <h2>Move into the right next step without losing the project context.</h2>
-        </div>
-        <div className="detail-card-grid">
-          {contactEntries.map((item) => (
-            <article className="detail-panel" key={item.title}>
+          {supportLinks.map((item) => (
+            <article className="detail-panel" key={item.to}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link className="text-link" to={item.to}>
                 {item.cta}
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Before Contacting Us</p>
-          <h2>Use these pages if you still need to narrow the inquiry.</h2>
-        </div>
-        <div className="detail-grid">
-          {supportLinks.map((item) => (
-            <article className="detail-panel" key={item.to}>
-              <h3>{item.title}</h3>
-              <Link className="text-link" to={item.to}>
-                Explore {item.title}
               </Link>
             </article>
           ))}
