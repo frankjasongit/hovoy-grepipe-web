@@ -1172,7 +1172,11 @@ function SiteLayout({ children }: { children: ReactNode }) {
 
         {activeMenu ? (
           <div className="mega-menu-shell">
-            <div className="mega-menu" role="group" aria-label={activeMenu.title}>
+            <div
+              className={`mega-menu ${openMenu ? `mega-menu-${openMenu}` : ''}`}
+              role="group"
+              aria-label={activeMenu.title}
+            >
               <div className="mega-menu-intro">
                 <p className="eyebrow">Explore</p>
                 <h3>{activeMenu.title}</h3>

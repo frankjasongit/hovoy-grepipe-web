@@ -266,6 +266,23 @@
   gap: 0.9rem;
 }
 
+.mega-menu-applications {
+  grid-template-columns: minmax(220px, 0.52fr) minmax(0, 1.48fr);
+}
+
+.mega-menu-applications .mega-menu-intro {
+  padding-inline: 1.1rem;
+}
+
+.mega-menu-applications .mega-menu-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+}
+
+.mega-menu-applications .mega-menu-card {
+  min-height: 108px;
+}
+
 .mega-menu-card {
   display: grid;
   gap: 0.55rem;
@@ -2341,6 +2358,11 @@
 
   .line-customization {
     padding: 1.5rem;
+  }
+
+  .mega-menu-applications,
+  .mega-menu-applications .mega-menu-links {
+    grid-template-columns: 1fr;
   }
 }
 
