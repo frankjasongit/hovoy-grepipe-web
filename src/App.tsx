@@ -1282,23 +1282,23 @@ function HomePage() {
 
   const projectEntryRoutes = [
     {
-      title: 'Start With Product Families',
-      text: 'Compare well service, line pipe, marine systems, flexible pipe, and fittings before narrowing the technical path.',
+      title: 'Product Lines',
+      text: 'Review well, line, marine, flexible pipe, and fittings systems before narrowing the technical route.',
       to: '/products',
     },
     {
-      title: 'Start With Applications',
-      text: 'Review oil and gas, offshore, desalination, and chemical processing environments before choosing the product family.',
+      title: 'Application Sectors',
+      text: 'Start from oil and gas, marine, desalination, and chemical processing when the operating environment is already clear.',
       to: '/applications',
     },
     {
-      title: 'Review Quality And Documents',
-      text: 'Open manufacturing, quality, and document support when the project is already in supplier review.',
+      title: 'Quality and Documentation',
+      text: 'Open manufacturing, inspection, and document support when the project is already in supplier review.',
       to: '/resources/downloads',
     },
     {
-      title: 'Send A Project RFQ',
-      text: 'Move directly to contact when the application, dimensions, pressure class, and scope are already known.',
+      title: 'Request RFQ',
+      text: 'Move directly to contact when the application, dimensions, pressure class, and scope are already defined.',
       to: '/contact',
     },
   ]
@@ -1328,22 +1328,22 @@ function HomePage() {
 
   const heroProofEntries = [
     {
-      title: 'Why Hovoy',
-      text: 'See the business reasons clients shortlist Hovoy in a crowded GRE, GRP, and FRP pipe market.',
-      to: '/why-hovoy',
-      label: 'Core positioning',
-    },
-    {
-      title: 'Downloads',
-      text: 'Open document entry points for product briefs, RFQ preparation, and quality-related material.',
-      to: '/resources/downloads',
-      label: 'Document access',
+      title: 'Company Profile',
+      text: 'Review how Hovoy positions composite pipe supply for industrial, marine, and energy projects.',
+      to: '/about',
+      label: 'Company',
     },
     {
       title: 'Manufacturing and Quality',
-      text: 'Review production logic, inspection discussion, shipment readiness, and export-oriented support.',
+      text: 'See production planning, inspection support, shipment readiness, and export-oriented quality discussion.',
       to: '/about/manufacturing-quality',
-      label: 'Proof content',
+      label: 'Quality',
+    },
+    {
+      title: 'Downloads and RFQ Support',
+      text: 'Open document entry points for product briefs, RFQ preparation, and quality-related material.',
+      to: '/resources/downloads',
+      label: 'Documents',
     },
   ]
 
@@ -1384,42 +1384,42 @@ function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">GRE / GRP / FRP Pipe Systems</p>
-          <h1>GRE, GRP, and FRP pipe supplier for industrial, marine, and energy projects.</h1>
+      <section className="hero home-hero" id="top">
+        <div className="hero-copy home-hero-copy">
+          <p className="eyebrow">Industrial Composite Pipe Systems</p>
+          <h1>Composite pipe systems for oil, water, marine, and process projects.</h1>
           <p className="hero-text">
-            Hovoy supports well tubing and casing, line pipe, marine and offshore pipe, flexible
-            composite pipe, and fittings packages for corrosive service, utility routing, seawater
-            systems, and export-oriented industrial supply.
+            Hovoy supplies GRE, GRP, and FRP pipe systems for well tubing and casing, line pipe,
+            marine and offshore service, flexible composite pipe, and fittings packages for
+            corrosive industrial, utility, and energy projects.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/contact">
-              Request Project Review
+              Request RFQ
             </Link>
             <Link className="button button-secondary" to="/products">
-              Explore Product Families
+              View Product Lines
             </Link>
             <Link className="button button-secondary" to="/applications">
-              Explore Applications
+              View Applications
             </Link>
           </div>
-          <dl className="hero-stats">
+          <dl className="hero-stats home-hero-stats">
             <div>
-              <dt>Industry Experience</dt>
-              <dd>20+ years in GRE, GRP, and FRP pipe supply</dd>
+              <dt>Industry Profile</dt>
+              <dd>20+ years in composite pipe supply</dd>
             </div>
             <div>
               <dt>Product Coverage</dt>
               <dd>Well, line, marine, flexible pipe, and fittings systems</dd>
             </div>
             <div>
-              <dt>Project Fit</dt>
-              <dd>Petrochemical, marine, desalination, and chemical-service supply</dd>
+              <dt>Project Sectors</dt>
+              <dd>Oil and gas, marine, desalination, and chemical-service supply</dd>
             </div>
           </dl>
 
-          <div className="hero-proof-grid" aria-label="Primary proof paths">
+          <div className="hero-proof-grid home-hero-proof-grid" aria-label="Primary proof paths">
             {heroProofEntries.map((item) => (
               <Link className="hero-proof-card" key={item.to} to={item.to}>
                 <span>{item.label}</span>
@@ -1431,7 +1431,7 @@ function HomePage() {
         </div>
 
         <div className="hero-visual">
-          <figure className="hero-photo-card">
+          <figure className="hero-photo-card home-hero-photo-card">
             <img
               className="hero-photo"
               src={heroRefinery}
@@ -1439,29 +1439,29 @@ function HomePage() {
             />
             <div className="hero-photo-shade" />
             <div className="hero-photo-panel">
-              <span>Industrial Project Context</span>
-              <strong>Build the inquiry around service conditions, route logic, fittings scope, and delivery needs.</strong>
-              <small>That structure makes it easier for project teams to compare product families, request documents, and move into quotation without losing context.</small>
+              <span>Industrial Supply Context</span>
+              <strong>Support composite pipe projects with clearer product paths, application fit, and package scope.</strong>
+              <small>Industrial buyers expect product definition, application logic, document support, and direct RFQ access without losing the engineering context.</small>
             </div>
           </figure>
         </div>
       </section>
 
-      <section className="trust-strip" aria-label="Industrial positioning">
+      <section className="trust-strip home-trust-strip" aria-label="Industrial positioning">
         <p>Well service systems</p>
-        <p>Produced-water and utility lines</p>
-        <p>Marine and offshore routing</p>
-        <p>Spoolable field deployment</p>
-        <p>Engineering-led project support</p>
+        <p>Utility and process lines</p>
+        <p>Shipboard and offshore pipe</p>
+        <p>Flexible field deployment</p>
+        <p>Quality and RFQ support</p>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid home-section">
         <div className="section-heading">
           <p className="eyebrow">Project Entry Routes</p>
-          <h2>Start from the commercial or technical path that matches the project stage.</h2>
+          <h2>Start from the route that matches the project stage.</h2>
           <p>
-            Strong industrial sites do not force every visitor through the same path. Use the
-            route below that best matches where the inquiry currently stands.
+            A stronger industrial homepage should make product, application, quality, and RFQ
+            routes visible without forcing every visitor through the same path.
           </p>
         </div>
 
@@ -1478,7 +1478,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid home-section">
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Product Families</p>
@@ -1510,7 +1510,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid home-section">
         <div className="section-heading section-heading-split">
           <div>
             <p className="eyebrow">Application Sectors</p>
@@ -1536,13 +1536,13 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section capability-band">
+      <section className="section capability-band home-capability-band">
         <div className="capability-copy">
-          <p className="eyebrow">Commercial Proof</p>
-          <h2>Show engineering teams why Hovoy is easier to work with than a generic pipe supplier.</h2>
+          <p className="eyebrow">Company Profile</p>
+          <h2>Show project teams why Hovoy is easier to review than a generic pipe supplier.</h2>
           <p>
-            The strongest industrial sites combine technical familiarity, manufacturing discussion,
-            export coordination, and package-completeness thinking in one clear story.
+            Strong industrial sites combine technical familiarity, manufacturing discussion,
+            export coordination, and package-completeness thinking in one clear company profile.
           </p>
         </div>
 
@@ -1556,7 +1556,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid home-section">
         <div className="section-heading">
           <p className="eyebrow">Support Paths</p>
           <h2>Keep document support, engineering guidance, and contact routes one click away.</h2>
@@ -1579,7 +1579,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section section-grid">
+      <section className="section section-grid home-section">
         <div className="section-heading">
           <p className="eyebrow">Project Process</p>
           <h2>From inquiry review to product matching and delivery support.</h2>
