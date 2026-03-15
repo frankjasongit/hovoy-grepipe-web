@@ -2822,20 +2822,37 @@ function ApplicationsPage() {
   })
 
   return (
-    <PageHero
-      eyebrow="Applications"
-      title="Composite pipe applications for oil and gas, marine, desalination, and chemical processing."
-      description="Review major service environments, compare typical material routes, and move into the application page that matches your operating conditions."
-    >
-      <section className="section section-grid page-section">
-        <div className="applications-hero-actions">
-          <Link className="line-btn line-btn-solid" to="/contact">
-            Request Project Review
-          </Link>
-          <Link className="line-btn line-btn-outline" to="/products">
-            Browse Product Families
-          </Link>
+    <>
+      <section className="page-hero applications-page-hero">
+        <div className="page-hero-copy applications-page-hero-copy">
+          <p className="eyebrow">Applications</p>
+          <h1>Composite pipe applications for oil and gas, marine, desalination, and chemical processing.</h1>
+          <p>
+            Review major service environments, compare typical material routes, and move into
+            the application page that matches your operating conditions.
+          </p>
+          <div className="applications-hero-actions">
+            <Link className="line-btn line-btn-solid" to="/contact">
+              Request Project Review
+            </Link>
+            <Link className="line-btn line-btn-outline" to="/products">
+              Browse Product Families
+            </Link>
+          </div>
         </div>
+
+        <aside className="applications-hero-panel" aria-label="Application sectors">
+          <p className="eyebrow">Application Sectors</p>
+          <h2>Start from the operating environment.</h2>
+          <div className="applications-hero-panel-grid">
+            {applicationRoutes.map((item) => (
+              <Link className="applications-hero-panel-card" key={item.to} to={item.to}>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </Link>
+            ))}
+          </div>
+        </aside>
       </section>
 
       <section className="section section-grid page-section">
@@ -2920,7 +2937,7 @@ function ApplicationsPage() {
         title="Need help matching the application to the product family?"
         text="Send the service media, pressure class, temperature, route conditions, and fittings scope so we can review the most suitable product line for the project."
       />
-    </PageHero>
+    </>
   )
 }
 
