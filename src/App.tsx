@@ -3059,135 +3059,285 @@ function ApplicationDetailPage() {
 }
 
 function EngineeringPage() {
-  const engineeringTopics = [
+  const engineeringCapabilities = [
     {
-      title: 'Material Systems By Duty',
-      text: 'Different service conditions may require different GRE, GRP, FRP, or flexible pipe logic. Project teams usually compare media resistance, operating environment, handling considerations, and lifecycle expectations before final selection.',
+      title: 'Material Selection',
+      text: 'Engineering review starts from service media, operating environment, pressure class, temperature, and the practical fit of GRE, GRP, FRP, or flexible composite systems.',
+      points: ['Service media and corrosive severity', 'Pressure / temperature review', 'Pipe body and resin route'],
     },
     {
-      title: 'Connection And Installation Logic',
-      text: 'Joint choice should reflect installation method, field access, maintenance planning, and the balance between shop fabrication and site assembly.',
+      title: 'Jointing Methods',
+      text: 'Joint systems should match installation method, field access, site conditions, maintenance expectations, and the balance between workshop fabrication and site assembly.',
+      points: ['Threaded, bonded, flanged, laminated', 'Field or workshop installation logic', 'Fittings and spool scope'],
     },
     {
-      title: 'Documentation Support',
-      text: 'Technical clarification often depends on line lists, drawings, pressure class requirements, fittings ratios, and destination-market documentation expectations.',
+      title: 'Standards And Review Inputs',
+      text: 'Technical clarification usually depends on standards basis, testing references, drawings, line data, fittings scope, and destination-market documentation requirements.',
+      points: ['Standards basis by application', 'Testing and quality discussion', 'RFQ technical inputs'],
     },
   ]
 
-  const documentationSupport = [
-    'Application summary and service media description',
-    'Diameter range, pressure class, and estimated line scope',
-    'Fittings, jointing, and spool requirements',
-    'Project drawings, line lists, or scope notes when available',
-    'Destination country, project schedule, and delivery priorities',
+  const materialQuickGuide = [
+    {
+      title: 'Oil and Gas Field Service',
+      system: 'GRE line pipe, well systems, conductive discussion when specified',
+      text: 'Used where corrosive fluids, produced water, field routing, and well-service conditions push the project toward composite systems and coordinated fittings scope.',
+      points: ['Produced water and corrosive field lines', 'Well tubing and casing support', 'Pressure class and routing review'],
+      to: '/applications/oil-and-gas',
+    },
+    {
+      title: 'Marine and Offshore Service',
+      system: 'Marine GRE systems with bonded joints and conductive options',
+      text: 'Reviewed where seawater duty, ballast, shipboard routing, weight reduction, and offshore utility systems all affect the final engineering route.',
+      points: ['Shipboard seawater and ballast duty', 'Bonded joint systems', 'Marine fittings and transition review'],
+      to: '/applications/marine-and-offshore',
+    },
+    {
+      title: 'Water Treatment and Desalination',
+      system: 'GRP / GRE utility and treatment routing',
+      text: 'Useful for saline utility systems, treatment blocks, process water distribution, and equipment tie-in routes where corrosion resistance and service life matter together.',
+      points: ['Treatment and desalination duty', 'Utility and process water systems', 'Large-diameter route discussions'],
+      to: '/applications/water-treatment-desalination',
+    },
+    {
+      title: 'Chemical Processing',
+      system: 'FRP / GRE / resin-specific industrial service review',
+      text: 'Selected where corrosive process media, temperature exposure, plant routing, and fittings scope all shape resin system and material selection.',
+      points: ['Corrosive process transfer', 'Resin and media compatibility', 'Plant utility and cooling circuits'],
+      to: '/applications/chemical-processing',
+    },
+  ]
+
+  const jointMethods = [
+    {
+      title: 'Threaded',
+      use: 'Field-friendly assembly for selected pressure classes and product families where make-up logic is part of installation planning.',
+      installation: 'Used when site assembly speed and controlled joint make-up are important.',
+      fit: 'Common in line pipe and well-related discussion.',
+    },
+    {
+      title: 'Bonded Socket',
+      use: 'Used where adhesive-bonded installation is the preferred route for marine, utility, and selected industrial piping systems.',
+      installation: 'Requires installation control, bonding procedure, and site-condition review.',
+      fit: 'Common in marine and selected utility service.',
+    },
+    {
+      title: 'Flanged',
+      use: 'Used for equipment tie-ins, maintenance access, transitions, and systems that need bolted connection points.',
+      installation: 'Relevant where equipment interfaces and removable joints are part of the package.',
+      fit: 'Common across line, marine, and treatment systems.',
+    },
+    {
+      title: 'Laminated',
+      use: 'Used where final joint build-up, spool completion, or site integration requires laminated connection work.',
+      installation: 'Typically reviewed for site integration and workshop-to-field completion logic.',
+      fit: 'Common in fabricated spool and integration discussion.',
+    },
+    {
+      title: 'Flexible / Spoolable',
+      use: 'Used when route length, deployment speed, and reduced field joining are driving the engineering choice.',
+      installation: 'Focused on reel deployment, route profile, and field layout conditions.',
+      fit: 'Common in flexible composite pipe discussions.',
+    },
+  ]
+
+  const standardsBasis = [
+    'ISO 14692 for GRP / GRE piping systems in oil and gas-related service',
+    'ASTM D2996 and ASTM D2997 as common FRP / GRP pipe references',
+    'AWWA C950 for pressure pipe discussion in water-related service',
+    'BS 7159 as a reference point for FRP piping systems',
+    'Marine or project-specific composite piping standards discussed by application',
+  ]
+
+  const testingTopics = [
+    'Hydrostatic pressure testing discussion',
+    'Thermal and Tg-related review where relevant',
+    'Dimensional and pressure-class planning',
+    'Manufacturing and quality discussion for inspection scope',
+    'Project-specific documentation and technical review path',
   ]
 
   const byProductFamily = [
     {
       title: 'Well Systems',
-      text: 'Focus on corrosive well environments, handling conditions, and the practical fit of tubing, casing, and related accessories.',
+      text: 'Engineering review usually starts from service fluid, burst and collapse expectations, connection planning, and field handling conditions.',
+      points: ['Tubing and casing class selection', 'Connection and accessory review', 'Corrosive well environment'],
+      to: '/products/well-tubing-casing',
     },
     {
       title: 'Line Pipe Systems',
-      text: 'Review transport duty, route conditions, utility service, fittings scope, and the balance between straight pipe and fabricated packages.',
+      text: 'Line pipe review usually focuses on service media, pressure class, route conditions, jointing method, and fittings package completeness.',
+      points: ['Resin and cure-system route', 'Route, pressure, and fittings scope', 'Straight pipe and fabricated items'],
+      to: '/products/line-pipe',
     },
     {
-      title: 'Marine And Offshore Systems',
-      text: 'Discuss seawater duty, weight reduction, routing constraints, and marine-specific project or class requirements.',
+      title: 'Marine and Offshore Systems',
+      text: 'Marine review usually focuses on seawater duty, bonded joint logic, conductive requirement, weight reduction, and shipboard routing conditions.',
+      points: ['Seawater and ballast service', 'Bonded joint installation route', 'Marine fittings and tie-ins'],
+      to: '/products/marine-offshore-pipe',
     },
     {
       title: 'Flexible Composite Pipe',
-      text: 'Clarify spoolable deployment conditions, route length, installation speed targets, and whether flexible or rigid systems are better suited.',
+      text: 'Flexible system review should confirm route length, reel deployment conditions, pressure target, and whether rigid or spoolable supply is the better fit.',
+      points: ['Deployment speed and route length', 'Flexible versus rigid comparison', 'Remote field installation'],
+      to: '/products/flexible-composite-pipe',
     },
   ]
 
+  const technicalDownloads = [
+    {
+      title: 'Product Family Overview',
+      text: 'Use this entry when the project still needs a high-level comparison between well systems, line pipe, marine pipe, flexible systems, and fittings.',
+      to: '/resources/downloads',
+      cta: 'Open downloads',
+    },
+    {
+      title: 'Manufacturing and Quality Discussion',
+      text: 'Use this entry when the engineering review needs inspection scope, testing discussion, and manufacturing-readiness context.',
+      to: '/about/manufacturing-quality',
+      cta: 'Open quality page',
+    },
+    {
+      title: 'RFQ Preparation Support',
+      text: 'Use this entry when the inquiry still needs help organizing media, pressure class, route conditions, and fittings scope before quotation.',
+      to: '/contact',
+      cta: 'Request review',
+    },
+  ]
+
+  const rfqInputs = [
+    'Application summary and service media',
+    'Pressure class, operating temperature, and diameter range',
+    'Estimated line scope, route conditions, and installation environment',
+    'Jointing method, fittings scope, and spool requirements',
+    'Drawings, line list, or project notes when available',
+    'Destination country, project timing, and documentation expectations',
+  ]
+
   usePageMeta({
-    title: 'Engineering | GRE, GRP, FRP Pipe Materials, Joints, and Quality',
+    title: 'GRE Pipe Engineering Support | Material Selection, Standards, and RFQ Review',
     description:
-      'Review Hovoy engineering support for GRE, GRP, and FRP pipe systems including material selection, joint methods, quality control, standards, and RFQ preparation.',
+      'Review Hovoy engineering support for composite pipe material selection, joint methods, standards basis, testing discussion, and RFQ preparation.',
     path: '/engineering/',
   })
 
   return (
     <PageHero
       eyebrow="Engineering"
-      title="Engineering support for GRE, GRP, FRP, and flexible composite pipe projects."
-      description="Review material systems, joint methods, standards, quality control, and project documentation support for composite pipe selection and RFQ preparation."
+      title="Engineering support for composite pipe material selection, jointing, standards, and RFQ preparation."
+      description="Use this page to review the core engineering factors behind material choice, jointing route, standards basis, testing discussion, and the technical inputs needed before quotation."
     >
       <div className="capability-grid">
-        <article className="capability-card">
-          <h3>Material Systems</h3>
-          <p>
-            Separate GRE, RTP, and flexible composite logic by product family, service media, and
-            operating duty rather than mixing them into one generic brochure page.
-          </p>
-        </article>
-        <article className="capability-card">
-          <h3>Joint Methods</h3>
-          <p>
-            Clarify threaded, bonded, laminated, flanged, and spoolable connection approaches so
-            engineering conversations can start from real installation logic.
-          </p>
-        </article>
-        <article className="capability-card">
-          <h3>Standards and Certification</h3>
-          <p>
-            Project teams need clear access to standards, testing, manufacturing controls, and quality
-            discussion instead of chasing this information through sales copy.
-          </p>
-        </article>
+        {engineeringCapabilities.map((item) => (
+          <article className="capability-card engineering-capability-card" key={item.title}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <ul className="engineering-mini-list">
+              {item.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Discipline Focus</p>
-          <h2>Core technical variables driving material and system qualification</h2>
+          <p className="eyebrow">Selection Quick Guide</p>
+          <h2>Start with the operating environment and narrow the engineering route.</h2>
         </div>
-        <div className="highlight-grid">
-          <div className="highlight-card">
-            <span className="highlight-marker" aria-hidden="true" />
-            <p>Material systems by resin, reinforcement, and service condition.</p>
-          </div>
-          <div className="highlight-card">
-            <span className="highlight-marker" aria-hidden="true" />
-            <p>Joint systems by application, installation method, and maintenance logic.</p>
-          </div>
-          <div className="highlight-card">
-            <span className="highlight-marker" aria-hidden="true" />
-            <p>Standards and certifications page with testing and compliance references.</p>
-          </div>
-          <div className="highlight-card">
-            <span className="highlight-marker" aria-hidden="true" />
-            <p>Manufacturing and quality page linked from about and product content.</p>
-          </div>
+        <div className="detail-card-grid">
+          {materialQuickGuide.map((item) => (
+            <article className="detail-panel engineering-guide-card" key={item.title}>
+              <p className="eyebrow engineering-card-tag">Recommended route</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <ul className="detail-list">
+                <li>{item.system}</li>
+                {item.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <Link className="text-link" to={item.to}>
+                Review application page
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Technical Review</p>
-          <h2>Topics that usually drive engineering conversations.</h2>
+          <p className="eyebrow">Joint Methods</p>
+          <h2>Compare the main connection routes used across composite piping systems.</h2>
+        </div>
+        <div className="engineering-table-wrap">
+          <table className="engineering-table">
+            <thead>
+              <tr>
+                <th>Joint type</th>
+                <th>Typical use</th>
+                <th>Installation logic</th>
+                <th>Common system fit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {jointMethods.map((item) => (
+                <tr key={item.title}>
+                  <th>{item.title}</th>
+                  <td>{item.use}</td>
+                  <td>{item.installation}</td>
+                  <td>{item.fit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Standards And Testing</p>
+          <h2>Common reference standards and technical review topics.</h2>
         </div>
         <div className="detail-card-grid">
-          {engineeringTopics.map((item) => (
-            <article className="detail-panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
+          <article className="detail-panel">
+            <h3>Standards Basis</h3>
+            <ul className="detail-list">
+              {standardsBasis.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="detail-panel detail-panel-accent">
+            <h3>Testing And Engineering Review</h3>
+            <ul className="detail-list">
+              {testingTopics.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
         </div>
       </section>
 
       <section className="section section-grid page-section">
         <div className="section-heading">
           <p className="eyebrow">By Product Family</p>
-          <h2>Engineering priorities change by system type.</h2>
+          <h2>Engineering priorities still change by system type.</h2>
         </div>
         <div className="detail-card-grid">
           {byProductFamily.map((item) => (
             <article className="detail-panel" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
+              <ul className="detail-list">
+                {item.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <Link className="text-link" to={item.to}>
+                Review product page
+              </Link>
             </article>
           ))}
         </div>
@@ -3195,15 +3345,45 @@ function EngineeringPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
+          <p className="eyebrow">Technical Downloads</p>
+          <h2>Open the route that matches the current review stage.</h2>
+        </div>
+        <div className="sector-grid">
+          {technicalDownloads.map((item) => (
+            <article className="sector-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link className="text-link" to={item.to}>
+                {item.cta}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section contact-panel engineering-contact-panel">
+        <div>
           <p className="eyebrow">RFQ Inputs</p>
           <h2>Technical information that helps us respond faster.</h2>
-        </div>
-        <article className="detail-panel">
-          <ul className="detail-list">
-            {documentationSupport.map((item) => (
+          <ul className="detail-list engineering-rfq-list">
+            {rfqInputs.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
+        </div>
+        <article className="contact-card engineering-rfq-card">
+          <p>Inquiry Email</p>
+          <div className="email-stack">
+            <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+            <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+          </div>
+          <span>
+            Send application, service media, pressure class, diameter range, jointing route,
+            fittings scope, and project timing for engineering review.
+          </span>
+          <Link className="button button-primary contact-button" to="/contact">
+            Submit Your RFQ
+          </Link>
         </article>
       </section>
     </PageHero>

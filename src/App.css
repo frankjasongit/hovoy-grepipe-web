@@ -2373,6 +2373,115 @@
   border-bottom: none;
 }
 
+.engineering-capability-card {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.engineering-capability-card p {
+  margin-top: 0;
+}
+
+.engineering-mini-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.engineering-mini-list li {
+  position: relative;
+  padding-left: 0.95rem;
+  color: #355063;
+  line-height: 1.55;
+}
+
+.engineering-mini-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: #1f5788;
+}
+
+.engineering-card-tag {
+  margin-bottom: 0.15rem;
+}
+
+.engineering-guide-card {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.engineering-guide-card p {
+  margin-top: 0;
+}
+
+.engineering-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(20, 43, 61, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(17, 41, 64, 0.04);
+}
+
+.engineering-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+}
+
+.engineering-table th,
+.engineering-table td {
+  padding: 1rem 1.05rem;
+  border-bottom: 1px solid rgba(20, 43, 61, 0.08);
+  vertical-align: top;
+  text-align: left;
+}
+
+.engineering-table thead th {
+  background: #173f67;
+  color: #ffffff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.engineering-table tbody th {
+  width: 16%;
+  color: #17324a;
+  font-size: 0.94rem;
+  font-weight: 700;
+  background: #f5f8fa;
+}
+
+.engineering-table tbody td {
+  color: #445867;
+  line-height: 1.65;
+}
+
+.engineering-table tbody tr:last-child th,
+.engineering-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.engineering-contact-panel {
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.engineering-rfq-list {
+  margin-top: 1.2rem;
+}
+
+.engineering-rfq-card {
+  align-content: start;
+}
+
 @media (max-width: 768px) {
   .line-landing-hero {
     padding: 2rem 1.25rem;
