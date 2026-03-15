@@ -2701,41 +2701,112 @@ function ProductLandingPage({
 }
 
 function ApplicationsPage() {
-  const applicationLogic = [
+  const applicationAdvantages = [
     {
-      title: 'Corrosion And Media',
-      text: 'Application pages help project teams start from service media and the severity of the operating environment.',
+      title: 'Corrosion Resistance',
+      text: 'Composite pipe is often reviewed where seawater, saline service, produced water, or corrosive process media create long-term maintenance pressure on metallic systems.',
     },
     {
-      title: 'Installation Context',
-      text: 'Onshore plant routing, offshore modules, water treatment blocks, and remote field lines all create different selection priorities.',
+      title: 'Lower Structural Weight',
+      text: 'Reduced structural weight can simplify handling, offshore lifting, route installation, and package planning compared with heavier metallic systems.',
     },
     {
-      title: 'Commercial Outcome',
-      text: 'A stronger application definition usually leads to a cleaner product shortlist, a more complete fittings scope, and faster RFQ handling.',
+      title: 'Service Life And Maintenance',
+      text: 'The material route is commonly considered where lifecycle performance, corrosion control, and reduced replacement exposure matter together.',
     },
   ]
 
   const applicationRoutes = [
     {
+      badge: 'Oil & Gas',
+      imageSrc: '/line-applications/oilfield.jpg',
+      imageAlt: 'Oil and gas field application scene',
       title: 'Oil and Gas',
-      text: 'Start here for well systems, field line networks, and flexible deployment in corrosive or remote service.',
+      text: 'Used for well service, field transfer, produced water handling, and corrosive onshore systems where pipe body, jointing route, and fittings all need to be reviewed together.',
+      applications: [
+        'Produced water transfer lines',
+        'Field gathering and utility networks',
+        'Well tubing and casing support routes',
+        'Corrosion-sensitive process water service',
+        'Remote or modular package supply',
+      ],
       to: '/applications/oil-and-gas',
+      linkLabel: 'Explore Oil and Gas',
     },
     {
+      badge: 'Marine',
+      imageSrc: '/application-scenes/ship-engine-room.jpg',
+      imageAlt: 'Marine shipboard piping scene',
       title: 'Marine and Offshore',
-      text: 'Use this path for seawater duty, shipboard routing, and offshore support systems.',
+      text: 'Reviewed for shipboard seawater duty, ballast and cooling lines, bonded joint systems, and offshore utility routes where corrosion resistance and lower installation weight are both relevant.',
+      applications: [
+        'Shipboard seawater cooling lines',
+        'Ballast and utility pipework',
+        'Marine fire main support routes',
+        'Offshore module utility systems',
+        'Conductive marine pipe discussions',
+      ],
       to: '/applications/marine-and-offshore',
+      linkLabel: 'Explore Marine and Offshore',
     },
     {
+      badge: 'Water',
+      imageSrc: '/line-applications/water-treatment.jpg',
+      imageAlt: 'Water treatment plant application scene',
       title: 'Water Treatment and Desalination',
-      text: 'For saline utility systems, treatment plants, and equipment tie-in networks.',
+      text: 'Suited to treatment blocks, desalination support, brine and saline utility routes, and plant systems where corrosion control and package completeness both affect the final specification.',
+      applications: [
+        'Reverse osmosis plant pipework',
+        'Brine and saline utility lines',
+        'Process water distribution',
+        'Seawater intake-related systems',
+        'Treatment equipment tie-in networks',
+      ],
       to: '/applications/water-treatment-desalination',
+      linkLabel: 'Explore Water Treatment',
     },
     {
+      badge: 'Chemical',
+      imageSrc: '/line-applications/chemical-plant.jpg',
+      imageAlt: 'Chemical processing plant application scene',
       title: 'Chemical Processing',
-      text: 'For corrosive plant environments, process lines, and maintenance-sensitive utility systems.',
+      text: 'Chosen for corrosive plant service, chemical transfer, and maintenance-sensitive utility routes where resin system, pressure class, and service media all shape material selection.',
+      applications: [
+        'Corrosive process transfer lines',
+        'Chemical plant utility systems',
+        'Acid and caustic support service',
+        'Process cooling and circulation routes',
+        'Waste and by-product handling',
+      ],
       to: '/applications/chemical-processing',
+      linkLabel: 'Explore Chemical Processing',
+    },
+  ]
+
+  const materialComparison = [
+    {
+      criterion: 'Corrosion performance',
+      gre: 'Strong fit in seawater, saline, and many corrosive industrial services',
+      steel: 'Usually depends on coating, lining, or corrosion allowance strategy',
+      hdpe: 'Useful in many utility duties, but not chosen for every industrial envelope',
+    },
+    {
+      criterion: 'Weight and handling',
+      gre: 'Lower structural weight than steel, useful for offshore and routed installs',
+      steel: 'Highest structural weight during handling and support planning',
+      hdpe: 'Very light for utility-focused handling and transport',
+    },
+    {
+      criterion: 'Pressure and temperature route',
+      gre: 'Can be aligned to industrial pressure class and service-temperature targets',
+      steel: 'Broad mechanical envelope when corrosion protection is acceptable',
+      hdpe: 'Often selected for lower pressure and lower temperature utility service',
+    },
+    {
+      criterion: 'Jointing and package scope',
+      gre: 'Bonded, threaded, flanged, laminated, and fittings package routes',
+      steel: 'Welded, flanged, and mechanical joining routes',
+      hdpe: 'Fusion and mechanical joining routes',
     },
   ]
 
@@ -2750,16 +2821,27 @@ function ApplicationsPage() {
     <PageHero
       eyebrow="Applications"
       title="Composite pipe applications for oil and gas, marine, desalination, and chemical processing."
-      description="Review Hovoy application pages for corrosive service, seawater systems, utility routing, treatment plants, and process piping projects."
+      description="Review major service environments, compare typical material routes, and move into the application page that matches your operating conditions."
     >
       <section className="section section-grid page-section">
-        <div className="section-heading">
-          <p className="eyebrow">Application Approach</p>
-          <h2>How composite systems fit major operating environments.</h2>
+        <div className="applications-hero-actions">
+          <Link className="line-btn line-btn-solid" to="/contact">
+            Request Project Review
+          </Link>
+          <Link className="line-btn line-btn-outline" to="/products">
+            Browse Product Families
+          </Link>
         </div>
-        <div className="detail-card-grid">
-          {applicationLogic.map((item) => (
-            <article className="detail-panel" key={item.title}>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Why Composite Pipe</p>
+          <h2>Why these systems are commonly reviewed in corrosive service.</h2>
+        </div>
+        <div className="applications-advantage-grid">
+          {applicationAdvantages.map((item) => (
+            <article className="applications-advantage-card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -2769,37 +2851,70 @@ function ApplicationsPage() {
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Industry Paths</p>
-          <h2>Choose the sector that matches the operating environment.</h2>
+          <p className="eyebrow">Industries We Serve</p>
+          <h2>Choose the application environment that matches the service conditions.</h2>
         </div>
-        <div className="sector-grid">
+        <div className="applications-industry-stack">
           {applicationRoutes.map((item) => (
-            <article className="sector-card" key={item.to}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <Link className="text-link" to={item.to}>
-                Explore {item.title}
-              </Link>
+            <article className="applications-industry-card" key={item.to}>
+              <div className="applications-industry-media">
+                <img alt={item.imageAlt} src={item.imageSrc} />
+                <span className="applications-industry-badge">{item.badge}</span>
+              </div>
+              <div className="applications-industry-copy">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <ul className="applications-use-list">
+                  {item.applications.map((application) => (
+                    <li key={application}>{application}</li>
+                  ))}
+                </ul>
+                <Link className="text-link" to={item.to}>
+                  {item.linkLabel}
+                </Link>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <div className="sector-grid">
-        {applicationPages.map((item) => (
-          <article className="sector-card" key={item.slug}>
-            <h3>{item.title}</h3>
-            <p>{item.summary}</p>
-            <Link className="text-link" to={`/applications/${item.slug}`}>
-              Explore {item.title}
-            </Link>
-          </article>
-        ))}
-      </div>
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Material Comparison</p>
+          <h2>Indicative material comparison by common project concerns.</h2>
+          <p>
+            This comparison is intended as a general selection view. Final material choice
+            should still follow service media, pressure class, temperature, route conditions,
+            and project specification.
+          </p>
+        </div>
+        <div className="applications-comparison-wrap">
+          <table className="applications-comparison-table">
+            <thead>
+              <tr>
+                <th>Selection Point</th>
+                <th>GRE / GRP / FRP</th>
+                <th>Carbon Steel</th>
+                <th>HDPE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {materialComparison.map((row) => (
+                <tr key={row.criterion}>
+                  <th>{row.criterion}</th>
+                  <td>{row.gre}</td>
+                  <td>{row.steel}</td>
+                  <td>{row.hdpe}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <CtaSection
-        title="Already know the application but not the product family?"
-        text="Send the service environment, media, pressure class, and installation context so we can align the right product line and fittings scope to the application."
+        title="Need help matching the application to the product family?"
+        text="Send the service media, pressure class, temperature, route conditions, and fittings scope so we can review the most suitable product line for the project."
       />
     </PageHero>
   )

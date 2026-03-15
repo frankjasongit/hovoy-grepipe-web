@@ -2120,6 +2120,168 @@
   font-weight: 700;
 }
 
+.applications-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.applications-advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.applications-advantage-card {
+  background: linear-gradient(180deg, rgba(245, 248, 250, 0.96), rgba(255, 255, 255, 0.98));
+  border: 1px solid rgba(20, 43, 61, 0.12);
+  border-top: 3px solid #17486e;
+  border-radius: 8px;
+  padding: 1.4rem;
+}
+
+.applications-advantage-card h3,
+.applications-industry-copy h3 {
+  margin: 0 0 0.65rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.05rem;
+  color: #152b3d;
+}
+
+.applications-advantage-card p,
+.applications-industry-copy > p {
+  margin: 0;
+  color: #4f6170;
+  line-height: 1.7;
+}
+
+.applications-industry-stack {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.applications-industry-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.2fr);
+  border: 1px solid rgba(20, 43, 61, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(17, 41, 64, 0.05);
+}
+
+.applications-industry-media {
+  position: relative;
+  min-height: 280px;
+  background: #d9e3ea;
+}
+
+.applications-industry-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.applications-industry-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  background: rgba(12, 45, 72, 0.9);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.applications-industry-copy {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.5rem 1.6rem 1.55rem;
+}
+
+.applications-use-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.applications-use-list li {
+  position: relative;
+  padding-left: 0.95rem;
+  color: #314759;
+  line-height: 1.55;
+}
+
+.applications-use-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: #1f5788;
+}
+
+.applications-comparison-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(20, 43, 61, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(17, 41, 64, 0.04);
+}
+
+.applications-comparison-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.applications-comparison-table th,
+.applications-comparison-table td {
+  padding: 1rem 1.05rem;
+  border-bottom: 1px solid rgba(20, 43, 61, 0.08);
+  vertical-align: top;
+  text-align: left;
+}
+
+.applications-comparison-table thead th {
+  background: #173f67;
+  color: #ffffff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.applications-comparison-table tbody th {
+  width: 16%;
+  color: #17324a;
+  font-size: 0.94rem;
+  font-weight: 700;
+  background: #f5f8fa;
+}
+
+.applications-comparison-table tbody td {
+  color: #445867;
+  line-height: 1.65;
+}
+
+.applications-comparison-table tbody tr:last-child th,
+.applications-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 @media (max-width: 768px) {
   .line-landing-hero {
     padding: 2rem 1.25rem;
@@ -2145,6 +2307,26 @@
 
   .line-btn {
     width: 100%;
+  }
+
+  .applications-hero-actions {
+    display: grid;
+  }
+
+  .applications-advantage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .applications-industry-card {
+    grid-template-columns: 1fr;
+  }
+
+  .applications-industry-media {
+    min-height: 220px;
+  }
+
+  .applications-use-list {
+    grid-template-columns: 1fr;
   }
 
   .line-filter-bar {
