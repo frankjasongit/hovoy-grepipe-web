@@ -1841,6 +1841,13 @@
   white-space: pre-line;
 }
 
+.line-product-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .line-product-image-info {
   background: linear-gradient(135deg, #e8f4f8 0%, #d1e7ee 100%);
 }

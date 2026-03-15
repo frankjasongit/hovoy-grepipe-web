@@ -161,6 +161,8 @@ type ProductLandingProductCard = {
   categoryLabel: string
   badgeClassName: string
   imageClassName: string
+  imageSrc?: string
+  imageAlt?: string
   placeholder: string
   title: string
   description: string
@@ -640,53 +642,59 @@ const productLandingConfigs: Record<(typeof productPages)[number]['slug'], Produ
       {
         imageSrc: '/application-scenes/process-piping.jpg',
         imageAlt: 'Industrial process piping scene',
-        title: 'Plant Routing Packages',
+        title: 'Standard Fittings Families',
         description:
-          'Used where elbows, tees, reducers, and tie-ins define the real package scope inside plant pipework.',
+          'Used where elbows, tees, reducers, and branch fittings define the real package scope inside plant pipework.',
         filterId: 'standard',
       },
       {
-        imageSrc: '/line-applications/chemical-plant.jpg',
-        imageAlt: 'Chemical plant scene',
-        title: 'Transitions and Tie-Ins',
+        imageSrc: '/product-media/line-pipe/flange-assembly.jpg',
+        imageAlt: 'Composite flange assembly detail',
+        title: 'Jointing and Connection Routes',
         description:
-          'Projects that connect to pumps, valves, tanks, and steel headers should review transitions early.',
-        filterId: 'transitions',
+          'Projects that depend on flanged, coupling, bonded, or connection-sensitive items should review jointing routes before the RFQ is finalized.',
+        filterId: 'joints',
       },
       {
         imageSrc: '/line-applications/water-treatment.jpg',
         imageAlt: 'Water treatment plant scene',
-        title: 'Complete System Packages',
+        title: 'Transitions and Package Completion',
         description:
-          'Useful where the RFQ needs to include both straight pipe and the fittings package rather than a partial material count.',
+          'Useful where the RFQ needs transitions, tie-ins, and complete fittings scope rather than a partial material count.',
         filterId: 'package',
       },
     ],
     filters: [
       { id: 'all', label: 'All Products' },
-      { id: 'standard', label: 'Standard Fittings' },
+      { id: 'standard', label: 'Fittings' },
+      { id: 'joints', label: 'Joints' },
+      { id: 'flanges', label: 'Flanges' },
       { id: 'transitions', label: 'Transitions' },
       { id: 'package', label: 'Package Scope' },
     ],
     productCards: [
       {
-        id: 'standard-fittings',
+        id: 'elbows-tees-reducers',
         category: 'standard package',
-        categoryLabel: 'Standard',
+        categoryLabel: 'Fittings',
         badgeClassName: 'line-badge-info',
         imageClassName: 'line-product-image-info',
+        imageSrc: '/product-media/line-pipe/fittings-display.jpg',
+        imageAlt: 'Composite fittings display',
         placeholder: 'Product Image\nElbows & Tees',
-        title: 'Standard Composite Fittings',
+        title: 'Elbows, Tees, and Reducers',
         description:
-          'Elbows, equal tees, reducing tees, reducers, and related items used in standard process and utility routing.',
-        tags: ['Elbows', 'Tees'],
+          'Standard composite fittings used to build process, utility, marine, and field routing packages beyond straight pipe only.',
+        tags: ['Elbows', 'Tees', 'Reducers'],
       },
       {
         id: 'flanges',
-        category: 'standard transitions',
+        category: 'flanges standard joints',
         categoryLabel: 'Flanges',
         badgeClassName: 'line-badge-success',
         imageClassName: 'line-product-image-success',
+        imageSrc: '/product-media/line-pipe/flange-detail.jpg',
+        imageAlt: 'Composite flange detail',
         placeholder: 'Product Image\nFlanges',
         title: 'Flanges and Stub Ends',
         description:
@@ -694,11 +702,25 @@ const productLandingConfigs: Record<(typeof productPages)[number]['slug'], Produ
         tags: ['Flanges', 'Stub Ends'],
       },
       {
-        id: 'transitions',
-        category: 'transitions',
-        categoryLabel: 'Transitions',
+        id: 'couplings-joints',
+        category: 'joints package',
+        categoryLabel: 'Joints',
         badgeClassName: 'line-badge-warning',
         imageClassName: 'line-product-image-warning',
+        imageSrc: '/product-media/line-pipe/flange-assembly.jpg',
+        imageAlt: 'Composite joint assembly',
+        placeholder: 'Product Image\nJoint Assembly',
+        title: 'Couplings and Joint Components',
+        description:
+          'Joint-related components used where assembly route, maintenance access, or installation method make the connection logic part of the core product scope.',
+        tags: ['Couplings', 'Jointing'],
+      },
+      {
+        id: 'transitions',
+        category: 'transitions package',
+        categoryLabel: 'Transitions',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
         placeholder: 'Product Image\nTransitions',
         title: 'Steel Transitions and Tie-Ins',
         description:
@@ -707,10 +729,10 @@ const productLandingConfigs: Record<(typeof productPages)[number]['slug'], Produ
       },
       {
         id: 'spools',
-        category: 'package',
+        category: 'package joints transitions',
         categoryLabel: 'Package',
-        badgeClassName: 'line-badge-accent',
-        imageClassName: 'line-product-image-accent',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
         placeholder: 'Product Image\nSpools',
         title: 'Shop Spools and Package Completion',
         description:
@@ -723,6 +745,8 @@ const productLandingConfigs: Record<(typeof productPages)[number]['slug'], Produ
       'Projects become easier to quote when the fittings list, tie-in points, jointing route, and transition details are clarified before the commercial package is built.',
     customizationFeatures: [
       'Fittings list review',
+      'Elbow and tee classification',
+      'Flange and stub-end planning',
       'Transition clarification',
       'Jointing route discussion',
       'Tie-in planning',
@@ -2538,11 +2562,19 @@ function ProductLandingPage({
                 <span className={`line-category-badge ${item.badgeClassName}`}>
                   {item.categoryLabel}
                 </span>
-                <div className="line-product-placeholder">
-                  {item.placeholder.split('\n').map((line) => (
-                    <span key={line}>{line}</span>
-                  ))}
-                </div>
+                {item.imageSrc ? (
+                  <img
+                    alt={item.imageAlt ?? item.title}
+                    className="line-product-photo"
+                    src={item.imageSrc}
+                  />
+                ) : (
+                  <div className="line-product-placeholder">
+                    {item.placeholder.split('\n').map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="line-product-info">
                 <h3>{item.title}</h3>
