@@ -142,6 +142,101 @@ const keywordPages: KeywordPage[] = [
   },
 ]
 
+const linePipeChoiceCards = [
+  {
+    icon: '⚡',
+    iconClassName: 'line-choice-icon-info',
+    title: 'High Pressure Applications',
+    description:
+      'Oil and gas field lines or industrial services that need higher pressure routes, engineered connection methods, and stricter material-system review.',
+    filterId: 'pressure',
+  },
+  {
+    icon: '💧',
+    iconClassName: 'line-choice-icon-success',
+    title: 'Water Treatment and Utility',
+    description:
+      'Process water, desalination, and utility transfer lines where efficient standard GRE routes and package completeness matter.',
+    filterId: 'anhydride',
+  },
+  {
+    icon: '🔬',
+    iconClassName: 'line-choice-icon-warning',
+    title: 'Chemical Processing',
+    description:
+      'Corrosive media service where amine-cured or conductive product routes may be required by the operating environment.',
+    filterId: 'amine',
+  },
+]
+
+const linePipeFilters = [
+  { id: 'all', label: 'All Products' },
+  { id: 'anhydride', label: 'Anhydride Cured' },
+  { id: 'amine', label: 'Amine Cured' },
+  { id: 'conductive', label: 'Conductive' },
+  { id: 'pressure', label: 'By Pressure' },
+]
+
+const linePipeProductCards = [
+  {
+    id: 'standard-gre',
+    category: 'anhydride',
+    categoryLabel: 'Anhydride Cured',
+    badgeClassName: 'line-badge-info',
+    imageClassName: 'line-product-image-info',
+    placeholder: 'Product Image\nGRE Line Pipe',
+    title: 'Standard GRE Line Pipe',
+    description:
+      'General purpose process and utility transport. Pressure, diameter, and temperature ranges to be filled from approved product tables.',
+    tags: ['Process Water', 'Utility'],
+  },
+  {
+    id: 'amine-cured',
+    category: 'amine pressure',
+    categoryLabel: 'Amine Cured',
+    badgeClassName: 'line-badge-warning',
+    imageClassName: 'line-product-image-warning',
+    placeholder: 'Product Image\nHigh Temp GRE',
+    title: 'Amine Cured Line Pipe',
+    description:
+      'For higher temperature service and more severe chemical environments where amine-cured resin systems are the preferred route.',
+    tags: ['Chemical', 'High Temp'],
+  },
+  {
+    id: 'conductive',
+    category: 'conductive pressure',
+    categoryLabel: 'Conductive',
+    badgeClassName: 'line-badge-accent',
+    imageClassName: 'line-product-image-accent',
+    placeholder: 'Product Image\nAnti-Static GRE',
+    title: 'Conductive Line Pipe',
+    description:
+      'Conductive and anti-static product route for specialized safety requirements or project specifications in hazardous areas.',
+    tags: ['Anti-Static', 'Oil & Gas'],
+  },
+  {
+    id: 'fittings',
+    category: 'all',
+    categoryLabel: 'Accessories',
+    badgeClassName: 'line-badge-success',
+    imageClassName: 'line-product-image-success',
+    placeholder: 'Product Image\nFittings & Flanges',
+    title: 'Fittings and Transitions',
+    description:
+      'Elbows, tees, reducers, flanges, couplings, and steel transitions for complete line pipe system packages.',
+    tags: ['DSJ Thread', 'Flanged'],
+  },
+]
+
+const linePipeCustomizationFeatures = [
+  'Resin system selection',
+  'Pressure class customization',
+  'Connection method options',
+  'Length and diameter specs',
+  'Fittings package design',
+  'Export packing requirements',
+]
+
 function ensureMetaAttribute(
   selector: string,
   attributeName: 'name' | 'property',
@@ -1251,6 +1346,16 @@ function ProductDetailPage() {
     path: `/products/${page.slug}/`,
   })
 
+  if (page.slug === 'line-pipe') {
+    return (
+      <LinePipeLandingPage
+        breadcrumbSchema={breadcrumbSchema}
+        page={page}
+        productSchema={productSchema}
+      />
+    )
+  }
+
   return (
     <>
       <script
@@ -1803,6 +1908,204 @@ function ProductDetailPage() {
           'Share the application, media, pressure class, dimensions, fittings scope, and destination market to help us respond more accurately.'
         }
       />
+    </>
+  )
+}
+
+function LinePipeLandingPage({
+  page,
+  productSchema,
+  breadcrumbSchema,
+}: {
+  page: (typeof productPages)[number]
+  productSchema: Record<string, unknown>
+  breadcrumbSchema: Record<string, unknown>
+}) {
+  const [activeFilter, setActiveFilter] = useState('all')
+
+  const filteredProducts =
+    activeFilter === 'all'
+      ? linePipeProductCards
+      : linePipeProductCards.filter((item) => item.category.includes(activeFilter))
+
+  const handleFilterChange = (filterId: string) => {
+    setActiveFilter(filterId)
+    const grid = document.getElementById('line-pipe-product-grid')
+    if (grid) {
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <section className="page-hero product-page-top">
+        <nav aria-label="Breadcrumb" className="breadcrumb-list">
+          <Link className="breadcrumb-link" to="/">
+            Home
+          </Link>
+          <span className="breadcrumb-separator">/</span>
+          <Link className="breadcrumb-link" to="/products">
+            Products
+          </Link>
+          <span className="breadcrumb-separator">/</span>
+          <span className="breadcrumb-current">{page.title}</span>
+        </nav>
+
+        <section className="line-landing-hero">
+          <div className="line-landing-hero-copy">
+            <p className="eyebrow">{page.heroEyebrow}</p>
+            <h1>GRE Line Pipe Solutions</h1>
+            <p className="line-landing-subtitle">
+              World-class corrosion-resistant piping systems for oil and gas, water
+              treatment, and chemical processing. Over 60-year service life with
+              customizable specifications and clear selection paths.
+            </p>
+            <div className="line-landing-actions">
+              <Link className="line-btn line-btn-primary" to="/contact">
+                Get Custom Quote
+              </Link>
+              <Link className="line-btn line-btn-secondary" to="/resources/downloads">
+                Download Catalog
+              </Link>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section className="section section-grid page-section">
+        <section className="line-landing-why">
+          <h2>Why Choose GRE Line Pipe</h2>
+          <p>
+            Glass Reinforced Epoxy pipes are built from inert materials with elevated
+            corrosion resistance. Compared with traditional steel and iron pipe systems,
+            GRE line pipe supports far longer working life in aggressive service and helps
+            reduce maintenance exposure over time.
+          </p>
+          <p>
+            The lighter composite structure supports easier handling, shipment, and
+            installation planning, while the internal and external barrier helps the pipe
+            withstand corrosive process media, saline water, and chemical service.
+          </p>
+        </section>
+      </section>
+
+      <section className="section section-grid page-section">
+        <div className="section-heading">
+          <p className="eyebrow">Selection Paths</p>
+          <h2>How to choose the right pipe for your project.</h2>
+        </div>
+        <div className="line-choice-grid">
+          {linePipeChoiceCards.map((item) => (
+            <article className="line-choice-card" key={item.title}>
+              <div className={`line-choice-icon ${item.iconClassName}`}>{item.icon}</div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <button
+                className="line-small-button"
+                onClick={() => handleFilterChange(item.filterId)}
+                type="button"
+              >
+                View Options
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section" id="line-pipe-product-grid">
+        <div className="section-heading">
+          <p className="eyebrow">Our Product Range</p>
+          <h2>Traditional product cards grouped by line pipe route.</h2>
+        </div>
+        <div className="line-filter-bar">
+          {linePipeFilters.map((item) => (
+            <button
+              key={item.id}
+              className={`line-filter-button ${activeFilter === item.id ? 'is-active' : ''}`}
+              onClick={() => handleFilterChange(item.id)}
+              type="button"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <div className="line-product-grid">
+          {filteredProducts.map((item) => (
+            <article className="line-product-card" key={item.id}>
+              <div className={`line-product-image ${item.imageClassName}`}>
+                <span className={`line-category-badge ${item.badgeClassName}`}>
+                  {item.categoryLabel}
+                </span>
+                <div className="line-product-placeholder">
+                  {item.placeholder.split('\n').map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="line-product-info">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <div className="line-product-tags">
+                  {item.tags.map((tag) => (
+                    <span className="line-product-tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-grid page-section">
+        <section className="line-customization">
+          <h2>Fully Customizable to Your Project Requirements</h2>
+          <p className="line-customization-intro">
+            Every aspect of our GRE line pipe can be customized to match your exact
+            specifications, from resin systems and pressure classes to connection methods
+            and delivery schedules.
+          </p>
+          <div className="line-feature-grid">
+            {linePipeCustomizationFeatures.map((item) => (
+              <div className="line-feature-item" key={item}>
+                <span className="line-feature-check">✓</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <Link className="line-btn line-btn-light" to="/contact">
+            Discuss Custom Requirements
+          </Link>
+        </section>
+      </section>
+
+      <section className="section section-grid page-section">
+        <section className="line-contact-cta">
+          <h3>Need help selecting the right product?</h3>
+          <p>
+            Our engineering team can review your project requirements and recommend the
+            optimal GRE line pipe route.
+          </p>
+          <div className="line-contact-actions">
+            <Link className="line-btn line-btn-solid" to="/contact">
+              Contact Engineering
+            </Link>
+            <Link className="line-btn line-btn-outline" to="/resources/downloads">
+              Download Selection Guide
+            </Link>
+          </div>
+        </section>
+      </section>
     </>
   )
 }
