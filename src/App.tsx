@@ -144,24 +144,24 @@ const keywordPages: KeywordPage[] = [
 
 const linePipeChoiceCards = [
   {
-    icon: '⚡',
-    iconClassName: 'line-choice-icon-info',
+    imageSrc: '/line-applications/oilfield.jpg',
+    imageAlt: 'Oil field application scene',
     title: 'High Pressure Applications',
     description:
       'Oil and gas field lines or industrial services that need higher pressure routes, engineered connection methods, and stricter material-system review.',
     filterId: 'pressure',
   },
   {
-    icon: '💧',
-    iconClassName: 'line-choice-icon-success',
+    imageSrc: '/line-applications/water-treatment.jpg',
+    imageAlt: 'Water treatment plant application scene',
     title: 'Water Treatment and Utility',
     description:
       'Process water, desalination, and utility transfer lines where efficient standard GRE routes and package completeness matter.',
     filterId: 'anhydride',
   },
   {
-    icon: '🔬',
-    iconClassName: 'line-choice-icon-warning',
+    imageSrc: '/line-applications/chemical-plant.jpg',
+    imageAlt: 'Chemical processing plant application scene',
     title: 'Chemical Processing',
     description:
       'Corrosive media service where amine-cured or conductive product routes may be required by the operating environment.',
@@ -2006,7 +2006,9 @@ function LinePipeLandingPage({
         <div className="line-choice-grid">
           {linePipeChoiceCards.map((item) => (
             <article className="line-choice-card" key={item.title}>
-              <div className={`line-choice-icon ${item.iconClassName}`}>{item.icon}</div>
+              <div className="line-choice-media">
+                <img alt={item.imageAlt} className="line-choice-image" src={item.imageSrc} />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
               <button
