@@ -142,100 +142,585 @@ const keywordPages: KeywordPage[] = [
   },
 ]
 
-const linePipeChoiceCards = [
-  {
-    imageSrc: '/line-applications/oilfield.jpg',
-    imageAlt: 'Oil field application scene',
-    title: 'High Pressure Applications',
-    description:
-      'Oil and gas field lines or industrial services that need higher pressure routes, engineered connection methods, and stricter material-system review.',
-    filterId: 'pressure',
-  },
-  {
-    imageSrc: '/line-applications/water-treatment.jpg',
-    imageAlt: 'Water treatment plant application scene',
-    title: 'Water Treatment and Utility',
-    description:
-      'Process water, desalination, and utility transfer lines where efficient standard GRE routes and package completeness matter.',
-    filterId: 'anhydride',
-  },
-  {
-    imageSrc: '/line-applications/chemical-plant.jpg',
-    imageAlt: 'Chemical processing plant application scene',
-    title: 'Chemical Processing',
-    description:
-      'Corrosive media service where amine-cured or conductive product routes may be required by the operating environment.',
-    filterId: 'amine',
-  },
-]
+type ProductLandingChoiceCard = {
+  imageSrc: string
+  imageAlt: string
+  title: string
+  description: string
+  filterId: string
+}
 
-const linePipeFilters = [
-  { id: 'all', label: 'All Products' },
-  { id: 'anhydride', label: 'Anhydride Cured' },
-  { id: 'amine', label: 'Amine Cured' },
-  { id: 'conductive', label: 'Conductive' },
-  { id: 'pressure', label: 'By Pressure' },
-]
+type ProductLandingFilter = {
+  id: string
+  label: string
+}
 
-const linePipeProductCards = [
-  {
-    id: 'standard-gre',
-    category: 'anhydride',
-    categoryLabel: 'Anhydride Cured',
-    badgeClassName: 'line-badge-info',
-    imageClassName: 'line-product-image-info',
-    placeholder: 'Product Image\nGRE Line Pipe',
-    title: 'Standard GRE Line Pipe',
-    description:
-      'General purpose process and utility transport. Pressure, diameter, and temperature ranges to be filled from approved product tables.',
-    tags: ['Process Water', 'Utility'],
-  },
-  {
-    id: 'amine-cured',
-    category: 'amine pressure',
-    categoryLabel: 'Amine Cured',
-    badgeClassName: 'line-badge-warning',
-    imageClassName: 'line-product-image-warning',
-    placeholder: 'Product Image\nHigh Temp GRE',
-    title: 'Amine Cured Line Pipe',
-    description:
-      'For higher temperature service and more severe chemical environments where amine-cured resin systems are the preferred route.',
-    tags: ['Chemical', 'High Temp'],
-  },
-  {
-    id: 'conductive',
-    category: 'conductive pressure',
-    categoryLabel: 'Conductive',
-    badgeClassName: 'line-badge-accent',
-    imageClassName: 'line-product-image-accent',
-    placeholder: 'Product Image\nAnti-Static GRE',
-    title: 'Conductive Line Pipe',
-    description:
-      'Conductive and anti-static product route for specialized safety requirements or project specifications in hazardous areas.',
-    tags: ['Anti-Static', 'Oil & Gas'],
-  },
-  {
-    id: 'fittings',
-    category: 'all',
-    categoryLabel: 'Accessories',
-    badgeClassName: 'line-badge-success',
-    imageClassName: 'line-product-image-success',
-    placeholder: 'Product Image\nFittings & Flanges',
-    title: 'Fittings and Transitions',
-    description:
-      'Elbows, tees, reducers, flanges, couplings, and steel transitions for complete line pipe system packages.',
-    tags: ['DSJ Thread', 'Flanged'],
-  },
-]
+type ProductLandingProductCard = {
+  id: string
+  category: string
+  categoryLabel: string
+  badgeClassName: string
+  imageClassName: string
+  placeholder: string
+  title: string
+  description: string
+  tags: string[]
+}
 
-const linePipeCustomizationFeatures = [
-  'Resin system selection',
-  'Pressure class customization',
-  'Connection method options',
-  'Length and diameter specs',
-  'Fittings package design',
-  'Export packing requirements',
-]
+type ProductLandingConfig = {
+  heroTitle: string
+  heroSubtitle: string
+  whyChoose: string[]
+  sectionEyebrow?: string
+  sectionTitle?: string
+  choiceCards: ProductLandingChoiceCard[]
+  filters: ProductLandingFilter[]
+  productCards: ProductLandingProductCard[]
+  customizationTitle: string
+  customizationIntro: string
+  customizationFeatures: string[]
+  contactTitle: string
+  contactText: string
+}
+
+const productLandingConfigs: Record<(typeof productPages)[number]['slug'], ProductLandingConfig> = {
+  'line-pipe': {
+    heroTitle: 'GRE Line Pipe Solutions',
+    heroSubtitle:
+      'World-class corrosion-resistant piping systems for oil and gas, water treatment, and chemical processing. Over 60-year service life with customizable specifications and clear selection paths.',
+    whyChoose: [
+      'Glass Reinforced Epoxy pipes are built from inert materials with elevated corrosion resistance. Compared with traditional steel and iron pipe systems, GRE line pipe supports far longer working life in aggressive service and helps reduce maintenance exposure over time.',
+      'The lighter composite structure supports easier handling, shipment, and installation planning, while the internal and external barrier helps the pipe withstand corrosive process media, saline water, and chemical service.',
+    ],
+    sectionEyebrow: 'Selection Paths',
+    sectionTitle: 'How to choose the right pipe for your project.',
+    choiceCards: [
+      {
+        imageSrc: '/line-applications/oilfield.jpg',
+        imageAlt: 'Oil field application scene',
+        title: 'High Pressure Applications',
+        description:
+          'Oil and gas field lines or industrial services that need higher pressure routes, engineered connection methods, and stricter material-system review.',
+        filterId: 'pressure',
+      },
+      {
+        imageSrc: '/line-applications/water-treatment.jpg',
+        imageAlt: 'Water treatment plant application scene',
+        title: 'Water Treatment and Utility',
+        description:
+          'Process water, desalination, and utility transfer lines where efficient standard GRE routes and package completeness matter.',
+        filterId: 'anhydride',
+      },
+      {
+        imageSrc: '/line-applications/chemical-plant.jpg',
+        imageAlt: 'Chemical processing plant application scene',
+        title: 'Chemical Processing',
+        description:
+          'Corrosive media service where amine-cured or conductive product routes may be required by the operating environment.',
+        filterId: 'amine',
+      },
+    ],
+    filters: [
+      { id: 'all', label: 'All Products' },
+      { id: 'anhydride', label: 'Anhydride Cured' },
+      { id: 'amine', label: 'Amine Cured' },
+      { id: 'conductive', label: 'Conductive' },
+      { id: 'pressure', label: 'By Pressure' },
+    ],
+    productCards: [
+      {
+        id: 'standard-gre',
+        category: 'anhydride',
+        categoryLabel: 'Anhydride Cured',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
+        placeholder: 'Product Image\nGRE Line Pipe',
+        title: 'Standard GRE Line Pipe',
+        description:
+          'General purpose process and utility transport. Pressure, diameter, and temperature ranges to be filled from approved product tables.',
+        tags: ['Process Water', 'Utility'],
+      },
+      {
+        id: 'amine-cured',
+        category: 'amine pressure',
+        categoryLabel: 'Amine Cured',
+        badgeClassName: 'line-badge-warning',
+        imageClassName: 'line-product-image-warning',
+        placeholder: 'Product Image\nHigh Temp GRE',
+        title: 'Amine Cured Line Pipe',
+        description:
+          'For higher temperature service and more severe chemical environments where amine-cured resin systems are the preferred route.',
+        tags: ['Chemical', 'High Temp'],
+      },
+      {
+        id: 'conductive',
+        category: 'conductive pressure',
+        categoryLabel: 'Conductive',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
+        placeholder: 'Product Image\nAnti-Static GRE',
+        title: 'Conductive Line Pipe',
+        description:
+          'Conductive and anti-static product route for specialized safety requirements or project specifications in hazardous areas.',
+        tags: ['Anti-Static', 'Oil & Gas'],
+      },
+      {
+        id: 'fittings',
+        category: 'all',
+        categoryLabel: 'Accessories',
+        badgeClassName: 'line-badge-success',
+        imageClassName: 'line-product-image-success',
+        placeholder: 'Product Image\nFittings & Flanges',
+        title: 'Fittings and Transitions',
+        description:
+          'Elbows, tees, reducers, flanges, couplings, and steel transitions for complete line pipe system packages.',
+        tags: ['DSJ Thread', 'Flanged'],
+      },
+    ],
+    customizationTitle: 'Fully Customizable to Your Project Requirements',
+    customizationIntro:
+      'Every aspect of our GRE line pipe can be customized to match your exact specifications, from resin systems and pressure classes to connection methods and delivery schedules.',
+    customizationFeatures: [
+      'Resin system selection',
+      'Pressure class customization',
+      'Connection method options',
+      'Length and diameter specs',
+      'Fittings package design',
+      'Export packing requirements',
+    ],
+    contactTitle: 'Need help selecting the right product?',
+    contactText:
+      'Our engineering team can review your project requirements and recommend the optimal GRE line pipe route.',
+  },
+  'well-tubing-casing': {
+    heroTitle: 'Composite Well Tubing and Casing',
+    heroSubtitle:
+      'Corrosion-resistant composite well strings for production environments where weight, handling efficiency, and long-term reliability matter.',
+    whyChoose: [
+      'Well tubing and casing projects are usually driven by corrosive service, installation practicality, and lifecycle reliability in aggressive field environments where metallic options can raise weight and corrosion concerns.',
+      'Composite well products help project teams review corrosion exposure, handling logic, and connection planning together instead of treating the pipe body and well accessories as separate decisions.',
+    ],
+    sectionEyebrow: 'Selection Paths',
+    sectionTitle: 'How to choose the right well product route.',
+    choiceCards: [
+      {
+        imageSrc: '/line-applications/oilfield.jpg',
+        imageAlt: 'Oil field production scene',
+        title: 'Corrosive Production Wells',
+        description:
+          'Used where produced fluids, corrosive duty, and long operating life are the main drivers behind well tubing selection.',
+        filterId: 'production',
+      },
+      {
+        imageSrc: '/line-applications/water-treatment.jpg',
+        imageAlt: 'Utility and water support scene',
+        title: 'Injection and Utility Support',
+        description:
+          'Useful where water injection support, field utility service, or auxiliary well-related flow paths affect the string discussion.',
+        filterId: 'corrosion',
+      },
+      {
+        imageSrc: '/product-media/line-pipe/site-buried.jpg',
+        imageAlt: 'Field installation route',
+        title: 'Field Handling and Installation',
+        description:
+          'Projects that depend on handling efficiency, lighter strings, and cleaner installation planning should review connections and accessories early.',
+        filterId: 'connections',
+      },
+    ],
+    filters: [
+      { id: 'all', label: 'All Products' },
+      { id: 'production', label: 'Production Tubing' },
+      { id: 'corrosion', label: 'Corrosion Duty' },
+      { id: 'connections', label: 'Connections' },
+    ],
+    productCards: [
+      {
+        id: 'production-tubing',
+        category: 'production corrosion',
+        categoryLabel: 'Production',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
+        placeholder: 'Product Image\nWell Tubing',
+        title: 'Composite Production Tubing',
+        description:
+          'Tubing route for corrosive well production where lighter handling and corrosion resistance are part of the selection logic.',
+        tags: ['Production', 'Corrosive Duty'],
+      },
+      {
+        id: 'well-casing',
+        category: 'production',
+        categoryLabel: 'Casing',
+        badgeClassName: 'line-badge-success',
+        imageClassName: 'line-product-image-success',
+        placeholder: 'Product Image\nWell Casing',
+        title: 'Composite Well Casing',
+        description:
+          'Casing supply discussed around field conditions, corrosion exposure, and the broader well string requirement.',
+        tags: ['Well Casing', 'Field Service'],
+      },
+      {
+        id: 'corrosion-string',
+        category: 'corrosion',
+        categoryLabel: 'Corrosion Duty',
+        badgeClassName: 'line-badge-warning',
+        imageClassName: 'line-product-image-warning',
+        placeholder: 'Product Image\nCorrosion String',
+        title: 'Corrosion-Resistant Well Strings',
+        description:
+          'For well environments where produced water, corrosive fluids, and longer service life drive the material discussion.',
+        tags: ['Produced Water', 'Long Life'],
+      },
+      {
+        id: 'well-connections',
+        category: 'connections',
+        categoryLabel: 'Connections',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
+        placeholder: 'Product Image\nConnections',
+        title: 'Associated Connections and Accessories',
+        description:
+          'Connection planning, accessory review, and field assembly details that complete the commercial well-string scope.',
+        tags: ['Connections', 'Accessories'],
+      },
+    ],
+    customizationTitle: 'Built Around Actual Well Conditions',
+    customizationIntro:
+      'Well tubing and casing discussions should follow the real field environment, including service fluid, connection logic, dimensions, and handling conditions.',
+    customizationFeatures: [
+      'Well string sizing',
+      'Connection planning',
+      'Corrosion-duty review',
+      'Accessory clarification',
+      'Field handling considerations',
+      'Project documentation support',
+    ],
+    contactTitle: 'Need a well tubing or casing review?',
+    contactText:
+      'Share the service environment, size range, connection needs, and project location so Hovoy can align the well product route to the field duty.',
+  },
+  'marine-offshore-pipe': {
+    heroTitle: 'Marine and Offshore Pipe Systems',
+    heroSubtitle:
+      'Composite marine piping for seawater duty, shipboard utility service, and offshore projects where corrosion resistance and weight reduction both matter.',
+    whyChoose: [
+      'Marine and offshore systems are usually selected around seawater exposure, vessel or module routing constraints, corrosion resistance, and lifecycle performance in saline environments.',
+      'Composite marine pipe reduces weight, helps with shipboard handling, and supports project discussions around fittings, tie-ins, and export-ready package supply.',
+    ],
+    sectionEyebrow: 'Selection Paths',
+    sectionTitle: 'How to choose the right marine pipe route.',
+    choiceCards: [
+      {
+        imageSrc: '/application-scenes/offshore-platform.jpg',
+        imageAlt: 'Offshore platform scene',
+        title: 'Offshore Module Service',
+        description:
+          'Used where offshore platforms, topside modules, or support systems need corrosion-resistant composite pipe routes.',
+        filterId: 'offshore',
+      },
+      {
+        imageSrc: '/application-scenes/desalination-plant.jpg',
+        imageAlt: 'Coastal desalination plant scene',
+        title: 'Seawater and Coastal Duty',
+        description:
+          'Applied where saline exposure, cooling water, or coastal utility service shapes the material and package decision.',
+        filterId: 'seawater',
+      },
+      {
+        imageSrc: '/application-scenes/process-piping.jpg',
+        imageAlt: 'Industrial piping system scene',
+        title: 'Shipboard Utility Routing',
+        description:
+          'For vessel utility systems where routing complexity, support loads, and maintenance access affect the jointing and fittings plan.',
+        filterId: 'shipboard',
+      },
+    ],
+    filters: [
+      { id: 'all', label: 'All Products' },
+      { id: 'seawater', label: 'Seawater Duty' },
+      { id: 'shipboard', label: 'Shipboard' },
+      { id: 'offshore', label: 'Offshore' },
+    ],
+    productCards: [
+      {
+        id: 'seawater-pipe',
+        category: 'seawater shipboard',
+        categoryLabel: 'Seawater Duty',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
+        placeholder: 'Product Image\nSeawater Pipe',
+        title: 'Seawater Service Pipe',
+        description:
+          'Marine composite pipe for continuous saline exposure, cooling circuits, and other corrosion-sensitive water service.',
+        tags: ['Seawater', 'Cooling Water'],
+      },
+      {
+        id: 'shipboard-pipe',
+        category: 'shipboard',
+        categoryLabel: 'Shipboard',
+        badgeClassName: 'line-badge-success',
+        imageClassName: 'line-product-image-success',
+        placeholder: 'Product Image\nShipboard Pipe',
+        title: 'Shipboard Utility Pipe',
+        description:
+          'Pipe route intended for onboard utility systems where weight reduction and routing practicality remain important.',
+        tags: ['Utility', 'Low Weight'],
+      },
+      {
+        id: 'offshore-pipe',
+        category: 'offshore',
+        categoryLabel: 'Offshore',
+        badgeClassName: 'line-badge-warning',
+        imageClassName: 'line-product-image-warning',
+        placeholder: 'Product Image\nOffshore Pipe',
+        title: 'Offshore Support Pipe',
+        description:
+          'Composite route for offshore installations that need corrosion resistance, package completeness, and practical delivery planning.',
+        tags: ['Offshore', 'Corrosion'],
+      },
+      {
+        id: 'marine-fittings',
+        category: 'shipboard seawater offshore',
+        categoryLabel: 'Accessories',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
+        placeholder: 'Product Image\nMarine Fittings',
+        title: 'Marine Fittings and Transitions',
+        description:
+          'Marine elbows, tees, flanges, and transition details used to complete shipboard and offshore piping packages.',
+        tags: ['Fittings', 'Transitions'],
+      },
+    ],
+    customizationTitle: 'Marine Packages Need More Than Straight Pipe',
+    customizationIntro:
+      'Marine projects are usually defined by route complexity, seawater duty, fittings count, tie-in conditions, and export delivery requirements.',
+    customizationFeatures: [
+      'Seawater-duty review',
+      'Shipboard routing support',
+      'Offshore package discussion',
+      'Fittings and tie-in planning',
+      'Project documentation alignment',
+      'Export packing coordination',
+    ],
+    contactTitle: 'Need marine or offshore pipe support?',
+    contactText:
+      'Send the service duty, pipe size range, fittings scope, route constraints, and project destination so Hovoy can review the right marine product route.',
+  },
+  'flexible-composite-pipe': {
+    heroTitle: 'Flexible Composite Pipe Routes',
+    heroSubtitle:
+      'Spoolable composite pipe for oil and gas transport, remote field deployment, and route conditions where reel-based installation can change the project logic.',
+    whyChoose: [
+      'Flexible composite pipe serves a different market from rigid GRE systems. The main discussion is usually about route length, deployment speed, reel handling, and whether field labor can be reduced.',
+      'Project teams often compare flexible and rigid routes side by side, so the product page should make spoolable deployment, installation logic, and field constraints easy to scan.',
+    ],
+    sectionEyebrow: 'Selection Paths',
+    sectionTitle: 'How to choose the right flexible pipe route.',
+    choiceCards: [
+      {
+        imageSrc: '/line-applications/oilfield.jpg',
+        imageAlt: 'Oil field deployment scene',
+        title: 'Remote Field Deployment',
+        description:
+          'Used where remote oil and gas routes depend on faster installation and easier transport into the field.',
+        filterId: 'field',
+      },
+      {
+        imageSrc: '/product-media/line-pipe/site-buried.jpg',
+        imageAlt: 'Field line route scene',
+        title: 'Fast Installation Routes',
+        description:
+          'Projects that benefit from reel-based deployment and reduced joining activity should review flexible routes early.',
+        filterId: 'spoolable',
+      },
+      {
+        imageSrc: '/application-scenes/process-piping.jpg',
+        imageAlt: 'Industrial piping comparison scene',
+        title: 'Rigid vs Flexible Comparison',
+        description:
+          'Useful where teams need to compare spoolable deployment against rigid GRE or GRP alternatives on the same route.',
+        filterId: 'comparison',
+      },
+    ],
+    filters: [
+      { id: 'all', label: 'All Products' },
+      { id: 'spoolable', label: 'Spoolable' },
+      { id: 'field', label: 'Field Service' },
+      { id: 'comparison', label: 'Comparison' },
+    ],
+    productCards: [
+      {
+        id: 'rtp',
+        category: 'spoolable field',
+        categoryLabel: 'Spoolable',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
+        placeholder: 'Product Image\nRTP / TCP',
+        title: 'Spoolable Composite Pipe',
+        description:
+          'Flexible pipe route for reel-based deployment, fast field installation, and reduced joining complexity.',
+        tags: ['Spoolable', 'Fast Install'],
+      },
+      {
+        id: 'field-transport',
+        category: 'field',
+        categoryLabel: 'Field Service',
+        badgeClassName: 'line-badge-success',
+        imageClassName: 'line-product-image-success',
+        placeholder: 'Product Image\nField Transport',
+        title: 'Field Transport Line',
+        description:
+          'Transport route for remote field duty where deployment speed and route access drive the product decision.',
+        tags: ['Oil & Gas', 'Remote'],
+      },
+      {
+        id: 'reel-deployment',
+        category: 'spoolable',
+        categoryLabel: 'Reel Deployment',
+        badgeClassName: 'line-badge-warning',
+        imageClassName: 'line-product-image-warning',
+        placeholder: 'Product Image\nReel Deployment',
+        title: 'Reel-Based Deployment Systems',
+        description:
+          'Flexible route discussed around reel handling, deployment logistics, and field schedule pressure.',
+        tags: ['Reel', 'Deployment'],
+      },
+      {
+        id: 'comparison-support',
+        category: 'comparison',
+        categoryLabel: 'Comparison',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
+        placeholder: 'Product Image\nRigid vs Flexible',
+        title: 'Rigid vs Flexible Comparison Support',
+        description:
+          'Selection route for projects deciding between flexible pipe and rigid composite systems on the same line.',
+        tags: ['Comparison', 'Route Logic'],
+      },
+    ],
+    customizationTitle: 'Flexible Pipe Projects Start With Route Logic',
+    customizationIntro:
+      'Flexible pipe selection depends on route length, deployment method, pressure class, access conditions, and whether a rigid or spoolable route is commercially stronger.',
+    customizationFeatures: [
+      'Route-length review',
+      'Spool and reel planning',
+      'Field deployment discussion',
+      'Pressure-class alignment',
+      'Rigid vs flexible comparison',
+      'Export and logistics support',
+    ],
+    contactTitle: 'Need to compare flexible and rigid routes?',
+    contactText:
+      'Share the fluid, route length, pressure class, and field deployment conditions so Hovoy can help decide whether a flexible system fits the project.',
+  },
+  'fittings-and-joints': {
+    heroTitle: 'Composite Fittings and Joint Systems',
+    heroSubtitle:
+      'Elbows, tees, reducers, flanges, transitions, and jointing logic that turn straight pipe supply into a complete project package.',
+    whyChoose: [
+      'Many RFQs fail at the fittings stage, not the straight-pipe stage. The connection method, fittings ratio, and tie-in details often shape commercial scope as much as the pipe itself.',
+      'A dedicated fittings and joints page should help clients scan the standard items, transition points, and package-completion logic without burying those details under generic pipe copy.',
+    ],
+    sectionEyebrow: 'Selection Paths',
+    sectionTitle: 'How to choose the right fittings route.',
+    choiceCards: [
+      {
+        imageSrc: '/application-scenes/process-piping.jpg',
+        imageAlt: 'Industrial process piping scene',
+        title: 'Plant Routing Packages',
+        description:
+          'Used where elbows, tees, reducers, and tie-ins define the real package scope inside plant pipework.',
+        filterId: 'standard',
+      },
+      {
+        imageSrc: '/line-applications/chemical-plant.jpg',
+        imageAlt: 'Chemical plant scene',
+        title: 'Transitions and Tie-Ins',
+        description:
+          'Projects that connect to pumps, valves, tanks, and steel headers should review transitions early.',
+        filterId: 'transitions',
+      },
+      {
+        imageSrc: '/line-applications/water-treatment.jpg',
+        imageAlt: 'Water treatment plant scene',
+        title: 'Complete System Packages',
+        description:
+          'Useful where the RFQ needs to include both straight pipe and the fittings package rather than a partial material count.',
+        filterId: 'package',
+      },
+    ],
+    filters: [
+      { id: 'all', label: 'All Products' },
+      { id: 'standard', label: 'Standard Fittings' },
+      { id: 'transitions', label: 'Transitions' },
+      { id: 'package', label: 'Package Scope' },
+    ],
+    productCards: [
+      {
+        id: 'standard-fittings',
+        category: 'standard package',
+        categoryLabel: 'Standard',
+        badgeClassName: 'line-badge-info',
+        imageClassName: 'line-product-image-info',
+        placeholder: 'Product Image\nElbows & Tees',
+        title: 'Standard Composite Fittings',
+        description:
+          'Elbows, equal tees, reducing tees, reducers, and related items used in standard process and utility routing.',
+        tags: ['Elbows', 'Tees'],
+      },
+      {
+        id: 'flanges',
+        category: 'standard transitions',
+        categoryLabel: 'Flanges',
+        badgeClassName: 'line-badge-success',
+        imageClassName: 'line-product-image-success',
+        placeholder: 'Product Image\nFlanges',
+        title: 'Flanges and Stub Ends',
+        description:
+          'Flanged ends, stub-end routes, and connection details for valve stations, equipment interfaces, and maintenance access.',
+        tags: ['Flanges', 'Stub Ends'],
+      },
+      {
+        id: 'transitions',
+        category: 'transitions',
+        categoryLabel: 'Transitions',
+        badgeClassName: 'line-badge-warning',
+        imageClassName: 'line-product-image-warning',
+        placeholder: 'Product Image\nTransitions',
+        title: 'Steel Transitions and Tie-Ins',
+        description:
+          'Transition components for mixed-material systems, equipment nozzles, and real plant tie-in conditions.',
+        tags: ['Steel Tie-In', 'Mixed Material'],
+      },
+      {
+        id: 'spools',
+        category: 'package',
+        categoryLabel: 'Package',
+        badgeClassName: 'line-badge-accent',
+        imageClassName: 'line-product-image-accent',
+        placeholder: 'Product Image\nSpools',
+        title: 'Shop Spools and Package Completion',
+        description:
+          'Fabricated spool discussions and package-completion items that keep RFQs from stopping at straight pipe only.',
+        tags: ['Spools', 'Package'],
+      },
+    ],
+    customizationTitle: 'Fittings Scope Should Be Defined Early',
+    customizationIntro:
+      'Projects become easier to quote when the fittings list, tie-in points, jointing route, and transition details are clarified before the commercial package is built.',
+    customizationFeatures: [
+      'Fittings list review',
+      'Transition clarification',
+      'Jointing route discussion',
+      'Tie-in planning',
+      'Shop spool scope',
+      'Packing and quantity alignment',
+    ],
+    contactTitle: 'Need help completing the fittings scope?',
+    contactText:
+      'Send the base pipe system, fittings list, tie-in points, and preferred connection route so Hovoy can review the complete package requirement.',
+  },
+}
 
 function ensureMetaAttribute(
   selector: string,
@@ -1346,10 +1831,13 @@ function ProductDetailPage() {
     path: `/products/${page.slug}/`,
   })
 
-  if (page.slug === 'line-pipe') {
+  const landingConfig = productLandingConfigs[page.slug]
+
+  if (landingConfig) {
     return (
-      <LinePipeLandingPage
+      <ProductLandingPage
         breadcrumbSchema={breadcrumbSchema}
+        config={landingConfig}
         page={page}
         productSchema={productSchema}
       />
@@ -1912,21 +2400,23 @@ function ProductDetailPage() {
   )
 }
 
-function LinePipeLandingPage({
+function ProductLandingPage({
   page,
   productSchema,
   breadcrumbSchema,
+  config,
 }: {
   page: (typeof productPages)[number]
   productSchema: Record<string, unknown>
   breadcrumbSchema: Record<string, unknown>
+  config: ProductLandingConfig
 }) {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const filteredProducts =
     activeFilter === 'all'
-      ? linePipeProductCards
-      : linePipeProductCards.filter((item) => item.category.includes(activeFilter))
+      ? config.productCards
+      : config.productCards.filter((item) => item.category.includes(activeFilter))
 
   const handleFilterChange = (filterId: string) => {
     setActiveFilter(filterId)
@@ -1963,12 +2453,8 @@ function LinePipeLandingPage({
         <section className="line-landing-hero">
           <div className="line-landing-hero-copy">
             <p className="eyebrow">{page.heroEyebrow}</p>
-            <h1>GRE Line Pipe Solutions</h1>
-            <p className="line-landing-subtitle">
-              World-class corrosion-resistant piping systems for oil and gas, water
-              treatment, and chemical processing. Over 60-year service life with
-              customizable specifications and clear selection paths.
-            </p>
+            <h1>{config.heroTitle}</h1>
+            <p className="line-landing-subtitle">{config.heroSubtitle}</p>
             <div className="line-landing-actions">
               <Link className="line-btn line-btn-primary" to="/contact">
                 Get Custom Quote
@@ -1983,28 +2469,20 @@ function LinePipeLandingPage({
 
       <section className="section section-grid page-section">
         <section className="line-landing-why">
-          <h2>Why Choose GRE Line Pipe</h2>
-          <p>
-            Glass Reinforced Epoxy pipes are built from inert materials with elevated
-            corrosion resistance. Compared with traditional steel and iron pipe systems,
-            GRE line pipe supports far longer working life in aggressive service and helps
-            reduce maintenance exposure over time.
-          </p>
-          <p>
-            The lighter composite structure supports easier handling, shipment, and
-            installation planning, while the internal and external barrier helps the pipe
-            withstand corrosive process media, saline water, and chemical service.
-          </p>
+          <h2>Why Choose {page.title}</h2>
+          {config.whyChoose.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </section>
       </section>
 
       <section className="section section-grid page-section">
         <div className="section-heading">
-          <p className="eyebrow">Selection Paths</p>
-          <h2>How to choose the right pipe for your project.</h2>
+          <p className="eyebrow">{config.sectionEyebrow ?? 'Selection Paths'}</p>
+          <h2>{config.sectionTitle ?? 'How to choose the right pipe for your project.'}</h2>
         </div>
         <div className="line-choice-grid">
-          {linePipeChoiceCards.map((item) => (
+          {config.choiceCards.map((item) => (
             <article className="line-choice-card" key={item.title}>
               <div className="line-choice-media">
                 <img alt={item.imageAlt} className="line-choice-image" src={item.imageSrc} />
@@ -2026,10 +2504,10 @@ function LinePipeLandingPage({
       <section className="section section-grid page-section" id="line-pipe-product-grid">
         <div className="section-heading">
           <p className="eyebrow">Our Product Range</p>
-          <h2>Traditional product cards grouped by line pipe route.</h2>
+          <h2>Traditional product cards grouped by the product route.</h2>
         </div>
         <div className="line-filter-bar">
-          {linePipeFilters.map((item) => (
+          {config.filters.map((item) => (
             <button
               key={item.id}
               className={`line-filter-button ${activeFilter === item.id ? 'is-active' : ''}`}
@@ -2071,14 +2549,10 @@ function LinePipeLandingPage({
 
       <section className="section section-grid page-section">
         <section className="line-customization">
-          <h2>Fully Customizable to Your Project Requirements</h2>
-          <p className="line-customization-intro">
-            Every aspect of our GRE line pipe can be customized to match your exact
-            specifications, from resin systems and pressure classes to connection methods
-            and delivery schedules.
-          </p>
+          <h2>{config.customizationTitle}</h2>
+          <p className="line-customization-intro">{config.customizationIntro}</p>
           <div className="line-feature-grid">
-            {linePipeCustomizationFeatures.map((item) => (
+            {config.customizationFeatures.map((item) => (
               <div className="line-feature-item" key={item}>
                 <span className="line-feature-check">✓</span>
                 <span>{item}</span>
@@ -2093,11 +2567,8 @@ function LinePipeLandingPage({
 
       <section className="section section-grid page-section">
         <section className="line-contact-cta">
-          <h3>Need help selecting the right product?</h3>
-          <p>
-            Our engineering team can review your project requirements and recommend the
-            optimal GRE line pipe route.
-          </p>
+          <h3>{config.contactTitle}</h3>
+          <p>{config.contactText}</p>
           <div className="line-contact-actions">
             <Link className="line-btn line-btn-solid" to="/contact">
               Contact Engineering
