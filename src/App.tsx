@@ -1620,7 +1620,7 @@ function HomePage() {
         </div>
 
         <div className="contact-card">
-          <p>Primary inquiry email</p>
+          <p>Inquiry Email</p>
           <div className="email-stack">
             <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
             <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
@@ -4166,23 +4166,14 @@ function ContactPage() {
           </p>
         </div>
         <article className="contact-card contact-card-priority">
-          <p>Primary inquiry email</p>
+          <p>Inquiry Email</p>
           <div className="email-stack">
             <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
             <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
           </div>
           <span>
-            Click either email address to open your mail app directly. Use the primary email first
-            and keep the secondary email as backup contact.
+            Click either email address below to open your mail app directly and start your inquiry.
           </span>
-          <div className="contact-card-actions">
-            <a className="button button-primary contact-button" href={`mailto:${primaryInquiryEmail}`}>
-              Email Sales
-            </a>
-            <a className="button button-secondary contact-button" href={`mailto:${secondaryInquiryEmail}`}>
-              Email Backup
-            </a>
-          </div>
         </article>
       </section>
 
