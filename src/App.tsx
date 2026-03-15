@@ -14,7 +14,6 @@ import {
   applicationPages,
   faqItems,
   productPages,
-  secondaryNav,
   siteUrl,
 } from './siteData'
 
@@ -29,6 +28,40 @@ export const MetaContext = createContext<MetaSnapshot | null>(null)
 
 const primaryInquiryEmail = 'sales@hovoy-grepipe.com'
 const secondaryInquiryEmail = 'chinahovoy@yahoo.com'
+
+const footerColumns = [
+  {
+    title: 'Product Lines',
+    links: [
+      { label: 'Line Pipe', to: '/products/line-pipe' },
+      { label: 'Well Tubing and Casing', to: '/products/well-tubing-casing' },
+      { label: 'Marine and Offshore Pipe', to: '/products/marine-offshore-pipe' },
+      { label: 'Flexible Composite Pipe', to: '/products/flexible-composite-pipe' },
+      { label: 'Fittings and Joints', to: '/products/fittings-and-joints' },
+    ],
+  },
+  {
+    title: 'Applications and Support',
+    links: [
+      { label: 'Oil and Gas', to: '/applications/oil-and-gas' },
+      { label: 'Marine and Offshore', to: '/applications/marine-and-offshore' },
+      { label: 'Water Treatment and Desalination', to: '/applications/water-treatment-desalination' },
+      { label: 'Chemical Processing', to: '/applications/chemical-processing' },
+      { label: 'Downloads', to: '/resources/downloads' },
+      { label: 'FAQ', to: '/resources/faq' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'Why Hovoy', to: '/why-hovoy' },
+      { label: 'Manufacturing and Quality', to: '/manufacturing-quality' },
+      { label: 'Engineering', to: '/engineering' },
+      { label: 'About', to: '/about' },
+      { label: 'Contact', to: '/contact' },
+    ],
+  },
+]
 
 type KeywordPage = {
   slug: 'gre-pipe' | 'grp-pipe' | 'frp-pipe'
@@ -1084,6 +1117,7 @@ function SiteLayout({ children }: { children: ReactNode }) {
   ]
 
   const activeMenu = openMenu ? megaMenus[openMenu as keyof typeof megaMenus] : null
+  const currentYear = new Date().getFullYear()
 
   return (
     <div className="site-shell">
@@ -1164,26 +1198,63 @@ function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
 
-      <footer className="footer">
-        <div>
-          <p className="brand-name">Hovoy GRE Pipe</p>
-          <p className="footer-note">
-            Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and casing,
-            line pipe, marine piping, flexible pipe, fittings, and project-driven industrial applications.
-          </p>
+      <footer className="footer footer-expanded">
+        <div className="footer-grid">
+          <section className="footer-brand-panel">
+            <div className="footer-brand-lockup">
+              <div className="brand-badge footer-brand-badge">HG</div>
+              <div>
+                <p className="brand-name">Hovoy GRE Pipe</p>
+                <p className="brand-tag">Composite piping systems for project supply</p>
+              </div>
+            </div>
+            <p className="footer-note">
+              Hovoy GRE Pipe supplies GRE, GRP, and FRP pipe systems for well tubing and
+              casing, line pipe, marine piping, flexible pipe, fittings, and project-driven
+              industrial applications.
+            </p>
+            <div className="footer-email-stack">
+              <a href={`mailto:${primaryInquiryEmail}`}>{primaryInquiryEmail}</a>
+              <a href={`mailto:${secondaryInquiryEmail}`}>{secondaryInquiryEmail}</a>
+            </div>
+            <div className="footer-brand-actions">
+              <Link className="button button-primary footer-action" to="/contact">
+                Request RFQ
+              </Link>
+              <Link className="button button-secondary footer-action" to="/resources/downloads">
+                Downloads
+              </Link>
+            </div>
+          </section>
+
+          {footerColumns.map((column) => (
+            <nav className="footer-column" key={column.title} aria-label={column.title}>
+              <p className="footer-heading">{column.title}</p>
+              <div className="footer-link-list">
+                {column.links.map((item) => (
+                  <Link className="footer-link" key={item.to} to={item.to}>
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          ))}
         </div>
 
-        <nav className="footer-nav" aria-label="Footer">
-          {secondaryNav.map((item) => (
-            <NavLink
-              className={({ isActive }) => (isActive ? 'navlink navlink-active' : 'navlink')}
-              key={item.to}
-              to={item.to}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="footer-base">
+          <p className="footer-base-copy">© {currentYear} Hovoy GRE Pipe. All rights reserved.</p>
+          <div className="footer-base-links">
+            <Link className="footer-link footer-link-compact" to="/contact">
+              Contact
+            </Link>
+            <Link className="footer-link footer-link-compact" to="/resources/downloads">
+              Downloads
+            </Link>
+            <a className="footer-link footer-link-compact" href="/sitemap.xml">
+              Sitemap
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   )
