@@ -222,13 +222,13 @@ const productLandingConfigs: Record<(typeof productPages)[number]['slug'], Produ
   'line-pipe': {
     heroTitle: 'GRE Line Pipe Solutions',
     heroSubtitle:
-      'World-class corrosion-resistant piping systems for oil and gas, water treatment, and chemical processing. Over 60-year service life with customizable specifications and clear selection paths.',
+      'Composite line pipe for corrosive process, utility, water, and energy service where pressure class, resin system, jointing route, and fittings package all need clear definition.',
     whyChoose: [
-      'Glass Reinforced Epoxy pipes are built from inert materials with elevated corrosion resistance. Compared with traditional steel and iron pipe systems, GRE line pipe supports far longer working life in aggressive service and helps reduce maintenance exposure over time.',
-      'The lighter composite structure supports easier handling, shipment, and installation planning, while the internal and external barrier helps the pipe withstand corrosive process media, saline water, and chemical service.',
+      'GRE line pipe is used where corrosive media, saline water, or aggressive plant service make long-term corrosion resistance and lower maintenance exposure more important in the final material decision.',
+      'Project discussions usually need pipe body, jointing system, fittings scope, and installation environment reviewed together so that pressure class, routing, and package supply are aligned before quotation.',
     ],
     sectionEyebrow: 'Selection Paths',
-    sectionTitle: 'How to choose the right pipe for your project.',
+    sectionTitle: 'Typical service paths for GRE line pipe.',
     choiceCards: [
       {
         imageSrc: '/line-applications/oilfield.jpg',
@@ -2578,7 +2578,7 @@ function ProductLandingPage({
 
       <section className="section section-grid page-section">
         <section className="line-landing-why">
-          <h2>Why Choose {page.title}</h2>
+          <h2>Product Overview</h2>
           {config.whyChoose.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -2613,7 +2613,7 @@ function ProductLandingPage({
       <section className="section section-grid page-section" id="line-pipe-product-grid">
         <div className="section-heading">
           <p className="eyebrow">Our Product Range</p>
-          <h2>Traditional product cards grouped by the product route.</h2>
+          <h2>Available product families and package items.</h2>
         </div>
         <div className="line-filter-bar">
           {config.filters.map((item) => (
