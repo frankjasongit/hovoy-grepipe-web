@@ -1127,7 +1127,7 @@ function SiteLayout({ children }: { children: ReactNode }) {
       >
         <div className="topbar-inner">
           <Link className="brand-lockup" to="/">
-            <div className="brand-badge">HG</div>
+            <div className="brand-badge">HO</div>
             <div>
               <p className="brand-name">Hovoy GRE Pipe</p>
               <p className="brand-tag">GRE, GRP, and FRP pipe systems for project supply</p>
@@ -1202,7 +1202,7 @@ function SiteLayout({ children }: { children: ReactNode }) {
         <div className="footer-grid">
           <section className="footer-brand-panel">
             <div className="footer-brand-lockup">
-              <div className="brand-badge footer-brand-badge">HG</div>
+              <div className="brand-badge footer-brand-badge">HO</div>
               <div>
                 <p className="brand-name">Hovoy GRE Pipe</p>
                 <p className="brand-tag">Composite piping systems for project supply</p>
