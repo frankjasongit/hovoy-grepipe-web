@@ -1500,6 +1500,14 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
+.detail-panel-accent .detail-list li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-panel-accent .detail-list li::before {
+  background: #d48647;
+}
+
 .detail-panel-tag {
   margin-bottom: 0.2rem;
 }
